@@ -22,7 +22,6 @@ namespace mainWindow {
 		public static oldSchoolDropLoggerForm instance;
 
 		private List<PictureBox> allPictureBoxes = new List<PictureBox>();
-		private List<String> multipleItemsLogged = new List<String>();
 
 		/* Getters and Setters */
 		private void setSelectedDagannothKing(String king) {
@@ -1929,8 +1928,7 @@ namespace mainWindow {
 
 		public void pictureBox_Click(object sender, EventArgs e) {
 
-			PictureBox pbSender = (PictureBox) sender;
-			String unloggedItem = pbSender.Tag.ToString();
+			PictureBox pbSender = (PictureBox)sender;
 
 			// PictureBoxes to switch between the dagannoth kings behave differently,
 			// don't want to do anything besides show the new items
@@ -1944,7 +1942,7 @@ namespace mainWindow {
 			if (pbSender.Tag.ToString() == "RDT") {
 
 				// Check if RDT is already open, if not, open it
-				if (!isFormOpen("RareDropTableForm")) { 
+				if (!isFormOpen("RareDropTableForm")) {
 					RareDropTableForm rdt = new RareDropTableForm();
 					// TODO
 					//rdt.StartPosition = FormStartPosition.CenterParent;
@@ -1954,7 +1952,7 @@ namespace mainWindow {
 
 			// Else so RDT and "Varies" case don't occur together - never will unless RDT is updated with varying item amounts
 			// Handle items that drop varying amounts
-			else if (pbSender.Tag.ToString().Substring(0,6) == "Varies") {
+			else if (pbSender.Tag.ToString().Substring(0, 6) == "Varies") {
 				PictureBox pb = (PictureBox)sender;
 
 				// TODO clean
@@ -1976,64 +1974,28 @@ namespace mainWindow {
 
 			// Prevent logging 'RDT' when RDT form is opened
 			else {
+				// Change background color of PictureBox
+				highlightPictureBox(pbSender);
 
-				multipleItemsLogged.Add(pbSender.Tag.ToString());
+				String unloggedItem = pbSender.Tag.ToString();
 
-				
+				// Only to show correctly in the ListBox
+				// given tag				produced string
+				// --------------			-----------------
+				// Rune battleaxe			1. Rune battleaxe
+				prepareAndAddItemToListBox(unloggedItem);
 
-				if (Control.ModifierKeys == Keys.Control) {
-
-					// - get most recently added item from list box = recentItem
-					String listboxRecentItem = itemDropListBox.Items[itemDropListBox.Items.Count - 1].ToString();
-					Console.WriteLine("Most recent item in listbox: " + listboxRecentItem);
-
-					// - remove the number preceeding that item
-					listboxRecentItem = listboxRecentItem.Substring(listboxRecentItem.IndexOf(".") + 2);
-					Console.WriteLine("Most recent item in listbox without number: " + listboxRecentItem);
-
-					// - take the new item (pbSender.tag.toString()) and concatenate it to recentItem
-					String newItemToAdd = pbSender.Tag.ToString();
-					Console.WriteLine("New item to be added to previous item: " + newItemToAdd);
-
-					// remove recentItem from listBox
-					itemDropListBox.Items.RemoveAt(itemDropListBox.Items.Count - 1);
-					Console.WriteLine("Last item in list box removed.");
-
-					// add this new multi-item to list box
-					
-					
-					// remove recent item from file
-					// write multi-item to file
-
-
-				}
-				else {
-
-					// Change background color of PictureBox
-					highlightPictureBox(pbSender);
-
-					// Only to show correctly in the ListBox
-					// given tag				produced string
-					// --------------			-----------------
-					// Rune battleaxe			1. Rune battleaxe
-					prepareAndAddItemToListBox(unloggedItem);
-				}
 				// Write new item to file
 				List<String> loggedItems = getLoggedItemsFromFile(getCurrentBoss());
 				loggedItems = addItemToLoggedItems(loggedItems, unloggedItem);
 				writeLoggedItemsToFile(loggedItems, getCurrentBoss());
-				
+
 				// TODO highlight last item so it can be removed easily
 			}
 		}
-		// TODO
-		// Submited custom drop on enter:
-		// enter key handler
-		//		check if custom drop box is focused, if so:
-		//			log drop
 
 		private void prepareAndAddItemToListBox(String item, Boolean isMultipleItems = false) {
-			
+
 			// Get the number of lines that are not 'real' - only a continuation of the lines above
 			int continuedItemLines = 0;
 			foreach (String x in itemDropListBox.Items) {
@@ -2045,7 +2007,7 @@ namespace mainWindow {
 			if (isMultipleItems == false) {
 				preparedString = (itemDropListBox.Items.Count + 1 - continuedItemLines) + ". " + item;
 			}
-			
+
 
 			// Use length to make sure the string doesn't go outside the bounds of the list box
 			int itemDropListBoxWidth = itemDropListBox.Width;
@@ -2089,7 +2051,7 @@ namespace mainWindow {
 				}
 
 				// Add each of the lines now to the list box
-				foreach(String s in brokenStrings) {
+				foreach (String s in brokenStrings) {
 					itemDropListBox.Items.Add(s);
 				}
 			}
@@ -2131,7 +2093,6 @@ namespace mainWindow {
 
 			// Clear text box
 			textboxCustomDrop.Text = "";
-			multipleItemsLogged.Clear();
 		}
 		private void buttonUndoLastDrop_Click(object sender, EventArgs e) {
 
@@ -2187,12 +2148,12 @@ namespace mainWindow {
 					int periodIndexPlus2 = loggedItemsList[i].IndexOf(".") + 2; // + 2 to skip the period and the following space
 					int longItemLength = loggedItemsList[i].Length;
 					int shortItemLength = longItemLength - periodIndexPlus2;
-					
+
 					String item = loggedItemsList[i].Substring(periodIndexPlus2);
 					loggedItems.Add(item);
 				}
 			}
-			catch (FileNotFoundException) {}
+			catch (FileNotFoundException) { }
 
 			return loggedItems;
 		}
@@ -2206,7 +2167,7 @@ namespace mainWindow {
 			itemDropListBox.Items.RemoveAt(itemDropListBox.Items.Count - 1);
 
 			// Then remove the item from the list aka the file
-			loggedItems.RemoveAt(loggedItems.Count-1);
+			loggedItems.RemoveAt(loggedItems.Count - 1);
 		}
 		public void writeLoggedItemsToFile(List<String> loggedItems, String boss) {
 
@@ -4723,12 +4684,6 @@ namespace mainWindow {
 			}
 		}
 
-		private void printList<T>(List<T> list) {
-			Console.WriteLine("=============");
-			foreach (var x in list) {
-				Console.WriteLine(x.ToString());
-			}
-			Console.WriteLine("=============");
-		}
+
 	}
 }
