@@ -8,8 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using rareDropTable;
 using Config;
+using StatisticsForm;
 
 namespace mainWindow {
 	public partial class oldSchoolDropLoggerForm : Form {
@@ -32,6 +34,18 @@ namespace mainWindow {
 		}
 		private String getCurrentBoss() {
 			return labelCurrentLogFor.Text.Replace("Current log for: ", "").Trim();
+		}
+
+		/* Menu strip handlers */
+		private void exitToolStripMenuItem_Click(object sender, EventArgs e) {
+			this.Close();
+		}
+		private void twitterToolStripMenuItem_Click(object sender, EventArgs e) {
+			System.Diagnostics.Process.Start("https://twitter.com/Im_Hess");
+		}
+		private void viewStatisticsToolStripMenuItem_Click(object sender, EventArgs e) {
+			Statistics s = new Statistics();
+			s.Show();
 		}
 
 		private void armadylToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -1910,6 +1924,7 @@ namespace mainWindow {
 			dagannothKingsToolStripMenuItem.PerformClick();
 			highlightPictureBox(pictureBoxDagannothSupreme);
 		}
+		
 		public void highlightPictureBox(PictureBox pb) {
 			if (pb.Name == "pictureBoxDagannothPrime" ||
 				pb.Name == "pictureBoxDagannothRex" ||
@@ -2185,6 +2200,7 @@ namespace mainWindow {
 			}
 		}
 
+		/* Constructor */
 		public oldSchoolDropLoggerForm() {
 			InitializeComponent();
 
@@ -4684,6 +4700,6 @@ namespace mainWindow {
 			}
 		}
 
-
+		
 	}
 }

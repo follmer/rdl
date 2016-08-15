@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(oldSchoolDropLoggerForm));
-			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+			this.menuStrip = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.bossToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.godwarsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.armadylToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,6 +60,11 @@
 			this.skotizoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.thermonuclearSmokeDevilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.zulrahToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.statisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.twitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+			this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.buttonUndoLastDrop = new System.Windows.Forms.Button();
 			this.buttonOpenDropList = new System.Windows.Forms.Button();
 			this.buttonNewTrip = new System.Windows.Forms.Button();
@@ -129,7 +135,8 @@
 			this.pictureBox10 = new System.Windows.Forms.PictureBox();
 			this.Label2 = new System.Windows.Forms.Label();
 			this.labelCurrentLogFor = new System.Windows.Forms.Label();
-			this.menuStrip1.SuspendLayout();
+			this.viewStatisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.menuStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothPrime)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothRex)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothSupreme)).BeginInit();
@@ -191,32 +198,41 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// menuStrip1
+			// menuStrip
 			// 
-			this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.menuStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+			this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.aboutToolStripMenuItem,
-            this.bossToolStripMenuItem});
-			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(474, 24);
-			this.menuStrip1.TabIndex = 0;
-			this.menuStrip1.Text = "menuStrip1";
+            this.bossToolStripMenuItem,
+            this.statisticsToolStripMenuItem,
+            this.helpToolStripMenuItem});
+			this.menuStrip.Location = new System.Drawing.Point(0, 0);
+			this.menuStrip.Name = "menuStrip";
+			this.menuStrip.Size = new System.Drawing.Size(474, 24);
+			this.menuStrip.TabIndex = 0;
+			this.menuStrip.Text = "menuStrip1";
 			// 
 			// fileToolStripMenuItem
 			// 
+			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator1,
+            this.exitToolStripMenuItem});
 			this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
 			this.fileToolStripMenuItem.Text = "File";
 			// 
-			// aboutToolStripMenuItem
+			// toolStripSeparator1
 			// 
-			this.aboutToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
-			this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-			this.aboutToolStripMenuItem.Text = "About";
+			this.toolStripSeparator1.Name = "toolStripSeparator1";
+			this.toolStripSeparator1.Size = new System.Drawing.Size(89, 6);
+			// 
+			// exitToolStripMenuItem
+			// 
+			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+			this.exitToolStripMenuItem.Text = "Exit";
+			this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
 			// 
 			// bossToolStripMenuItem
 			// 
@@ -433,6 +449,44 @@
 			this.zulrahToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
 			this.zulrahToolStripMenuItem.Text = "Zulrah";
 			this.zulrahToolStripMenuItem.Click += new System.EventHandler(this.zulrahToolStripMenuItem_Click);
+			// 
+			// statisticsToolStripMenuItem
+			// 
+			this.statisticsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewStatisticsToolStripMenuItem});
+			this.statisticsToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+			this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
+			this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+			this.statisticsToolStripMenuItem.Text = "Statistics";
+			// 
+			// helpToolStripMenuItem
+			// 
+			this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.twitterToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.aboutToolStripMenuItem1});
+			this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+			this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+			this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+			this.helpToolStripMenuItem.Text = "Help";
+			// 
+			// twitterToolStripMenuItem
+			// 
+			this.twitterToolStripMenuItem.Name = "twitterToolStripMenuItem";
+			this.twitterToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+			this.twitterToolStripMenuItem.Text = "Twitter";
+			this.twitterToolStripMenuItem.Click += new System.EventHandler(this.twitterToolStripMenuItem_Click);
+			// 
+			// toolStripSeparator2
+			// 
+			this.toolStripSeparator2.Name = "toolStripSeparator2";
+			this.toolStripSeparator2.Size = new System.Drawing.Size(107, 6);
+			// 
+			// aboutToolStripMenuItem1
+			// 
+			this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
+			this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
+			this.aboutToolStripMenuItem1.Text = "About";
 			// 
 			// buttonUndoLastDrop
 			// 
@@ -1280,6 +1334,13 @@
 			this.labelCurrentLogFor.TabIndex = 138;
 			this.labelCurrentLogFor.Text = "Current log for: Armadyl";
 			// 
+			// viewStatisticsToolStripMenuItem
+			// 
+			this.viewStatisticsToolStripMenuItem.Name = "viewStatisticsToolStripMenuItem";
+			this.viewStatisticsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.viewStatisticsToolStripMenuItem.Text = "View statistics";
+			this.viewStatisticsToolStripMenuItem.Click += new System.EventHandler(this.viewStatisticsToolStripMenuItem_Click);
+			// 
 			// oldSchoolDropLoggerForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1356,17 +1417,17 @@
 			this.Controls.Add(this.buttonNewTrip);
 			this.Controls.Add(this.buttonOpenDropList);
 			this.Controls.Add(this.buttonUndoLastDrop);
-			this.Controls.Add(this.menuStrip1);
+			this.Controls.Add(this.menuStrip);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.MainMenuStrip = this.menuStrip1;
+			this.MainMenuStrip = this.menuStrip;
 			this.MaximumSize = new System.Drawing.Size(490, 399);
 			this.MinimumSize = new System.Drawing.Size(490, 399);
 			this.Name = "oldSchoolDropLoggerForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Old School Drop Logger";
 			this.Load += new System.EventHandler(this.oldSchoolDropLoggerForm_Load);
-			this.menuStrip1.ResumeLayout(false);
-			this.menuStrip1.PerformLayout();
+			this.menuStrip.ResumeLayout(false);
+			this.menuStrip.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothPrime)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothRex)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothSupreme)).EndInit();
@@ -1433,9 +1494,8 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bossToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem godwarsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem armadylToolStripMenuItem;
@@ -1533,6 +1593,14 @@
         internal System.Windows.Forms.Label Label2;
 		internal System.Windows.Forms.Label labelCurrentLogFor;
 		public System.Windows.Forms.ListBox itemDropListBox;
+		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem1;
+		private System.Windows.Forms.ToolStripMenuItem twitterToolStripMenuItem;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+		private System.Windows.Forms.ToolStripMenuItem statisticsToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem viewStatisticsToolStripMenuItem;
 	}
 }
 
