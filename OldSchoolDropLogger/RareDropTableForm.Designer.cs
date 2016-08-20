@@ -52,6 +52,7 @@
 			this.pictureBox26 = new System.Windows.Forms.PictureBox();
 			this.pictureBox25 = new System.Windows.Forms.PictureBox();
 			this.buttonCloseRDT = new System.Windows.Forms.Button();
+			this.pictureBox28 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -79,6 +80,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// pictureBox1
@@ -349,7 +351,7 @@
 			// 
 			this.pictureBox27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.pictureBox27.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox27.Image")));
-			this.pictureBox27.Location = new System.Drawing.Point(131, 148);
+			this.pictureBox27.Location = new System.Drawing.Point(114, 148);
 			this.pictureBox27.Name = "pictureBox27";
 			this.pictureBox27.Size = new System.Drawing.Size(35, 35);
 			this.pictureBox27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -360,7 +362,7 @@
 			// 
 			this.pictureBox26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.pictureBox26.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox26.Image")));
-			this.pictureBox26.Location = new System.Drawing.Point(97, 148);
+			this.pictureBox26.Location = new System.Drawing.Point(80, 148);
 			this.pictureBox26.Name = "pictureBox26";
 			this.pictureBox26.Size = new System.Drawing.Size(35, 35);
 			this.pictureBox26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -371,7 +373,7 @@
 			// 
 			this.pictureBox25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.pictureBox25.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox25.Image")));
-			this.pictureBox25.Location = new System.Drawing.Point(63, 148);
+			this.pictureBox25.Location = new System.Drawing.Point(46, 148);
 			this.pictureBox25.Name = "pictureBox25";
 			this.pictureBox25.Size = new System.Drawing.Size(35, 35);
 			this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -392,12 +394,26 @@
 			this.buttonCloseRDT.UseVisualStyleBackColor = false;
 			this.buttonCloseRDT.Click += new System.EventHandler(this.buttonCloseRDT_Click);
 			// 
+			// pictureBox28
+			// 
+			this.pictureBox28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pictureBox28.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox28.Image")));
+			this.pictureBox28.InitialImage = null;
+			this.pictureBox28.Location = new System.Drawing.Point(148, 148);
+			this.pictureBox28.Name = "pictureBox28";
+			this.pictureBox28.Size = new System.Drawing.Size(35, 35);
+			this.pictureBox28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+			this.pictureBox28.TabIndex = 28;
+			this.pictureBox28.TabStop = false;
+			this.pictureBox28.Tag = "None";
+			// 
 			// RareDropTableForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
 			this.ClientSize = new System.Drawing.Size(229, 226);
+			this.Controls.Add(this.pictureBox28);
 			this.Controls.Add(this.buttonCloseRDT);
 			this.Controls.Add(this.pictureBox27);
 			this.Controls.Add(this.pictureBox26);
@@ -459,6 +475,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -493,5 +510,6 @@
 		private System.Windows.Forms.PictureBox pictureBox26;
 		private System.Windows.Forms.PictureBox pictureBox25;
 		internal System.Windows.Forms.Button buttonCloseRDT;
+		private System.Windows.Forms.PictureBox pictureBox28;
 	}
 }

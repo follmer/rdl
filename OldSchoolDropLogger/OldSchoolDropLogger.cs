@@ -18,6 +18,8 @@ namespace mainWindow {
 		private String selectedDagannothKing = "Dagannoth Prime";
 		private String logsFilePath = AppDomain.CurrentDomain.BaseDirectory + "/logs/";
 
+		private List<String> listboxItemsList = new List<String>();
+
 		private Color hightlightOrange = Color.FromArgb(179, 107, 0);
 
 		// Create an instance of this class so data can be passed to it from other forms
@@ -1925,7 +1927,7 @@ namespace mainWindow {
 			highlightPictureBox(pictureBoxDagannothSupreme);
 		}
 		
-		public void highlightPictureBox(PictureBox pb) {
+		public void highlightPictureBox(PictureBox pb, Boolean resetAll = true) {
 			if (pb.Name == "pictureBoxDagannothPrime" ||
 				pb.Name == "pictureBoxDagannothRex" ||
 				pb.Name == "pictureBoxDagannothSupreme") {
@@ -1936,14 +1938,36 @@ namespace mainWindow {
 				pb.BackColor = Color.FromArgb(192, 255, 192);
 			}
 			else {
-				resetAllPictureBoxBackgroundColor();
+				// Only reset the pictures if it is set - this will not reset pictures when control is held
+				if (resetAll) {
+					resetAllPictureBoxBackgroundColor();
+				}
+
+				// Still change the picture box that was clicked
 				pb.BackColor = hightlightOrange;
 			}
 		}
 
 		public void pictureBox_Click(object sender, EventArgs e) {
 
+			// ============== TODO ==============
+			// - Fix multi-item adding with RDT
+			//		- Seems to work except it's adding an RDT log before the actual item
+			// - If two of the same item are added to the same drop, add their x #'s together rather than two x 1's etc
+			// - Enter adds a custom drop to the list-box (rather than having to click button)
+			// - (maybe) middle mouse button functions same as ctrl-click
+			//
+			//
+
+
+			Boolean isControlPressed = false;
 			PictureBox pbSender = (PictureBox)sender;
+			String unloggedItem = pbSender.Tag.ToString();
+
+			
+
+			if (Control.ModifierKeys == Keys.Control) { isControlPressed = true; }
+
 
 			// PictureBoxes to switch between the dagannoth kings behave differently,
 			// don't want to do anything besides show the new items
@@ -1955,6 +1979,10 @@ namespace mainWindow {
 
 			// Open new window and handle RDT drops
 			if (pbSender.Tag.ToString() == "RDT") {
+
+				// NEW
+				// Before modifying the string, add it to our list of items
+				listboxItemsList.Add(unloggedItem);
 
 				// Check if RDT is already open, if not, open it
 				if (!isFormOpen("RareDropTableForm")) {
@@ -1979,6 +2007,13 @@ namespace mainWindow {
 
 				// Use the retrieved tag and prepare it for the user to just enter a number after
 				String preparedItem = item + " x ";
+
+				// Handle control clicking of these items that have to be manually entered
+				// Handled by placing a comma at the beginning of the string so when the "add custom drop" button is clicked
+				// it knows where to place the item based on if that comma is there or not
+				if (isControlPressed) {
+					preparedItem = ", " + preparedItem;
+				}
 				textboxCustomDrop.Text = preparedItem;
 
 				// Focus on the text box, set the cursor to the end, and deselect the text
@@ -1989,23 +2024,81 @@ namespace mainWindow {
 
 			// Prevent logging 'RDT' when RDT form is opened
 			else {
-				// Change background color of PictureBox
-				highlightPictureBox(pbSender);
 
-				String unloggedItem = pbSender.Tag.ToString();
+				// NEW
+				// Before modifying the string, add it to our list of items
+				listboxItemsList.Add(unloggedItem);
 
-				// Only to show correctly in the ListBox
-				// given tag				produced string
-				// --------------			-----------------
-				// Rune battleaxe			1. Rune battleaxe
-				prepareAndAddItemToListBox(unloggedItem);
+				if (isControlPressed) {
+					///* New
 
-				// Write new item to file
-				List<String> loggedItems = getLoggedItemsFromFile(getCurrentBoss());
-				loggedItems = addItemToLoggedItems(loggedItems, unloggedItem);
-				writeLoggedItemsToFile(loggedItems, getCurrentBoss());
+					printStringList(listboxItemsList);
+					
+					// Make sure there is at least one item to add a control clicked item to since it will have to be removed
+					if (listboxItemsList.Count <= 1) { return; }
+
+					// TODO if you control click twice when there are no items in the listbox, it will eventually add them. Pretty sure this
+					// functionality is expected and fine
+
+					// Get second to last item from the listboxItemsList (second to last since the ctrl-clicked item was already added)
+					String lastItemInListBoxItemsList = listboxItemsList[listboxItemsList.Count - 2];
+
+					// Remove last item (it was control clicked) and also remove the one before it, since two items are needed to ctrl click
+					// non-ctrl-clicked item
+					listboxItemsList.RemoveAt(listboxItemsList.Count - 2);
+					// ctrl-clicked item
+					listboxItemsList.RemoveAt(listboxItemsList.Count - 1);
+
+					// Create the new string to add
+					String concatenatedItems = lastItemInListBoxItemsList + ", " + unloggedItem;
+
+					// Add the new item to the listboxItemsList
+					listboxItemsList.Add(concatenatedItems);
+
+					/* File writing */
+					// Write new item to file
+					List<String> loggedItems = getLoggedItemsFromFile(getCurrentBoss());
+
+					// Need to remove the standalone item from the file and then re-add the concatenated items in
+					loggedItems.RemoveAt(loggedItems.Count - 1);
+					loggedItems = addItemToLoggedItems(loggedItems, concatenatedItems);
+					writeLoggedItemsToFile(loggedItems, getCurrentBoss());
+					/* End file writing */
+
+				}
+				else {
+					// Change background color of PictureBox
+					highlightPictureBox(pbSender);
+
+					// Only to show correctly in the ListBox
+					// given tag				produced string
+					// --------------			-----------------
+					// Rune battleaxe			1. Rune battleaxe
+					prepareAndAddItemToListBox(unloggedItem);
+
+					// Write new item to file
+					List<String> loggedItems = getLoggedItemsFromFile(getCurrentBoss());
+					loggedItems = addItemToLoggedItems(loggedItems, unloggedItem);
+					writeLoggedItemsToFile(loggedItems, getCurrentBoss());
+				}
 
 				// TODO highlight last item so it can be removed easily
+			}
+			
+
+			// Update the list box
+			updateListBox();
+		}
+
+		private void updateListBox() {
+
+			// Clear list box to prepare to rewrite all strings
+			itemDropListBox.Items.Clear();
+
+			// Write the updated list to the list box
+			foreach (String item in listboxItemsList) {
+				prepareAndAddItemToListBox(item);
+
 			}
 		}
 
@@ -2022,7 +2115,6 @@ namespace mainWindow {
 			if (isMultipleItems == false) {
 				preparedString = (itemDropListBox.Items.Count + 1 - continuedItemLines) + ". " + item;
 			}
-
 
 			// Use length to make sure the string doesn't go outside the bounds of the list box
 			int itemDropListBoxWidth = itemDropListBox.Width;
@@ -2096,18 +2188,58 @@ namespace mainWindow {
 		}
 
 		private void buttonAddCustomDrop_Click(object sender, EventArgs e) {
+
 			String unloggedItem = textboxCustomDrop.Text;
 
-			// Prepare the item and add to list box
-			prepareAndAddItemToListBox(unloggedItem);
+			// If there is a comma as the first character in the submitted string, we know that it was
+			// control-clicked so it needs to be added to the previous item rather than a new line
+			Console.WriteLine(unloggedItem);
+			Console.WriteLine(unloggedItem.IndexOf(","));
 
-			// Write new item to file
-			List<String> loggedItems = getLoggedItemsFromFile(getCurrentBoss());
-			loggedItems = addItemToLoggedItems(loggedItems, unloggedItem);
-			writeLoggedItemsToFile(loggedItems, getCurrentBoss());
+			if (unloggedItem.IndexOf(",") == 0) {
 
+				// Make sure there is at least one item to add a control clicked item to since it will have to be removed
+				if (listboxItemsList.Count <= 0) { return; }
+
+				// Get second to last item from the listboxItemsList (second to last since the ctrl-clicked item was already added)
+				String lastItemInListBoxItemsList = listboxItemsList[listboxItemsList.Count - 1];
+
+				// Remove the item previously logged so we can replace it with itself + the control-clicked item
+				listboxItemsList.RemoveAt(listboxItemsList.Count - 1);
+
+				// Create the new string to add
+				String concatenatedItems = lastItemInListBoxItemsList + unloggedItem;
+
+				// Add the new item to the listboxItemsList
+				listboxItemsList.Add(concatenatedItems);
+
+				/* File writing */
+				// Write new item to file
+				List<String> loggedItems = getLoggedItemsFromFile(getCurrentBoss());
+
+				// Need to remove the standalone item from the file and then re-add the concatenated items in
+				loggedItems.RemoveAt(loggedItems.Count - 1);
+				loggedItems = addItemToLoggedItems(loggedItems, concatenatedItems);
+				writeLoggedItemsToFile(loggedItems, getCurrentBoss());
+				/* End file writing */
+			}
+			else {
+
+				listboxItemsList.Add(unloggedItem);
+
+				// Prepare the item and add to list box
+				prepareAndAddItemToListBox(unloggedItem);
+
+				// Write new item to file
+				List<String> loggedItems = getLoggedItemsFromFile(getCurrentBoss());
+				loggedItems = addItemToLoggedItems(loggedItems, unloggedItem);
+				writeLoggedItemsToFile(loggedItems, getCurrentBoss());
+				
+			}
 			// Clear text box
 			textboxCustomDrop.Text = "";
+
+			updateListBox();
 		}
 		private void buttonUndoLastDrop_Click(object sender, EventArgs e) {
 
@@ -2178,11 +2310,18 @@ namespace mainWindow {
 			return loggedItems;
 		}
 		public void removeLastLoggedItem(List<String> loggedItems, String itemToRemove) {
+
+			listboxItemsList.RemoveAt(listboxItemsList.Count - 1);
+
+			updateListBox();
+
 			// Remove the item from the list box
-			itemDropListBox.Items.RemoveAt(itemDropListBox.Items.Count - 1);
+			//itemDropListBox.Items.RemoveAt(itemDropListBox.Items.Count - 1);
 
 			// Then remove the item from the list aka the file
-			loggedItems.RemoveAt(loggedItems.Count - 1);
+			if (loggedItems.Count >= 1) {
+				loggedItems.RemoveAt(loggedItems.Count - 1);
+			}
 		}
 		public void writeLoggedItemsToFile(List<String> loggedItems, String boss) {
 
@@ -2209,6 +2348,16 @@ namespace mainWindow {
 				if (c is PictureBox) c.Click += pictureBox_Click;
 			}
 		}
+
+		public void printStringList(List<String> list) {
+			Console.WriteLine("\n================= String List =====================");
+			foreach (String s in list) {
+				Console.WriteLine(s);
+			}
+			Console.WriteLine("====================================================\n");
+		}
+
+
 
 		// ==============================================================================
 		// ================= shouldn't have to touch these again ========================

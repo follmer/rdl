@@ -76,6 +76,7 @@ namespace rareDropTable {
 			pictureBox25.Tag = "RDT: Dragon med helm x 1";
 			pictureBox26.Tag = "RDT: Shield left half x 1";
 			pictureBox27.Tag = "RDT: Dragon spear x 1";
+			pictureBox28.Tag = "RDT: None";
 		}
 		private void buttonCloseRDT_Click(object sender, EventArgs e) {
 			this.Close();

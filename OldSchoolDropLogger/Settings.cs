@@ -10,7 +10,7 @@ namespace Config {
 
 		public Dictionary<String, String> settings = new Dictionary<String, String>();
 		private String settingsFile = AppDomain.CurrentDomain.BaseDirectory + "Settings.conf";
-		private String defaultBoss = "Armdayl";
+		private String defaultBoss = "Armadyl";
 
 		public Dictionary<String, String> getSettings() {
 			return settings;
