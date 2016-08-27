@@ -105,6 +105,7 @@ namespace mainWindow {
 			pictureBox26.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png"); ;
 			pictureBox26.Tag = "RDT";
 			setNPictureBoxesToVisible(26);
+			resetItemDropListBox();
 		}
 		private void bandosToolStripMenuItem_Click(object sender, EventArgs e) {
 			labelCurrentLogFor.Text = "Current log for: " + bandosToolStripMenuItem.Text;
@@ -159,6 +160,7 @@ namespace mainWindow {
 			pictureBox25.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
 			pictureBox25.Tag = "RDT";
 			setNPictureBoxesToVisible(25);
+			resetItemDropListBox();
 		}
 		private void saradominToolStripMenuItem_Click(object sender, EventArgs e) {
 			labelCurrentLogFor.Text = "Current log for: " + saradominToolStripMenuItem.Text;
@@ -215,6 +217,7 @@ namespace mainWindow {
 			pictureBox26.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
 			pictureBox26.Tag = "RDT";
 			setNPictureBoxesToVisible(26);
+			resetItemDropListBox();
 		}
 		private void zamorakToolStripMenuItem_Click(object sender, EventArgs e) {
 			labelCurrentLogFor.Text = "Current log for: " + zamorakToolStripMenuItem.Text;
@@ -269,6 +272,7 @@ namespace mainWindow {
 			pictureBox25.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
 			pictureBox25.Tag = "RDT";
 			setNPictureBoxesToVisible(25);
+			resetItemDropListBox();
 		}
 		private void callistoToolStripMenuItem_Click(object sender, EventArgs e) {
 			labelCurrentLogFor.Text = "Current log for: " + callistoToolStripMenuItem.Text;
@@ -341,6 +345,7 @@ namespace mainWindow {
 			pictureBox34.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
 			pictureBox34.Tag = "RDT";
 			setNPictureBoxesToVisible(34);
+			resetItemDropListBox();
 		}
 		private void chaosElementalToolStripMenuItem_Click(object sender, EventArgs e) {
 			labelCurrentLogFor.Text = "Current log for: " + chaosElementalToolStripMenuItem.Text;
@@ -413,6 +418,7 @@ namespace mainWindow {
 			pictureBox34.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
 			pictureBox34.Tag = "RDT";
 			setNPictureBoxesToVisible(34);
+			resetItemDropListBox();
 		}
 		private void chaosFanaticToolStripMenuItem_Click(object sender, EventArgs e) {
 			labelCurrentLogFor.Text = "Current log for: " + chaosFanaticToolStripMenuItem.Text;
@@ -477,6 +483,7 @@ namespace mainWindow {
 			pictureBox30.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
 			pictureBox30.Tag = "RDT";
 			setNPictureBoxesToVisible(30);
+			resetItemDropListBox();
 		}
 		private void crazyArchaeologistToolStripMenuItem_Click(object sender, EventArgs e) {
 			labelCurrentLogFor.Text = "Current log for: " + crazyArchaeologistToolStripMenuItem.Text;
@@ -537,6 +544,7 @@ namespace mainWindow {
 			pictureBox28.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
 			pictureBox28.Tag = "RDT";
 			setNPictureBoxesToVisible(28);
+			resetItemDropListBox();
 		}
 		private void kingBlackDragonToolStripMenuItem_Click(object sender, EventArgs e) {
 			labelCurrentLogFor.Text = "Current log for: " + kingBlackDragonToolStripMenuItem.Text;
@@ -593,6 +601,7 @@ namespace mainWindow {
 			pictureBox26.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
 			pictureBox26.Tag = "RDT";
 			setNPictureBoxesToVisible(26);
+			resetItemDropListBox();
 		}
 		private void scorpiaToolStripMenuItem_Click(object sender, EventArgs e) {
 			labelCurrentLogFor.Text = "Current log for: " + scorpiaToolStripMenuItem.Text;
@@ -653,6 +662,7 @@ namespace mainWindow {
 			pictureBox28.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
 			pictureBox28.Tag = "RDT";
 			setNPictureBoxesToVisible(28);
+			resetItemDropListBox();
 		}
 		private void venenatisToolStripMenuItem_Click(object sender, EventArgs e) {
 			labelCurrentLogFor.Text = "Current log for: " + venenatisToolStripMenuItem.Text;
@@ -725,6 +735,7 @@ namespace mainWindow {
 			pictureBox34.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
 			pictureBox34.Tag = "RDT";
 			setNPictureBoxesToVisible(34);
+			resetItemDropListBox();
 		}
 		private void vetionToolStripMenuItem_Click(object sender, EventArgs e) {
 			labelCurrentLogFor.Text = "Current log for: " + vetionToolStripMenuItem.Text;
@@ -801,6 +812,7 @@ namespace mainWindow {
 			pictureBox36.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
 			pictureBox36.Tag = "RDT";
 			setNPictureBoxesToVisible(36);
+			resetItemDropListBox();
 		}
 		private void abyssalSireToolStripMenuItem_Click(object sender, EventArgs e) {
 			labelCurrentLogFor.Text = "Current log for: " + abyssalSireToolStripMenuItem.Text;
@@ -915,6 +927,7 @@ namespace mainWindow {
 			pictureBox55.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
 			pictureBox55.Tag = "RDT";
 			setNPictureBoxesToVisible(55);
+			resetItemDropListBox();
 			//'TODO check line above, was originally 56
 		}
 		private void barrowsToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -988,6 +1001,7 @@ namespace mainWindow {
 			pictureBox34.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bolt_rack_5.png");
 			pictureBox34.Tag = "Varies; Bolt rack";
 			setNPictureBoxesToVisible(34);
+			resetItemDropListBox();
 		}
 		private void cerberusToolStripMenuItem_Click(object sender, EventArgs e) {
 			labelCurrentLogFor.Text = "Current log for: " + cerberusToolStripMenuItem.Text;
@@ -1070,6 +1084,7 @@ namespace mainWindow {
 			pictureBox39.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
 			pictureBox39.Tag = "RDT";
 			setNPictureBoxesToVisible(39);
+			resetItemDropListBox();
 		}
 		private void corporealBeastToolStripMenuItem_Click(object sender, EventArgs e) {
 			labelCurrentLogFor.Text = "Current log for: " + corporealBeastToolStripMenuItem.Text;
@@ -1163,6 +1178,7 @@ namespace mainWindow {
 			pictureBox44.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pet_dark_core.png");
 			pictureBox44.Tag = "Pet dark core x 1";
 			setNPictureBoxesToVisible(44);
+			resetItemDropListBox();
 		}
 		private void dagannothKingsToolStripMenuItem_Click(object sender, EventArgs e) {
 			labelCurrentLogFor.Text = "Current log for: " + dagannothKingsToolStripMenuItem.Text;
@@ -1427,7 +1443,9 @@ namespace mainWindow {
 				pictureBox43.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
 				pictureBox43.Tag = "RDT";
 				setNPictureBoxesToVisible(43, "Dagannoth Kings");
+
 			}
+			resetItemDropListBox();
 		}
 		private void giantMoleToolStripMenuItem_Click(object sender, EventArgs e) {
 			labelCurrentLogFor.Text = "Current log for: " + giantMoleToolStripMenuItem.Text;
@@ -1476,6 +1494,7 @@ namespace mainWindow {
 			pictureBox22.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
 			pictureBox22.Tag = "RDT";
 			setNPictureBoxesToVisible(22);
+			resetItemDropListBox();
 		}
 		private void kalphiteQueenToolStripMenuItem_Click(object sender, EventArgs e) {
 			labelCurrentLogFor.Text = "Current log for: " + kalphiteQueenToolStripMenuItem.Text;
@@ -1576,6 +1595,7 @@ namespace mainWindow {
 			pictureBox48.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
 			pictureBox48.Tag = "RDT";
 			setNPictureBoxesToVisible(48);
+			resetItemDropListBox();
 		}
 		private void krakenToolStripMenuItem_Click(object sender, EventArgs e) {
 			labelCurrentLogFor.Text = "Current log for: " + krakenToolStripMenuItem.Text;
@@ -1660,6 +1680,7 @@ namespace mainWindow {
 			pictureBox40.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
 			pictureBox40.Tag = "RDT";
 			setNPictureBoxesToVisible(40);
+			resetItemDropListBox();
 		}
 		private void skotizoToolStripMenuItem_Click(object sender, EventArgs e) {
 			labelCurrentLogFor.Text = "Current log for: " + skotizoToolStripMenuItem.Text;
@@ -1714,6 +1735,7 @@ namespace mainWindow {
 			pictureBox25.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Jar_of_darkness.png");
 			pictureBox25.Tag = "Jar of darkness x 1";
 			setNPictureBoxesToVisible(25);
+			resetItemDropListBox();
 		}
 		private void thermonuclearSmokeDevilToolStripMenuItem_Click(object sender, EventArgs e) {
 			labelCurrentLogFor.Text = "Current log for: " + thermonuclearSmokeDevilToolStripMenuItem.Text;
@@ -1804,6 +1826,7 @@ namespace mainWindow {
 			pictureBox43.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
 			pictureBox43.Tag = "RDT";
 			setNPictureBoxesToVisible(43);
+			resetItemDropListBox();
 		}
 		private void zulrahToolStripMenuItem_Click(object sender, EventArgs e) {
 			labelCurrentLogFor.Text = "Current log for: " + zulrahToolStripMenuItem.Text;
@@ -1905,6 +1928,7 @@ namespace mainWindow {
 			pictureBox48.Tag = "RDT";
 			//TODO not sure what to put here.maybe 'Rare drop table -> <item>' "
 			setNPictureBoxesToVisible(48);
+			resetItemDropListBox();
 		}
 
 		private void pictureBoxDagannothPrime_Click(object sender, EventArgs e) {
@@ -2100,6 +2124,11 @@ namespace mainWindow {
 				prepareAndAddItemToListBox(item);
 
 			}
+
+			if (itemDropListBox.Items.Count >= 1) {
+				itemDropListBox.SetSelected(itemDropListBox.Items.Count - 1, true);
+			}
+
 		}
 
 		private void prepareAndAddItemToListBox(String item, Boolean isMultipleItems = false) {
@@ -2337,6 +2366,10 @@ namespace mainWindow {
 			foreach (PictureBox p in allPictureBoxes) {
 				p.BackColor = Color.Transparent;
 			}
+		}
+		private void resetItemDropListBox() {
+			listboxItemsList.Clear();
+			itemDropListBox.Items.Clear();
 		}
 
 		/* Constructor */
