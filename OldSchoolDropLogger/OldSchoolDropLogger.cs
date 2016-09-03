@@ -2004,10 +2004,6 @@ namespace mainWindow {
 			// Open new window and handle RDT drops
 			if (pbSender.Tag.ToString() == "RDT") {
 
-				// NEW
-				// Before modifying the string, add it to our list of items
-				listboxItemsList.Add(unloggedItem);
-
 				// Check if RDT is already open, if not, open it
 				if (!isFormOpen("RareDropTableForm")) {
 					RareDropTableForm rdt = new RareDropTableForm();

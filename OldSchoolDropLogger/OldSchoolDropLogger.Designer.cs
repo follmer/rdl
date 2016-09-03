@@ -61,6 +61,7 @@
 			this.thermonuclearSmokeDevilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.zulrahToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.statisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.viewStatisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.twitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -133,9 +134,7 @@
 			this.pictureBox12 = new System.Windows.Forms.PictureBox();
 			this.pictureBox11 = new System.Windows.Forms.PictureBox();
 			this.pictureBox10 = new System.Windows.Forms.PictureBox();
-			this.Label2 = new System.Windows.Forms.Label();
 			this.labelCurrentLogFor = new System.Windows.Forms.Label();
-			this.viewStatisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothPrime)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothRex)).BeginInit();
@@ -458,6 +457,13 @@
 			this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
 			this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
 			this.statisticsToolStripMenuItem.Text = "Statistics";
+			// 
+			// viewStatisticsToolStripMenuItem
+			// 
+			this.viewStatisticsToolStripMenuItem.Name = "viewStatisticsToolStripMenuItem";
+			this.viewStatisticsToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+			this.viewStatisticsToolStripMenuItem.Text = "View statistics";
+			this.viewStatisticsToolStripMenuItem.Click += new System.EventHandler(this.viewStatisticsToolStripMenuItem_Click);
 			// 
 			// helpToolStripMenuItem
 			// 
@@ -1313,16 +1319,6 @@
 			this.pictureBox10.TabIndex = 93;
 			this.pictureBox10.TabStop = false;
 			// 
-			// Label2
-			// 
-			this.Label2.AutoSize = true;
-			this.Label2.ForeColor = System.Drawing.SystemColors.Control;
-			this.Label2.Location = new System.Drawing.Point(21, 231);
-			this.Label2.Name = "Label2";
-			this.Label2.Size = new System.Drawing.Size(39, 13);
-			this.Label2.TabIndex = 136;
-			this.Label2.Text = "Label2";
-			// 
 			// labelCurrentLogFor
 			// 
 			this.labelCurrentLogFor.AutoSize = true;
@@ -1334,13 +1330,6 @@
 			this.labelCurrentLogFor.TabIndex = 138;
 			this.labelCurrentLogFor.Text = "Current log for: Armadyl";
 			// 
-			// viewStatisticsToolStripMenuItem
-			// 
-			this.viewStatisticsToolStripMenuItem.Name = "viewStatisticsToolStripMenuItem";
-			this.viewStatisticsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.viewStatisticsToolStripMenuItem.Text = "View statistics";
-			this.viewStatisticsToolStripMenuItem.Click += new System.EventHandler(this.viewStatisticsToolStripMenuItem_Click);
-			// 
 			// oldSchoolDropLoggerForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1348,7 +1337,6 @@
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
 			this.ClientSize = new System.Drawing.Size(474, 360);
 			this.Controls.Add(this.labelCurrentLogFor);
-			this.Controls.Add(this.Label2);
 			this.Controls.Add(this.pictureBox56);
 			this.Controls.Add(this.pictureBox55);
 			this.Controls.Add(this.pictureBox54);
@@ -1590,7 +1578,6 @@
         internal System.Windows.Forms.PictureBox pictureBox12;
         internal System.Windows.Forms.PictureBox pictureBox11;
         internal System.Windows.Forms.PictureBox pictureBox10;
-        internal System.Windows.Forms.Label Label2;
 		internal System.Windows.Forms.Label labelCurrentLogFor;
 		public System.Windows.Forms.ListBox itemDropListBox;
 		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;

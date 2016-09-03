@@ -29,7 +29,7 @@ namespace rareDropTable {
 		public void putRDTPictureBoxesIntoList() {
 			// Put all RDT pictureboxes into allRDTPictureBoxes list
 			Control[] d;
-			for (int i = 1; i <= 27; i++) {
+			for (int i = 1; i <= 28; i++) {
 				d = this.Controls.Find("pictureBox" + i.ToString(), true);
 				allRDTPictureBoxes.Add((PictureBox)d[0]);
 			}
