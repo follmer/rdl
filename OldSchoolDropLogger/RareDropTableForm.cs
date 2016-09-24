@@ -65,7 +65,7 @@ namespace rareDropTable {
 			pictureBox14.Tag = "RDT: Silver ore x 100";
 			pictureBox15.Tag = "RDT: Chaos talisman x 1";
 			pictureBox16.Tag = "RDT: Nature talisman x 1";
-			pictureBox17.Tag = "RDT: Coins 3000 x 1";
+			pictureBox17.Tag = "RDT: Coins x 3000";
 			pictureBox18.Tag = "RDT: Loop half of key x 1";
 			pictureBox19.Tag = "RDT: Rune spear x 1";
 			pictureBox20.Tag = "RDT: Rune 2h sword x 1";

@@ -1039,12 +1039,12 @@ namespace mainWindow {
 			pictureBox16.Tag = "Runite bolts (unf) x 40";
 			pictureBox17.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Cannonball_50.png");
 			pictureBox17.Tag = "Cannonball x 50";
-			pictureBox18.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Torstol_seed_1.png");
-			pictureBox18.Tag = "Torstol seed x 1";
+			pictureBox18.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Torstol_seed_3.png");
+			pictureBox18.Tag = "Torstol seed x 3";
 			pictureBox19.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_torstol_noted_6.png");
 			pictureBox19.Tag = "Grimy torstol x 6";
 			pictureBox20.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Super_restore_(4).png");
-			pictureBox20.Tag = "Super restore (4) x 1";
+			pictureBox20.Tag = "Super restore (4) x 2";
 			pictureBox21.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coal_noted_120.png");
 			pictureBox21.Tag = "Coal x 120";
 			pictureBox22.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Runite_ore_noted_5.png");
@@ -2050,9 +2050,11 @@ namespace mainWindow {
 				listboxItemsList.Add(unloggedItem);
 
 				if (isControlPressed) {
-					///* New
+					
+					// Highlight all pictureboxes that are control clicked along with original; resetAll = false
+					highlightPictureBox(pbSender, false);
 
-					printStringList(listboxItemsList);
+					//printStringList(listboxItemsList);
 					
 					// Make sure there is at least one item to add a control clicked item to since it will have to be removed
 					if (listboxItemsList.Count <= 1) { return; }
@@ -2212,9 +2214,25 @@ namespace mainWindow {
 			return false;
 		}
 
+
+		private void keyPressedHandler(object sender, KeyEventArgs e) {
+
+			Console.WriteLine("1:" + e.KeyCode);
+			if ((e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return) && this.ActiveControl == textboxCustomDrop) {
+				e.SuppressKeyPress = true;
+				buttonAddCustomDrop.Click += buttonAddCustomDrop_Click;	
+			}
+		}
+
+		void oldSchoolDropLoggerForm_KeyPress(object sender, KeyPressEventArgs e) {
+			Console.WriteLine("2: " + e.KeyChar);
+		}
+
 		private void buttonAddCustomDrop_Click(object sender, EventArgs e) {
 
 			String unloggedItem = textboxCustomDrop.Text;
+
+			if (unloggedItem == "" || unloggedItem == null) return;
 
 			// If there is a comma as the first character in the submitted string, we know that it was
 			// control-clicked so it needs to be added to the previous item rather than a new line
