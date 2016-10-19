@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using rareDropTable;
 using Config;
 using StatisticsForm;
+using itemQuantityCreator;
 
 namespace mainWindow {
 	public partial class oldSchoolDropLoggerForm : Form {
@@ -52,7 +53,7 @@ namespace mainWindow {
 
 		private void armadylToolStripMenuItem_Click(object sender, EventArgs e) {
 			labelCurrentLogFor.Text = "Current log for: " + armadylToolStripMenuItem.Text; ;
-			pictureBox1.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_crossbow.png"); ;
+			pictureBox1.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_crossbow.png");
 			pictureBox1.Tag = "Rune crossbow x 1";
 			pictureBox2.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_sword.png"); ;
 			pictureBox2.Tag = "Rune sword x 1";
@@ -928,7 +929,6 @@ namespace mainWindow {
 			pictureBox55.Tag = "RDT";
 			setNPictureBoxesToVisible(55);
 			resetItemDropListBox();
-			//'TODO check line above, was originally 56
 		}
 		private void barrowsToolStripMenuItem_Click(object sender, EventArgs e) {
 			labelCurrentLogFor.Text = "Current log for: " + barrowsToolStripMenuItem.Text;
@@ -1150,8 +1150,7 @@ namespace mainWindow {
 			pictureBox30.Tag = "Antidote++ (4) x 40";
 			pictureBox31.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Watermelon_seed_24.png");
 			pictureBox31.Tag = "Watermelon seed x 24";
-			// TODO the ranarr seed drop drops 10 seeds
-			pictureBox32.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ranarr_seed_5.png");
+			pictureBox32.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ranarr_seed_10.png");
 			pictureBox32.Tag = "Ranarr seed x 10";
 			pictureBox33.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Tuna_potato.png");
 			pictureBox33.Tag = "Tuna potato x 30";
@@ -1926,7 +1925,6 @@ namespace mainWindow {
 			pictureBox47.Tag = "Pet snakeling x 1";
 			pictureBox48.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
 			pictureBox48.Tag = "RDT";
-			//TODO not sure what to put here.maybe 'Rare drop table -> <item>' "
 			setNPictureBoxesToVisible(48);
 			resetItemDropListBox();
 		}
@@ -1934,7 +1932,6 @@ namespace mainWindow {
 		private void pictureBoxDagannothPrime_Click(object sender, EventArgs e) {
 			pictureBoxDagannothPrime.Click += pictureBoxDagannothPrime_Click;
 			setSelectedDagannothKing("Dagannoth Prime");
-			// TODO remove line below - messy
 			dagannothKingsToolStripMenuItem.PerformClick();
 			highlightPictureBox(pictureBoxDagannothPrime);
 		}
@@ -1974,16 +1971,6 @@ namespace mainWindow {
 
 		public void pictureBox_Click(object sender, EventArgs e) {
 
-			// ============== TODO ==============
-			// - Fix multi-item adding with RDT
-			//		- Seems to work except it's adding an RDT log before the actual item
-			// - If two of the same item are added to the same drop, add their x #'s together rather than two x 1's etc
-			// - Enter adds a custom drop to the list-box (rather than having to click button)
-			// - (maybe) middle mouse button functions same as ctrl-click
-			//
-			//
-
-
 			Boolean isControlPressed = false;
 			PictureBox pbSender = (PictureBox)sender;
 			String unloggedItem = pbSender.Tag.ToString();
@@ -2007,7 +1994,7 @@ namespace mainWindow {
 				// Check if RDT is already open, if not, open it
 				if (!isFormOpen("RareDropTableForm")) {
 					RareDropTableForm rdt = new RareDropTableForm();
-					// TODO
+					// TODO give specific coordinates to where the RDT window opens
 					//rdt.StartPosition = FormStartPosition.CenterParent;
 					rdt.Show();
 				}
@@ -2018,7 +2005,6 @@ namespace mainWindow {
 			else if (pbSender.Tag.ToString().Substring(0, 6) == "Varies") {
 				PictureBox pb = (PictureBox)sender;
 
-				// TODO clean
 				// Get the tag of the selected item
 				String item = pb.Tag.ToString().Substring(pb.Tag.ToString().IndexOf(";") + 2);
 
@@ -2058,9 +2044,6 @@ namespace mainWindow {
 					
 					// Make sure there is at least one item to add a control clicked item to since it will have to be removed
 					if (listboxItemsList.Count <= 1) { return; }
-
-					// TODO if you control click twice when there are no items in the listbox, it will eventually add them. Pretty sure this
-					// functionality is expected and fine
 
 					// Get second to last item from the listboxItemsList (second to last since the ctrl-clicked item was already added)
 					String lastItemInListBoxItemsList = listboxItemsList[listboxItemsList.Count - 2];
@@ -2103,10 +2086,7 @@ namespace mainWindow {
 					loggedItems = addItemToLoggedItems(loggedItems, unloggedItem);
 					writeLoggedItemsToFile(loggedItems, getCurrentBoss());
 				}
-
-				// TODO highlight last item so it can be removed easily
 			}
-			
 
 			// Update the list box
 			updateListBox();
@@ -4896,6 +4876,12 @@ namespace mainWindow {
 			}
 		}
 
-		
+		private void testToolStripMenuItem_Click(object sender, EventArgs e) {
+
+			ItemQuantityCreator iqc = new ItemQuantityCreator();
+
+			pictureBox57.Image = iqc.createQuantityImage(19467904);
+
+		}
 	}
 }

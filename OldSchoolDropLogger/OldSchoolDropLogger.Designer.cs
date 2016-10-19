@@ -66,6 +66,8 @@
 			this.twitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.testImageCreatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.buttonUndoLastDrop = new System.Windows.Forms.Button();
 			this.buttonOpenDropList = new System.Windows.Forms.Button();
 			this.buttonNewTrip = new System.Windows.Forms.Button();
@@ -135,6 +137,7 @@
 			this.pictureBox11 = new System.Windows.Forms.PictureBox();
 			this.pictureBox10 = new System.Windows.Forms.PictureBox();
 			this.labelCurrentLogFor = new System.Windows.Forms.Label();
+			this.pictureBox57 = new System.Windows.Forms.PictureBox();
 			this.menuStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothPrime)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothRex)).BeginInit();
@@ -195,6 +198,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox57)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// menuStrip
@@ -204,7 +208,8 @@
             this.fileToolStripMenuItem,
             this.bossToolStripMenuItem,
             this.statisticsToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.helpToolStripMenuItem,
+            this.testImageCreatorToolStripMenuItem});
 			this.menuStrip.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip.Name = "menuStrip";
 			this.menuStrip.Size = new System.Drawing.Size(474, 24);
@@ -493,6 +498,21 @@
 			this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
 			this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
 			this.aboutToolStripMenuItem1.Text = "About";
+			// 
+			// testImageCreatorToolStripMenuItem
+			// 
+			this.testImageCreatorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.testToolStripMenuItem});
+			this.testImageCreatorToolStripMenuItem.Name = "testImageCreatorToolStripMenuItem";
+			this.testImageCreatorToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
+			this.testImageCreatorToolStripMenuItem.Text = "Test image creator";
+			// 
+			// testToolStripMenuItem
+			// 
+			this.testToolStripMenuItem.Name = "testToolStripMenuItem";
+			this.testToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.testToolStripMenuItem.Text = "Create";
+			this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
 			// 
 			// buttonUndoLastDrop
 			// 
@@ -1330,6 +1350,17 @@
 			this.labelCurrentLogFor.TabIndex = 138;
 			this.labelCurrentLogFor.Text = "Current log for: Armadyl";
 			// 
+			// pictureBox57
+			// 
+			this.pictureBox57.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBox57.ImageLocation = "";
+			this.pictureBox57.Location = new System.Drawing.Point(26, 205);
+			this.pictureBox57.Name = "pictureBox57";
+			this.pictureBox57.Size = new System.Drawing.Size(146, 35);
+			this.pictureBox57.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+			this.pictureBox57.TabIndex = 139;
+			this.pictureBox57.TabStop = false;
+			// 
 			// oldSchoolDropLoggerForm
 			// 
 			this.AcceptButton = this.buttonAddCustomDrop;
@@ -1337,6 +1368,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
 			this.ClientSize = new System.Drawing.Size(474, 360);
+			this.Controls.Add(this.pictureBox57);
 			this.Controls.Add(this.labelCurrentLogFor);
 			this.Controls.Add(this.pictureBox56);
 			this.Controls.Add(this.pictureBox55);
@@ -1477,6 +1509,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox57)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -1590,6 +1623,9 @@
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
 		private System.Windows.Forms.ToolStripMenuItem statisticsToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem viewStatisticsToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem testImageCreatorToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
+		private System.Windows.Forms.PictureBox pictureBox57;
 	}
 }
 

@@ -1,0 +1,4 @@
+============== Feature List ==============
+- If two of the same item are added to the same drop, add their x #'s together rather than two x 1's etc
+- Highlighted backgrounds get reset when new boss is selected
+- Display all drops from previous trip somehow
