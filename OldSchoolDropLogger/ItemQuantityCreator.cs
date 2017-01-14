@@ -9,7 +9,7 @@ using System.Media;
 namespace itemQuantityCreator {
 	class ItemQuantityCreator {
 
-		public Image createQuantityImage(int quantity) {
+		public Bitmap createQuantityImage(int quantity) {
 
 			// Default quantity color is yellow and there is no ending letter
 			String textColor = "_yellow";
@@ -77,15 +77,15 @@ namespace itemQuantityCreator {
 			return result;
 		}
 
-		private Image getNumberImage(int number, String textColor, String endingLetter = "") {
+		private Bitmap getNumberImage(int number, String textColor, String endingLetter = "") {
 
 			// Item is more than 100k so need to fetch a letter K or M
 			if (endingLetter != "") {
-				return Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Numbers/" + endingLetter + ".png");
+				return (Bitmap)Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Numbers/" + endingLetter + ".png");
 			}
 
 			// Fetch the correct number with the correct color
-			return Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Numbers/" + number.ToString() + textColor + ".png");
+			return (Bitmap)Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Numbers/" + number.ToString() + textColor + ".png");
 		}
 
 		public ItemQuantityCreator() {

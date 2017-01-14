@@ -1,34 +1,29 @@
-﻿namespace mainWindow
-{
-    partial class oldSchoolDropLoggerForm
-    {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+﻿namespace dropLogger {
+	partial class OldSchoolDropLogger {
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing) {
+			if (disposing && (components != null)) {
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(oldSchoolDropLoggerForm));
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent() {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OldSchoolDropLogger));
 			this.menuStrip = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -59,20 +54,19 @@
 			this.krakenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.skotizoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.thermonuclearSmokeDevilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.wintertodtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.zulrahToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.statisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.viewStatisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.alwaysOnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.twitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-			this.testImageCreatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.buttonUndoLastDrop = new System.Windows.Forms.Button();
 			this.buttonOpenDropList = new System.Windows.Forms.Button();
 			this.buttonNewTrip = new System.Windows.Forms.Button();
 			this.buttonEndTrip = new System.Windows.Forms.Button();
-			this.alwaysOnTopCheckBox = new System.Windows.Forms.CheckBox();
 			this.itemDropListBox = new System.Windows.Forms.ListBox();
 			this.labelAddCustomDrop = new System.Windows.Forms.Label();
 			this.textboxCustomDrop = new System.Windows.Forms.TextBox();
@@ -137,7 +131,19 @@
 			this.pictureBox11 = new System.Windows.Forms.PictureBox();
 			this.pictureBox10 = new System.Windows.Forms.PictureBox();
 			this.labelCurrentLogFor = new System.Windows.Forms.Label();
+			this.pictureBox64 = new System.Windows.Forms.PictureBox();
+			this.pictureBox63 = new System.Windows.Forms.PictureBox();
+			this.pictureBox62 = new System.Windows.Forms.PictureBox();
+			this.pictureBox61 = new System.Windows.Forms.PictureBox();
+			this.pictureBox58 = new System.Windows.Forms.PictureBox();
+			this.pictureBox60 = new System.Windows.Forms.PictureBox();
+			this.pictureBox59 = new System.Windows.Forms.PictureBox();
 			this.pictureBox57 = new System.Windows.Forms.PictureBox();
+			this.labelTitleTotalKills = new System.Windows.Forms.Label();
+			this.panelSidePanel = new System.Windows.Forms.Panel();
+			this.buttonToggleSidePanel = new System.Windows.Forms.Button();
+			this.button1 = new System.Windows.Forms.Button();
+			this.listBox1 = new System.Windows.Forms.ListBox();
 			this.menuStrip.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothPrime)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothRex)).BeginInit();
@@ -198,7 +204,15 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox64)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox63)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox62)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox61)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox58)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox60)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox59)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox57)).BeginInit();
+			this.panelSidePanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// menuStrip
@@ -208,11 +222,11 @@
             this.fileToolStripMenuItem,
             this.bossToolStripMenuItem,
             this.statisticsToolStripMenuItem,
-            this.helpToolStripMenuItem,
-            this.testImageCreatorToolStripMenuItem});
+            this.settingsToolStripMenuItem,
+            this.helpToolStripMenuItem});
 			this.menuStrip.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip.Name = "menuStrip";
-			this.menuStrip.Size = new System.Drawing.Size(474, 24);
+			this.menuStrip.Size = new System.Drawing.Size(684, 24);
 			this.menuStrip.TabIndex = 0;
 			this.menuStrip.Text = "menuStrip1";
 			// 
@@ -372,6 +386,7 @@
             this.krakenToolStripMenuItem,
             this.skotizoToolStripMenuItem,
             this.thermonuclearSmokeDevilToolStripMenuItem,
+            this.wintertodtToolStripMenuItem,
             this.zulrahToolStripMenuItem});
 			this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
 			this.otherToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
@@ -447,6 +462,13 @@
 			this.thermonuclearSmokeDevilToolStripMenuItem.Text = "Thermonuclear Smoke Devil";
 			this.thermonuclearSmokeDevilToolStripMenuItem.Click += new System.EventHandler(this.thermonuclearSmokeDevilToolStripMenuItem_Click);
 			// 
+			// wintertodtToolStripMenuItem
+			// 
+			this.wintertodtToolStripMenuItem.Name = "wintertodtToolStripMenuItem";
+			this.wintertodtToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+			this.wintertodtToolStripMenuItem.Text = "Wintertodt";
+			this.wintertodtToolStripMenuItem.Click += new System.EventHandler(this.wintertodtToolStripMenuItem_Click);
+			// 
 			// zulrahToolStripMenuItem
 			// 
 			this.zulrahToolStripMenuItem.Name = "zulrahToolStripMenuItem";
@@ -456,19 +478,27 @@
 			// 
 			// statisticsToolStripMenuItem
 			// 
-			this.statisticsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewStatisticsToolStripMenuItem});
 			this.statisticsToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
 			this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
 			this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
 			this.statisticsToolStripMenuItem.Text = "Statistics";
+			this.statisticsToolStripMenuItem.Click += new System.EventHandler(this.statisticsToolStripMenuItem_Click);
 			// 
-			// viewStatisticsToolStripMenuItem
+			// settingsToolStripMenuItem
 			// 
-			this.viewStatisticsToolStripMenuItem.Name = "viewStatisticsToolStripMenuItem";
-			this.viewStatisticsToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
-			this.viewStatisticsToolStripMenuItem.Text = "View statistics";
-			this.viewStatisticsToolStripMenuItem.Click += new System.EventHandler(this.viewStatisticsToolStripMenuItem_Click);
+			this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.alwaysOnTopToolStripMenuItem});
+			this.settingsToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+			this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+			this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+			this.settingsToolStripMenuItem.Text = "Settings";
+			// 
+			// alwaysOnTopToolStripMenuItem
+			// 
+			this.alwaysOnTopToolStripMenuItem.Name = "alwaysOnTopToolStripMenuItem";
+			this.alwaysOnTopToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+			this.alwaysOnTopToolStripMenuItem.Text = "Always on top";
+			this.alwaysOnTopToolStripMenuItem.Click += new System.EventHandler(this.alwaysOnTopToolStripMenuItem_Click);
 			// 
 			// helpToolStripMenuItem
 			// 
@@ -499,21 +529,6 @@
 			this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
 			this.aboutToolStripMenuItem1.Text = "About";
 			// 
-			// testImageCreatorToolStripMenuItem
-			// 
-			this.testImageCreatorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.testToolStripMenuItem});
-			this.testImageCreatorToolStripMenuItem.Name = "testImageCreatorToolStripMenuItem";
-			this.testImageCreatorToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
-			this.testImageCreatorToolStripMenuItem.Text = "Test image creator";
-			// 
-			// testToolStripMenuItem
-			// 
-			this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-			this.testToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.testToolStripMenuItem.Text = "Create";
-			this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
-			// 
 			// buttonUndoLastDrop
 			// 
 			this.buttonUndoLastDrop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
@@ -534,7 +549,7 @@
 			this.buttonOpenDropList.FlatAppearance.BorderSize = 0;
 			this.buttonOpenDropList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.buttonOpenDropList.ForeColor = System.Drawing.Color.Silver;
-			this.buttonOpenDropList.Location = new System.Drawing.Point(191, 30);
+			this.buttonOpenDropList.Location = new System.Drawing.Point(186, 30);
 			this.buttonOpenDropList.Name = "buttonOpenDropList";
 			this.buttonOpenDropList.Size = new System.Drawing.Size(156, 23);
 			this.buttonOpenDropList.TabIndex = 4;
@@ -547,7 +562,7 @@
 			this.buttonNewTrip.FlatAppearance.BorderSize = 0;
 			this.buttonNewTrip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.buttonNewTrip.ForeColor = System.Drawing.Color.Silver;
-			this.buttonNewTrip.Location = new System.Drawing.Point(191, 59);
+			this.buttonNewTrip.Location = new System.Drawing.Point(186, 59);
 			this.buttonNewTrip.Name = "buttonNewTrip";
 			this.buttonNewTrip.Size = new System.Drawing.Size(75, 23);
 			this.buttonNewTrip.TabIndex = 5;
@@ -560,41 +575,29 @@
 			this.buttonEndTrip.FlatAppearance.BorderSize = 0;
 			this.buttonEndTrip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.buttonEndTrip.ForeColor = System.Drawing.Color.Silver;
-			this.buttonEndTrip.Location = new System.Drawing.Point(272, 59);
+			this.buttonEndTrip.Location = new System.Drawing.Point(267, 59);
 			this.buttonEndTrip.Name = "buttonEndTrip";
 			this.buttonEndTrip.Size = new System.Drawing.Size(75, 23);
 			this.buttonEndTrip.TabIndex = 6;
 			this.buttonEndTrip.Text = "End Trip";
 			this.buttonEndTrip.UseVisualStyleBackColor = false;
 			// 
-			// alwaysOnTopCheckBox
-			// 
-			this.alwaysOnTopCheckBox.AutoSize = true;
-			this.alwaysOnTopCheckBox.ForeColor = System.Drawing.Color.Silver;
-			this.alwaysOnTopCheckBox.Location = new System.Drawing.Point(370, 33);
-			this.alwaysOnTopCheckBox.Name = "alwaysOnTopCheckBox";
-			this.alwaysOnTopCheckBox.Size = new System.Drawing.Size(98, 17);
-			this.alwaysOnTopCheckBox.TabIndex = 71;
-			this.alwaysOnTopCheckBox.Text = "Always On Top";
-			this.alwaysOnTopCheckBox.UseVisualStyleBackColor = true;
-			this.alwaysOnTopCheckBox.CheckedChanged += new System.EventHandler(this.alwaysOnTopCheckBox_CheckedChanged);
-			// 
 			// itemDropListBox
 			// 
-			this.itemDropListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+			this.itemDropListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
 			this.itemDropListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.itemDropListBox.ForeColor = System.Drawing.SystemColors.Control;
 			this.itemDropListBox.FormattingEnabled = true;
 			this.itemDropListBox.Location = new System.Drawing.Point(12, 88);
 			this.itemDropListBox.Name = "itemDropListBox";
-			this.itemDropListBox.Size = new System.Drawing.Size(160, 208);
+			this.itemDropListBox.Size = new System.Drawing.Size(160, 234);
 			this.itemDropListBox.TabIndex = 72;
 			// 
 			// labelAddCustomDrop
 			// 
 			this.labelAddCustomDrop.AutoSize = true;
 			this.labelAddCustomDrop.ForeColor = System.Drawing.Color.Silver;
-			this.labelAddCustomDrop.Location = new System.Drawing.Point(11, 308);
+			this.labelAddCustomDrop.Location = new System.Drawing.Point(11, 343);
 			this.labelAddCustomDrop.Name = "labelAddCustomDrop";
 			this.labelAddCustomDrop.Size = new System.Drawing.Size(93, 13);
 			this.labelAddCustomDrop.TabIndex = 73;
@@ -605,7 +608,7 @@
 			this.textboxCustomDrop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
 			this.textboxCustomDrop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.textboxCustomDrop.ForeColor = System.Drawing.Color.Silver;
-			this.textboxCustomDrop.Location = new System.Drawing.Point(12, 324);
+			this.textboxCustomDrop.Location = new System.Drawing.Point(12, 359);
 			this.textboxCustomDrop.Name = "textboxCustomDrop";
 			this.textboxCustomDrop.Size = new System.Drawing.Size(100, 20);
 			this.textboxCustomDrop.TabIndex = 74;
@@ -616,7 +619,7 @@
 			this.buttonAddCustomDrop.FlatAppearance.BorderSize = 0;
 			this.buttonAddCustomDrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.buttonAddCustomDrop.ForeColor = System.Drawing.Color.Silver;
-			this.buttonAddCustomDrop.Location = new System.Drawing.Point(118, 324);
+			this.buttonAddCustomDrop.Location = new System.Drawing.Point(118, 359);
 			this.buttonAddCustomDrop.Name = "buttonAddCustomDrop";
 			this.buttonAddCustomDrop.Size = new System.Drawing.Size(54, 20);
 			this.buttonAddCustomDrop.TabIndex = 75;
@@ -1350,24 +1353,181 @@
 			this.labelCurrentLogFor.TabIndex = 138;
 			this.labelCurrentLogFor.Text = "Current log for: Armadyl";
 			// 
+			// pictureBox64
+			// 
+			this.pictureBox64.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox64.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pictureBox64.Location = new System.Drawing.Point(424, 333);
+			this.pictureBox64.Name = "pictureBox64";
+			this.pictureBox64.Size = new System.Drawing.Size(35, 35);
+			this.pictureBox64.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+			this.pictureBox64.TabIndex = 147;
+			this.pictureBox64.TabStop = false;
+			this.pictureBox64.Visible = false;
+			// 
+			// pictureBox63
+			// 
+			this.pictureBox63.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox63.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pictureBox63.Location = new System.Drawing.Point(390, 333);
+			this.pictureBox63.Name = "pictureBox63";
+			this.pictureBox63.Size = new System.Drawing.Size(35, 35);
+			this.pictureBox63.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+			this.pictureBox63.TabIndex = 146;
+			this.pictureBox63.TabStop = false;
+			this.pictureBox63.Visible = false;
+			// 
+			// pictureBox62
+			// 
+			this.pictureBox62.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox62.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pictureBox62.Location = new System.Drawing.Point(356, 333);
+			this.pictureBox62.Name = "pictureBox62";
+			this.pictureBox62.Size = new System.Drawing.Size(35, 35);
+			this.pictureBox62.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+			this.pictureBox62.TabIndex = 145;
+			this.pictureBox62.TabStop = false;
+			this.pictureBox62.Visible = false;
+			// 
+			// pictureBox61
+			// 
+			this.pictureBox61.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox61.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pictureBox61.Location = new System.Drawing.Point(322, 333);
+			this.pictureBox61.Name = "pictureBox61";
+			this.pictureBox61.Size = new System.Drawing.Size(35, 35);
+			this.pictureBox61.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+			this.pictureBox61.TabIndex = 144;
+			this.pictureBox61.TabStop = false;
+			this.pictureBox61.Visible = false;
+			// 
+			// pictureBox58
+			// 
+			this.pictureBox58.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox58.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pictureBox58.Location = new System.Drawing.Point(220, 333);
+			this.pictureBox58.Name = "pictureBox58";
+			this.pictureBox58.Size = new System.Drawing.Size(35, 35);
+			this.pictureBox58.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+			this.pictureBox58.TabIndex = 143;
+			this.pictureBox58.TabStop = false;
+			this.pictureBox58.Visible = false;
+			// 
+			// pictureBox60
+			// 
+			this.pictureBox60.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox60.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pictureBox60.Location = new System.Drawing.Point(288, 333);
+			this.pictureBox60.Name = "pictureBox60";
+			this.pictureBox60.Size = new System.Drawing.Size(35, 35);
+			this.pictureBox60.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+			this.pictureBox60.TabIndex = 142;
+			this.pictureBox60.TabStop = false;
+			this.pictureBox60.Visible = false;
+			// 
+			// pictureBox59
+			// 
+			this.pictureBox59.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox59.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pictureBox59.Location = new System.Drawing.Point(254, 333);
+			this.pictureBox59.Name = "pictureBox59";
+			this.pictureBox59.Size = new System.Drawing.Size(35, 35);
+			this.pictureBox59.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+			this.pictureBox59.TabIndex = 141;
+			this.pictureBox59.TabStop = false;
+			this.pictureBox59.Visible = false;
+			// 
 			// pictureBox57
 			// 
-			this.pictureBox57.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-			this.pictureBox57.ImageLocation = "";
-			this.pictureBox57.Location = new System.Drawing.Point(26, 205);
+			this.pictureBox57.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox57.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pictureBox57.Location = new System.Drawing.Point(186, 333);
 			this.pictureBox57.Name = "pictureBox57";
-			this.pictureBox57.Size = new System.Drawing.Size(146, 35);
+			this.pictureBox57.Size = new System.Drawing.Size(35, 35);
 			this.pictureBox57.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-			this.pictureBox57.TabIndex = 139;
+			this.pictureBox57.TabIndex = 140;
 			this.pictureBox57.TabStop = false;
+			this.pictureBox57.Visible = false;
 			// 
-			// oldSchoolDropLoggerForm
+			// labelTitleTotalKills
+			// 
+			this.labelTitleTotalKills.Dock = System.Windows.Forms.DockStyle.Top;
+			this.labelTitleTotalKills.ForeColor = System.Drawing.Color.Silver;
+			this.labelTitleTotalKills.Location = new System.Drawing.Point(0, 0);
+			this.labelTitleTotalKills.Name = "labelTitleTotalKills";
+			this.labelTitleTotalKills.Size = new System.Drawing.Size(178, 23);
+			this.labelTitleTotalKills.TabIndex = 148;
+			this.labelTitleTotalKills.Text = "Total kills";
+			this.labelTitleTotalKills.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// panelSidePanel
+			// 
+			this.panelSidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+			this.panelSidePanel.Controls.Add(this.listBox1);
+			this.panelSidePanel.Controls.Add(this.labelTitleTotalKills);
+			this.panelSidePanel.Location = new System.Drawing.Point(467, 30);
+			this.panelSidePanel.Name = "panelSidePanel";
+			this.panelSidePanel.Size = new System.Drawing.Size(178, 349);
+			this.panelSidePanel.TabIndex = 149;
+			// 
+			// buttonToggleSidePanel
+			// 
+			this.buttonToggleSidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+			this.buttonToggleSidePanel.FlatAppearance.BorderSize = 0;
+			this.buttonToggleSidePanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonToggleSidePanel.ForeColor = System.Drawing.Color.Silver;
+			this.buttonToggleSidePanel.Location = new System.Drawing.Point(651, 28);
+			this.buttonToggleSidePanel.Name = "buttonToggleSidePanel";
+			this.buttonToggleSidePanel.Size = new System.Drawing.Size(29, 29);
+			this.buttonToggleSidePanel.TabIndex = 150;
+			this.buttonToggleSidePanel.Text = "❮❮";
+			this.buttonToggleSidePanel.UseVisualStyleBackColor = false;
+			this.buttonToggleSidePanel.Click += new System.EventHandler(this.buttonToggleSidePanel_Click);
+			// 
+			// button1
+			// 
+			this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+			this.button1.FlatAppearance.BorderSize = 0;
+			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button1.ForeColor = System.Drawing.Color.Silver;
+			this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+			this.button1.Location = new System.Drawing.Point(651, 64);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(29, 30);
+			this.button1.TabIndex = 151;
+			this.button1.UseVisualStyleBackColor = false;
+			// 
+			// listBox1
+			// 
+			this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+			this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.listBox1.ForeColor = System.Drawing.Color.Silver;
+			this.listBox1.FormattingEnabled = true;
+			this.listBox1.Items.AddRange(new object[] {
+            "Thermonuclear smoke devil: 99999"});
+			this.listBox1.Location = new System.Drawing.Point(3, 31);
+			this.listBox1.Name = "listBox1";
+			this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.None;
+			this.listBox1.Size = new System.Drawing.Size(170, 312);
+			this.listBox1.TabIndex = 149;
+			// 
+			// OldSchoolDropLogger
 			// 
 			this.AcceptButton = this.buttonAddCustomDrop;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-			this.ClientSize = new System.Drawing.Size(474, 360);
+			this.ClientSize = new System.Drawing.Size(684, 395);
+			this.Controls.Add(this.button1);
+			this.Controls.Add(this.buttonToggleSidePanel);
+			this.Controls.Add(this.panelSidePanel);
+			this.Controls.Add(this.pictureBox64);
+			this.Controls.Add(this.pictureBox63);
+			this.Controls.Add(this.pictureBox62);
+			this.Controls.Add(this.pictureBox61);
+			this.Controls.Add(this.pictureBox58);
+			this.Controls.Add(this.pictureBox60);
+			this.Controls.Add(this.pictureBox59);
 			this.Controls.Add(this.pictureBox57);
 			this.Controls.Add(this.labelCurrentLogFor);
 			this.Controls.Add(this.pictureBox56);
@@ -1433,7 +1593,6 @@
 			this.Controls.Add(this.textboxCustomDrop);
 			this.Controls.Add(this.labelAddCustomDrop);
 			this.Controls.Add(this.itemDropListBox);
-			this.Controls.Add(this.alwaysOnTopCheckBox);
 			this.Controls.Add(this.buttonEndTrip);
 			this.Controls.Add(this.buttonNewTrip);
 			this.Controls.Add(this.buttonOpenDropList);
@@ -1442,9 +1601,9 @@
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.KeyPreview = true;
 			this.MainMenuStrip = this.menuStrip;
-			this.MaximumSize = new System.Drawing.Size(490, 399);
-			this.MinimumSize = new System.Drawing.Size(490, 399);
-			this.Name = "oldSchoolDropLoggerForm";
+			this.MaximumSize = new System.Drawing.Size(700, 434);
+			this.MinimumSize = new System.Drawing.Size(490, 434);
+			this.Name = "OldSchoolDropLogger";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Old School Drop Logger";
 			this.Load += new System.EventHandler(this.oldSchoolDropLoggerForm_Load);
@@ -1509,110 +1668,117 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox64)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox63)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox62)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox61)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox58)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox60)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox59)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox57)).EndInit();
+			this.panelSidePanel.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
-        }
+		}
 
-        #endregion
+		#endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bossToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem godwarsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem armadylToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bandosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saradominToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem zamorakToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem wildernessToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem callistoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem chaosElementalToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem chaosFanaticToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem crazyArchaeologistToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem kingBlackDragonToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem scorpiaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem venenatisToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vetionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem otherToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem abyssalSireToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem barrowsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cerberusToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem corporealBeastToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dagannothKingsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem giantMoleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem kalphiteQueenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem krakenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem skotizoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem thermonuclearSmokeDevilToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem zulrahToolStripMenuItem;
-        internal System.Windows.Forms.Button buttonUndoLastDrop;
-        internal System.Windows.Forms.Button buttonOpenDropList;
-        internal System.Windows.Forms.Button buttonNewTrip;
-        internal System.Windows.Forms.Button buttonEndTrip;
-        internal System.Windows.Forms.CheckBox alwaysOnTopCheckBox;
-        internal System.Windows.Forms.Label labelAddCustomDrop;
-        internal System.Windows.Forms.TextBox textboxCustomDrop;
-        internal System.Windows.Forms.Button buttonAddCustomDrop;
-        internal System.Windows.Forms.PictureBox pictureBoxDagannothPrime;
-        internal System.Windows.Forms.PictureBox pictureBoxDagannothRex;
-        internal System.Windows.Forms.PictureBox pictureBoxDagannothSupreme;
-        internal System.Windows.Forms.PictureBox pictureBox1;
-        internal System.Windows.Forms.PictureBox pictureBox8;
-        internal System.Windows.Forms.PictureBox pictureBox7;
-        internal System.Windows.Forms.PictureBox pictureBox6;
-        internal System.Windows.Forms.PictureBox pictureBox5;
-        internal System.Windows.Forms.PictureBox pictureBox4;
-        internal System.Windows.Forms.PictureBox pictureBox3;
-        internal System.Windows.Forms.PictureBox pictureBox2;
-        internal System.Windows.Forms.PictureBox pictureBox9;
-        internal System.Windows.Forms.PictureBox pictureBox17;
-        internal System.Windows.Forms.PictureBox pictureBox49;
-        internal System.Windows.Forms.PictureBox pictureBox41;
-        internal System.Windows.Forms.PictureBox pictureBox33;
-        internal System.Windows.Forms.PictureBox pictureBox25;
-        internal System.Windows.Forms.PictureBox pictureBox56;
-        internal System.Windows.Forms.PictureBox pictureBox55;
-        internal System.Windows.Forms.PictureBox pictureBox54;
-        internal System.Windows.Forms.PictureBox pictureBox53;
-        internal System.Windows.Forms.PictureBox pictureBox50;
-        internal System.Windows.Forms.PictureBox pictureBox52;
-        internal System.Windows.Forms.PictureBox pictureBox51;
-        internal System.Windows.Forms.PictureBox pictureBox48;
-        internal System.Windows.Forms.PictureBox pictureBox47;
-        internal System.Windows.Forms.PictureBox pictureBox46;
-        internal System.Windows.Forms.PictureBox pictureBox45;
-        internal System.Windows.Forms.PictureBox pictureBox42;
-        internal System.Windows.Forms.PictureBox pictureBox44;
-        internal System.Windows.Forms.PictureBox pictureBox43;
-        internal System.Windows.Forms.PictureBox pictureBox40;
-        internal System.Windows.Forms.PictureBox pictureBox39;
-        internal System.Windows.Forms.PictureBox pictureBox38;
-        internal System.Windows.Forms.PictureBox pictureBox37;
-        internal System.Windows.Forms.PictureBox pictureBox34;
-        internal System.Windows.Forms.PictureBox pictureBox36;
-        internal System.Windows.Forms.PictureBox pictureBox35;
-        internal System.Windows.Forms.PictureBox pictureBox32;
-        internal System.Windows.Forms.PictureBox pictureBox31;
-        internal System.Windows.Forms.PictureBox pictureBox30;
-        internal System.Windows.Forms.PictureBox pictureBox29;
-        internal System.Windows.Forms.PictureBox pictureBox26;
-        internal System.Windows.Forms.PictureBox pictureBox24;
-        internal System.Windows.Forms.PictureBox pictureBox23;
-        internal System.Windows.Forms.PictureBox pictureBox22;
-        internal System.Windows.Forms.PictureBox pictureBox21;
-        internal System.Windows.Forms.PictureBox pictureBox20;
-        internal System.Windows.Forms.PictureBox pictureBox28;
-        internal System.Windows.Forms.PictureBox pictureBox27;
-        internal System.Windows.Forms.PictureBox pictureBox16;
-        internal System.Windows.Forms.PictureBox pictureBox15;
-        internal System.Windows.Forms.PictureBox pictureBox19;
-        internal System.Windows.Forms.PictureBox pictureBox18;
-        internal System.Windows.Forms.PictureBox pictureBox14;
-        internal System.Windows.Forms.PictureBox pictureBox13;
-        internal System.Windows.Forms.PictureBox pictureBox12;
-        internal System.Windows.Forms.PictureBox pictureBox11;
-        internal System.Windows.Forms.PictureBox pictureBox10;
+		private System.Windows.Forms.MenuStrip menuStrip;
+		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem bossToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem godwarsToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem armadylToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem bandosToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem saradominToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem zamorakToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem wildernessToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem callistoToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem chaosElementalToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem chaosFanaticToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem crazyArchaeologistToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem kingBlackDragonToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem scorpiaToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem venenatisToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem vetionToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem otherToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem abyssalSireToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem barrowsToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem cerberusToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem corporealBeastToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem dagannothKingsToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem giantMoleToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem kalphiteQueenToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem krakenToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem skotizoToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem thermonuclearSmokeDevilToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem zulrahToolStripMenuItem;
+		internal System.Windows.Forms.Button buttonUndoLastDrop;
+		internal System.Windows.Forms.Button buttonOpenDropList;
+		internal System.Windows.Forms.Button buttonNewTrip;
+		internal System.Windows.Forms.Button buttonEndTrip;
+		internal System.Windows.Forms.Label labelAddCustomDrop;
+		internal System.Windows.Forms.TextBox textboxCustomDrop;
+		internal System.Windows.Forms.Button buttonAddCustomDrop;
+		internal System.Windows.Forms.PictureBox pictureBoxDagannothPrime;
+		internal System.Windows.Forms.PictureBox pictureBoxDagannothRex;
+		internal System.Windows.Forms.PictureBox pictureBoxDagannothSupreme;
+		internal System.Windows.Forms.PictureBox pictureBox1;
+		internal System.Windows.Forms.PictureBox pictureBox8;
+		internal System.Windows.Forms.PictureBox pictureBox7;
+		internal System.Windows.Forms.PictureBox pictureBox6;
+		internal System.Windows.Forms.PictureBox pictureBox5;
+		internal System.Windows.Forms.PictureBox pictureBox4;
+		internal System.Windows.Forms.PictureBox pictureBox3;
+		internal System.Windows.Forms.PictureBox pictureBox2;
+		internal System.Windows.Forms.PictureBox pictureBox9;
+		internal System.Windows.Forms.PictureBox pictureBox17;
+		internal System.Windows.Forms.PictureBox pictureBox49;
+		internal System.Windows.Forms.PictureBox pictureBox41;
+		internal System.Windows.Forms.PictureBox pictureBox33;
+		internal System.Windows.Forms.PictureBox pictureBox25;
+		internal System.Windows.Forms.PictureBox pictureBox56;
+		internal System.Windows.Forms.PictureBox pictureBox55;
+		internal System.Windows.Forms.PictureBox pictureBox54;
+		internal System.Windows.Forms.PictureBox pictureBox53;
+		internal System.Windows.Forms.PictureBox pictureBox50;
+		internal System.Windows.Forms.PictureBox pictureBox52;
+		internal System.Windows.Forms.PictureBox pictureBox51;
+		internal System.Windows.Forms.PictureBox pictureBox48;
+		internal System.Windows.Forms.PictureBox pictureBox47;
+		internal System.Windows.Forms.PictureBox pictureBox46;
+		internal System.Windows.Forms.PictureBox pictureBox45;
+		internal System.Windows.Forms.PictureBox pictureBox42;
+		internal System.Windows.Forms.PictureBox pictureBox44;
+		internal System.Windows.Forms.PictureBox pictureBox43;
+		internal System.Windows.Forms.PictureBox pictureBox40;
+		internal System.Windows.Forms.PictureBox pictureBox39;
+		internal System.Windows.Forms.PictureBox pictureBox38;
+		internal System.Windows.Forms.PictureBox pictureBox37;
+		internal System.Windows.Forms.PictureBox pictureBox34;
+		internal System.Windows.Forms.PictureBox pictureBox36;
+		internal System.Windows.Forms.PictureBox pictureBox35;
+		internal System.Windows.Forms.PictureBox pictureBox32;
+		internal System.Windows.Forms.PictureBox pictureBox31;
+		internal System.Windows.Forms.PictureBox pictureBox30;
+		internal System.Windows.Forms.PictureBox pictureBox29;
+		internal System.Windows.Forms.PictureBox pictureBox26;
+		internal System.Windows.Forms.PictureBox pictureBox24;
+		internal System.Windows.Forms.PictureBox pictureBox23;
+		internal System.Windows.Forms.PictureBox pictureBox22;
+		internal System.Windows.Forms.PictureBox pictureBox21;
+		internal System.Windows.Forms.PictureBox pictureBox20;
+		internal System.Windows.Forms.PictureBox pictureBox28;
+		internal System.Windows.Forms.PictureBox pictureBox27;
+		internal System.Windows.Forms.PictureBox pictureBox16;
+		internal System.Windows.Forms.PictureBox pictureBox15;
+		internal System.Windows.Forms.PictureBox pictureBox19;
+		internal System.Windows.Forms.PictureBox pictureBox18;
+		internal System.Windows.Forms.PictureBox pictureBox14;
+		internal System.Windows.Forms.PictureBox pictureBox13;
+		internal System.Windows.Forms.PictureBox pictureBox12;
+		internal System.Windows.Forms.PictureBox pictureBox11;
+		internal System.Windows.Forms.PictureBox pictureBox10;
 		internal System.Windows.Forms.Label labelCurrentLogFor;
 		public System.Windows.Forms.ListBox itemDropListBox;
 		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
@@ -1622,10 +1788,22 @@
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
 		private System.Windows.Forms.ToolStripMenuItem statisticsToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem viewStatisticsToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem testImageCreatorToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
-		private System.Windows.Forms.PictureBox pictureBox57;
+		internal System.Windows.Forms.PictureBox pictureBox64;
+		internal System.Windows.Forms.PictureBox pictureBox63;
+		internal System.Windows.Forms.PictureBox pictureBox62;
+		internal System.Windows.Forms.PictureBox pictureBox61;
+		internal System.Windows.Forms.PictureBox pictureBox58;
+		internal System.Windows.Forms.PictureBox pictureBox60;
+		internal System.Windows.Forms.PictureBox pictureBox59;
+		internal System.Windows.Forms.PictureBox pictureBox57;
+		internal System.Windows.Forms.Label labelTitleTotalKills;
+		private System.Windows.Forms.Panel panelSidePanel;
+		internal System.Windows.Forms.Button buttonToggleSidePanel;
+		private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem alwaysOnTopToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem wintertodtToolStripMenuItem;
+		internal System.Windows.Forms.Button button1;
+		private System.Windows.Forms.ListBox listBox1;
 	}
 }
 

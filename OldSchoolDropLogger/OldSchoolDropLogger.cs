@@ -14,8 +14,9 @@ using Config;
 using StatisticsForm;
 using itemQuantityCreator;
 
-namespace mainWindow {
-	public partial class oldSchoolDropLoggerForm : Form {
+namespace dropLogger {
+	public partial class OldSchoolDropLogger : Form {
+
 		private String selectedDagannothKing = "Dagannoth Prime";
 		private String logsFilePath = AppDomain.CurrentDomain.BaseDirectory + "/logs/";
 
@@ -24,7 +25,7 @@ namespace mainWindow {
 		private Color hightlightOrange = Color.FromArgb(179, 107, 0);
 
 		// Create an instance of this class so data can be passed to it from other forms
-		public static oldSchoolDropLoggerForm instance;
+		public static OldSchoolDropLogger instance;
 
 		private List<PictureBox> allPictureBoxes = new List<PictureBox>();
 
@@ -1827,6 +1828,127 @@ namespace mainWindow {
 			setNPictureBoxesToVisible(43);
 			resetItemDropListBox();
 		}
+		private void wintertodtToolStripMenuItem_Click(object sender, EventArgs e) {
+			labelCurrentLogFor.Text = "Current log for: " + wintertodtToolStripMenuItem.Text;
+			pictureBox1.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Oak_logs_noted_generic.png");
+			pictureBox1.Tag = "Varies; Oak logs";
+			pictureBox2.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Willow_logs_noted_generic.png");
+			pictureBox2.Tag = "Varies; Willow logs";
+			pictureBox3.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Maple_logs_noted_generic.png");
+			pictureBox3.Tag = "Varies; Maple logs";
+			pictureBox4.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Teak_logs_noted_generic.png");
+			pictureBox4.Tag = "Varies; Teak logs";
+			pictureBox5.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mahogany_logs_noted_generic.png");
+			pictureBox5.Tag = "Varies; Mahogany logs";
+			pictureBox6.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Yew_logs_noted_generic.png");
+			pictureBox6.Tag = "Varies; Yew logs";
+			pictureBox7.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Magic_logs_noted_generic.png");
+			pictureBox7.Tag = "Varies; Magic logs";
+			pictureBox8.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pure_essence_noted_generic.png");
+			pictureBox8.Tag = "Varies; Pure essence";
+			pictureBox9.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_sapphire_noted_generic.png");
+			pictureBox9.Tag = "Varies; Uncut sapphire";
+			pictureBox10.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_emerald_noted_generic.png");
+			pictureBox10.Tag = "Varies; Uncut emerald";
+			pictureBox11.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_ruby_noted_generic.png");
+			pictureBox11.Tag = "Varies; Uncut ruby";
+			pictureBox12.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_diamond_noted_generic.png");
+			pictureBox12.Tag = "Varies; Uncut diamond";
+			pictureBox13.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coal_noted_generic.png");
+			pictureBox13.Tag = "Varies; Coal";
+			pictureBox14.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Iron_ore_noted_generic.png");
+			pictureBox14.Tag = "Varies; Iron ore";
+			pictureBox15.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Silver_ore_noted_generic.png");
+			pictureBox15.Tag = "Varies; Silver ore";
+			pictureBox16.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Gold_ore_noted_generic.png");
+			pictureBox16.Tag = "Varies; Gold ore";
+			pictureBox17.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mithril_ore_noted_generic.png");
+			pictureBox17.Tag = "Varies; Mithril ore";
+			pictureBox18.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Adamantite_ore_noted_generic.png");
+			pictureBox18.Tag = "Varies; Adamantite ore";
+			pictureBox19.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Runite_ore_noted_generic.png");
+			pictureBox19.Tag = "Varies; Runite ore";
+			pictureBox20.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_guam_leaf_noted_generic.png");
+			pictureBox20.Tag = "Varies; Grimy guam leaf";
+			pictureBox21.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_marrentill_noted_generic.png");
+			pictureBox21.Tag = "Varies; Grimy marrentill";
+			pictureBox22.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_ranarr_weed_noted_generic.png");
+			pictureBox22.Tag = "Varies; Grimy ranarr weed";
+			pictureBox23.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_avantoe_noted_generic.png");
+			pictureBox23.Tag = "Varies; Grimy avantoe";
+			pictureBox24.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_cadantine_noted_generic.png");
+			pictureBox24.Tag = "Varies; Grimy cadantine";
+			pictureBox25.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Tarromin_seed_1.png");
+			pictureBox25.Tag = "Varies; Tarromin seed";
+			pictureBox26.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Harralander_seed_1.png");
+			pictureBox26.Tag = "Varies; Harralander seed";
+			pictureBox27.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Toadflax_seed_1.png");
+			pictureBox27.Tag = "Varies; Toadflax seed";
+			pictureBox28.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ranarr_seed_1.png");
+			pictureBox28.Tag = "Varies; Ranarr seed";
+			pictureBox29.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Snapdragon_seed_1.png");
+			pictureBox29.Tag = "Varies; Snapdragon seed";
+			pictureBox30.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Banana_tree_seed_1.png");
+			pictureBox30.Tag = "Varies; Banana tree seed";
+			pictureBox31.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Acorn_1.png");
+			pictureBox31.Tag = "Acorn x 1";
+			pictureBox32.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Willow_seed_1.png");
+			pictureBox32.Tag = "Varies; Willow seed";
+			pictureBox33.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Watermelon_seed_1.png");
+			pictureBox33.Tag = "Varies; Watermelon seed";
+			pictureBox34.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Maple_seed_1.png");
+			pictureBox34.Tag = "Varies; Maple seed";
+			pictureBox35.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Yew_seed_1.png");
+			pictureBox35.Tag = "Varies; Yew seed";
+			pictureBox36.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Magic_seed_1.png");
+			pictureBox36.Tag = "Magic seed x 1";
+			pictureBox37.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Spirit_seed_1.png");
+			pictureBox37.Tag = "Spirit seed x 1";
+			pictureBox38.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_anchovies_noted_generic.png");
+			pictureBox38.Tag = "Varies; Raw anchovies";
+			pictureBox39.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_trout_noted_generic.png");
+			pictureBox39.Tag = "Varies; Raw trout";
+			pictureBox40.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_salmon_noted_generic.png");
+			pictureBox40.Tag = "Varies; Raw salmon";
+			pictureBox41.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_lobster_noted_generic.png");
+			pictureBox41.Tag = "Varies; Raw lobster";
+			pictureBox42.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_tuna_noted_generic.png");
+			pictureBox42.Tag = "Varies; Raw tuna";
+			pictureBox43.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_swordfish_noted_generic.png");
+			pictureBox43.Tag = "Varies; Raw swordfish";
+			pictureBox44.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_shark_noted_generic.png");
+			pictureBox44.Tag = "Varies; Raw shark";
+			pictureBox45.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Saltpetre_noted_generic.png");
+			pictureBox45.Tag = "Varies; Saltpetre";
+			pictureBox46.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Limestone_noted_generic.png");
+			pictureBox46.Tag = "Varies; Limestone";
+			pictureBox47.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dynamite_noted_generic.png");
+			pictureBox47.Tag = "Varies; Dynamite";
+			pictureBox48.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coins_1000.png");
+			pictureBox48.Tag = "Varies; Coins";
+			pictureBox49.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Burnt_page.png");
+			pictureBox49.Tag = "Varies; Burnt page";
+			pictureBox50.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bruma_torch.png");
+			pictureBox50.Tag = "Bruma torch x 1";
+			pictureBox51.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pyromancer_hood.png");
+			pictureBox51.Tag = "Pyromancer hood x 1";
+			pictureBox52.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pyromancer_garb.png");
+			pictureBox52.Tag = "Pyromancer garb x 1";
+			pictureBox53.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pyromancer_robe.png");
+			pictureBox53.Tag = "Pyromancer robe x 1";
+			pictureBox54.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pyromancer_boots.png");
+			pictureBox54.Tag = "Pyromancer boots x 1";
+			pictureBox55.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Warm_gloves.png");
+			pictureBox55.Tag = "Warm gloves x 1";
+			pictureBox56.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Tome_of_fire_(empty).png");
+			pictureBox56.Tag = "Tome of fire (empty) x 1";
+			pictureBox57.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Phoenix.png");
+			pictureBox57.Tag = "Phoenix x 1";
+			pictureBox58.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
+			pictureBox58.Tag = "RDT";
+			setNPictureBoxesToVisible(58);
+			resetItemDropListBox();
+		}
 		private void zulrahToolStripMenuItem_Click(object sender, EventArgs e) {
 			labelCurrentLogFor.Text = "Current log for: " + zulrahToolStripMenuItem.Text;
 			pictureBox1.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pure_essence_noted_1500.png");
@@ -1973,10 +2095,7 @@ namespace mainWindow {
 
 			Boolean isControlPressed = false;
 			PictureBox pbSender = (PictureBox)sender;
-			String unloggedItem = pbSender.Tag.ToString();
-
 			
-
 			if (Control.ModifierKeys == Keys.Control) { isControlPressed = true; }
 
 
@@ -1987,6 +2106,8 @@ namespace mainWindow {
 				pbSender.Name == "pictureBoxDagannothSupreme") {
 				return;
 			}
+
+			String unloggedItem = pbSender.Tag.ToString();
 
 			// Open new window and handle RDT drops
 			if (pbSender.Tag.ToString() == "RDT") {
@@ -2366,14 +2487,55 @@ namespace mainWindow {
 			itemDropListBox.Items.Clear();
 		}
 
+		private void statisticsToolStripMenuItem_Click(object sender, EventArgs e) {
+			Statistics stats = new Statistics();
+			stats.Show();
+		}
+
+		private void buttonToggleSidePanel_Click(object sender, EventArgs e) {
+			if (panelSidePanel.Visible == true) {
+				panelSidePanel.Visible = false;
+				OldSchoolDropLogger.instance.Size = new Size(490, 434);
+				buttonToggleSidePanel.Location = new Point(443, 30);
+				buttonToggleSidePanel.Text = "❯❯";
+			}
+			else {
+				panelSidePanel.Visible = true;
+				OldSchoolDropLogger.instance.Size = new Size(700, 434);
+				buttonToggleSidePanel.Location = new Point(651, 30);
+				buttonToggleSidePanel.Text = "❮❮";
+			}
+		}
+
+		private void alwaysOnTopToolStripMenuItem_Click(object sender, EventArgs e) {
+			if (alwaysOnTopToolStripMenuItem.Checked == false) {
+				this.TopMost = true;
+				alwaysOnTopToolStripMenuItem.Checked = true;
+			}
+			else {
+				this.TopMost = false;
+				alwaysOnTopToolStripMenuItem.Checked = false;
+			}
+		}
+
 		/* Constructor */
-		public oldSchoolDropLoggerForm() {
+		public OldSchoolDropLogger() {
 			InitializeComponent();
 
 			// Add click listener to each picturebox
 			foreach (Control c in this.Controls) {
 				if (c is PictureBox) c.Click += pictureBox_Click;
 			}
+
+			// Set side panel to hidden
+			panelSidePanel.Visible = false;
+			this.Size = new Size(490, 434);
+			buttonToggleSidePanel.Location = new Point(443, 28);
+			buttonToggleSidePanel.Text = "❯❯";
+
+
+			
+
 		}
 
 		public void printStringList(List<String> list) {
@@ -2383,8 +2545,6 @@ namespace mainWindow {
 			}
 			Console.WriteLine("====================================================\n");
 		}
-
-
 
 		// ==============================================================================
 		// ================= shouldn't have to touch these again ========================
@@ -2411,14 +2571,6 @@ namespace mainWindow {
 			for (int i = 1; i <= 56; i++) {
 				c = this.Controls.Find("pictureBox" + i.ToString(), true);
 				allPictureBoxes.Add((PictureBox)c[0]);
-			}
-		}
-		private void alwaysOnTopCheckBox_CheckedChanged(object sender, EventArgs e) {
-			if (alwaysOnTopCheckBox.Checked == true) {
-				this.TopMost = true;
-			}
-			else {
-				this.TopMost = false;
 			}
 		}
 		private ToolStripMenuItem getDefaultBossFromSettings(String boss) {
@@ -2482,7 +2634,7 @@ namespace mainWindow {
 					return armadylToolStripMenuItem;
 			}
 		}
-		private void setNPictureBoxesToVisible(int n, String boss = "") {
+		public void setNPictureBoxesToVisible(int n, String boss = "") {
 			if (boss == "Dagannoth Kings") {
 				pictureBoxDagannothPrime.Show();
 				pictureBoxDagannothRex.Show();
@@ -2552,6 +2704,14 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 21:
 					pictureBox1.Visible = true;
@@ -2610,6 +2770,14 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 22:
 					pictureBox1.Visible = true;
@@ -2668,6 +2836,14 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 23:
 					pictureBox1.Visible = true;
@@ -2726,6 +2902,14 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 24:
 					pictureBox1.Visible = true;
@@ -2784,6 +2968,14 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 25:
 					pictureBox1.Visible = true;
@@ -2842,6 +3034,14 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 26:
 					pictureBox1.Visible = true;
@@ -2900,6 +3100,14 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 27:
 					pictureBox1.Visible = true;
@@ -2958,6 +3166,14 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 28:
 					pictureBox1.Visible = true;
@@ -3016,6 +3232,14 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 29:
 					pictureBox1.Visible = true;
@@ -3074,6 +3298,14 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 30:
 					pictureBox1.Visible = true;
@@ -3132,6 +3364,14 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 31:
 					pictureBox1.Visible = true;
@@ -3190,6 +3430,14 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 32:
 					pictureBox1.Visible = true;
@@ -3248,6 +3496,14 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 33:
 					pictureBox1.Visible = true;
@@ -3306,6 +3562,14 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 34:
 					pictureBox1.Visible = true;
@@ -3364,6 +3628,14 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 35:
 					pictureBox1.Visible = true;
@@ -3422,6 +3694,14 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 36:
 					pictureBox1.Visible = true;
@@ -3480,6 +3760,14 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 37:
 					pictureBox1.Visible = true;
@@ -3538,6 +3826,14 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 38:
 					pictureBox1.Visible = true;
@@ -3596,6 +3892,14 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 39:
 					pictureBox1.Visible = true;
@@ -3654,6 +3958,14 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 40:
 					pictureBox1.Visible = true;
@@ -3712,6 +4024,14 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 41:
 					pictureBox1.Visible = true;
@@ -3770,6 +4090,14 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 42:
 					pictureBox1.Visible = true;
@@ -3828,6 +4156,14 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 43:
 					pictureBox1.Visible = true;
@@ -3886,6 +4222,14 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 44:
 					pictureBox1.Visible = true;
@@ -3944,6 +4288,14 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 45:
 					pictureBox1.Visible = true;
@@ -4002,6 +4354,14 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 46:
 					pictureBox1.Visible = true;
@@ -4060,6 +4420,14 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 47:
 					pictureBox1.Visible = true;
@@ -4118,6 +4486,14 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 48:
 					pictureBox1.Visible = true;
@@ -4176,6 +4552,14 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 49:
 					pictureBox1.Visible = true;
@@ -4234,66 +4618,16 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 50:
-					pictureBox1.Visible = true;
-					pictureBox2.Visible = true;
-					pictureBox3.Visible = true;
-					pictureBox4.Visible = true;
-					pictureBox5.Visible = true;
-					pictureBox6.Visible = true;
-					pictureBox7.Visible = true;
-					pictureBox8.Visible = true;
-					pictureBox9.Visible = true;
-					pictureBox10.Visible = true;
-					pictureBox11.Visible = true;
-					pictureBox12.Visible = true;
-					pictureBox13.Visible = true;
-					pictureBox14.Visible = true;
-					pictureBox15.Visible = true;
-					pictureBox16.Visible = true;
-					pictureBox17.Visible = true;
-					pictureBox18.Visible = true;
-					pictureBox19.Visible = true;
-					pictureBox20.Visible = true;
-					pictureBox21.Visible = true;
-					pictureBox22.Visible = true;
-					pictureBox23.Visible = true;
-					pictureBox24.Visible = true;
-					pictureBox25.Visible = true;
-					pictureBox26.Visible = true;
-					pictureBox27.Visible = true;
-					pictureBox28.Visible = true;
-					pictureBox29.Visible = true;
-					pictureBox30.Visible = true;
-					pictureBox31.Visible = true;
-					pictureBox32.Visible = true;
-					pictureBox33.Visible = true;
-					pictureBox34.Visible = true;
-					pictureBox35.Visible = true;
-					pictureBox36.Visible = true;
-					pictureBox37.Visible = true;
-					pictureBox38.Visible = true;
-					pictureBox39.Visible = true;
-					pictureBox40.Visible = true;
-					pictureBox41.Visible = true;
-					pictureBox42.Visible = true;
-					pictureBox43.Visible = true;
-					pictureBox44.Visible = true;
-					pictureBox45.Visible = true;
-					pictureBox46.Visible = true;
-					pictureBox47.Visible = true;
-					pictureBox48.Visible = true;
-					pictureBox49.Visible = true;
-					pictureBox50.Visible = false;
-					pictureBox51.Visible = false;
-					pictureBox52.Visible = false;
-					pictureBox53.Visible = false;
-					pictureBox54.Visible = false;
-					pictureBox55.Visible = false;
-					pictureBox56.Visible = false;
-					break;
-				case 51:
 					pictureBox1.Visible = true;
 					pictureBox2.Visible = true;
 					pictureBox3.Visible = true;
@@ -4350,8 +4684,16 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
-				case 52:
+				case 51:
 					pictureBox1.Visible = true;
 					pictureBox2.Visible = true;
 					pictureBox3.Visible = true;
@@ -4408,8 +4750,16 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
-				case 53:
+				case 52:
 					pictureBox1.Visible = true;
 					pictureBox2.Visible = true;
 					pictureBox3.Visible = true;
@@ -4466,8 +4816,16 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
-				case 54:
+				case 53:
 					pictureBox1.Visible = true;
 					pictureBox2.Visible = true;
 					pictureBox3.Visible = true;
@@ -4524,8 +4882,16 @@ namespace mainWindow {
 					pictureBox54.Visible = false;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
-				case 55:
+				case 54:
 					pictureBox1.Visible = true;
 					pictureBox2.Visible = true;
 					pictureBox3.Visible = true;
@@ -4582,6 +4948,80 @@ namespace mainWindow {
 					pictureBox54.Visible = true;
 					pictureBox55.Visible = false;
 					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
+					break;
+				case 55:
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = true;
+					pictureBox6.Visible = true;
+					pictureBox7.Visible = true;
+					pictureBox8.Visible = true;
+					pictureBox9.Visible = true;
+					pictureBox10.Visible = true;
+					pictureBox11.Visible = true;
+					pictureBox12.Visible = true;
+					pictureBox13.Visible = true;
+					pictureBox14.Visible = true;
+					pictureBox15.Visible = true;
+					pictureBox16.Visible = true;
+					pictureBox17.Visible = true;
+					pictureBox18.Visible = true;
+					pictureBox19.Visible = true;
+					pictureBox20.Visible = true;
+					pictureBox21.Visible = true;
+					pictureBox22.Visible = true;
+					pictureBox23.Visible = true;
+					pictureBox24.Visible = true;
+					pictureBox25.Visible = true;
+					pictureBox26.Visible = true;
+					pictureBox27.Visible = true;
+					pictureBox28.Visible = true;
+					pictureBox29.Visible = true;
+					pictureBox30.Visible = true;
+					pictureBox31.Visible = true;
+					pictureBox32.Visible = true;
+					pictureBox33.Visible = true;
+					pictureBox34.Visible = true;
+					pictureBox35.Visible = true;
+					pictureBox36.Visible = true;
+					pictureBox37.Visible = true;
+					pictureBox38.Visible = true;
+					pictureBox39.Visible = true;
+					pictureBox40.Visible = true;
+					pictureBox41.Visible = true;
+					pictureBox42.Visible = true;
+					pictureBox43.Visible = true;
+					pictureBox44.Visible = true;
+					pictureBox45.Visible = true;
+					pictureBox46.Visible = true;
+					pictureBox47.Visible = true;
+					pictureBox48.Visible = true;
+					pictureBox49.Visible = true;
+					pictureBox50.Visible = true;
+					pictureBox51.Visible = true;
+					pictureBox52.Visible = true;
+					pictureBox53.Visible = true;
+					pictureBox54.Visible = true;
+					pictureBox55.Visible = true;
+					pictureBox56.Visible = false;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 56:
 					pictureBox1.Visible = true;
@@ -4639,7 +5079,15 @@ namespace mainWindow {
 					pictureBox53.Visible = true;
 					pictureBox54.Visible = true;
 					pictureBox55.Visible = true;
-					pictureBox56.Visible = false;
+					pictureBox56.Visible = true;
+					pictureBox57.Visible = false;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 57:
 					pictureBox1.Visible = true;
@@ -4698,6 +5146,14 @@ namespace mainWindow {
 					pictureBox54.Visible = true;
 					pictureBox55.Visible = true;
 					pictureBox56.Visible = true;
+					pictureBox57.Visible = true;
+					pictureBox58.Visible = false;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 58:
 					pictureBox1.Visible = true;
@@ -4756,6 +5212,14 @@ namespace mainWindow {
 					pictureBox54.Visible = true;
 					pictureBox55.Visible = true;
 					pictureBox56.Visible = true;
+					pictureBox57.Visible = true;
+					pictureBox58.Visible = true;
+					pictureBox59.Visible = false;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 59:
 					pictureBox1.Visible = true;
@@ -4814,6 +5278,14 @@ namespace mainWindow {
 					pictureBox54.Visible = true;
 					pictureBox55.Visible = true;
 					pictureBox56.Visible = true;
+					pictureBox57.Visible = true;
+					pictureBox58.Visible = true;
+					pictureBox59.Visible = true;
+					pictureBox60.Visible = false;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
 					break;
 				case 60:
 					pictureBox1.Visible = true;
@@ -4872,16 +5344,283 @@ namespace mainWindow {
 					pictureBox54.Visible = true;
 					pictureBox55.Visible = true;
 					pictureBox56.Visible = true;
+					pictureBox57.Visible = true;
+					pictureBox58.Visible = true;
+					pictureBox59.Visible = true;
+					pictureBox60.Visible = true;
+					pictureBox61.Visible = false;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
+					break;
+				case 61:
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = true;
+					pictureBox6.Visible = true;
+					pictureBox7.Visible = true;
+					pictureBox8.Visible = true;
+					pictureBox9.Visible = true;
+					pictureBox10.Visible = true;
+					pictureBox11.Visible = true;
+					pictureBox12.Visible = true;
+					pictureBox13.Visible = true;
+					pictureBox14.Visible = true;
+					pictureBox15.Visible = true;
+					pictureBox16.Visible = true;
+					pictureBox17.Visible = true;
+					pictureBox18.Visible = true;
+					pictureBox19.Visible = true;
+					pictureBox20.Visible = true;
+					pictureBox21.Visible = true;
+					pictureBox22.Visible = true;
+					pictureBox23.Visible = true;
+					pictureBox24.Visible = true;
+					pictureBox25.Visible = true;
+					pictureBox26.Visible = true;
+					pictureBox27.Visible = true;
+					pictureBox28.Visible = true;
+					pictureBox29.Visible = true;
+					pictureBox30.Visible = true;
+					pictureBox31.Visible = true;
+					pictureBox32.Visible = true;
+					pictureBox33.Visible = true;
+					pictureBox34.Visible = true;
+					pictureBox35.Visible = true;
+					pictureBox36.Visible = true;
+					pictureBox37.Visible = true;
+					pictureBox38.Visible = true;
+					pictureBox39.Visible = true;
+					pictureBox40.Visible = true;
+					pictureBox41.Visible = true;
+					pictureBox42.Visible = true;
+					pictureBox43.Visible = true;
+					pictureBox44.Visible = true;
+					pictureBox45.Visible = true;
+					pictureBox46.Visible = true;
+					pictureBox47.Visible = true;
+					pictureBox48.Visible = true;
+					pictureBox49.Visible = true;
+					pictureBox50.Visible = true;
+					pictureBox51.Visible = true;
+					pictureBox52.Visible = true;
+					pictureBox53.Visible = true;
+					pictureBox54.Visible = true;
+					pictureBox55.Visible = true;
+					pictureBox56.Visible = true;
+					pictureBox57.Visible = true;
+					pictureBox58.Visible = true;
+					pictureBox59.Visible = true;
+					pictureBox60.Visible = true;
+					pictureBox61.Visible = true;
+					pictureBox62.Visible = false;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
+					break;
+				case 62:
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = true;
+					pictureBox6.Visible = true;
+					pictureBox7.Visible = true;
+					pictureBox8.Visible = true;
+					pictureBox9.Visible = true;
+					pictureBox10.Visible = true;
+					pictureBox11.Visible = true;
+					pictureBox12.Visible = true;
+					pictureBox13.Visible = true;
+					pictureBox14.Visible = true;
+					pictureBox15.Visible = true;
+					pictureBox16.Visible = true;
+					pictureBox17.Visible = true;
+					pictureBox18.Visible = true;
+					pictureBox19.Visible = true;
+					pictureBox20.Visible = true;
+					pictureBox21.Visible = true;
+					pictureBox22.Visible = true;
+					pictureBox23.Visible = true;
+					pictureBox24.Visible = true;
+					pictureBox25.Visible = true;
+					pictureBox26.Visible = true;
+					pictureBox27.Visible = true;
+					pictureBox28.Visible = true;
+					pictureBox29.Visible = true;
+					pictureBox30.Visible = true;
+					pictureBox31.Visible = true;
+					pictureBox32.Visible = true;
+					pictureBox33.Visible = true;
+					pictureBox34.Visible = true;
+					pictureBox35.Visible = true;
+					pictureBox36.Visible = true;
+					pictureBox37.Visible = true;
+					pictureBox38.Visible = true;
+					pictureBox39.Visible = true;
+					pictureBox40.Visible = true;
+					pictureBox41.Visible = true;
+					pictureBox42.Visible = true;
+					pictureBox43.Visible = true;
+					pictureBox44.Visible = true;
+					pictureBox45.Visible = true;
+					pictureBox46.Visible = true;
+					pictureBox47.Visible = true;
+					pictureBox48.Visible = true;
+					pictureBox49.Visible = true;
+					pictureBox50.Visible = true;
+					pictureBox51.Visible = true;
+					pictureBox52.Visible = true;
+					pictureBox53.Visible = true;
+					pictureBox54.Visible = true;
+					pictureBox55.Visible = true;
+					pictureBox56.Visible = true;
+					pictureBox57.Visible = true;
+					pictureBox58.Visible = true;
+					pictureBox59.Visible = true;
+					pictureBox60.Visible = true;
+					pictureBox61.Visible = true;
+					pictureBox62.Visible = true;
+					pictureBox63.Visible = false;
+					pictureBox64.Visible = false;
+					break;
+				case 63:
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = true;
+					pictureBox6.Visible = true;
+					pictureBox7.Visible = true;
+					pictureBox8.Visible = true;
+					pictureBox9.Visible = true;
+					pictureBox10.Visible = true;
+					pictureBox11.Visible = true;
+					pictureBox12.Visible = true;
+					pictureBox13.Visible = true;
+					pictureBox14.Visible = true;
+					pictureBox15.Visible = true;
+					pictureBox16.Visible = true;
+					pictureBox17.Visible = true;
+					pictureBox18.Visible = true;
+					pictureBox19.Visible = true;
+					pictureBox20.Visible = true;
+					pictureBox21.Visible = true;
+					pictureBox22.Visible = true;
+					pictureBox23.Visible = true;
+					pictureBox24.Visible = true;
+					pictureBox25.Visible = true;
+					pictureBox26.Visible = true;
+					pictureBox27.Visible = true;
+					pictureBox28.Visible = true;
+					pictureBox29.Visible = true;
+					pictureBox30.Visible = true;
+					pictureBox31.Visible = true;
+					pictureBox32.Visible = true;
+					pictureBox33.Visible = true;
+					pictureBox34.Visible = true;
+					pictureBox35.Visible = true;
+					pictureBox36.Visible = true;
+					pictureBox37.Visible = true;
+					pictureBox38.Visible = true;
+					pictureBox39.Visible = true;
+					pictureBox40.Visible = true;
+					pictureBox41.Visible = true;
+					pictureBox42.Visible = true;
+					pictureBox43.Visible = true;
+					pictureBox44.Visible = true;
+					pictureBox45.Visible = true;
+					pictureBox46.Visible = true;
+					pictureBox47.Visible = true;
+					pictureBox48.Visible = true;
+					pictureBox49.Visible = true;
+					pictureBox50.Visible = true;
+					pictureBox51.Visible = true;
+					pictureBox52.Visible = true;
+					pictureBox53.Visible = true;
+					pictureBox54.Visible = true;
+					pictureBox55.Visible = true;
+					pictureBox56.Visible = true;
+					pictureBox57.Visible = true;
+					pictureBox58.Visible = true;
+					pictureBox59.Visible = true;
+					pictureBox60.Visible = true;
+					pictureBox61.Visible = true;
+					pictureBox62.Visible = true;
+					pictureBox63.Visible = true;
+					pictureBox64.Visible = false;
+					break;
+				case 64:
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = true;
+					pictureBox6.Visible = true;
+					pictureBox7.Visible = true;
+					pictureBox8.Visible = true;
+					pictureBox9.Visible = true;
+					pictureBox10.Visible = true;
+					pictureBox11.Visible = true;
+					pictureBox12.Visible = true;
+					pictureBox13.Visible = true;
+					pictureBox14.Visible = true;
+					pictureBox15.Visible = true;
+					pictureBox16.Visible = true;
+					pictureBox17.Visible = true;
+					pictureBox18.Visible = true;
+					pictureBox19.Visible = true;
+					pictureBox20.Visible = true;
+					pictureBox21.Visible = true;
+					pictureBox22.Visible = true;
+					pictureBox23.Visible = true;
+					pictureBox24.Visible = true;
+					pictureBox25.Visible = true;
+					pictureBox26.Visible = true;
+					pictureBox27.Visible = true;
+					pictureBox28.Visible = true;
+					pictureBox29.Visible = true;
+					pictureBox30.Visible = true;
+					pictureBox31.Visible = true;
+					pictureBox32.Visible = true;
+					pictureBox33.Visible = true;
+					pictureBox34.Visible = true;
+					pictureBox35.Visible = true;
+					pictureBox36.Visible = true;
+					pictureBox37.Visible = true;
+					pictureBox38.Visible = true;
+					pictureBox39.Visible = true;
+					pictureBox40.Visible = true;
+					pictureBox41.Visible = true;
+					pictureBox42.Visible = true;
+					pictureBox43.Visible = true;
+					pictureBox44.Visible = true;
+					pictureBox45.Visible = true;
+					pictureBox46.Visible = true;
+					pictureBox47.Visible = true;
+					pictureBox48.Visible = true;
+					pictureBox49.Visible = true;
+					pictureBox50.Visible = true;
+					pictureBox51.Visible = true;
+					pictureBox52.Visible = true;
+					pictureBox53.Visible = true;
+					pictureBox54.Visible = true;
+					pictureBox55.Visible = true;
+					pictureBox56.Visible = true;
+					pictureBox57.Visible = true;
+					pictureBox58.Visible = true;
+					pictureBox59.Visible = true;
+					pictureBox60.Visible = true;
+					pictureBox61.Visible = true;
+					pictureBox62.Visible = true;
+					pictureBox63.Visible = true;
+					pictureBox64.Visible = true;
 					break;
 			}
 		}
 
-		private void testToolStripMenuItem_Click(object sender, EventArgs e) {
-
-			ItemQuantityCreator iqc = new ItemQuantityCreator();
-
-			pictureBox57.Image = iqc.createQuantityImage(19467904);
-
-		}
+		
 	}
 }
+
