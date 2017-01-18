@@ -11,6 +11,8 @@ namespace itemQuantityCreator {
 
 		public Bitmap createQuantityImage(int quantity) {
 
+			Console.WriteLine("ItemQuantityCreator.createQuantityImage(): " + quantity);
+
 			// Default quantity color is yellow and there is no ending letter
 			String textColor = "_yellow";
 			String endingLetter = "";
@@ -30,16 +32,22 @@ namespace itemQuantityCreator {
 
 			String number = quantity.ToString();
 
-			// Create a bitmap of the first number in the quantity with the correct text color
+			
+
+			// Fetch a bitmap of the first number in the quantity with the correct text color
 			// This is the starting image that other images will be "appended" to
 			Bitmap first = new Bitmap(getNumberImage((int) Char.GetNumericValue(number[0]), textColor));
+
+			// If the quantity is between 0 and 9, the string length is only 1, so we can just return
+			// the correct bitmap image without having to do any magic
+			if (quantity >= 0 && quantity < 10) return first;
 
 			// Result bitmap uninstantiated
 			Bitmap result = null;
 
 			// Loop through all numbers in the quantity that will be shown
 			// 10,000,000	=> 10
-			// 9403			=> 9403
+			// 9,403		=> 9403
 			// 463,291		=> 463
 			for (int i = 1; i < number.Length; i++) {
 				
@@ -72,7 +80,7 @@ namespace itemQuantityCreator {
 					}
 				}
 			}
-
+			Console.WriteLine(result);
 			// Returns the quantity to be shown with the appropriate letter and appropriate colors
 			return result;
 		}

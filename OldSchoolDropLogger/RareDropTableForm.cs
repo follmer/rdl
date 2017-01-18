@@ -18,7 +18,7 @@ namespace rareDropTable {
 		private void pictureBox_Click(object sender, EventArgs e) {
 
 			// Grabs the instance of oldSchoolDropLoggerForm rather than creating a new instance
-			dropLogger.OldSchoolDropLogger f = dropLogger.OldSchoolDropLogger.instance;
+			OldSchoolDropLogger f = OldSchoolDropLogger.instance;
 			f.pictureBox_Click(sender, e);
 
 			// Change background color for each RDT PictureBox
