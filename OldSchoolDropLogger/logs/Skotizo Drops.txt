@@ -1,0 +1,26 @@
+Death rune x 500
+Soul rune x 450
+Blood rune x 450
+Rune platebody x 3
+Rune kiteshield x 3
+Rune platelegs x 3
+Rune plateskirt x 3
+Grimy ranarr weed x 40
+Grimy snapdragon x 20
+Grimy torstol x 20
+Battlestaff x 25
+Uncut dragonstone x 10
+Adamantite ore x 75
+Runite bar x 20
+Raw anglerfish x 60
+Mahogany plank x 150
+Shield left half x 1
+Dark totem base x 1
+Dark totem middle x 1
+Dark totem top x 1
+Dark totem x 1
+Onyx bolt tips x 40
+Uncut onyx x 1
+Hard clue scroll x 1
+Elite clue scroll x 1
+Jar of darkness x 1

@@ -1,0 +1,39 @@
+Rune 2h sword x 1
+Rune halberd x 1
+Rune axe x 1
+Rune pickaxe x 1
+Rune full helm x 1
+Rune platebody x 1
+Rune chainbody x 1
+Black d'hide body x 1
+Battlestaff x 6
+Lava battlestaff x 1
+Pure essence x 300
+Fire rune x 300
+Death rune x 100
+Blood rune x 60
+Soul rune x 100
+Runite bolts (unf) x 40
+Cannonball x 50
+Torstol seed x 3
+Grimy torstol x 6
+Super restore (4) x 2
+Coal x 120
+Runite ore x 5
+Wine of zamorak x 15
+Unholy symbol x 1
+Ashes x 50
+Summer pie x 3
+Dragon bones x 20
+Fire orb x 20
+Uncut diamond x 5
+Coins
+Key master teleport x 3
+Elite clue scroll x 1
+Smouldering stone x 1
+Pegasian crystal x 1
+Eternal crystal x 1
+Primordial crystal x 1
+Jar of souls x 1
+Hellpuppy x 1
+RDT x 1

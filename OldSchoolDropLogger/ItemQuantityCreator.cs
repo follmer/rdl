@@ -32,8 +32,6 @@ namespace itemQuantityCreator {
 
 			String number = quantity.ToString();
 
-			
-
 			// Fetch a bitmap of the first number in the quantity with the correct text color
 			// This is the starting image that other images will be "appended" to
 			Bitmap first = new Bitmap(getNumberImage((int) Char.GetNumericValue(number[0]), textColor));

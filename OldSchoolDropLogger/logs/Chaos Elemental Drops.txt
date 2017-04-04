@@ -1,0 +1,34 @@
+Mithril dart x 300
+Rune arrow x 150
+Chaos rune x 250
+Air rune x 500
+Death rune x 125
+Blood rune x 75
+Anchovy pizza x 3
+Tuna x 5
+Grimy guam leaf
+Grimy marrentil
+Grimy tarromin
+Grimy harralander
+Grimy ranarr weed
+Grimy irit leaf
+Grimy avantoe
+Grimy kwuarm
+Grimy snapdragon
+Grimy lantadym
+Grimy dwarf weed
+Super attack (4) x 1
+Super strength (4) x 1
+Super defence (4) x 1
+Weapon poison (++) x 1
+Antidote++ (4) x 1
+Strange fruit x 10
+Bones x 4
+Bat bones x 5
+Big bones x 3
+Babydragon bones x 2
+Dragon bones x 1
+Coins x 7500
+Elite clue scroll x 1
+Pet chaos elemental x 1
+RDT x 1

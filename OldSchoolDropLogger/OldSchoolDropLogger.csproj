@@ -156,6 +156,30 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon_42x42.png" />
+    <Content Include="logs\Abyssal Sire Drops.txt" />
+    <Content Include="logs\Armadyl Drops.txt" />
+    <Content Include="logs\Bandos Drops.txt" />
+    <Content Include="logs\Barrows Drops.txt" />
+    <Content Include="logs\Callisto Drops.txt" />
+    <Content Include="logs\Cerberus Drops.txt" />
+    <Content Include="logs\Chaos Elemental Drops.txt" />
+    <Content Include="logs\Chaos Fanatic Drops.txt" />
+    <Content Include="logs\Corporeal Beast Drops.txt" />
+    <Content Include="logs\Crazy Archaeologist Drops.txt" />
+    <Content Include="logs\Dagannoth Kings Drops.txt" />
+    <Content Include="logs\Giant Mole Drops.txt" />
+    <Content Include="logs\Kalphite Queen Drops.txt" />
+    <Content Include="logs\King Black Dragon Drops.txt" />
+    <Content Include="logs\Kraken Drops.txt" />
+    <Content Include="logs\Saradomin Drops.txt" />
+    <Content Include="logs\Scorpia Drops.txt" />
+    <Content Include="logs\Skotizo Drops.txt" />
+    <Content Include="logs\Thermonuclear Smoke Devil Drops.txt" />
+    <Content Include="logs\Venenatis Drops.txt" />
+    <Content Include="logs\Vet%27ion Drops.txt" />
+    <Content Include="logs\Wintertodt Drops.txt" />
+    <Content Include="logs\Zamorak Drops.txt" />
+    <Content Include="logs\Zulrah Drops.txt" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

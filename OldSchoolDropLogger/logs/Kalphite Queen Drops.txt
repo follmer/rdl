@@ -1,0 +1,48 @@
+Battlestaff x 10
+Lava battlestaff x 1
+Mithril arrow x 500
+Rune arrow x 250
+Rune knife (p++) x 25
+Red d'hide body x 1
+Rune chainbody x 1
+Grapes x 100
+Super combat potion (2) x 1
+Superantipoison (2) x 1
+Ranging potion (3) x 1
+Saradomin brew (4) x 1
+Super restore (4) x 1
+Prayer potion (4) x 2
+Weapon poison (++) x 5
+Wine of zamorak x 60
+Uncut Emerald x 25
+Uncut ruby x 25
+Uncut diamond x 25
+Watermelon seed x 25
+Torstol seed x 2
+Papaya tree seed x 2
+Palm tree seed x 1
+Magic seed x 2
+Blood rune x 100
+Death rune x 100
+Potato cactus x 100
+Magic logs x 60
+Toadflax x 25
+Ranarr weed x 25
+Snapdragon x 25
+Torstol x 25
+Runite bar x 3
+Bucket of sand x 100
+Cactus spine x 10
+Gold ore x 250
+Ensouled kalphite head x 1
+Monkfish x 3
+Shark x 2
+Dark crab x 2
+Coins
+Elite clue scroll x 1
+Dragon 2h sword x 2
+Dragon chainbody x 1
+Kq head x 1
+Jar of sand x 1
+Kalphite princess x 1
+RDT x 1

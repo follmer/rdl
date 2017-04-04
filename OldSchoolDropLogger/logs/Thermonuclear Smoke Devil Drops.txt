@@ -1,0 +1,43 @@
+Rune dagger x 1
+Rune scimitar x 1
+Rune battleaxe x 1
+Mystic air staff x 1
+Mystic fire staff x 1
+Dragon scimitar x 1
+Fire talisman x 1
+Ancient staff x 1
+Red d'hide body x 1
+Rune chainbody x 1
+Dust rune x 100
+Air rune x 300
+Soul rune x 60
+Rune knife (p++) x 50
+Rune arrow x 100
+Snapdragon seed x 1
+Magic seed x 1
+Pure essence x 300
+Desert goat horn x 50
+Molten glass x 100
+Mithril bar x 20
+Grimy toadflax x 15
+Coal x 150
+Gold ore x 200
+Onyx bolt tips x 12
+Grapes x 100
+Diamond x 10
+Magic logs x 20
+Ugthanki kebab x 3
+Tuna potato x 3
+Prayer potion (4) x 2
+Sanfew serum (4) x 2
+Tinderbox x 1
+Coins
+Bullseye lantern (unlit) x 1
+Dragonstone ring x 1
+Crystal key x 1
+Elite clue scroll x 1
+Smoke battlestaff x 1
+Occult necklace x 1
+Dragon chainbody x 1
+Pet smoke devil x 1
+RDT x 1

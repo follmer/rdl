@@ -1,0 +1,126 @@
+Battlestaff
+Air battlestaff x 1
+Water battlestaff x 1
+Earth battlestaff x 1
+Pure essence x 150
+Air rune x 155
+Mud rune x 32
+Death rune
+Ensouled dagannoth head x 1
+Air talisman
+Water talisman
+Earth talisman
+Grimy ranarr weed x 1
+Belladonna seed x 1
+Cactus seed x 1
+Poison ivy seed x 1
+Irit seed x 1
+Toadflax seed x 1
+Avantoe seed x 1
+Kwuarm seed x 1
+Snapdragon seed x 1
+Cadantine seed x 1
+Lantadyme seed x 1
+Dwarf weed seed x 1
+Fremennik shield x 1
+Fremennik helm x 1
+Skeletal top x 1
+Skeletal bottoms x 1
+Farseer helm x 1
+Coins
+Hard clue scroll x 1
+Elite clue scroll x 1
+Dragon axe x 1
+Mud battlestaff x 1
+Seers ring x 1
+Pet dagannoth prime x 1
+RDT x 1
+Mithril warhammer x 1
+Mithril 2h sword x 1
+Mithril pickaxe x 1
+Adamant axe x 1
+Rune battleaxe x 1
+Rune axe x 1
+Fremennik blade x 1
+Fremennik helm x 1
+Super attack (2) x 1
+Super strength (2) x 1
+Super defence (2) x 1
+Prayer potion (2) x 1
+Antifire (2) x 1
+Zamorak brew (2) x 1
+Fremennik shield x 1
+Steel kiteshield x 1
+Air talisman x 1
+Fire talisman x 1
+Water talisman x 1
+Earth talisman x 1
+Mind talisman x 1
+Body talisman x 1
+Cosmic talisman x 1
+Steel platebody x 1
+Grimy ranarr weed x 1
+Ensouled dagannoth head x 1
+Iron ore x 150
+Coal x 100
+Mithril ore x 25
+Steel bar
+Adamantite bar x 1
+Adamant platebody x 1
+Bass x 5
+Swordfish x 5
+Shark x 5
+Coins
+Ring of life x 1
+Rock-shell plate x 1
+Rock-shell legs x 1
+Hard clue scroll x 1
+Elite clue scroll x 1
+Dragon axe x 1
+Warrior ring x 1
+Berserker ring x 1
+Pet dagannoth rex x 1
+RDT x 1
+Iron arrow
+Steel arrow
+Iron knife
+Steel knife
+Mithril knife
+Rune thrownaxe
+Rune javelin
+Rune bolts
+Rune limbs x 1
+Adamant axe x 1
+Belladonna seed x 1
+Cactus seed x 1
+Poison ivy seed x 1
+Irit seed x 1
+Toadflax seed x 1
+Avantoe seed x 1
+Kwuarm seed x 1
+Cadantine seed x 1
+Lantadyme seed x 1
+Dwarf weed seed x 1
+Torstol seed x 1
+Coins
+Opal bolt tips
+Oyster x 1
+Shark x 5
+Maple logs
+Yew logs
+Grimy ranarr weed x 1
+Ensouled dagannoth head x 1
+Feather
+Red d'hide vambraces
+Fremennik shield x 1
+Fremennik helm x 1
+Spined body x 1
+Spined chaps x 1
+Archer helm x 1
+Hard clue scroll x 1
+Elite clue scroll x 1
+Seercull x 1
+Dragon axe x 1
+Archers ring x 1
+Pet dagannoth supreme x 1
+RDT x 1

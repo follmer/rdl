@@ -17,6 +17,9 @@ using itemQuantityCreator;
 namespace dropLogger {
 	public partial class OldSchoolDropLogger : Form {
 
+		ItemQuantityCreator iqc;
+		private Statistics stats = null;
+
 		private String selectedDagannothKing = "Dagannoth Prime";
 		private String logsFilePath = AppDomain.CurrentDomain.BaseDirectory + "/logs/";
 
@@ -24,7 +27,7 @@ namespace dropLogger {
 
 		private Color hightlightOrange = Color.FromArgb(179, 107, 0);
 
-		ItemQuantityCreator iqc;
+		private String activeSidebarWindow = null;
 
 		// Create an instance of this class so data can be passed to it from other forms
 		public static OldSchoolDropLogger instance;
@@ -32,8 +35,6 @@ namespace dropLogger {
 		private List<PictureBox> allPictureBoxes = new List<PictureBox>();
 
 		private Boolean isStatisticsInstantiated = false;
-
-		private Statistics stats = null;
 
 		private String sidebarViewingLootFromBoss = "";
 
@@ -99,13 +100,13 @@ namespace dropLogger {
 			pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png"); ;
 			pictureBox20.Tag = "Elite clue scroll x 1";
 			pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Armadyl_helmet.png"); ;
-			pictureBox21.Tag = "Armadyl helm x 1";
+			pictureBox21.Tag = "Armadyl helmet x 1";
 			pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Armadyl_chestplate.png"); ;
 			pictureBox22.Tag = "Armadyl chestplate x 1";
 			pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Armadyl_chainskirt.png"); ;
 			pictureBox23.Tag = "Armadyl chainskirt x 1";
 			pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Armadyl_hilt.png"); ;
-			pictureBox24.Tag = "Armdadyl hilt x 1";
+			pictureBox24.Tag = "Armadyl hilt x 1";
 			pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pet_kree'arra.png"); ;
 			pictureBox25.Tag = "Pet kree'arra x 1";
 			pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png"); ;
@@ -691,7 +692,7 @@ namespace dropLogger {
 			pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Malediction_shard_3.png");
 			pictureBox26.Tag = "Malediction shard 3 x 1";
 			pictureBox27.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Scorpia's_offspring.png");
-			pictureBox27.Tag = "Scropia's offspring x 1";
+			pictureBox27.Tag = "Scorpia's offspring x 1";
 			pictureBox28.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
 			pictureBox28.Tag = "RDT";
 			setNPictureBoxesToVisible(28);
@@ -921,11 +922,11 @@ namespace dropLogger {
 			pictureBox31.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_dwarf_weed_noted_25.png");
 			pictureBox31.Tag = "Grimy dwarf weed x 25";
 			pictureBox32.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Chilli_potato.png");
-			pictureBox32.Tag = "Chilli potato x 10";
+			pictureBox32.Tag = "Chili potato x 10";
 			pictureBox33.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Saradomin_brew_(3).png");
 			pictureBox33.Tag = "Saradomin brew (3) x 6";
 			pictureBox34.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Super_restore_(4).png");
-			pictureBox34.Tag = "Super restone (4) x 4";
+			pictureBox34.Tag = "Super restore (4) x 4";
 			pictureBox35.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coal_noted_generic.png");
 			pictureBox35.Tag = "Varies; Coal";
 			pictureBox36.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Runite_ore_noted_6.png");
@@ -1176,8 +1177,8 @@ namespace dropLogger {
 			pictureBox18.Tag = "Law rune x 250";
 			pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Cosmic_rune_500.png");
 			pictureBox19.Tag = "Cosmic rune x 500";
-			pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Death_rune.png");
-			pictureBox20.Tag = "Varies; Death rune";
+			pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Death_rune_300.png");
+			pictureBox20.Tag = "Death rune x 300";
 			pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Soul_rune_250.png");
 			pictureBox21.Tag = "Soul rune x 250";
 			pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Adamantite_bar_noted_35.png");
@@ -1275,15 +1276,15 @@ namespace dropLogger {
 				pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Avantoe_seed_1.png");
 				pictureBox19.Tag = "Avantoe seed x 1";
 				pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Kwuarm_seed_1.png");
-				pictureBox20.Tag = "Kwuarm seed x 1";
-				pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Cadantine_seed_1.png");
-				pictureBox21.Tag = "Cadantine seed x 1";
-				pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Lantadyme_seed_1.png");
-				pictureBox22.Tag = "Lantadyme seed x 1";
-				pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dwarf_weed_seed_1.png");
-				pictureBox23.Tag = "Dwarf weed seed x 1";
-				pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Snapdragon_seed_1.png");
-				pictureBox24.Tag = "Snapdragon seed x 1";
+				pictureBox20.Tag = "Kwuarm seed x 1"; 
+				pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Snapdragon_seed_1.png");
+				pictureBox21.Tag = "Snapdragon seed x 1";
+				pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Cadantine_seed_1.png");
+				pictureBox22.Tag = "Cadantine seed x 1";
+				pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Lantadyme_seed_1.png");
+				pictureBox23.Tag = "Lantadyme seed x 1";
+				pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dwarf_weed_seed_1.png");
+				pictureBox24.Tag = "Dwarf weed seed x 1";
 				pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Fremennik_shield.png");
 				pictureBox25.Tag = "Fremennik shield x 1";
 				pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Fremennik_helm.png");
@@ -1379,7 +1380,7 @@ namespace dropLogger {
 				pictureBox31.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Adamantite_bar.png");
 				pictureBox31.Tag = "Adamantite bar x 1";
 				pictureBox32.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Adamant_platebody.png");
-				pictureBox32.Tag = "Admantite platebody x 1";
+				pictureBox32.Tag = "Adamant platebody x 1";
 				pictureBox33.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bass.png");
 				pictureBox33.Tag = "Bass x 5";
 				pictureBox34.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Swordfish.png");
@@ -1770,7 +1771,7 @@ namespace dropLogger {
 			pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_plateskirt_noted_3.png");
 			pictureBox7.Tag = "Rune plateskirt x 3";
 			pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_ranarr_weed_noted_40.png");
-			pictureBox8.Tag = "Grimy ranarr x 40";
+			pictureBox8.Tag = "Grimy ranarr weed x 40";
 			pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_snapdragon_noted_20.png");
 			pictureBox9.Tag = "Grimy snapdragon x 20";
 			pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_torstol_noted_20.png");
@@ -1793,20 +1794,22 @@ namespace dropLogger {
 			pictureBox18.Tag = "Dark totem base x 1";
 			pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dark_totem_middle.png");
 			pictureBox19.Tag = "Dark totem middle x 1";
-			pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dark_totem.png");
-			pictureBox20.Tag = "Dark totem x 1";
-			pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Onyx_bolt_tips_40.png");
-			pictureBox21.Tag = "Onyx bolt tips x 40";
-			pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_onyx.png");
-			pictureBox22.Tag = "Uncut onyx x 1";
-			pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Hard_clue_scroll.png");
-			pictureBox23.Tag = "Hard clue scroll x 1";
-			pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png");
-			pictureBox24.Tag = "Elite clue scroll x 1";
-			pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Jar_of_darkness.png");
-			pictureBox25.Tag = "Jar of darkness x 1";
-			setNPictureBoxesToVisible(25);
-			setNPictureBoxesToEnabled(25);
+			pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dark_totem_top.png");
+			pictureBox20.Tag = "Dark totem top x 1";
+			pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dark_totem.png");
+			pictureBox21.Tag = "Dark totem x 1";
+			pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Onyx_bolt_tips_40.png");
+			pictureBox22.Tag = "Onyx bolt tips x 40";
+			pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_onyx.png");
+			pictureBox23.Tag = "Uncut onyx x 1";
+			pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Hard_clue_scroll.png");
+			pictureBox24.Tag = "Hard clue scroll x 1";
+			pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png");
+			pictureBox25.Tag = "Elite clue scroll x 1";
+			pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Jar_of_darkness.png");
+			pictureBox26.Tag = "Jar of darkness x 1";
+			setNPictureBoxesToVisible(26);
+			setNPictureBoxesToEnabled(26);
 			removeAllItemQuantityOverlays();
 			resetItemDropListBox();
 			resetAllPictureBoxBackgroundColor();
@@ -2173,7 +2176,15 @@ namespace dropLogger {
 				pb.BackColor = hightlightOrange;
 			}
 		}
-
+		private List<PictureBox> getHighlightedPictureBox() {
+			List<PictureBox> hpb = new List<PictureBox>();
+			foreach (var pb in this.Controls.OfType<PictureBox>()) {
+				if (pb.BackColor == hightlightOrange) {
+					hpb.Add(pb);
+				}
+			}
+			return hpb;
+		}
 		public void pictureBox_Click(object sender, EventArgs e) {
 
 			Boolean isControlPressed = false;
@@ -2289,14 +2300,14 @@ namespace dropLogger {
 					List<String> loggedItems = getLoggedItemsFromFile(getCurrentBoss());
 					loggedItems = addItemToLoggedItems(loggedItems, unloggedItem);
 					writeLoggedItemsToFile(loggedItems, getCurrentBoss());
+					updateSidebarBossKillcounts();
 				}
 			}
 
 			// Update the list box
 			updateListBox();
-
 		}
-
+		
 		private void updateListBox() {
 
 			// Clear list box to prepare to rewrite all strings
@@ -2380,16 +2391,6 @@ namespace dropLogger {
 			}
 		}
 
-		private List<PictureBox> getHighlightedPictureBox() {
-			List<PictureBox> hpb = new List<PictureBox>();
-			foreach (var pb in this.Controls.OfType<PictureBox>()) {
-				if (pb.BackColor == hightlightOrange) {
-					hpb.Add(pb);
-				}
-			}
-			return hpb;
-		}
-
 		private Boolean isFormOpen(String f) {
 			var k = Application.OpenForms.Cast<Form>().Select(g => g.Name);
 			List<String> forms = k.ToList();
@@ -2399,10 +2400,8 @@ namespace dropLogger {
 			return false;
 		}
 
-
 		private void keyPressedHandler(object sender, KeyEventArgs e) {
 			Console.Write("OldSchoolDropLogger.keyPressedHandler():");
-			Console.WriteLine("1:" + e.KeyCode);
 			if ((e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return) && this.ActiveControl == textboxCustomDrop) {
 				e.SuppressKeyPress = true;
 				buttonAddCustomDrop.Click += buttonAddCustomDrop_Click;	
@@ -2411,7 +2410,6 @@ namespace dropLogger {
 
 		void oldSchoolDropLoggerForm_KeyPress(object sender, KeyPressEventArgs e) {
 			Console.Write("OldSchoolDropLogger.oldSchoolDropLoggerForm_KeyPress():");
-			Console.WriteLine("2: " + e.KeyChar);
 		}
 
 		private void buttonAddCustomDrop_Click(object sender, EventArgs e) {
@@ -2420,12 +2418,10 @@ namespace dropLogger {
 
 			if (unloggedItem == "" || unloggedItem == null) return;
 
+			Console.Write("OldSchoolDropLogger.buttonAddCustomDrop_Click():");
+
 			// If there is a comma as the first character in the submitted string, we know that it was
 			// control-clicked so it needs to be added to the previous item rather than a new line
-			Console.Write("OldSchoolDropLogger.buttonAddCustomDrop_Click():");
-			Console.WriteLine(unloggedItem);
-			Console.WriteLine(unloggedItem.IndexOf(","));
-
 			if (unloggedItem.IndexOf(",") == 0) {
 
 				// Make sure there is at least one item to add a control clicked item to since it will have to be removed
@@ -2449,7 +2445,9 @@ namespace dropLogger {
 
 				// Need to remove the standalone item from the file and then re-add the concatenated items in
 				loggedItems.RemoveAt(loggedItems.Count - 1);
-				loggedItems = addItemToLoggedItems(loggedItems, concatenatedItems);
+
+				// Add [v] since it is a varied item - this will help in the future when dealing with showing total loot
+				loggedItems = addItemToLoggedItems(loggedItems, (concatenatedItems + " [v]"));
 				writeLoggedItemsToFile(loggedItems, getCurrentBoss());
 				/* End file writing */
 			}
@@ -2462,7 +2460,9 @@ namespace dropLogger {
 
 				// Write new item to file
 				List<String> loggedItems = getLoggedItemsFromFile(getCurrentBoss());
-				loggedItems = addItemToLoggedItems(loggedItems, unloggedItem);
+
+				// Add [v] since it is a varied item - this will help in the future when dealing with showing total loot
+				loggedItems = addItemToLoggedItems(loggedItems, unloggedItem + " [v]");
 				writeLoggedItemsToFile(loggedItems, getCurrentBoss());
 				
 			}
@@ -2470,6 +2470,7 @@ namespace dropLogger {
 			textboxCustomDrop.Text = "";
 
 			updateListBox();
+			updateSidebarBossKillcounts();
 		}
 		private void buttonUndoLastDrop_Click(object sender, EventArgs e) {
 
@@ -2479,6 +2480,7 @@ namespace dropLogger {
 			List<String> itemList = getLoggedItemsFromFile(getCurrentBoss());
 			removeLastLoggedItem(itemList, lastItem);
 			writeLoggedItemsToFile(itemList, getCurrentBoss());
+			updateSidebarBossKillcounts("removed");
 		}
 
 		// Unused
@@ -2545,9 +2547,6 @@ namespace dropLogger {
 
 			updateListBox();
 
-			// Remove the item from the list box
-			//itemDropListBox.Items.RemoveAt(itemDropListBox.Items.Count - 1);
-
 			// Then remove the item from the list aka the file
 			if (loggedItems.Count >= 1) {
 				loggedItems.RemoveAt(loggedItems.Count - 1);
@@ -2602,22 +2601,29 @@ namespace dropLogger {
 		private void listBoxSidebar_SelectedIndexChanged(object sender, EventArgs e) {
 			Console.WriteLine("OldSchoolDropLogger.listBoxSidebar_SelectedIndexChanged()");
 
+			resetAllPictureBoxBackgroundColor();
+			if (listBoxSidebar.SelectedItem == null) return;
 			string bossClicked = listBoxSidebar.SelectedItem.ToString().Split(':')[0];
 
-			if (bossClicked == sidebarViewingLootFromBoss) return;
+			if (bossClicked == sidebarViewingLootFromBoss) {
+				return;
+			}
 
 			sidebarViewingLootFromBoss = bossClicked;
 			displayTotalLootFromBoss(bossClicked);
 		}
 
 		private void buttonSideBarBossKillcounts_Click(object sender, EventArgs e) {
+			showSidebarBossKillcounts();
+		}
+
+		private void showSidebarBossKillcounts() {
+			activeSidebarWindow = "BossKillCounts";
 
 			Console.Write("OldSchoolDropLogger.buttonSideBarBossKillcounts_Click():");
 
 			// Don't keep repopulating the BossKillcounts table if the Statistics class has already been created
 			if (isStatisticsInstantiated == false) {
-
-				stats = new Statistics();
 
 				Dictionary<String, int> totalKillsPerBoss = stats.getTotalKillsLoggedPerBoss();
 
@@ -2631,73 +2637,128 @@ namespace dropLogger {
 			}
 
 			isStatisticsInstantiated = true;
-			
+		}
+		private void updateSidebarBossKillcounts(String addedOrRemoved = "added") {
+
+			int index = -1;
+			int kc = 0;
+
+			for (int i = 0; i < listBoxSidebar.Items.Count; i++) {
+
+				if (listBoxSidebar.Items[i].ToString().Contains(getCurrentBoss())) {
+
+					String entry = listBoxSidebar.Items[i].ToString();
+
+					String[] entryArr = entry.Split(' ');
+
+					int.TryParse(listBoxSidebar.Items[i].ToString(), out index);
+
+					int updateKillcount = 0;
+					int.TryParse(entryArr[entryArr.Length - 1], out updateKillcount);
+
+					if (addedOrRemoved == "added") kc = updateKillcount + 1;
+					else kc = updateKillcount - 1;
+
+					break;
+				}
+			}
+
+			if (index != -1) {
+				listBoxSidebar.Items.RemoveAt(index);
+				listBoxSidebar.Items.Insert(index, getCurrentBoss() + ": " + kc);
+			}
 		}
 
 		private void displayTotalLootFromBoss(string boss) {
+
 			Console.WriteLine("OldSchoolDropLogger.displayTotalLootFromBoss()");
 
 			iqc = new ItemQuantityCreator();
 
+			// Make sure all drops are up to date so when we display them it's the correct amount
+			stats.setTotalDropsFromAllBosses();
+
 			switch (boss) {
 				case "Armadyl":
-					Console.WriteLine("boss: arma");
 
-					Console.WriteLine("TEST: " + stats.getItemQuantitiesFromBoss("Armadyl")["Rune crossbow x 1"]);
-
-					// TODO prevent user from clicking these boxes because they are not being logged
 					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_crossbow.png");
-					pictureBox1.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss("Armadyl")["Rune crossbow x 1"]);
+					pictureBox1.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Rune crossbow x 1"]);
 
-					//pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_sword.png"); ;
-					//pictureBox2.Tag = "Rune sword x 1";
-					//pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Runite_bolts_5.png"); ;
-					//pictureBox3.Tag = "Varies; Runite bolts";
-					//pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_arrow_5.png"); ;
-					//pictureBox4.Tag = "Varies; Rune arrow";
-					//pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_bolts_(e)_5.png"); ;
-					//pictureBox5.Tag = "Varies; Dragon bolts (e)";
-					//pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mind_rune.png"); ;
-					//pictureBox6.Tag = "Varies; Mind rune";
-					//pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coins_10000.png"); ;
-					//pictureBox7.Tag = "Varies; Coins";
-					//pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dwarf_weed_noted_generic.png"); ;
-					//pictureBox8.Tag = "Varies; Dwarf weed";
-					//pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dwarf_weed_seed_3.png"); ;
-					//pictureBox9.Tag = "Dward weed seed x 3";
-					//pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Yew_seed_1.png"); ;
-					//pictureBox10.Tag = "Yew seed x 1";
-					//pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ranging_potion_(3).png"); ;
-					//pictureBox11.Tag = "Ranging potion (3) x 3";
-					//pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Super_defence_(3).png"); ;
-					//pictureBox12.Tag = "Super defence (3) x 3";
-					//pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Crystal_key.png"); ;
-					//pictureBox13.Tag = "Crystal key x 1";
-					//pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Black_d'hide_body.png"); ;
-					//pictureBox14.Tag = "Black d'hide body x 1";
-					//pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Long_bone.png"); ;
-					//pictureBox15.Tag = "Long bone x 1";
-					//pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Curved_bone.png"); ;
-					//pictureBox16.Tag = "Curved bone x 1";
-					//pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Godsword_shard_1.png"); ;
-					//pictureBox17.Tag = "Godsword shard 1 x 1";
-					//pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Godsword_shard_2.png"); ;
-					//pictureBox18.Tag = "Godsword shard 2 x 1";
-					//pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Godsword_shard_3.png"); ;
-					//pictureBox19.Tag = "Godsword shard 3 x 1";
-					//pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png"); ;
-					//pictureBox20.Tag = "Elite clue scroll x 1";
-					//pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Armadyl_helmet.png"); ;
-					//pictureBox21.Tag = "Armadyl helm x 1";
-					//pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Armadyl_chestplate.png"); ;
-					//pictureBox22.Tag = "Armadyl chestplate x 1";
-					//pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Armadyl_chainskirt.png"); ;
-					//pictureBox23.Tag = "Armadyl chainskirt x 1";
-					//pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Armadyl_hilt.png"); ;
-					//pictureBox24.Tag = "Armdadyl hilt x 1";
-					//pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pet_kree'arra.png"); ;
-					//pictureBox25.Tag = "Pet kree'arra x 1";
-					//setNPictureBoxesToVisible(25);
+					pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_sword.png");
+					pictureBox2.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Rune sword x 1"]);
+
+					pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Runite_bolts_5.png");
+					pictureBox3.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Runite bolts"]);
+
+					pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_arrow_5.png"); ;
+					pictureBox4.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Rune arrow"]);
+
+					pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_bolts_(e)_5.png"); ;
+					pictureBox5.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Dragon bolts (e)"]);
+
+					pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mind_rune.png"); ;
+					pictureBox6.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Mind rune"]);
+
+					pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coins_10000.png"); ;
+					pictureBox7.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Coins"]);
+
+					pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dwarf_weed_noted_generic.png"); ;
+					pictureBox8.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Dwarf weed"]);
+
+					pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dwarf_weed_seed_3.png"); ;
+					pictureBox9.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Dwarf weed seed x 3"]);
+
+					pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Yew_seed_1.png"); ;
+					pictureBox10.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Yew seed x 1"]);
+
+					pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ranging_potion_(3).png"); ;
+					pictureBox11.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Ranging potion (3) x 3"]);
+
+					pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Super_defence_(3).png"); ;
+					pictureBox12.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Super defence (3) x 3"]);
+
+					pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Crystal_key.png"); ;
+					pictureBox13.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Crystal key x 1"]);
+
+					pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Black_d'hide_body.png"); ;
+					pictureBox14.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Black d'hide body x 1"]);
+
+					pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Long_bone.png"); ;
+					pictureBox15.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Long bone x 1"]);
+
+					pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Curved_bone.png"); ;
+					pictureBox16.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Curved bone x 1"]);
+
+					pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Godsword_shard_1.png"); ;
+					pictureBox17.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Godsword shard 1 x 1"]);
+
+					pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Godsword_shard_2.png"); ;
+					pictureBox18.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Godsword shard 2 x 1"]);
+
+					pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Godsword_shard_3.png"); ;
+					pictureBox19.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Godsword shard 3 x 1"]);
+
+					pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png"); ;
+					pictureBox20.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Elite clue scroll x 1"]);
+
+					pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Armadyl_helmet.png"); ;
+					pictureBox21.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Armadyl helmet x 1"]);
+
+					pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Armadyl_chestplate.png"); ;
+					pictureBox22.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Armadyl chestplate x 1"]);
+
+					pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Armadyl_chainskirt.png"); ;
+					pictureBox23.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Armadyl chainskirt x 1"]);
+
+					pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Armadyl_hilt.png"); ;
+					pictureBox24.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Armadyl hilt x 1"]);
+
+					pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pet_kree'arra.png"); ;
+					pictureBox25.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Pet kree'arra x 1"]);
+
+					pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png"); ;
+					pictureBox26.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["RDT x 1"]);
+					setNPictureBoxesToVisible(26);
 					// Display corrent item quantity over picture box
 
 					setNPictureBoxesToDisabled(26);
@@ -2840,6 +2901,8 @@ namespace dropLogger {
 			this.Size = new Size(490, 434);
 			buttonToggleSidePanel.Location = new Point(440, 28);
 			buttonToggleSidePanel.Text = "❯❯";
+
+			
 		}
 
 		public void printStringList(List<String> list) {
@@ -2849,6 +2912,24 @@ namespace dropLogger {
 				Console.WriteLine(s);
 			}
 			Console.WriteLine("====================================================\n");
+		}
+		private void printDictionary(Dictionary<String, int> dict) {
+			Console.WriteLine("========= Dictionary contents =========");
+			foreach (KeyValuePair<String, int> kvp in dict) {
+				Console.WriteLine(kvp.Key + " => " + kvp.Value);
+			}
+			Console.WriteLine("=======================================");
+		}
+		private void print2LevelDictionary(Dictionary<String, Dictionary<String, int>> dict) {
+			Console.WriteLine("========= Dictionary contents =========");
+			foreach (KeyValuePair<String, Dictionary<String, int>> dd in dict) {
+
+				foreach (KeyValuePair<String, int> kvp in dict[dd.Key]) {
+
+					Console.WriteLine(kvp.Key + " => " + kvp.Value);
+				}
+			}
+			Console.WriteLine("=======================================");
 		}
 
 		// ==============================================================================
@@ -2867,6 +2948,7 @@ namespace dropLogger {
 			// === End obtaining settings
 
 			instance = this;
+			stats = new Statistics();
 
 		}
 		private void putAllPictureBoxesIntoList() {
@@ -5962,3 +6044,15 @@ namespace dropLogger {
 	}
 }
 
+
+/*
+ * 
+ * Was working on:
+ * 
+ * - getting the boss kill count to update when a item was logged
+ *	- for some reason if you select a boss killcount in the sidebar, go to log more items of that boss, then select the boss kc again (the boss was
+ *		already highlighted before this) then it crashed in the listBoxSidebar_SelectedIndexChanged() no idea why
+ * 
+ * 
+ * 
+ */

@@ -79,11 +79,10 @@ namespace StatisticsForm {
 		public Dictionary<String, Dictionary<String, int>> getTotalDropsFromAllBosses() {
 			return totalDropsFromAllBosses;
 		}
-
-		private void setTotalDropsFromAllBosses() {
+		public void setTotalDropsFromAllBosses() {
 
 			foreach (String boss in getAllBossStrings()) {
-
+				Console.WriteLine("==================== New boss: " + boss + "==============================");
 				if (File.Exists(logsFilePath + boss + ".txt")) {
 
 					// Get the lines from the file
@@ -92,7 +91,7 @@ namespace StatisticsForm {
 
 					// Loop through the lines in the file
 					for (int i = 0; i < lines.Count; i++) {
-
+						
 						// Trim the leading number (i.e. 104.) from the string
 						// OR
 						// Trim the leading space from " RDT:"
@@ -103,50 +102,81 @@ namespace StatisticsForm {
 							lines[i] = lines[i].Substring(lines[i].IndexOf(":") + 1);
 						}
 
-						// If there is more than one drop logged per kill (indicated by a , in the line)
-						if (lines[i].Contains(',')) {
 
-							// Split multi-drop drops on the comma (i.e. Zulrah has multidrops)
-							String[] drops = lines[i].Split(',');
+						// Split drop on the comma - will do nothing if the drop isn't a multidrop,
+						// but will count all multidrops correctly
+						String[] drops = lines[i].Split(',');
+						
+						for (int j = 0; j < drops.Length; j++) {
+							Console.WriteLine(drops[j]);
 
-							for (int j = 0; j < drops.Length; j++) {
+							// Trim all the drops
+							drops[j] = drops[j].Trim();
 
-								// Trim all the drops
-								drops[j] = drops[j].Trim();
+							String drop = drops[j];
 
-								String drop = drops[j];
+							int dropQuantity = 0;
 
-								int dropQuantity;
+							// If the drop is variable, it is indicated by [v]. This needs to be removed
+							// and the item substrung to not include the "x <quantity>". Quantity will be kept
+							// since a custom quantity needs to be added to the drop rather than just +1
+							if (drop.Contains("[v]")) {
+								int xIndex = drop.IndexOf(" x ");
+
+								String ssDrop = drop.Substring(0, xIndex);
+								Console.WriteLine("ssDrop: " + ssDrop);
+								// Where to start counting the quantity
+								int qtyStart = xIndex + 3;
+
+								try {
+
+									// -1 to stay in bounds of string and -3 to remove '[v]' = -4
+									bool smallerThan32Bit = int.TryParse(drop.Substring(qtyStart, drop.Length - qtyStart - 4), out dropQuantity);
+
+									// Number logged was > 2147m
+									// TODO check this logic
+									if (!smallerThan32Bit) {
+										dropQuantity = 2147000000;
+									}
+
+									// Special case for rdt
+									if (ssDrop.Contains("RDT:")) {
+										ssDrop = "RDT x 1";
+										dropQuantity = 1;
+									}
+
+									// Check if the previously logged quantities + the new quantity that we are logging is > 2147m
+									long checkMaxIntWhenAdded;
+									checkMaxIntWhenAdded = (long) totalDropsFromAllBosses[boss][ssDrop] + dropQuantity;
+
+									if (checkMaxIntWhenAdded > 2147000000 || checkMaxIntWhenAdded < 0) {
+										totalDropsFromAllBosses[boss][ssDrop] = 2147000000;
+									}
+									else {
+										totalDropsFromAllBosses[boss][ssDrop] += dropQuantity;
+									}
+									
+								}
+								catch (InvalidOperationException e) {
+									Debug.WriteLine(e.ToString());
+								}
+							}
+							else {
 
 								try {
 									// Guarantee correct log file format (fails only if modified by user)
+
 									int.TryParse(drop.Split(' ')[drop.Split(' ').Length - 1], out dropQuantity);
-
-									// Check if the boss exists yet in the dictionary
-									if (totalDropsFromAllBosses.ContainsKey(boss)) {
-
-										// Check if the drop exists yet in the dictionary
-										if (totalDropsFromAllBosses[boss].ContainsKey(lines[i])) {
-
-											// It already exists, so just increase the quantity
-											totalDropsFromAllBosses[boss][drop] += dropQuantity;
-										}
-										else {
-
-											// Drop doesn't exist in dictionary yet, so create an entry for it
-											totalDropsFromAllBosses[boss].Add(drop, dropQuantity);
-										}
+									if (drop.Contains("RDT:")) {
+										drop = "RDT x 1";
+										dropQuantity = 1;
+									}
+									Console.WriteLine(boss + ", " + drop + ", " + dropQuantity);
+									if (totalDropsFromAllBosses[boss][drop] + dropQuantity >= 2147000000) {
+										totalDropsFromAllBosses[boss][drop] = 2147000000;
 									}
 									else {
-
-										// Boss doesn't exist in the dictionary, but Since the boss hadn't 
-										// existed yet, the drop for that boss won't exist either
-										// so create it too
-										Dictionary<String, int> dropDict = new Dictionary<string, int>();
-										dropDict.Add(drop, dropQuantity);
-
-										totalDropsFromAllBosses.Add(boss, dropDict);
-
+										totalDropsFromAllBosses[boss][drop] += dropQuantity;
 									}
 								}
 								catch (InvalidOperationException e) {
@@ -154,55 +184,11 @@ namespace StatisticsForm {
 								}
 							}
 						}
-						else {
-
-							String drop = lines[i];
-
-							int dropQuantity;
-
-							try {
-								// Guarantee correct log file format (fails only if modified by user)
-								int.TryParse(drop.Split(' ')[drop.Split(' ').Length - 1], out dropQuantity);
-
-								// Check if the boss exists yet in the dictionary
-								if (totalDropsFromAllBosses.ContainsKey(boss)) {
-
-									// Check if the drop exists yet in the dictionary
-									if (totalDropsFromAllBosses[boss].ContainsKey(lines[i])) {
-
-										// It already exists, so just increase the quantity
-										totalDropsFromAllBosses[boss][drop] += dropQuantity;
-									}
-									else {
-
-										// Drop doesn't exist in dictionary yet, so create an entry for it
-										totalDropsFromAllBosses[boss].Add(drop, dropQuantity);
-									}
-								}
-								else {
-
-									// Boss doesn't exist in the dictionary, but Since the boss hadn't 
-									// existed yet, the drop for that boss won't exist either
-									// so create it too
-									Dictionary<String, int> dropDict = new Dictionary<string, int>();
-									dropDict.Add(drop, dropQuantity);
-
-									totalDropsFromAllBosses.Add(boss, dropDict);
-
-								}
-							}
-							catch (InvalidOperationException e) {
-								Debug.WriteLine(e.ToString());
-							}
-						}
 					}
 				}
 			}
+			Console.WriteLine("Drops updated...");
 		}
-		private void updateTotalDropsForBoss(String boss) {
-			
-		}
-
 		private void setAllBossStrings() {
 
 			OldSchoolDropLogger f = OldSchoolDropLogger.instance;
@@ -215,7 +201,28 @@ namespace StatisticsForm {
 				}
 			}
 		}
-		
+		private void createAllDropsWithZeroQuantity() {
+
+			foreach (String boss in getAllBossStrings()) {
+
+				if (File.Exists(logsFilePath + boss + " Drops.txt")) {
+
+					// Get the lines from the file
+					var file = File.ReadAllLines(logsFilePath + boss + " Drops.txt");
+					List<String> lines = new List<String>(file);
+
+					Dictionary<String, int> noQtyDict = new Dictionary<string, int>();
+
+					// Loop through the lines in the file
+					for (int i = 0; i < lines.Count; i++) {
+						if (!noQtyDict.ContainsKey(lines[i])) {
+							noQtyDict.Add(lines[i], 0);
+						}
+					}
+					totalDropsFromAllBosses.Add(boss, noQtyDict);
+				}
+			}
+		}
 
 		/* Class functions */
 		private void totalDropsPerBoss() { }
@@ -234,7 +241,10 @@ namespace StatisticsForm {
 		private void overlayItemQuantityOnPictureBox(int quantity, PaintEventArgs e) {
 			e.Graphics.DrawImage(iqc.createQuantityImage(quantity), new Point(9, 2));
 		}
-		
+		private void updateTotalDropsForBoss(String boss) {
+
+		}
+
 
 		/* Helper functions */
 		private void printDictionary(Dictionary<String, int> dict) {
@@ -263,6 +273,8 @@ namespace StatisticsForm {
 			return false;
 		}
 
+
+
 		/* Constructor */
 		public Statistics() {
 			Console.WriteLine("Statistics()");
@@ -270,9 +282,30 @@ namespace StatisticsForm {
 			getAllBossStrings();
 			iqc = new ItemQuantityCreator();
 			totalDropsFromAllBosses = new Dictionary<string, Dictionary<string, int>>();
-			setTotalDropsFromAllBosses();
+
 			print2LevelDictionary(totalDropsFromAllBosses);
-			Console.WriteLine(totalDropsFromAllBosses["Zulrah"]["Chaos rune x 500"]);
+
+
+			//TODO:
+			// [x] rewrite code so that at the very beginning a quantity of 0 is set for all items for existing bosses
+			// Add code when drop is logged and written to file: if drop is of variable quantity, add [v] to the end of the drop in the file
+			//				so that it can be distinguised when adding total drops
+			//
+			//				Test cases:
+			//							 Runite bolts x 999999
+			//							 Runite bolts x 9999, Runite crossbow x 1
+			//							 Runite crossbow x 1, Runite bolts x 99999
+			//
+			// [ ] De-highlight picturebox when viewing total loot
+			// [ ] When you log a drop then view the totalLootLogged, the most recent drop isn't included in the quantity
+			// - maybe fix how totalDropsFromAllBosses is accessed, would be nice to just do totalDropsFromAllBosses["Zulrah"]["Chaos rune"]
+			//			- instead of having to type the "x 500" etc
+			// - need to explore the function in stats that creates the picturebox image overlay rather than doing it manually
+			// - finish adding the dropViewer (currently on Armadyl)
+			// - Work on updateTotalDropsFromBoss so that when you log a drop and go to view all drops it is counted there
+
+			createAllDropsWithZeroQuantity();
+			setTotalDropsFromAllBosses();
 		}
 	}
 }
