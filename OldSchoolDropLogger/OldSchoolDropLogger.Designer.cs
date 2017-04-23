@@ -143,8 +143,13 @@
 			this.listBoxSidebar = new System.Windows.Forms.ListBox();
 			this.buttonToggleSidePanel = new System.Windows.Forms.Button();
 			this.buttonSideBarBossKillcounts = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
-			this.button3 = new System.Windows.Forms.Button();
+			this.buttonSideBarTimers = new System.Windows.Forms.Button();
+			this.buttonSideBarEstimatedGPMade = new System.Windows.Forms.Button();
+			this.buttonSideBarDropRates = new System.Windows.Forms.Button();
+			this.buttonSideBarUniqueDrops = new System.Windows.Forms.Button();
+			this.pictureBoxDagannothSupremeLoot = new System.Windows.Forms.PictureBox();
+			this.pictureBoxDagannothRexLoot = new System.Windows.Forms.PictureBox();
+			this.pictureBoxDagannothPrimeLoot = new System.Windows.Forms.PictureBox();
 			this.menuStripLogger.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothPrime)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothRex)).BeginInit();
@@ -214,6 +219,9 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox59)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox57)).BeginInit();
 			this.panelSidePanel.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothSupremeLoot)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothRexLoot)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothPrimeLoot)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// menuStripLogger
@@ -1503,32 +1511,102 @@
 			this.buttonSideBarBossKillcounts.UseVisualStyleBackColor = false;
 			this.buttonSideBarBossKillcounts.Click += new System.EventHandler(this.buttonSideBarBossKillcounts_Click);
 			// 
-			// button2
+			// buttonSideBarTimers
 			// 
-			this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-			this.button2.FlatAppearance.BorderSize = 0;
-			this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button2.ForeColor = System.Drawing.Color.Silver;
-			this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-			this.button2.Location = new System.Drawing.Point(650, 100);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(29, 30);
-			this.button2.TabIndex = 152;
-			this.button2.UseVisualStyleBackColor = false;
+			this.buttonSideBarTimers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+			this.buttonSideBarTimers.FlatAppearance.BorderSize = 0;
+			this.buttonSideBarTimers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonSideBarTimers.ForeColor = System.Drawing.Color.Silver;
+			this.buttonSideBarTimers.Image = ((System.Drawing.Image)(resources.GetObject("buttonSideBarTimers.Image")));
+			this.buttonSideBarTimers.Location = new System.Drawing.Point(650, 100);
+			this.buttonSideBarTimers.Name = "buttonSideBarTimers";
+			this.buttonSideBarTimers.Size = new System.Drawing.Size(29, 30);
+			this.buttonSideBarTimers.TabIndex = 152;
+			this.buttonSideBarTimers.UseVisualStyleBackColor = false;
 			// 
-			// button3
+			// buttonSideBarEstimatedGPMade
 			// 
-			this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-			this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-			this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-			this.button3.FlatAppearance.BorderSize = 0;
-			this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button3.ForeColor = System.Drawing.Color.Silver;
-			this.button3.Location = new System.Drawing.Point(650, 134);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(29, 30);
-			this.button3.TabIndex = 153;
-			this.button3.UseVisualStyleBackColor = false;
+			this.buttonSideBarEstimatedGPMade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+			this.buttonSideBarEstimatedGPMade.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSideBarEstimatedGPMade.BackgroundImage")));
+			this.buttonSideBarEstimatedGPMade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.buttonSideBarEstimatedGPMade.FlatAppearance.BorderSize = 0;
+			this.buttonSideBarEstimatedGPMade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonSideBarEstimatedGPMade.ForeColor = System.Drawing.Color.Silver;
+			this.buttonSideBarEstimatedGPMade.Location = new System.Drawing.Point(650, 134);
+			this.buttonSideBarEstimatedGPMade.Name = "buttonSideBarEstimatedGPMade";
+			this.buttonSideBarEstimatedGPMade.Size = new System.Drawing.Size(29, 30);
+			this.buttonSideBarEstimatedGPMade.TabIndex = 153;
+			this.buttonSideBarEstimatedGPMade.UseVisualStyleBackColor = false;
+			// 
+			// buttonSideBarDropRates
+			// 
+			this.buttonSideBarDropRates.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+			this.buttonSideBarDropRates.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSideBarDropRates.BackgroundImage")));
+			this.buttonSideBarDropRates.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.buttonSideBarDropRates.FlatAppearance.BorderSize = 0;
+			this.buttonSideBarDropRates.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonSideBarDropRates.ForeColor = System.Drawing.Color.Silver;
+			this.buttonSideBarDropRates.Location = new System.Drawing.Point(650, 168);
+			this.buttonSideBarDropRates.Name = "buttonSideBarDropRates";
+			this.buttonSideBarDropRates.Size = new System.Drawing.Size(29, 30);
+			this.buttonSideBarDropRates.TabIndex = 154;
+			this.buttonSideBarDropRates.UseVisualStyleBackColor = false;
+			this.buttonSideBarDropRates.Click += new System.EventHandler(this.buttonSideBarDropRates_Click);
+			// 
+			// buttonSideBarUniqueDrops
+			// 
+			this.buttonSideBarUniqueDrops.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+			this.buttonSideBarUniqueDrops.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSideBarUniqueDrops.BackgroundImage")));
+			this.buttonSideBarUniqueDrops.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.buttonSideBarUniqueDrops.FlatAppearance.BorderSize = 0;
+			this.buttonSideBarUniqueDrops.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonSideBarUniqueDrops.ForeColor = System.Drawing.Color.Silver;
+			this.buttonSideBarUniqueDrops.Location = new System.Drawing.Point(650, 202);
+			this.buttonSideBarUniqueDrops.Name = "buttonSideBarUniqueDrops";
+			this.buttonSideBarUniqueDrops.Size = new System.Drawing.Size(29, 30);
+			this.buttonSideBarUniqueDrops.TabIndex = 155;
+			this.buttonSideBarUniqueDrops.UseVisualStyleBackColor = false;
+			// 
+			// pictureBoxDagannothSupremeLoot
+			// 
+			this.pictureBoxDagannothSupremeLoot.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBoxDagannothSupremeLoot.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxDagannothSupremeLoot.BackgroundImage")));
+			this.pictureBoxDagannothSupremeLoot.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxDagannothSupremeLoot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pictureBoxDagannothSupremeLoot.Location = new System.Drawing.Point(424, 56);
+			this.pictureBoxDagannothSupremeLoot.Name = "pictureBoxDagannothSupremeLoot";
+			this.pictureBoxDagannothSupremeLoot.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxDagannothSupremeLoot.TabIndex = 159;
+			this.pictureBoxDagannothSupremeLoot.TabStop = false;
+			this.pictureBoxDagannothSupremeLoot.Visible = false;
+			this.pictureBoxDagannothSupremeLoot.Click += new System.EventHandler(this.pictureBoxDagannothSupremeLoot_Click);
+			// 
+			// pictureBoxDagannothRexLoot
+			// 
+			this.pictureBoxDagannothRexLoot.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBoxDagannothRexLoot.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxDagannothRexLoot.BackgroundImage")));
+			this.pictureBoxDagannothRexLoot.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxDagannothRexLoot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pictureBoxDagannothRexLoot.Location = new System.Drawing.Point(390, 56);
+			this.pictureBoxDagannothRexLoot.Name = "pictureBoxDagannothRexLoot";
+			this.pictureBoxDagannothRexLoot.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxDagannothRexLoot.TabIndex = 158;
+			this.pictureBoxDagannothRexLoot.TabStop = false;
+			this.pictureBoxDagannothRexLoot.Click += new System.EventHandler(this.pictureBoxDagannothRexLoot_Click);
+			// 
+			// pictureBoxDagannothPrimeLoot
+			// 
+			this.pictureBoxDagannothPrimeLoot.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBoxDagannothPrimeLoot.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxDagannothPrimeLoot.BackgroundImage")));
+			this.pictureBoxDagannothPrimeLoot.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxDagannothPrimeLoot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pictureBoxDagannothPrimeLoot.Location = new System.Drawing.Point(356, 56);
+			this.pictureBoxDagannothPrimeLoot.Name = "pictureBoxDagannothPrimeLoot";
+			this.pictureBoxDagannothPrimeLoot.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxDagannothPrimeLoot.TabIndex = 157;
+			this.pictureBoxDagannothPrimeLoot.TabStop = false;
+			this.pictureBoxDagannothPrimeLoot.Visible = false;
+			this.pictureBoxDagannothPrimeLoot.Click += new System.EventHandler(this.pictureBoxDagannothPrimeLoot_Click);
 			// 
 			// OldSchoolDropLogger
 			// 
@@ -1537,8 +1615,13 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
 			this.ClientSize = new System.Drawing.Size(684, 395);
-			this.Controls.Add(this.button3);
-			this.Controls.Add(this.button2);
+			this.Controls.Add(this.pictureBoxDagannothSupremeLoot);
+			this.Controls.Add(this.pictureBoxDagannothRexLoot);
+			this.Controls.Add(this.pictureBoxDagannothPrimeLoot);
+			this.Controls.Add(this.buttonSideBarUniqueDrops);
+			this.Controls.Add(this.buttonSideBarDropRates);
+			this.Controls.Add(this.buttonSideBarEstimatedGPMade);
+			this.Controls.Add(this.buttonSideBarTimers);
 			this.Controls.Add(this.buttonSideBarBossKillcounts);
 			this.Controls.Add(this.buttonToggleSidePanel);
 			this.Controls.Add(this.panelSidePanel);
@@ -1698,6 +1781,9 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox59)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox57)).EndInit();
 			this.panelSidePanel.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothSupremeLoot)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothRexLoot)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothPrimeLoot)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -1821,10 +1907,15 @@
 		private System.Windows.Forms.ToolStripMenuItem wintertodtToolStripMenuItem;
 		internal System.Windows.Forms.Button buttonSideBarBossKillcounts;
 		private System.Windows.Forms.ListBox listBoxSidebar;
-		internal System.Windows.Forms.Button button2;
-		internal System.Windows.Forms.Button button3;
+		internal System.Windows.Forms.Button buttonSideBarTimers;
+		internal System.Windows.Forms.Button buttonSideBarEstimatedGPMade;
 		public System.Windows.Forms.MenuStrip menuStripLogger;
 		public System.Windows.Forms.ToolStripMenuItem bossToolStripMenuItem;
+		internal System.Windows.Forms.Button buttonSideBarDropRates;
+		internal System.Windows.Forms.Button buttonSideBarUniqueDrops;
+		internal System.Windows.Forms.PictureBox pictureBoxDagannothSupremeLoot;
+		internal System.Windows.Forms.PictureBox pictureBoxDagannothRexLoot;
+		internal System.Windows.Forms.PictureBox pictureBoxDagannothPrimeLoot;
 	}
 }
 

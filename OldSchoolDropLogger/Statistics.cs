@@ -25,7 +25,6 @@ namespace StatisticsForm {
 		private Dictionary<String, Boolean> sidebarActiveStatistic = new Dictionary<String, Boolean>();
 		public Dictionary<String, Dictionary<String, int>> totalDropsFromAllBosses;
 
-		
 		/* Getters & Setters */
 		public Dictionary<String, int> getTotalKillsLoggedPerBoss() {
 			killsPerBoss = new Dictionary<String, int>();
@@ -79,10 +78,28 @@ namespace StatisticsForm {
 		public Dictionary<String, Dictionary<String, int>> getTotalDropsFromAllBosses() {
 			return totalDropsFromAllBosses;
 		}
+		private void clearDropsFromAllBosses() {
+			Dictionary<String, Dictionary<String, int>> temp = totalDropsFromAllBosses;
+			foreach (KeyValuePair<String, Dictionary<String, int>> dict in totalDropsFromAllBosses.ToArray()) {
+
+				String boss = dict.Key;
+
+				foreach (KeyValuePair<String, int> kvp in totalDropsFromAllBosses[dict.Key].ToArray()) {
+					
+					String item = kvp.Key;
+
+					totalDropsFromAllBosses[boss][item] = 0;
+				}
+			}
+		}
 		public void setTotalDropsFromAllBosses() {
 
+			if (!isClassInitialized()) return; 
+			// Otherwise the class is already created and the function keeps adding to the quantity, giving us incorrect quantities
+			clearDropsFromAllBosses();
+
 			foreach (String boss in getAllBossStrings()) {
-				Console.WriteLine("==================== New boss: " + boss + "==============================");
+
 				if (File.Exists(logsFilePath + boss + ".txt")) {
 
 					// Get the lines from the file
@@ -108,7 +125,6 @@ namespace StatisticsForm {
 						String[] drops = lines[i].Split(',');
 						
 						for (int j = 0; j < drops.Length; j++) {
-							Console.WriteLine(drops[j]);
 
 							// Trim all the drops
 							drops[j] = drops[j].Trim();
@@ -124,7 +140,7 @@ namespace StatisticsForm {
 								int xIndex = drop.IndexOf(" x ");
 
 								String ssDrop = drop.Substring(0, xIndex);
-								Console.WriteLine("ssDrop: " + ssDrop);
+
 								// Where to start counting the quantity
 								int qtyStart = xIndex + 3;
 
@@ -164,14 +180,18 @@ namespace StatisticsForm {
 							else {
 
 								try {
-									// Guarantee correct log file format (fails only if modified by user)
 
+									// Guarantee correct log file format (fails only if modified by user)
 									int.TryParse(drop.Split(' ')[drop.Split(' ').Length - 1], out dropQuantity);
 									if (drop.Contains("RDT:")) {
 										drop = "RDT x 1";
 										dropQuantity = 1;
 									}
-									Console.WriteLine(boss + ", " + drop + ", " + dropQuantity);
+
+									//Console.WriteLine("\n=============== DEBUG ================");
+									//Console.WriteLine("Drop: " + drop);
+									//Console.WriteLine("=============== DEBUG ================\n");
+
 									if (totalDropsFromAllBosses[boss][drop] + dropQuantity >= 2147000000) {
 										totalDropsFromAllBosses[boss][drop] = 2147000000;
 									}
@@ -180,14 +200,13 @@ namespace StatisticsForm {
 									}
 								}
 								catch (InvalidOperationException e) {
-									Debug.WriteLine(e.ToString());
+									Debug.WriteLine("Drop log file has incorrect format. \n\n" + e.ToString());
 								}
 							}
 						}
 					}
 				}
 			}
-			Console.WriteLine("Drops updated...");
 		}
 		private void setAllBossStrings() {
 
@@ -200,6 +219,8 @@ namespace StatisticsForm {
 					allBossStrings.Add(boss.ToString());
 				}
 			}
+
+			allBossStrings.Sort();
 		}
 		private void createAllDropsWithZeroQuantity() {
 

@@ -11,8 +11,6 @@ namespace itemQuantityCreator {
 
 		public Bitmap createQuantityImage(int quantity) {
 
-			Console.WriteLine("ItemQuantityCreator.createQuantityImage(): " + quantity);
-
 			// Default quantity color is yellow and there is no ending letter
 			String textColor = "_yellow";
 			String endingLetter = "";
@@ -32,13 +30,29 @@ namespace itemQuantityCreator {
 
 			String number = quantity.ToString();
 
+			// Since some of the numbers are of smaller width and look different, keep track of this and modify offset as necessary
+			int modifyOffset = 0;
+			if (number[0] == '1') {
+				modifyOffset = -1;
+			}
+				
 			// Fetch a bitmap of the first number in the quantity with the correct text color
 			// This is the starting image that other images will be "appended" to
 			Bitmap first = new Bitmap(getNumberImage((int) Char.GetNumericValue(number[0]), textColor));
 
 			// If the quantity is between 0 and 9, the string length is only 1, so we can just return
 			// the correct bitmap image without having to do any magic
-			if (quantity >= 0 && quantity < 10) return first;
+			if (quantity >= 0 && quantity < 10) {
+
+				// Create a new bitmap with the same dimensions as our number
+				Bitmap firstShifted = new Bitmap(first.Width, first.Height);
+
+				// Draw the number with an offset of 2 from the left (to match real item quantities)
+				Graphics gr = Graphics.FromImage(firstShifted);
+				gr.DrawImageUnscaled(first, 2, 0);
+
+				return firstShifted;
+			}
 
 			// Result bitmap uninstantiated
 			Bitmap result = null;
@@ -48,37 +62,55 @@ namespace itemQuantityCreator {
 			// 9,403		=> 9403
 			// 463,291		=> 463
 			for (int i = 1; i < number.Length; i++) {
-				
+
 				// Second bitmap to be appended to the first bitmap
-				Bitmap second = new Bitmap(getNumberImage((int) Char.GetNumericValue(number[i]), textColor));
+				Bitmap second = new Bitmap(getNumberImage((int)Char.GetNumericValue(number[i]), textColor));
 
 				// Add the widths, height does not matter as they are both the same height always
-				result = new Bitmap(first.Width + second.Width, first.Height);
+				result = new Bitmap(first.Width + second.Width + modifyOffset, first.Height);
 
-				// Create the image at the specified location with specified size (from docs)
-				Graphics g = Graphics.FromImage(result);
-				g.DrawImageUnscaled(first, 0, 0);
-				g.DrawImageUnscaled(second, first.Width, 0);
+				if (number[i - 1] == '1') {
+					modifyOffset = -1;
+				}
+				else {
+					modifyOffset = 0;
+				}
+
+				// If we reach the end of the number, but there's no K or M to append,
+				// shift the entire bitmap 2 px to the right so it looks correct
+				//
+				// Else continue on as normal
+				if (i == (number.Length - 1) && endingLetter == "") {
+					result = new Bitmap(first.Width + second.Width + 2, first.Height);
+					Graphics g = Graphics.FromImage(result);
+					g.DrawImageUnscaled(first, 2, 0);
+					g.DrawImageUnscaled(second, first.Width + 2 + modifyOffset, 0);
+				}
+				else {
+					Graphics g = Graphics.FromImage(result);
+					g.DrawImageUnscaled(first, 0, 0);
+					g.DrawImageUnscaled(second, first.Width + modifyOffset, 0);
+				}
 
 				// Update the baseline bitmap
 				first = result;
-
+				
 				// If we reach the end of the number and it needs a K or M appended, do so
 				if (i == number.Length - 1) {
 					if (endingLetter != "") {
 						Bitmap orig = new Bitmap(getNumberImage((int)Char.GetNumericValue(number[i]), textColor, endingLetter));
 
-						// Combine bitmaps again
-						result = new Bitmap(first.Width + orig.Width, first.Height);
+						// Combine bitmaps again // + 2 offset to move entire bitmap 2px right
+						result = new Bitmap(first.Width + orig.Width + 2, first.Height);
 
-						// Redraw, same as above
+						// Redraw, same as above // + 2 offset to move entire bitmap 2px right
 						Graphics gr = Graphics.FromImage(result);
-						gr.DrawImageUnscaled(first, 0, 0);
-						gr.DrawImageUnscaled(orig, first.Width, 0);
+						gr.DrawImageUnscaled(first, 2, 0); // Place 2px right
+						gr.DrawImageUnscaled(orig, first.Width + 2, 0);
 					}
 				}
 			}
-			Console.WriteLine(result);
+
 			// Returns the quantity to be shown with the appropriate letter and appropriate colors
 			return result;
 		}

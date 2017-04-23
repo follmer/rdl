@@ -19,13 +19,15 @@ namespace dropLogger {
 
 		ItemQuantityCreator iqc;
 		private Statistics stats = null;
-
+		
 		private String selectedDagannothKing = "Dagannoth Prime";
+		private String selectedDagannothKingLoot = "Dagannoth Prime";
 		private String logsFilePath = AppDomain.CurrentDomain.BaseDirectory + "/logs/";
+		private String viewingDropsFromBoss = "";
 
 		private List<String> listboxItemsList = new List<String>();
 
-		private Color hightlightOrange = Color.FromArgb(179, 107, 0);
+		private Color highlightOrange = Color.FromArgb(179, 107, 0);
 
 		private String activeSidebarWindow = null;
 
@@ -45,8 +47,21 @@ namespace dropLogger {
 		private String getSelectedDagannothKing() {
 			return selectedDagannothKing;
 		}
+		private void setSelectedDagannothKingLoot(String king) {
+			selectedDagannothKingLoot = king;
+		}
+		private String getSelectedDagannothKingLoot() {
+			return selectedDagannothKingLoot;
+		}
+
 		private String getCurrentBoss() {
 			return labelCurrentLogFor.Text.Replace("Current log for: ", "").Trim();
+		}
+		private String getViewingDropsFromBoss() {
+			return viewingDropsFromBoss;
+		}
+		private void setViewingDropsFromBoss(String boss) {
+			viewingDropsFromBoss = boss;
 		}
 
 		/* Menu strip handlers */
@@ -58,6 +73,7 @@ namespace dropLogger {
 		}
 
 		private void armadylToolStripMenuItem_Click(object sender, EventArgs e) {
+			String lastBossSeen = getCurrentBoss();
 			labelCurrentLogFor.Text = "Current log for: " + armadylToolStripMenuItem.Text; ;
 			pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_crossbow.png");
 			pictureBox1.Tag = "Rune crossbow x 1";
@@ -76,7 +92,7 @@ namespace dropLogger {
 			pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dwarf_weed_noted_generic.png"); ;
 			pictureBox8.Tag = "Varies; Dwarf weed";
 			pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dwarf_weed_seed_3.png"); ;
-			pictureBox9.Tag = "Dward weed seed x 3";
+			pictureBox9.Tag = "Dwarf weed seed x 3";
 			pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Yew_seed_1.png"); ;
 			pictureBox10.Tag = "Yew seed x 1";
 			pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ranging_potion_(3).png"); ;
@@ -114,10 +130,11 @@ namespace dropLogger {
 			setNPictureBoxesToVisible(26);
 			setNPictureBoxesToEnabled(26);
 			removeAllItemQuantityOverlays();
-			resetItemDropListBox();
+			resetItemDropListBox(lastBossSeen);
 			resetAllPictureBoxBackgroundColor();
 		}
 		private void bandosToolStripMenuItem_Click(object sender, EventArgs e) {
+			String lastBossSeen = getCurrentBoss();
 			labelCurrentLogFor.Text = "Current log for: " + bandosToolStripMenuItem.Text;
 			pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_2h_sword.png");
 			pictureBox1.Tag = "Rune 2h sword x 1";
@@ -158,7 +175,7 @@ namespace dropLogger {
 			pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Godsword_shard_3.png");
 			pictureBox19.Tag = "Godsword shard 3 x 1";
 			pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_chestplate.png");
-			pictureBox20.Tag = "Bandos platebody x 1";
+			pictureBox20.Tag = "Bandos chestplate x 1";
 			pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_tassets.png");
 			pictureBox21.Tag = "Bandos tassets x 1";
 			pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_boots.png");
@@ -172,10 +189,11 @@ namespace dropLogger {
 			setNPictureBoxesToVisible(25);
 			setNPictureBoxesToEnabled(25);
 			removeAllItemQuantityOverlays();
-			resetItemDropListBox();
+			resetItemDropListBox(lastBossSeen);
 			resetAllPictureBoxBackgroundColor();
 		}
 		private void saradominToolStripMenuItem_Click(object sender, EventArgs e) {
+			String lastBossSeen = getCurrentBoss();
 			labelCurrentLogFor.Text = "Current log for: " + saradominToolStripMenuItem.Text;
 			pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_dart.png");
 			pictureBox1.Tag = "Varies; Rune dart";
@@ -232,10 +250,11 @@ namespace dropLogger {
 			setNPictureBoxesToVisible(26);
 			setNPictureBoxesToEnabled(26);
 			removeAllItemQuantityOverlays();
-			resetItemDropListBox();
+			resetItemDropListBox(lastBossSeen);
 			resetAllPictureBoxBackgroundColor();
 		}
 		private void zamorakToolStripMenuItem_Click(object sender, EventArgs e) {
+			String lastBossSeen = getCurrentBoss();
 			labelCurrentLogFor.Text = "Current log for: " + zamorakToolStripMenuItem.Text;
 			pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_sword.png");
 			pictureBox1.Tag = "Rune sword x 1";
@@ -290,10 +309,11 @@ namespace dropLogger {
 			setNPictureBoxesToVisible(25);
 			setNPictureBoxesToEnabled(25);
 			removeAllItemQuantityOverlays();
-			resetItemDropListBox();
+			resetItemDropListBox(lastBossSeen);
 			resetAllPictureBoxBackgroundColor();
 		}
 		private void callistoToolStripMenuItem_Click(object sender, EventArgs e) {
+			String lastBossSeen = getCurrentBoss();
 			labelCurrentLogFor.Text = "Current log for: " + callistoToolStripMenuItem.Text;
 			pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_pickaxe.png");
 			pictureBox1.Tag = "Rune pickaxe x 1";
@@ -366,10 +386,11 @@ namespace dropLogger {
 			setNPictureBoxesToVisible(34);
 			setNPictureBoxesToEnabled(34);
 			removeAllItemQuantityOverlays();
-			resetItemDropListBox();
+			resetItemDropListBox(lastBossSeen);
 			resetAllPictureBoxBackgroundColor();
 		}
 		private void chaosElementalToolStripMenuItem_Click(object sender, EventArgs e) {
+			String lastBossSeen = getCurrentBoss();
 			labelCurrentLogFor.Text = "Current log for: " + chaosElementalToolStripMenuItem.Text;
 			pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mithril_dart_300.png");
 			pictureBox1.Tag = "Mithril dart x 300";
@@ -442,10 +463,11 @@ namespace dropLogger {
 			setNPictureBoxesToVisible(34);
 			setNPictureBoxesToEnabled(34);
 			removeAllItemQuantityOverlays();
-			resetItemDropListBox();
+			resetItemDropListBox(lastBossSeen);
 			resetAllPictureBoxBackgroundColor();
 		}
 		private void chaosFanaticToolStripMenuItem_Click(object sender, EventArgs e) {
+			String lastBossSeen = getCurrentBoss();
 			labelCurrentLogFor.Text = "Current log for: " + chaosFanaticToolStripMenuItem.Text;
 			pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Fire_rune_250.png");
 			pictureBox1.Tag = "Fire rune x 250";
@@ -510,10 +532,11 @@ namespace dropLogger {
 			setNPictureBoxesToVisible(30);
 			setNPictureBoxesToEnabled(30);
 			removeAllItemQuantityOverlays();
-			resetItemDropListBox();
+			resetItemDropListBox(lastBossSeen);
 			resetAllPictureBoxBackgroundColor();
 		}
 		private void crazyArchaeologistToolStripMenuItem_Click(object sender, EventArgs e) {
+			String lastBossSeen = getCurrentBoss();
 			labelCurrentLogFor.Text = "Current log for: " + crazyArchaeologistToolStripMenuItem.Text;
 			pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_crossbow.png");
 			pictureBox1.Tag = "Rune crossbow x 2";
@@ -574,10 +597,11 @@ namespace dropLogger {
 			setNPictureBoxesToVisible(28);
 			setNPictureBoxesToEnabled(28);
 			removeAllItemQuantityOverlays();
-			resetItemDropListBox();
+			resetItemDropListBox(lastBossSeen);
 			resetAllPictureBoxBackgroundColor();
 		}
 		private void kingBlackDragonToolStripMenuItem_Click(object sender, EventArgs e) {
+			String lastBossSeen = getCurrentBoss();
 			labelCurrentLogFor.Text = "Current log for: " + kingBlackDragonToolStripMenuItem.Text;
 			pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_longsword.png");
 			pictureBox1.Tag = "Rune longsword x 1";
@@ -634,10 +658,11 @@ namespace dropLogger {
 			setNPictureBoxesToVisible(26);
 			setNPictureBoxesToEnabled(26);
 			removeAllItemQuantityOverlays();
-			resetItemDropListBox();
+			resetItemDropListBox(lastBossSeen);
 			resetAllPictureBoxBackgroundColor();
 		}
 		private void scorpiaToolStripMenuItem_Click(object sender, EventArgs e) {
+			String lastBossSeen = getCurrentBoss();
 			labelCurrentLogFor.Text = "Current log for: " + scorpiaToolStripMenuItem.Text;
 			pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_scimitar.png");
 			pictureBox1.Tag = "Rune scimitar x 1";
@@ -698,10 +723,11 @@ namespace dropLogger {
 			setNPictureBoxesToVisible(28);
 			setNPictureBoxesToEnabled(28);
 			removeAllItemQuantityOverlays();
-			resetItemDropListBox();
+			resetItemDropListBox(lastBossSeen);
 			resetAllPictureBoxBackgroundColor();
 		}
 		private void venenatisToolStripMenuItem_Click(object sender, EventArgs e) {
+			String lastBossSeen = getCurrentBoss();
 			labelCurrentLogFor.Text = "Current log for: " + venenatisToolStripMenuItem.Text;
 			pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_pickaxe.png");
 			pictureBox1.Tag = "Rune pickaxe x 1";
@@ -774,10 +800,11 @@ namespace dropLogger {
 			setNPictureBoxesToVisible(34);
 			setNPictureBoxesToEnabled(34);
 			removeAllItemQuantityOverlays();
-			resetItemDropListBox();
+			resetItemDropListBox(lastBossSeen);
 			resetAllPictureBoxBackgroundColor();
 		}
 		private void vetionToolStripMenuItem_Click(object sender, EventArgs e) {
+			String lastBossSeen = getCurrentBoss();
 			labelCurrentLogFor.Text = "Current log for: " + vetionToolStripMenuItem.Text;
 			pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_pickaxe.png");
 			pictureBox1.Tag = "Rune pickaxe x 1";
@@ -830,7 +857,7 @@ namespace dropLogger {
 			pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ogre_coffin_key_noted_10.png");
 			pictureBox25.Tag = "Ogre coffin key x 10";
 			pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Cannonball_250.png");
-			pictureBox25.Tag = "Cannonball x 250";
+			pictureBox26.Tag = "Cannonball x 250";
 			pictureBox27.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coins_10000.png");
 			pictureBox27.Tag = "Varies; ";
 			pictureBox28.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mysterious_emblem.png");
@@ -854,10 +881,11 @@ namespace dropLogger {
 			setNPictureBoxesToVisible(36);
 			setNPictureBoxesToEnabled(36);
 			removeAllItemQuantityOverlays();
-			resetItemDropListBox();
+			resetItemDropListBox(lastBossSeen);
 			resetAllPictureBoxBackgroundColor();
 		}
 		private void abyssalSireToolStripMenuItem_Click(object sender, EventArgs e) {
+			String lastBossSeen = getCurrentBoss();
 			labelCurrentLogFor.Text = "Current log for: " + abyssalSireToolStripMenuItem.Text;
 			pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_sword_noted_3.png");
 			pictureBox1.Tag = "Rune sword x 3";
@@ -972,10 +1000,11 @@ namespace dropLogger {
 			setNPictureBoxesToVisible(55);
 			setNPictureBoxesToEnabled(55);
 			removeAllItemQuantityOverlays();
-			resetItemDropListBox();
+			resetItemDropListBox(lastBossSeen);
 			resetAllPictureBoxBackgroundColor();
 		}
 		private void barrowsToolStripMenuItem_Click(object sender, EventArgs e) {
+			String lastBossSeen = getCurrentBoss();
 			labelCurrentLogFor.Text = "Current log for: " + barrowsToolStripMenuItem.Text;
 			pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ahrim's_hood.png");
 			pictureBox1.Tag = "Ahrim's hood x 1";
@@ -1048,10 +1077,11 @@ namespace dropLogger {
 			setNPictureBoxesToVisible(34);
 			setNPictureBoxesToEnabled(34);
 			removeAllItemQuantityOverlays();
-			resetItemDropListBox();
+			resetItemDropListBox(lastBossSeen);
 			resetAllPictureBoxBackgroundColor();
 		}
 		private void cerberusToolStripMenuItem_Click(object sender, EventArgs e) {
+			String lastBossSeen = getCurrentBoss();
 			labelCurrentLogFor.Text = "Current log for: " + cerberusToolStripMenuItem.Text;
 			pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_2h_sword.png");
 			pictureBox1.Tag = "Rune 2h sword x 1";
@@ -1134,10 +1164,11 @@ namespace dropLogger {
 			setNPictureBoxesToVisible(39);
 			setNPictureBoxesToEnabled(39);
 			removeAllItemQuantityOverlays();
-			resetItemDropListBox();
+			resetItemDropListBox(lastBossSeen);
 			resetAllPictureBoxBackgroundColor();
 		}
 		private void corporealBeastToolStripMenuItem_Click(object sender, EventArgs e) {
+			String lastBossSeen = getCurrentBoss();
 			labelCurrentLogFor.Text = "Current log for: " + corporealBeastToolStripMenuItem.Text;
 			pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Adamant_arrow_750.png");
 			pictureBox1.Tag = "Adamant arrow x 750";
@@ -1230,10 +1261,11 @@ namespace dropLogger {
 			setNPictureBoxesToVisible(44);
 			setNPictureBoxesToEnabled(44);
 			removeAllItemQuantityOverlays();
-			resetItemDropListBox();
+			resetItemDropListBox(lastBossSeen);
 			resetAllPictureBoxBackgroundColor();
 		}
 		private void dagannothKingsToolStripMenuItem_Click(object sender, EventArgs e) {
+			String lastBossSeen = getCurrentBoss();
 			labelCurrentLogFor.Text = "Current log for: " + dagannothKingsToolStripMenuItem.Text;
 			highlightPictureBox(pictureBoxDagannothPrime);
 			if (selectedDagannothKing == "Dagannoth Prime") {
@@ -1462,7 +1494,7 @@ namespace dropLogger {
 				pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Opal_bolt_tips_5.png");
 				pictureBox23.Tag = "Varies; Opal bolt tips";
 				pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Oyster_pearls.png");
-				pictureBox24.Tag = "Oyster pearls";
+				pictureBox24.Tag = "Oyster pearls x 1";
 				pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Shark.png");
 				pictureBox25.Tag = "Shark x 5";
 				pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Maple_logs_noted_generic.png");
@@ -1507,10 +1539,11 @@ namespace dropLogger {
 				resetAllPictureBoxBackgroundColor();
 
 			}
-			resetItemDropListBox();
+			resetItemDropListBox(lastBossSeen);
 			resetAllPictureBoxBackgroundColor();
 		}
 		private void giantMoleToolStripMenuItem_Click(object sender, EventArgs e) {
+			String lastBossSeen = getCurrentBoss();
 			labelCurrentLogFor.Text = "Current log for: " + giantMoleToolStripMenuItem.Text;
 			pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mithril_battleaxe.png");
 			pictureBox1.Tag = "Mithril battleaxe x 1";
@@ -1559,10 +1592,11 @@ namespace dropLogger {
 			setNPictureBoxesToVisible(22);
 			setNPictureBoxesToEnabled(22);
 			removeAllItemQuantityOverlays();
-			resetItemDropListBox();
+			resetItemDropListBox(lastBossSeen);
 			resetAllPictureBoxBackgroundColor();
 		}
 		private void kalphiteQueenToolStripMenuItem_Click(object sender, EventArgs e) {
+			String lastBossSeen = getCurrentBoss();
 			labelCurrentLogFor.Text = "Current log for: " + kalphiteQueenToolStripMenuItem.Text;
 			pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Battlestaff_noted_10.png");
 			pictureBox1.Tag = "Battlestaff x 10";
@@ -1663,10 +1697,11 @@ namespace dropLogger {
 			setNPictureBoxesToVisible(48);
 			setNPictureBoxesToEnabled(48);
 			removeAllItemQuantityOverlays();
-			resetItemDropListBox();
+			resetItemDropListBox(lastBossSeen);
 			resetAllPictureBoxBackgroundColor();
 		}
 		private void krakenToolStripMenuItem_Click(object sender, EventArgs e) {
+			String lastBossSeen = getCurrentBoss();
 			labelCurrentLogFor.Text = "Current log for: " + krakenToolStripMenuItem.Text;
 			pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_warhammer.png");
 			pictureBox1.Tag = "Rune warhammer x 1";
@@ -1751,10 +1786,11 @@ namespace dropLogger {
 			setNPictureBoxesToVisible(40);
 			setNPictureBoxesToEnabled(40);
 			removeAllItemQuantityOverlays();
-			resetItemDropListBox();
+			resetItemDropListBox(lastBossSeen);
 			resetAllPictureBoxBackgroundColor();
 		}
 		private void skotizoToolStripMenuItem_Click(object sender, EventArgs e) {
+			String lastBossSeen = getCurrentBoss();
 			labelCurrentLogFor.Text = "Current log for: " + skotizoToolStripMenuItem.Text;
 			pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Death_rune_500.png");
 			pictureBox1.Tag = "Death rune x 500";
@@ -1811,10 +1847,11 @@ namespace dropLogger {
 			setNPictureBoxesToVisible(26);
 			setNPictureBoxesToEnabled(26);
 			removeAllItemQuantityOverlays();
-			resetItemDropListBox();
+			resetItemDropListBox(lastBossSeen);
 			resetAllPictureBoxBackgroundColor();
 		}
 		private void thermonuclearSmokeDevilToolStripMenuItem_Click(object sender, EventArgs e) {
+			String lastBossSeen = getCurrentBoss();
 			labelCurrentLogFor.Text = "Current log for: " + thermonuclearSmokeDevilToolStripMenuItem.Text;
 			pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_dagger.png");
 			pictureBox1.Tag = "Rune dagger x 1";
@@ -1905,10 +1942,11 @@ namespace dropLogger {
 			setNPictureBoxesToVisible(43);
 			setNPictureBoxesToEnabled(43);
 			removeAllItemQuantityOverlays();
-			resetItemDropListBox();
+			resetItemDropListBox(lastBossSeen);
 			resetAllPictureBoxBackgroundColor();
 		}
 		private void wintertodtToolStripMenuItem_Click(object sender, EventArgs e) {
+			String lastBossSeen = getCurrentBoss();
 			labelCurrentLogFor.Text = "Current log for: " + wintertodtToolStripMenuItem.Text;
 			pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Oak_logs_noted_generic.png");
 			pictureBox1.Tag = "Varies; Oak logs";
@@ -1952,87 +1990,92 @@ namespace dropLogger {
 			pictureBox20.Tag = "Varies; Grimy guam leaf";
 			pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_marrentill_noted_generic.png");
 			pictureBox21.Tag = "Varies; Grimy marrentill";
-			pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_ranarr_weed_noted_generic.png");
-			pictureBox22.Tag = "Varies; Grimy ranarr weed";
-			pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_avantoe_noted_generic.png");
-			pictureBox23.Tag = "Varies; Grimy avantoe";
-			pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_cadantine_noted_generic.png");
-			pictureBox24.Tag = "Varies; Grimy cadantine";
-			pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Tarromin_seed_1.png");
-			pictureBox25.Tag = "Varies; Tarromin seed";
-			pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Harralander_seed_1.png");
-			pictureBox26.Tag = "Varies; Harralander seed";
-			pictureBox27.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Toadflax_seed_1.png");
-			pictureBox27.Tag = "Varies; Toadflax seed";
-			pictureBox28.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ranarr_seed_1.png");
-			pictureBox28.Tag = "Varies; Ranarr seed";
-			pictureBox29.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Snapdragon_seed_1.png");
-			pictureBox29.Tag = "Varies; Snapdragon seed";
-			pictureBox30.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Banana_tree_seed_1.png");
-			pictureBox30.Tag = "Varies; Banana tree seed";
-			pictureBox31.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Acorn_1.png");
-			pictureBox31.Tag = "Acorn x 1";
-			pictureBox32.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Willow_seed_1.png");
-			pictureBox32.Tag = "Varies; Willow seed";
-			pictureBox33.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Watermelon_seed_1.png");
-			pictureBox33.Tag = "Varies; Watermelon seed";
-			pictureBox34.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Maple_seed_1.png");
-			pictureBox34.Tag = "Varies; Maple seed";
-			pictureBox35.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Yew_seed_1.png");
-			pictureBox35.Tag = "Varies; Yew seed";
-			pictureBox36.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Magic_seed_1.png");
-			pictureBox36.Tag = "Magic seed x 1";
-			pictureBox37.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Spirit_seed_1.png");
-			pictureBox37.Tag = "Spirit seed x 1";
-			pictureBox38.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_anchovies_noted_generic.png");
-			pictureBox38.Tag = "Varies; Raw anchovies";
-			pictureBox39.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_trout_noted_generic.png");
-			pictureBox39.Tag = "Varies; Raw trout";
-			pictureBox40.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_salmon_noted_generic.png");
-			pictureBox40.Tag = "Varies; Raw salmon";
-			pictureBox41.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_lobster_noted_generic.png");
-			pictureBox41.Tag = "Varies; Raw lobster";
-			pictureBox42.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_tuna_noted_generic.png");
-			pictureBox42.Tag = "Varies; Raw tuna";
-			pictureBox43.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_swordfish_noted_generic.png");
-			pictureBox43.Tag = "Varies; Raw swordfish";
-			pictureBox44.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_shark_noted_generic.png");
-			pictureBox44.Tag = "Varies; Raw shark";
-			pictureBox45.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Saltpetre_noted_generic.png");
-			pictureBox45.Tag = "Varies; Saltpetre";
-			pictureBox46.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Limestone_noted_generic.png");
-			pictureBox46.Tag = "Varies; Limestone";
-			pictureBox47.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dynamite_noted_generic.png");
-			pictureBox47.Tag = "Varies; Dynamite";
-			pictureBox48.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coins_1000.png");
-			pictureBox48.Tag = "Varies; Coins";
-			pictureBox49.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Burnt_page.png");
-			pictureBox49.Tag = "Varies; Burnt page";
-			pictureBox50.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bruma_torch.png");
-			pictureBox50.Tag = "Bruma torch x 1";
-			pictureBox51.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pyromancer_hood.png");
-			pictureBox51.Tag = "Pyromancer hood x 1";
-			pictureBox52.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pyromancer_garb.png");
-			pictureBox52.Tag = "Pyromancer garb x 1";
-			pictureBox53.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pyromancer_robe.png");
-			pictureBox53.Tag = "Pyromancer robe x 1";
-			pictureBox54.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pyromancer_boots.png");
-			pictureBox54.Tag = "Pyromancer boots x 1";
-			pictureBox55.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Warm_gloves.png");
-			pictureBox55.Tag = "Warm gloves x 1";
-			pictureBox56.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Tome_of_fire_(empty).png");
-			pictureBox56.Tag = "Tome of fire (empty) x 1";
-			pictureBox57.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Phoenix.png");
-			pictureBox57.Tag = "Phoenix x 1";
-			pictureBox58.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
-			pictureBox58.Tag = "RDT";
-			setNPictureBoxesToVisible(58);
-			setNPictureBoxesToEnabled(58);
+			pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_harralander_noted_generic.png");
+			pictureBox22.Tag = "Varies; Grimy harralander";
+			pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_ranarr_weed_noted_generic.png");
+			pictureBox23.Tag = "Varies; Grimy ranarr weed";
+			pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_avantoe_noted_generic.png");
+			pictureBox24.Tag = "Varies; Grimy avantoe";
+			pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_cadantine_noted_generic.png");
+			pictureBox25.Tag = "Varies; Grimy cadantine";
+			pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_torstol_noted_generic.png");
+			pictureBox26.Tag = "Varies; Grimy torstol";
+			pictureBox27.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Tarromin_seed_1.png");
+			pictureBox27.Tag = "Varies; Tarromin seed";
+			pictureBox28.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Harralander_seed_1.png");
+			pictureBox28.Tag = "Varies; Harralander seed";
+			pictureBox29.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Toadflax_seed_1.png");
+			pictureBox29.Tag = "Varies; Toadflax seed";
+			pictureBox30.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ranarr_seed_1.png");
+			pictureBox30.Tag = "Varies; Ranarr seed";
+			pictureBox31.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Snapdragon_seed_1.png");
+			pictureBox31.Tag = "Varies; Snapdragon seed";
+			pictureBox32.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Watermelon_seed_1.png");
+			pictureBox32.Tag = "Varies; Watermelon seed";
+			pictureBox33.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Banana_tree_seed_1.png");
+			pictureBox33.Tag = "Varies; Banana tree seed";
+			pictureBox34.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Acorn_1.png");
+			pictureBox34.Tag = "Acorn x 1";
+			pictureBox35.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Willow_seed_1.png");
+			pictureBox35.Tag = "Varies; Willow seed";
+			pictureBox36.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Maple_seed_1.png");
+			pictureBox36.Tag = "Varies; Maple seed";
+			pictureBox37.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Yew_seed_1.png");
+			pictureBox37.Tag = "Varies; Yew seed";
+			pictureBox38.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Magic_seed_1.png");
+			pictureBox38.Tag = "Magic seed x 1";
+			pictureBox39.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Spirit_seed_1.png");
+			pictureBox39.Tag = "Spirit seed x 1";
+			pictureBox40.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_anchovies_noted_generic.png");
+			pictureBox40.Tag = "Varies; Raw anchovies";
+			pictureBox41.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_trout_noted_generic.png");
+			pictureBox41.Tag = "Varies; Raw trout";
+			pictureBox42.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_salmon_noted_generic.png");
+			pictureBox42.Tag = "Varies; Raw salmon";
+			pictureBox43.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_lobster_noted_generic.png");
+			pictureBox43.Tag = "Varies; Raw lobster";
+			pictureBox44.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_tuna_noted_generic.png");
+			pictureBox44.Tag = "Varies; Raw tuna";
+			pictureBox45.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_swordfish_noted_generic.png");
+			pictureBox45.Tag = "Varies; Raw swordfish";
+			pictureBox46.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_shark_noted_generic.png");
+			pictureBox46.Tag = "Varies; Raw shark";
+			pictureBox47.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Saltpetre_noted_generic.png");
+			pictureBox47.Tag = "Varies; Saltpetre";
+			pictureBox48.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Limestone_noted_generic.png");
+			pictureBox48.Tag = "Varies; Limestone";
+			pictureBox49.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dynamite_noted_generic.png");
+			pictureBox49.Tag = "Varies; Dynamite";
+			pictureBox50.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coins_1000.png");
+			pictureBox50.Tag = "Varies; Coins";
+			pictureBox51.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Burnt_page.png");
+			pictureBox51.Tag = "Varies; Burnt page";
+			pictureBox52.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bruma_torch.png");
+			pictureBox52.Tag = "Bruma torch x 1";
+			pictureBox53.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pyromancer_hood.png");
+			pictureBox53.Tag = "Pyromancer hood x 1";
+			pictureBox54.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pyromancer_garb.png");
+			pictureBox54.Tag = "Pyromancer garb x 1";
+			pictureBox55.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pyromancer_robe.png");
+			pictureBox55.Tag = "Pyromancer robe x 1";
+			pictureBox56.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pyromancer_boots.png");
+			pictureBox56.Tag = "Pyromancer boots x 1";
+			pictureBox57.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Warm_gloves.png");
+			pictureBox57.Tag = "Warm gloves x 1";
+			pictureBox58.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Tome_of_fire_(empty).png");
+			pictureBox58.Tag = "Tome of fire (empty) x 1";
+			pictureBox59.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Phoenix.png");
+			pictureBox59.Tag = "Phoenix x 1";
+			pictureBox60.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
+			pictureBox60.Tag = "RDT";
+			setNPictureBoxesToVisible(60);
+			setNPictureBoxesToEnabled(60);
 			removeAllItemQuantityOverlays();
-			resetItemDropListBox();
+			resetItemDropListBox(lastBossSeen);
 			resetAllPictureBoxBackgroundColor();
 		}
 		private void zulrahToolStripMenuItem_Click(object sender, EventArgs e) {
+			String lastBossSeen = getCurrentBoss();
 			labelCurrentLogFor.Text = "Current log for: " + zulrahToolStripMenuItem.Text;
 			pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pure_essence_noted_1500.png");
 			pictureBox1.Tag = "Pure essence x 1500";
@@ -2065,7 +2108,7 @@ namespace dropLogger {
 			pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Magic_seed_1.png");
 			pictureBox15.Tag = "Magic seed x 1";
 			pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Calquat_tree_seed_2.png");
-			pictureBox16.Tag = "Calquat tree seed x 2";
+			pictureBox16.Tag = "Calquat seed x 2";
 			pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Spirit_seed_1.png");
 			pictureBox17.Tag = "Spirit seed x 1";
 			pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Crystal_seed.png");
@@ -2133,7 +2176,7 @@ namespace dropLogger {
 			setNPictureBoxesToVisible(48);
 			setNPictureBoxesToEnabled(48);
 			removeAllItemQuantityOverlays();
-			resetItemDropListBox();
+			resetItemDropListBox(lastBossSeen);
 			resetAllPictureBoxBackgroundColor();
 		}
 
@@ -2155,8 +2198,28 @@ namespace dropLogger {
 			dagannothKingsToolStripMenuItem.PerformClick();
 			highlightPictureBox(pictureBoxDagannothSupreme);
 		}
-		
+		private void pictureBoxDagannothPrimeLoot_Click(object sender, EventArgs e) {
+			pictureBoxDagannothPrimeLoot.Click += pictureBoxDagannothPrimeLoot_Click;
+			setSelectedDagannothKingLoot("Dagannoth Prime");
+			displayTotalLootFromBoss("Dagannoth Kings");
+			highlightPictureBox(pictureBoxDagannothPrimeLoot);
+		}
+		private void pictureBoxDagannothRexLoot_Click(object sender, EventArgs e) {
+			pictureBoxDagannothRexLoot.Click += pictureBoxDagannothRexLoot_Click;
+			setSelectedDagannothKingLoot("Dagannoth Rex");
+			displayTotalLootFromBoss("Dagannoth Kings");
+			highlightPictureBox(pictureBoxDagannothRexLoot);
+		}
+		private void pictureBoxDagannothSupremeLoot_Click(object sender, EventArgs e) {
+			pictureBoxDagannothSupremeLoot.Click += pictureBoxDagannothSupremeLoot_Click;
+			setSelectedDagannothKingLoot("Dagannoth Supreme");
+			displayTotalLootFromBoss("Dagannoth Kings");
+			highlightPictureBox(pictureBoxDagannothSupremeLoot);
+		}
+
 		public void highlightPictureBox(PictureBox pb, Boolean resetAll = true) {
+			pb.BackColor = highlightOrange;
+
 			if (pb.Name == "pictureBoxDagannothPrime" ||
 				pb.Name == "pictureBoxDagannothRex" ||
 				pb.Name == "pictureBoxDagannothSupreme") {
@@ -2166,20 +2229,30 @@ namespace dropLogger {
 				pictureBoxDagannothSupreme.BackColor = Color.Transparent;
 				pb.BackColor = Color.FromArgb(192, 255, 192);
 			}
+			else if (pb.Name == "pictureBoxDagannothPrimeLoot" ||
+				pb.Name == "pictureBoxDagannothRexLoot" ||
+				pb.Name == "pictureBoxDagannothSupremeLoot") {
+
+				pictureBoxDagannothPrimeLoot.BackColor = Color.Transparent;
+				pictureBoxDagannothRexLoot.BackColor = Color.Transparent;
+				pictureBoxDagannothSupremeLoot.BackColor = Color.Transparent;
+				pb.BackColor = Color.FromArgb(192, 255, 192);
+			}
 			else {
+
 				// Only reset the pictures if it is set - this will not reset pictures when control is held
 				if (resetAll) {
 					resetAllPictureBoxBackgroundColor();
 				}
 
 				// Still change the picture box that was clicked
-				pb.BackColor = hightlightOrange;
+				pb.BackColor = highlightOrange;
 			}
 		}
 		private List<PictureBox> getHighlightedPictureBox() {
 			List<PictureBox> hpb = new List<PictureBox>();
 			foreach (var pb in this.Controls.OfType<PictureBox>()) {
-				if (pb.BackColor == hightlightOrange) {
+				if (pb.BackColor == highlightOrange) {
 					hpb.Add(pb);
 				}
 			}
@@ -2192,12 +2265,21 @@ namespace dropLogger {
 			
 			if (Control.ModifierKeys == Keys.Control) { isControlPressed = true; }
 
+			// Deselect item from sidebar
+			if (activeSidebarWindow == "BossKillCounts") {
+				listBoxSidebar.ClearSelected();
+			}
 
 			// PictureBoxes to switch between the dagannoth kings behave differently,
 			// don't want to do anything besides show the new items
 			if (pbSender.Name == "pictureBoxDagannothPrime" ||
 				pbSender.Name == "pictureBoxDagannothRex" ||
 				pbSender.Name == "pictureBoxDagannothSupreme") {
+				return;
+			}
+			else if (pbSender.Name == "pictureBoxDagannothPrimeLoot" ||
+				pbSender.Name == "pictureBoxDagannothRexLoot" ||
+				pbSender.Name == "pictureBoxDagannothSupremeLoot") {
 				return;
 			}
 
@@ -2567,7 +2649,13 @@ namespace dropLogger {
 				p.BackColor = Color.Transparent;
 			}
 		}
-		private void resetItemDropListBox() {
+		private void resetItemDropListBox(String lastBossSeen) {
+			Console.WriteLine("now showing: " + getCurrentBoss());
+			Console.WriteLine("last seen: " + lastBossSeen);
+			if (getCurrentBoss() == lastBossSeen) {
+				return;
+			}
+
 			listboxItemsList.Clear();
 			itemDropListBox.Items.Clear();
 		}
@@ -2598,48 +2686,157 @@ namespace dropLogger {
 			}
 		}
 
+		/* Sidebar button clicks */
 		private void listBoxSidebar_SelectedIndexChanged(object sender, EventArgs e) {
+
+			if (activeSidebarWindow == "BossDropRates") return;
+			if (listBoxSidebar.SelectedIndex == -1) {
+				Console.WriteLine("listBoxSidebar_SelectedIndexChanged(): No item selected");
+			}
+
+
 			Console.WriteLine("OldSchoolDropLogger.listBoxSidebar_SelectedIndexChanged()");
 
-			resetAllPictureBoxBackgroundColor();
 			if (listBoxSidebar.SelectedItem == null) return;
+
 			string bossClicked = listBoxSidebar.SelectedItem.ToString().Split(':')[0];
 
-			if (bossClicked == sidebarViewingLootFromBoss) {
-				return;
-			}
+			//if (bossClicked == getCurrentBoss()) {
+			//	return;
+			//}
+
+			resetAllPictureBoxBackgroundColor();
 
 			sidebarViewingLootFromBoss = bossClicked;
 			displayTotalLootFromBoss(bossClicked);
 		}
-
 		private void buttonSideBarBossKillcounts_Click(object sender, EventArgs e) {
+			labelSidebarTitle.Text = "Kill counts";
 			showSidebarBossKillcounts();
 		}
+		private void buttonSideBarDropRates_Click(object sender, EventArgs e) {
+			labelSidebarTitle.Text = "Drop rates";
+			showSidebarBossDroprates();
+		}
+		private void showSidebarBossDroprates() {
+			// Don't keep repopulating the BossKillcounts table if the data is already displaying
+			if (activeSidebarWindow == "BossDropRates") return;
 
-		private void showSidebarBossKillcounts() {
-			activeSidebarWindow = "BossKillCounts";
+			activeSidebarWindow = "BossDropRates";
 
-			Console.Write("OldSchoolDropLogger.buttonSideBarBossKillcounts_Click():");
+			Console.WriteLine("OldSchoolDropLogger.buttonSideBarBossDroprates_Click():");
 
-			// Don't keep repopulating the BossKillcounts table if the Statistics class has already been created
-			if (isStatisticsInstantiated == false) {
+			Dictionary<String, int> allDropsFromBoss = stats.getItemQuantitiesFromBoss(getCurrentBoss());
 
-				Dictionary<String, int> totalKillsPerBoss = stats.getTotalKillsLoggedPerBoss();
+			double totalDrops = 0;
 
-				foreach (KeyValuePair<String, int> boss in totalKillsPerBoss) {
-					string bosskc = boss.Value.ToString();
+			// Calculate the number of total drops logged
+			foreach (KeyValuePair<String, int> drop in allDropsFromBoss) {
 
-					if (int.Parse(bosskc) >= 100000) bosskc = "100k+";
-
-					listBoxSidebar.Items.Add(boss.Key + ": " + bosskc);
+				// Grab the quantity of the drop first, i.e.
+				// Law rune x 200 -> get 200
+				int len = drop.Key.ToString().Split(' ').Length;
+				int qty = -1;
+				int.TryParse(drop.Key.ToString().Split(' ')[len - 1], out qty);
+					
+				// Shouldn't ever hit this please
+				if (qty == -1) {
+					Console.WriteLine("ERROR ==========================================");
 				}
+
+				// Calculate how many times the drop was actually dropped
+				// i.e. if the total drop quantity was 1000, but the drop string is in 
+				// increments of 200, we know that the numberOfTimesDropped = 5 since
+				// 5 * 200 = 1000.
+				int numberOfTimesDropped = 0;
+				if (qty != 0) {
+					numberOfTimesDropped = drop.Value / qty;
+				}
+				
+
+				// Update the total number of drops
+				totalDrops += numberOfTimesDropped;
+			}
+
+			// Since Zulrah drops two items at a time
+			if (getCurrentBoss() == "Zulrah") {
+				totalDrops /= 2;
+			}
+
+			List<String> unsortedList = new List<String>();
+
+			foreach (KeyValuePair<String, int> drop in allDropsFromBoss) {
+
+				// Grab the quantity of the drop first, i.e.
+				// Law rune x 200 -> get 200
+				int len = drop.Key.ToString().Split(' ').Length;
+				int qty = -1;
+				int.TryParse(drop.Key.ToString().Split(' ')[len - 1], out qty);
+
+				// Calculate how many times the drop was actually dropped
+				int numberOfTimesDropped = 0;
+				if (qty != 0) {
+					numberOfTimesDropped = drop.Value / qty;
+				}
+
+				double e = Math.Round((double) totalDrops / (double) numberOfTimesDropped, 1);
+
+				String item = "";
+
+				// Prepare the string to show as a ratio, deal with drops of 0 quantity first
+				if (numberOfTimesDropped == 0) {
+					item = drop.Key + " - 0:" + totalDrops;
+				}
+				else {
+					item = drop.Key + " - 1:" + e;
+				}
+
+				if (item == "") {
+					Console.WriteLine("============================= showSidebarBossDroprates() ERROR ========================");
+				}
+				
+				unsortedList.Add(item);
+			}
+
+			listBoxSidebar.Items.Clear();
+
+			unsortedList.Sort();
+
+			// Add the sorted items
+			foreach (String s in unsortedList) {
+				listBoxSidebar.Items.Add(s);
 			}
 
 			isStatisticsInstantiated = true;
 		}
-		private void updateSidebarBossKillcounts(String addedOrRemoved = "added") {
+		private void showSidebarBossKillcounts() {
 
+			// Don't keep repopulating the BossKillcounts table if the data is already displaying
+			if (activeSidebarWindow == "BossKillCounts") return;
+
+			activeSidebarWindow = "BossKillCounts";
+
+			Console.WriteLine("OldSchoolDropLogger.buttonSideBarBossKillcounts_Click():");
+
+			listBoxSidebar.Items.Clear();
+
+			Dictionary<String, int> totalKillsPerBoss = stats.getTotalKillsLoggedPerBoss();
+
+			// Loop through each boss and display the killcounts for each 
+			foreach (KeyValuePair<String, int> boss in totalKillsPerBoss) {
+				string bosskc = boss.Value.ToString();
+
+				// Shorten killcounts if they get too big
+				if (int.Parse(bosskc) >= 100000) bosskc = "100k+";
+
+				listBoxSidebar.Items.Add(boss.Key + ": " + bosskc);
+			}
+
+			isStatisticsInstantiated = true;
+		}
+		private void updateSidebarBossKillcounts(String itemAddedOrRemoved = "added") {
+
+			int lineContainingBoss = -1;
 			int index = -1;
 			int kc = 0;
 
@@ -2647,16 +2844,18 @@ namespace dropLogger {
 
 				if (listBoxSidebar.Items[i].ToString().Contains(getCurrentBoss())) {
 
+					lineContainingBoss = i;
+
 					String entry = listBoxSidebar.Items[i].ToString();
 
 					String[] entryArr = entry.Split(' ');
 
-					int.TryParse(listBoxSidebar.Items[i].ToString(), out index);
+					int.TryParse(entry, out index);
 
 					int updateKillcount = 0;
 					int.TryParse(entryArr[entryArr.Length - 1], out updateKillcount);
 
-					if (addedOrRemoved == "added") kc = updateKillcount + 1;
+					if (itemAddedOrRemoved == "added") kc = updateKillcount + 1;
 					else kc = updateKillcount - 1;
 
 					break;
@@ -2664,8 +2863,7 @@ namespace dropLogger {
 			}
 
 			if (index != -1) {
-				listBoxSidebar.Items.RemoveAt(index);
-				listBoxSidebar.Items.Insert(index, getCurrentBoss() + ": " + kc);
+				listBoxSidebar.Items[lineContainingBoss] = getCurrentBoss() + ": " + kc;
 			}
 		}
 
@@ -2678,205 +2876,2094 @@ namespace dropLogger {
 			// Make sure all drops are up to date so when we display them it's the correct amount
 			stats.setTotalDropsFromAllBosses();
 
+			Dictionary<String, int> allItemQuantitiesFromCurrentBoss = stats.getItemQuantitiesFromBoss(boss);
+
+			//pictureBox65.Image = iqc.createQuantityImage(3333);
+
 			switch (boss) {
 				case "Armadyl":
 
 					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_crossbow.png");
-					pictureBox1.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Rune crossbow x 1"]);
+					pictureBox1.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune crossbow x 1"]);
 
 					pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_sword.png");
-					pictureBox2.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Rune sword x 1"]);
+					pictureBox2.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune sword x 1"]);
 
 					pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Runite_bolts_5.png");
-					pictureBox3.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Runite bolts"]);
+					pictureBox3.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Runite bolts"]);
 
 					pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_arrow_5.png"); ;
-					pictureBox4.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Rune arrow"]);
+					pictureBox4.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune arrow"]);
 
 					pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_bolts_(e)_5.png"); ;
-					pictureBox5.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Dragon bolts (e)"]);
+					pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon bolts (e)"]);
 
 					pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mind_rune.png"); ;
-					pictureBox6.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Mind rune"]);
+					pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mind rune"]);
 
 					pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coins_10000.png"); ;
-					pictureBox7.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Coins"]);
+					pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coins"]);
 
 					pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dwarf_weed_noted_generic.png"); ;
-					pictureBox8.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Dwarf weed"]);
+					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dwarf weed"]);
 
 					pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dwarf_weed_seed_3.png"); ;
-					pictureBox9.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Dwarf weed seed x 3"]);
+					pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dwarf weed seed x 3"]);
 
 					pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Yew_seed_1.png"); ;
-					pictureBox10.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Yew seed x 1"]);
+					pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Yew seed x 1"]);
 
 					pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ranging_potion_(3).png"); ;
-					pictureBox11.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Ranging potion (3) x 3"]);
+					pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ranging potion (3) x 3"]);
 
 					pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Super_defence_(3).png"); ;
-					pictureBox12.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Super defence (3) x 3"]);
+					pictureBox12.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Super defence (3) x 3"]);
 
 					pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Crystal_key.png"); ;
-					pictureBox13.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Crystal key x 1"]);
+					pictureBox13.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Crystal key x 1"]);
 
 					pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Black_d'hide_body.png"); ;
-					pictureBox14.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Black d'hide body x 1"]);
+					pictureBox14.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Black d'hide body x 1"]);
 
 					pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Long_bone.png"); ;
-					pictureBox15.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Long bone x 1"]);
+					pictureBox15.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Long bone x 1"]);
 
 					pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Curved_bone.png"); ;
-					pictureBox16.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Curved bone x 1"]);
+					pictureBox16.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Curved bone x 1"]);
 
 					pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Godsword_shard_1.png"); ;
-					pictureBox17.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Godsword shard 1 x 1"]);
+					pictureBox17.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Godsword shard 1 x 1"]);
 
 					pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Godsword_shard_2.png"); ;
-					pictureBox18.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Godsword shard 2 x 1"]);
+					pictureBox18.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Godsword shard 2 x 1"]);
 
 					pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Godsword_shard_3.png"); ;
-					pictureBox19.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Godsword shard 3 x 1"]);
+					pictureBox19.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Godsword shard 3 x 1"]);
 
 					pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png"); ;
-					pictureBox20.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Elite clue scroll x 1"]);
+					pictureBox20.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Elite clue scroll x 1"]);
 
 					pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Armadyl_helmet.png"); ;
-					pictureBox21.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Armadyl helmet x 1"]);
+					pictureBox21.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Armadyl helmet x 1"]);
 
 					pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Armadyl_chestplate.png"); ;
-					pictureBox22.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Armadyl chestplate x 1"]);
+					pictureBox22.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Armadyl chestplate x 1"]);
 
 					pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Armadyl_chainskirt.png"); ;
-					pictureBox23.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Armadyl chainskirt x 1"]);
+					pictureBox23.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Armadyl chainskirt x 1"]);
 
 					pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Armadyl_hilt.png"); ;
-					pictureBox24.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Armadyl hilt x 1"]);
+					pictureBox24.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Armadyl hilt x 1"]);
 
 					pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pet_kree'arra.png"); ;
-					pictureBox25.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["Pet kree'arra x 1"]);
+					pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pet kree'arra x 1"]);
 
 					pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png"); ;
-					pictureBox26.Image = iqc.createQuantityImage(stats.getItemQuantitiesFromBoss(boss)["RDT x 1"]);
-					setNPictureBoxesToVisible(26);
-					// Display corrent item quantity over picture box
+					pictureBox26.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["RDT x 1"]);
 
+					setNPictureBoxesToVisible(26);
 					setNPictureBoxesToDisabled(26);
 					break;
 
 				case "Bandos":
-					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_chestplate.png");
-					// Display corrent item quantity over picture box
+					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_2h_sword.png");
+					pictureBox1.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune 2h sword x 1"]);
+
+					pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_pickaxe.png");
+					pictureBox2.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune pickaxe x 1"]);
+
+					pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_longsword.png");
+					pictureBox3.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune longsword x 1"]);
+
+					pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_sword.png"); ;
+					pictureBox4.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune sword x 1"]);
+
+					pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_platebody.png"); ;
+					pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune platebody x 1"]);
+
+					pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Nature_rune.png"); ;
+					pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Nature rune"]);
+
+					pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Adamantite_ore_noted_generic.png"); ;
+					pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Adamantite ore"]);
+
+					pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coal_noted_generic.png"); ;
+					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coal"]);
+
+					pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Magic_logs_noted_generic.png"); ;
+					pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Magic logs"]);
+
+					pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Snapdragon_seed_1.png"); ;
+					pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Snapdragon seed x 1"]);
+
+					pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_snapdragon_noted_generic.png"); ;
+					pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy snapdragon x 3"]);
+
+					pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Super_restore_(4).png"); ;
+					pictureBox12.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Super restore (4) x 3"]);
+
+					pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coins_10000.png"); ;
+					pictureBox13.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coins"]);
+
+					pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Long_bone.png"); ;
+					pictureBox14.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Long bone x 1"]);
+
+					pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Curved_bone.png"); ;
+					pictureBox15.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Curved bone x 1"]);
+
+					pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png"); ;
+					pictureBox16.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Elite clue scroll x 1"]);
+
+					pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Godsword_shard_1.png"); ;
+					pictureBox17.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Godsword shard 1 x 1"]);
+
+					pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Godsword_shard_2.png"); ;
+					pictureBox18.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Godsword shard 2 x 1"]);
+
+					pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Godsword_shard_3.png"); ;
+					pictureBox19.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Godsword shard 3 x 1"]);
+
+					pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_chestplate.png"); ;
+					pictureBox20.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Bandos chestplate x 1"]);
+
+					pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_tassets.png"); ;
+					pictureBox21.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Bandos tassets x 1"]);
+
+					pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_boots.png"); ;
+					pictureBox22.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Bandos boots x 1"]);
+
+					pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_hilt.png"); ;
+					pictureBox23.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Bandos hilt x 1"]);
+
+					pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pet_general_graardor.png"); ;
+					pictureBox24.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pet general graardor x 1"]);
+
+					pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png"); ;
+					pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["RDT x 1"]);
+
+					setNPictureBoxesToVisible(25);
+					setNPictureBoxesToDisabled(25);
 					break;
 
 				case "Saradomin":
-					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_chestplate.png");
-					// Display corrent item quantity over picture box
+					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_dart.png");
+					pictureBox1.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune dart"]);
+					pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_sword.png");
+					pictureBox2.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune sword x 1"]);
+					pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Adamant_platebody.png");
+					pictureBox3.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Adamant platebody x 1"]);
+					pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_plateskirt.png");
+					pictureBox4.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune plateskirt x 1"]);
+					pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_kiteshield.png");
+					pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune kiteshield x 1"]);
+					pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Law_rune.png");
+					pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Law rune"]);
+					pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ranarr_seed_2.png");
+					pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ranarr seed x 2"]);
+					pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Magic_seed_1.png");
+					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Magic seed x 1"]);
+					pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Diamond_noted_generic.png");
+					pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Diamond x 6"]);
+					pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_ranarr_weed.png");
+					pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy ranarr weed x 5"]);
+					pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Prayer_potion_(4).png");
+					pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Prayer potion (4) x 3"]);
+					pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Saradomin_brew_(3).png");
+					pictureBox12.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Saradomin brew (3) x 3"]);
+					pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Super_restore_(4).png");
+					pictureBox13.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Super restore (4) x 3"]);
+					pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Super_defence_(4).png");
+					pictureBox14.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Super defence (4) x 3"]);
+					pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Magic_potion_(3).png");
+					pictureBox15.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Magic potion (3) x 3"]);
+					pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coins_10000.png");
+					pictureBox16.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coins"]);
+					pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png");
+					pictureBox17.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Elite clue scroll x 1"]);
+					pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Godsword_shard_1.png");
+					pictureBox18.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Godsword shard 1 x 1"]);
+					pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Godsword_shard_2.png");
+					pictureBox19.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Godsword shard 2 x 1"]);
+					pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Godsword_shard_3.png");
+					pictureBox20.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Godsword shard 3 x 1"]);
+					pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Saradomin's_light.png");
+					pictureBox21.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Saradomin's light x 1"]);
+					pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Saradomin_sword.png");
+					pictureBox22.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Saradomin sword x 1"]);
+					pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Armadyl_crossbow.png");
+					pictureBox23.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Armadyl crossbow x 1"]);
+					pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Saradomin_hilt.png");
+					pictureBox24.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Saradomin hilt x 1"]);
+					pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pet_zilyana.png");
+					pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pet zilyana x 1"]);
+					pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
+					pictureBox26.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["RDT x 1"]);
+
+					setNPictureBoxesToVisible(26);
+					setNPictureBoxesToDisabled(26);
 					break;
 
 				case "Zamorak":
-					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_chestplate.png");
-					// Display corrent item quantity over picture box
+					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_sword.png");
+					pictureBox1.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune sword x 1"]);
+					pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_scimitar.png");
+					pictureBox2.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune scimitar x 1"]);
+					pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_dagger_(p++).png");
+					pictureBox3.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon dagger (p++) x 1"]);
+					pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Adamant_arrow_5.png");
+					pictureBox4.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Adamant arrows"]);
+					pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Adamant_platebody.png");
+					pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Adamant platebody x 1"]);
+					pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_platelegs.png");
+					pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune platelegs x 1"]);
+					pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Lantadyme_seed_3.png");
+					pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Lantadyme seed x 3"]);
+					pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_lantadyme_noted_generic.png");
+					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy lantadyme"]);
+					pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Super_attack_(3).png");
+					pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Super attack (3) x 3"]);
+					pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Super_strength_(3).png");
+					pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Super strength (3) x 3"]);
+					pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Super_restore_(3).png");
+					pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Super restore (3) x 3"]);
+					pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Zamorak_brew_(3).png");
+					pictureBox12.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Zamorak brew (3) x 3"]);
+					pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Death_rune.png");
+					pictureBox13.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Death rune"]);
+					pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Blood_rune.png");
+					pictureBox14.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Blood rune"]);
+					pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coins_10000.png");
+					pictureBox15.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coins"]);
+					pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png");
+					pictureBox16.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Elite clue scroll x 1"]);
+					pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Godsword_shard_1.png");
+					pictureBox17.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Godsword shard 1 x 1"]);
+					pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Godsword_shard_2.png");
+					pictureBox18.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Godsword shard 2 x 1"]);
+					pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Godsword_shard_3.png");
+					pictureBox19.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Godsword shard 3 x 1"]);
+					pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Steam_battlestaff.png");
+					pictureBox20.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Steam battlestaff x 1"]);
+					pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Staff_of_the_dead.png");
+					pictureBox21.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Staff of the dead x 1"]);
+					pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Zamorakian_spear.png");
+					pictureBox22.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Zamorakian spear x 1"]);
+					pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Zamorak_hilt.png");
+					pictureBox23.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Zamorak hilt x 1"]);
+					pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pet_k'ril_tsutsaroth.png");
+					pictureBox24.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pet k'ril tsutsaroth x 1"]);
+					pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
+					pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["RDT x 1"]);
+
+					setNPictureBoxesToVisible(25);
+					setNPictureBoxesToDisabled(25);
 					break;
 
 				case "Callisto":
-					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_chestplate.png");
-					// Display corrent item quantity over picture box
+					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_pickaxe.png");
+					pictureBox1.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune pickaxe x 1"]);
+					pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_2h_sword.png");
+					pictureBox2.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune 2h sword x 1"]);
+					pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Soul_rune.png");
+					pictureBox3.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Soul rune x 250"]);
+					pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Death_rune.png");
+					pictureBox4.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Death rune x 300"]);
+					pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Chaos_rune.png");
+					pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Chaos rune x 400"]);
+					pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Blood_rune.png");
+					pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Blood rune x 200"]);
+					pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mahogany_logs_noted_generic.png");
+					pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mahogany logs x 400"]);
+					pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Magic_logs_noted_generic.png");
+					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Magic logs x 100"]);
+					pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ranarr_seed_5.png");
+					pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ranarr seed x 5"]);
+					pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Snapdragon_seed_3.png");
+					pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Snapdragon seed x 3"]);
+					pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Palm_tree_seed_1.png");
+					pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Palm tree seed x 1"]);
+					pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Yew_seed_1.png");
+					pictureBox12.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Yew seed x 1"]);
+					pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Magic_seed_1.png");
+					pictureBox13.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Magic seed x 1"]);
+					pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_toadflax_noted_generic.png");
+					pictureBox14.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy toadflax x 100"]);
+					pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dark_fishing_bait_generic.png");
+					pictureBox15.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dark fishing bait x 375"]);
+					pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dark_crab.png");
+					pictureBox16.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dark crab x 8"]);
+					pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Super_restore_(4).png");
+					pictureBox17.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Super restore (4) x 3"]);
+					pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mysterious_emblem.png");
+					pictureBox18.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mysterious emblem x 1"]);
+					pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Limpwurt_root_noted_generic.png");
+					pictureBox19.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Limpwurt root x 50"]);
+					pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coconut_noted_generic.png");
+					pictureBox20.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coconut x 60"]);
+					pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Crushed_nest_noted_generic.png");
+					pictureBox21.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Crushed birds nest x 75"]);
+					pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Supercompost_noted_generic.png");
+					pictureBox22.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Supercompost x 100"]);
+					pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Cannonball_generic.png");
+					pictureBox23.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Cannonball x 250"]);
+					pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Red_dragonhide_noted_generic.png");
+					pictureBox24.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Red dragonhide x 75"]);
+					pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_ruby_noted_generic.png");
+					pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut ruby x 20"]);
+					pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_diamond_noted_generic.png");
+					pictureBox26.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut diamond x 10"]);
+					pictureBox27.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_dragonstone.png");
+					pictureBox27.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut dragonstone x 1"]);
+					pictureBox28.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coins_10000.png");
+					pictureBox28.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coins"]);
+					pictureBox29.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png");
+					pictureBox29.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Elite clue scroll x 1"]);
+					pictureBox30.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_pickaxe.png");
+					pictureBox30.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon pickaxe x 1"]);
+					pictureBox31.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_2h_sword.png");
+					pictureBox31.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon 2h sword x 1"]);
+					pictureBox32.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Tyrannical_ring.png");
+					pictureBox32.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Tyrannical ring x 1"]);
+					pictureBox33.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Callisto_cub.png");
+					pictureBox33.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Callisto cub x 1"]);
+					pictureBox34.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
+					pictureBox34.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["RDT x 1"]);
+
+					setNPictureBoxesToVisible(34);
+					setNPictureBoxesToDisabled(34);
 					break;
 
 				case "Chaos Elemental":
-					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_chestplate.png");
-					// Display corrent item quantity over picture box
+					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mithril_dart_generic.png");
+					pictureBox1.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mithril dart x 300"]);
+					pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_arrow_5.png");
+					pictureBox2.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune arrow x 150"]);
+					pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Chaos_rune.png");
+					pictureBox3.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Chaos rune x 250"]);
+					pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Air_rune.png");
+					pictureBox4.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Air rune x 500"]);
+					pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Death_rune.png");
+					pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Death rune x 125"]);
+					pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Blood_rune.png");
+					pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Blood rune x 75"]);
+					pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Anchovy_pizza.png");
+					pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Anchovy pizza x 3"]);
+					pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Tuna.png");
+					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Tuna x 5"]);
+					pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_guam_leaf.png");
+					pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy guam leaf"]);
+					pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_marrentill.png");
+					pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy marrentil"]);
+					pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_tarromin.png");
+					pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy tarromin"]);
+					pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_harralander.png");
+					pictureBox12.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy harralander"]);
+					pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_ranarr_weed.png");
+					pictureBox13.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy ranarr weed"]);
+					pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_irit_leaf.png");
+					pictureBox14.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy irit leaf"]);
+					pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_avantoe.png");
+					pictureBox15.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy avantoe"]);
+					pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_kwuarm.png");
+					pictureBox16.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy kwuarm"]);
+					pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_cadantine.png");
+					pictureBox17.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy snapdragon"]);
+					pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_lantadyme.png");
+					pictureBox18.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy lantadyme"]);
+					pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_dwarf_weed.png");
+					pictureBox19.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy dwarf weed"]);
+					pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Super_attack_(4).png");
+					pictureBox20.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Super attack (4) x 1"]);
+					pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Super_strength_(4).png");
+					pictureBox21.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Super strength (4) x 1"]);
+					pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Super_defence_(4).png");
+					pictureBox22.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Super defence (4) x 1"]);
+					pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Weapon_poison_(++).png");
+					pictureBox23.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Weapon poison (++) x 1"]);
+					pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Antidote++_(4).png");
+					pictureBox24.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Antidote++ (4) x 1"]);
+					pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Strange_fruit_noted_generic.png");
+					pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Strange fruit x 10"]);
+					pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bones.png");
+					pictureBox26.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Bones x 4"]);
+					pictureBox27.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bat_bones.png");
+					pictureBox27.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Bat bones x 5"]);
+					pictureBox28.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Big_bones.png");
+					pictureBox28.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Big bones x 3"]);
+					pictureBox29.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Babydragon_bones.png");
+					pictureBox29.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Babydragon bones x 2"]);
+					pictureBox30.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_bones.png");
+					pictureBox30.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon bones x 1"]);
+					pictureBox31.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coins_10000.png");
+					pictureBox31.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coins x 7500"]);
+					pictureBox32.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png");
+					pictureBox32.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Elite clue scroll x 1"]);
+					pictureBox33.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pet_chaos_elemental.png");
+					pictureBox33.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pet chaos elemental x 1"]);
+					pictureBox34.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
+					pictureBox34.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["RDT x 1"]);
+
+					setNPictureBoxesToVisible(34);
+					setNPictureBoxesToDisabled(34);
 					break;
 
 				case "Chaos Fanatic":
-					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_chestplate.png");
-					// Display corrent item quantity over picture box
+					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Fire_rune.png");
+					pictureBox1.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Fire rune x 250"]);
+					pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Smoke_rune.png");
+					pictureBox2.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Smoke rune x 30"]);
+					pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Chaos_rune.png");
+					pictureBox3.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Chaos rune x 175"]);
+					pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Blood_rune.png");
+					pictureBox4.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Blood rune x 50"]);
+					pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pure_essence_noted_generic.png");
+					pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pure essence x 250"]);
+					pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_sapphire_noted_generic.png");
+					pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut sapphire x 4"]);
+					pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_emerald_noted_generic.png");
+					pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut emerald x 6"]);
+					pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ring_of_life.png");
+					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ring of life x 1"]);
+					pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Chaos_talisman.png");
+					pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Chaos talisman x 1"]);
+					pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Nature_talisman.png");
+					pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Nature talisman x 1"]);
+					pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Zamorak_robe_(top).png");
+					pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Zamorak robe (top) x 1"]);
+					pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Zamorak_robe_(bottom).png");
+					pictureBox12.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Zamorak robe (bottom) x 1"]);
+					pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Splitbark_body.png");
+					pictureBox13.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Splitbark body x 1"]);
+					pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Splitbark_legs.png");
+					pictureBox14.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Splitbark legs x 1"]);
+					pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Prayer_potion_(4).png");
+					pictureBox15.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Prayer potion (4) x 1"]);
+					pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_lantadyme_noted_generic.png");
+					pictureBox16.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy lantadyme x 4"]);
+					pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Anchovy_pizza_noted_generic.png");
+					pictureBox17.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Anchovy pizza x 8"]);
+					pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Monkfish.png");
+					pictureBox18.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Monkfish x 3"]);
+					pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Shark.png");
+					pictureBox19.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Shark x 1"]);
+					pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Battlestaff_noted_generic.png");
+					pictureBox20.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Battlestaff x 5"]);
+					pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Wine_of_zamorak_noted_generic.png");
+					pictureBox21.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Wine of zamorak x 10"]);
+					pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coins_10000.png");
+					pictureBox22.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coins"]);
+					pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Sinister_key.png");
+					pictureBox23.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Sinister key x 1"]);
+					pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mysterious_emblem.png");
+					pictureBox24.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mysterious emblem x 1"]);
+					pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ancient_staff.png");
+					pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ancient staff x 1"]);
+					pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png");
+					pictureBox26.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Elite clue scroll x 1"]);
+					pictureBox27.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Odium_shard_1.png");
+					pictureBox27.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Odium shard 1 x 1"]);
+					pictureBox28.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Malediction_shard_1.png");
+					pictureBox28.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Malediction shard 1 x 1"]);
+					pictureBox29.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pet_chaos_elemental.png");
+					pictureBox29.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pet chaos elemental x 1"]);
+					pictureBox30.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
+					pictureBox30.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["RDT x 1"]);
+
+					setNPictureBoxesToVisible(30);
+					setNPictureBoxesToDisabled(30);
 					break;
 
 				case "Crazy Archaeologist":
-					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_chestplate.png");
-					// Display corrent item quantity over picture box
+					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_crossbow.png");
+					pictureBox1.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune crossbox x 1"]);
+					pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_knife_generic.png");
+					pictureBox2.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune knife x 10"]);
+					pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Amulet_of_power.png");
+					pictureBox3.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Amulet of power x 1"]);
+					pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mud_rune.png");
+					pictureBox4.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mud rune x 30"]);
+					pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Potato_with_cheese.png");
+					pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Potato with cheese x 3"]);
+					pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Anchovy_pizza_noted_generic.png");
+					pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Anchovy pizza x 8"]);
+					pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Shark.png");
+					pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Shark x 1"]);
+					pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Prayer_potion_(4).png");
+					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Prayer potion (4) x 1"]);
+					pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_sapphire_noted_generic.png");
+					pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut sapphire x 4"]);
+					pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_emerald_noted_generic.png");
+					pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut emerald x 6"]);
+					pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Silver_ore_noted_generic.png");
+					pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Silver ore x 40"]);
+					pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Muddy_key.png");
+					pictureBox12.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Muddy key x 1"]);
+					pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rusty_sword.png");
+					pictureBox13.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rusty sword x 1"]);
+					pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_dwarf_weed_noted_generic.png");
+					pictureBox14.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy dwarf weed x 4"]);
+					pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/White_berries_noted_generic.png");
+					pictureBox15.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Whiteberries x 10"]);
+					pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Cannonball_generic.png");
+					pictureBox16.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Cannonball x 150"]);
+					pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Red_d'hide_body.png");
+					pictureBox17.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Red d'hide body x 1"]);
+					pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Red_dragonhide_noted_generic.png");
+					pictureBox18.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Red dragonhide x 10"]);
+					pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coins_10000.png");
+					pictureBox19.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coins"]);
+					pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Onyx_bolt_tips_generic.png");
+					pictureBox20.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Onyx bolt tips x 12"]);
+					pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mysterious_emblem.png");
+					pictureBox21.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mysterious emblem x 1"]);
+					pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_arrow_generic.png");
+					pictureBox22.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon arrow x 75"]);
+					pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Long_bone.png");
+					pictureBox23.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Long bone x 1"]);
+					pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png");
+					pictureBox24.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Elite clue scroll x 1"]);
+					pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Fedora.png");
+					pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Fedora x 1"]);
+					pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Odium_shard_2.png");
+					pictureBox26.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Odium shard 2 x 1"]);
+					pictureBox27.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Malediction_shard_2.png");
+					pictureBox27.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Malediction shard 2 x 1"]);
+					pictureBox28.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
+					pictureBox28.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["RDT x 1"]);
+
+					setNPictureBoxesToVisible(28);
+					setNPictureBoxesToDisabled(28);
 					break;
 
 				case "King Black Dragon":
-					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_chestplate.png");
-					// Display corrent item quantity over picture box
+					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_longsword.png");
+					pictureBox1.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune longsword x 1"]);
+					pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Adamant_platebody.png");
+					pictureBox2.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Adamant platebody x 1"]);
+					pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Adamant_kiteshield.png");
+					pictureBox3.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Adamant kiteshield x 1"]);
+					pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Iron_arrow_generic.png");
+					pictureBox4.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Iron arrow x 690"]);
+					pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Runite_bolts_generic.png");
+					pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune bolts"]);
+					pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_dart_tip.png");
+					pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon dart tips"]);
+					pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_arrowtips_generic.png");
+					pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon arrowtips"]);
+					pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_javelin_heads_generic.png");
+					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon javelin heads x 15"]);
+					pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Fire_rune.png");
+					pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Fire rune x 300"]);
+					pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Air_rune.png");
+					pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Air rune x 300"]);
+					pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Blood_rune.png");
+					pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Blood rune x 30"]);
+					pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Law_rune.png");
+					pictureBox12.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Law rune x 30"]);
+					pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Amulet_of_power.png");
+					pictureBox13.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Amulet of power x 1"]);
+					pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Yew_logs_noted_generic.png");
+					pictureBox14.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Yew logs x 150"]);
+					pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Shark.png");
+					pictureBox15.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Shark x 4"]);
+					pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Gold_ore_noted_generic.png");
+					pictureBox16.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Gold ore x 100"]);
+					pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Runite_limbs.png");
+					pictureBox17.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Runite limbs x 1"]);
+					pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Adamantite_bar.png");
+					pictureBox18.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Adamantite bar x 3"]);
+					pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Runite_bar.png");
+					pictureBox19.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Runite bar x 1"]);
+					pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png");
+					pictureBox20.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Elite clue scroll x 1"]);
+					pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_med_helm.png");
+					pictureBox21.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon med helm x 1"]);
+					pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Kbd_heads.png");
+					pictureBox22.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Kbd heads x 1"]);
+					pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_pickaxe.png");
+					pictureBox23.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon pickaxe x 1"]);
+					pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Draconic_visage.png");
+					pictureBox24.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Draconic visage x 1"]);
+					pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Prince_black_dragon.png");
+					pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Prince black dragon x 1"]);
+					pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
+					pictureBox26.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["RDT x 1"]);
+
+					setNPictureBoxesToVisible(26);
+					setNPictureBoxesToDisabled(26);
 					break;
 
 				case "Scorpia":
-					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_chestplate.png");
-					// Display corrent item quantity over picture box
+					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_scimitar.png");
+					pictureBox1.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune scimitar x 1"]);
+					pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_sword.png");
+					pictureBox2.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune sword x 1"]);
+					pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_warhammer.png");
+					pictureBox3.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune warhammer x 1"]);
+					pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_2h_sword.png");
+					pictureBox4.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune 2h sword x 1"]);
+					pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_spear.png");
+					pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune spear x 1"]);
+					pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_pickaxe.png");
+					pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune pickaxe x 1"]);
+					pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_chainbody.png");
+					pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune chainbody x 1"]);
+					pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Phoenix_necklace.png");
+					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Phoenix necklace x 1"]);
+					pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dust_rune.png");
+					pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dust rune x 30"]);
+					pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_sapphire_noted_generic.png");
+					pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut sapphire x 4"]);
+					pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_emerald_noted_generic.png");
+					pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut emerald x 5"]);
+					pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coins_10000.png");
+					pictureBox12.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coins"]);
+					pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Admiral_pie.png");
+					pictureBox13.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Admiral pie x 3"]);
+					pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Anchovy_pizza_noted_generic.png");
+					pictureBox14.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Anchovy pizza x 8"]);
+					pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Shark.png");
+					pictureBox15.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Shark x 1"]);
+					pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Cactus_spine_noted_generic.png");
+					pictureBox16.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Cactus spine x 10"]);
+					pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Prayer_potion_(4).png");
+					pictureBox17.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Prayer potion (4) x 1"]);
+					pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Superantipoison_(4).png");
+					pictureBox18.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Superantipoison (4) x 1"]);
+					pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ensouled_scorpion_head.png");
+					pictureBox19.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ensouled scorpion head x 1"]);
+					pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bucket_of_sand_noted_generic.png");
+					pictureBox20.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Bucket of sand x 25"]);
+					pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Kwuarm_noted_generic.png");
+					pictureBox21.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Kwuarm x 4"]);
+					pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mysterious_emblem.png");
+					pictureBox22.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mysterious emblem x 1"]);
+					pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_scimitar.png");
+					pictureBox23.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon scimitar x 1"]);
+					pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png");
+					pictureBox24.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Elite clue scroll x 1"]);
+					pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Odium_shard_3.png");
+					pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Odium shard 3 x 1"]);
+					pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Malediction_shard_3.png");
+					pictureBox26.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Malediction shard 3 x 1"]);
+					pictureBox27.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Scorpia's_offspring.png");
+					pictureBox27.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Scorpia's offspring x 1"]);
+					pictureBox28.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
+					pictureBox28.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["RDT x 1"]);
+
+					setNPictureBoxesToVisible(28);
+					setNPictureBoxesToDisabled(28);
 					break;
 
 				case "Venenatis":
-					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_chestplate.png");
-					// Display corrent item quantity over picture box
+					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_pickaxe.png");
+					pictureBox1.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune pickaxe x 1"]);
+					pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_2h_sword.png");
+					pictureBox2.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune 2h sword x 1"]);
+					pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_knife_generic.png");
+					pictureBox3.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune knife x 60"]);
+					pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Diamond_bolts_(e)_generic.png");
+					pictureBox4.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Diamond bolts (e) x 100"]);
+					pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Cannonball_generic.png");
+					pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Cannonball x 250"]);
+					pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Chaos_rune_generic.png");
+					pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Chaos rune x 400"]);
+					pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Death_rune_generic.png");
+					pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Death rune x 300"]);
+					pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Blood_rune_generic.png");
+					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Blood rune x 200"]);
+					pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dark_fishing_bait_generic.png");
+					pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dark fishing bait x 375"]);
+					pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dark_crab.png");
+					pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dark crab x 8"]);
+					pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Supercompost_noted_generic.png");
+					pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Supercompost x 100"]);
+					pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Unicorn_horn_noted_generic.png");
+					pictureBox12.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Unicorn horn x 100"]);
+					pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Red_spiders'_eggs_noted_generic.png");
+					pictureBox13.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Red spiders' eggs x 500"]);
+					pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_ruby_noted_generic.png");
+					pictureBox14.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut ruby x 20"]);
+					pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_diamond_noted_generic.png");
+					pictureBox15.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut diamond x 10"]);
+					pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_dragonstone.png");
+					pictureBox16.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut dragonstone x 1"]);
+					pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Gold_ore_noted_generic.png");
+					pictureBox17.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Gold ore x 300"]);
+					pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Limpwurt_root_noted_generic.png");
+					pictureBox18.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Limpwurt root x 50"]);
+					pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_snapdragon_noted_generic.png");
+					pictureBox19.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy snapdragon x 100"]);
+					pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Antidote++_(4)_noted_generic.png");
+					pictureBox20.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Antidote++ (4) x 10"]);
+					pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Super_restore_(4).png");
+					pictureBox21.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Super restore (4) x 3"]);
+					pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Palm_tree_seed_1.png");
+					pictureBox22.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Palm tree seed x 1"]);
+					pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Yew_seed_1.png");
+					pictureBox23.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Yew seed x 1"]);
+					pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Magic_seed_1.png");
+					pictureBox24.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Magic seed x 1"]);
+					pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Magic_logs_noted_generic.png");
+					pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Magic logs x 100"]);
+					pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coins_10000.png");
+					pictureBox26.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coins"]);
+					pictureBox27.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mysterious_emblem.png");
+					pictureBox27.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mysterious emblem x 1"]);
+					pictureBox28.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png");
+					pictureBox28.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Elite clue scroll x 1"]);
+					pictureBox29.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Onyx_bolt_tips_generic.png");
+					pictureBox29.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Onyx bolt tips x 60"]);
+					pictureBox30.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_2h_sword.png");
+					pictureBox30.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon 2h sword x 1"]);
+					pictureBox31.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_pickaxe.png");
+					pictureBox31.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon pickaxe x 1"]);
+					pictureBox32.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Treasonous_ring.png");
+					pictureBox32.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Treasonous ring x 1"]);
+					pictureBox33.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Venenatis_spiderling.png");
+					pictureBox33.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Venenatis spiderling x 1"]);
+					pictureBox34.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
+					pictureBox34.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["RDT x 1"]);
+
+					setNPictureBoxesToVisible(34);
+					setNPictureBoxesToDisabled(34);
 					break;
 
 				case "Vet'ion":
-					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_chestplate.png");
-					// Display corrent item quantity over picture box
+					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_pickaxe.png");
+					pictureBox1.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune pickaxe x 1"]);
+					pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_2h_sword.png");
+					pictureBox2.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune 2h sword x 1"]);
+					pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ancient_staff.png");
+					pictureBox3.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ancient staff x 1"]);
+					pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Gold_ore_noted_generic.png");
+					pictureBox4.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Gold ore x 300"]);
+					pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Magic_logs_noted_generic.png");
+					pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Magic logs x 100"]);
+					pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Chaos_rune_generic.png");
+					pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Chaos rune x 400"]);
+					pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Death_rune_generic.png");
+					pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Death rune x 300"]);
+					pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Blood_rune_generic.png");
+					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Blood rune x 200"]);
+					pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dark_fishing_bait_generic.png");
+					pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dark fishing bait x 375"]);
+					pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dark_crab.png");
+					pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dark crab x 8"]);
+					pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Supercompost_noted_generic.png");
+					pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Supercompost x 100"]);
+					pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Limpwurt_root_noted_generic.png");
+					pictureBox12.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Limpwurt root x 50"]);
+					pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_bones_noted_generic.png");
+					pictureBox13.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon bones x 100"]);
+					pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_ruby_noted_generic.png");
+					pictureBox14.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut ruby x 20"]);
+					pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_diamond_noted_generic.png");
+					pictureBox15.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut diamond x 10"]);
+					pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_dragonstone.png");
+					pictureBox16.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut dragonstone x 1"]);
+					pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Oak_plank_noted_generic.png");
+					pictureBox17.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Oak plank x 300"]);
+					pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mort_myre_fungus_noted_generic.png");
+					pictureBox18.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mort myre fungus x 200"]);
+					pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_ranarr_weed_noted_generic.png");
+					pictureBox19.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy ranarr weed x 100"]);
+					pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Sanfew_serum_(4)_noted_generic.png");
+					pictureBox20.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Sanfew serum (4) x 10"]);
+					pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Super_restore_(4).png");
+					pictureBox21.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Super restore (4) x 3"]);
+					pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Palm_tree_seed_1.png");
+					pictureBox22.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Palm tree seed x 1"]);
+					pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Yew_seed_1.png");
+					pictureBox23.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Yew seed x 1"]);
+					pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Magic_seed_1.png");
+					pictureBox24.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Magic seed x 1"]);
+					pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ogre_coffin_key_noted_generic.png");
+					pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ogre coffin key x 10"]);
+					pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Cannonball_generic.png");
+					pictureBox26.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Cannonball x 250"]);
+					pictureBox27.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coins_10000.png");
+					pictureBox27.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coins"]);
+					pictureBox28.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mysterious_emblem.png");
+					pictureBox28.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mysterious emblem x 1"]);
+					pictureBox29.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png");
+					pictureBox29.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Elite clue scroll x 1"]);
+					pictureBox30.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_2h_sword.png");
+					pictureBox30.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon 2h sword x 1"]);
+					pictureBox31.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_pickaxe.png");
+					pictureBox31.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon pickaxe x 1"]);
+					pictureBox32.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ring_of_the_gods.png");
+					pictureBox32.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ring of the gods x 1"]);
+					pictureBox33.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Long_bone.png");
+					pictureBox33.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Long bone x 1"]);
+					pictureBox34.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Curved_bone.png");
+					pictureBox34.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Curved bone x 1"]);
+					pictureBox35.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Vet'ion_jr.png");
+					pictureBox35.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Vet'ion jr x 1"]);
+					pictureBox36.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
+					pictureBox36.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["RDT x 1"]);
+
+					setNPictureBoxesToVisible(36);
+					setNPictureBoxesToDisabled(36);
 					break;
 
 				case "Abyssal Sire":
-					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_chestplate.png");
-					// Display corrent item quantity over picture box
+					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_sword_noted_generic.png");
+					pictureBox1.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune sword x 3"]);
+					pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_full_helm_noted_generic.png");
+					pictureBox2.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune full helm x 3"]);
+					pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_platebody_noted_generic.png");
+					pictureBox3.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune platebody x 2"]);
+					pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_kiteshield_noted_generic.png");
+					pictureBox4.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune kiteshield x 2"]);
+					pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Battlestaff_noted_generic.png");
+					pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Battlestaff x 10"]);
+					pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Air_battlestaff_noted_generic.png");
+					pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Air battlestaff x 6"]);
+					pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mystic_air_staff_noted_generic.png");
+					pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mystic air staff x 2"]);
+					pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mystic_lava_staff_noted_generic.png");
+					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mystic lava staff x 2"]);
+					pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Cosmic_rune_generic.png");
+					pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Cosmic rune x 350"]);
+					pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Law_rune_generic.png");
+					pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Law rune x 250"]);
+					pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Death_rune_generic.png");
+					pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Death rune"]);
+					pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Blood_rune_generic.png");
+					pictureBox12.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Blood rune"]);
+					pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Soul_rune_generic.png");
+					pictureBox13.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Soul rune"]);
+					pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pure_essence_noted_generic.png");
+					pictureBox14.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pure essence x 600"]);
+					pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Earth_orb_noted_generic.png");
+					pictureBox15.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Earth orb"]);
+					pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Magic_logs_noted_generic.png");
+					pictureBox16.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Magic logs"]);
+					pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ranarr_seed_generic.png");
+					pictureBox17.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ranarr seed x 1"]);
+					pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Snapdragon_seed_generic.png");
+					pictureBox18.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Snapdragon xeed x 2"]);
+					pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Torstol_seed_generic.png");
+					pictureBox19.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Torstol seed x 2"]);
+					pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Watermelon_seed_generic.png");
+					pictureBox20.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Watermelon seed x 30"]);
+					pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Papaya_tree_seed_generic.png");
+					pictureBox21.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Papaya tree seed x 2"]);
+					pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Palm_tree_seed_generic.png");
+					pictureBox22.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Palm tree seed x 2"]);
+					pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Willow_seed_generic.png");
+					pictureBox23.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Willow seed x 2"]);
+					pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Maple_seed_generic.png");
+					pictureBox24.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Maple seed x 2"]);
+					pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Yew_seed_generic.png");
+					pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Yew seed x 2"]);
+					pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Magic_seed_generic.png");
+					pictureBox26.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Magic seed x 2"]);
+					pictureBox27.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Spirit_seed_generic.png");
+					pictureBox27.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Spirit seed x 2"]);
+					pictureBox28.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_kwuarm_noted_generic.png");
+					pictureBox28.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy kwuarm x 25"]);
+					pictureBox29.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_lantadyme_noted_generic.png");
+					pictureBox29.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy lantadyme x 25"]);
+					pictureBox30.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_cadantine_noted_generic.png");
+					pictureBox30.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy cadantine x 25"]);
+					pictureBox31.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_dwarf_weed_noted_generic.png");
+					pictureBox31.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy dwarf weed x 25"]);
+					pictureBox32.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Chilli_potato.png");
+					pictureBox32.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Chili potato x 10"]);
+					pictureBox33.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Saradomin_brew_(3).png");
+					pictureBox33.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Saradomin brew (3) x 6"]);
+					pictureBox34.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Super_restore_(4).png");
+					pictureBox34.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Super restore (4) x 4"]);
+					pictureBox35.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coal_noted_generic.png");
+					pictureBox35.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coal"]);
+					pictureBox36.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Runite_ore_noted_generic.png");
+					pictureBox36.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Runite ore x 6"]);
+					pictureBox37.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Runite_bar_noted_generic.png");
+					pictureBox37.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Runite bar x 5"]);
+					pictureBox38.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Jug_of_water_noted_generic.png");
+					pictureBox38.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Jug of water"]);
+					pictureBox39.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Binding_necklace_noted_generic.png");
+					pictureBox39.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Binding necklace x 25"]);
+					pictureBox40.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Air_talisman.png");
+					pictureBox40.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Air talisman x 1"]);
+					pictureBox41.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Water_talisman.png");
+					pictureBox41.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Water talisman x 1"]);
+					pictureBox42.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Fire_talisman.png");
+					pictureBox42.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Fire talisman x 1"]);
+					pictureBox43.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Earth_talisman.png");
+					pictureBox43.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Earth talisman x 1"]);
+					pictureBox44.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mind_talisman.png");
+					pictureBox44.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mind talisman x 1"]);
+					pictureBox45.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Body_talisman.png");
+					pictureBox45.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Body talisman x 1"]);
+					pictureBox46.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Cosmic_talisman.png");
+					pictureBox46.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Cosmic talisman x 1"]);
+					pictureBox47.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Nature_talisman.png");
+					pictureBox47.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Nature talisman x 1"]);
+					pictureBox48.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Chaos_talisman.png");
+					pictureBox48.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Chaos talisman x 1"]);
+					pictureBox49.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Cannonball_generic.png");
+					pictureBox49.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Cannonball x 30"]);
+					pictureBox50.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_diamond_noted_generic.png");
+					pictureBox50.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut diamond x 15"]);
+					pictureBox51.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coins_10000.png");
+					pictureBox51.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coins"]);
+					pictureBox52.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Onyx_bolt_tips_generic.png");
+					pictureBox52.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Onyx bolt tips x 10"]);
+					pictureBox53.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png");
+					pictureBox53.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Elite clue scroll x 1"]);
+					pictureBox54.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Unsired.png");
+					pictureBox54.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Unsired x 1"]);
+					pictureBox55.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
+					pictureBox55.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["RDT x 1"]);
+
+					setNPictureBoxesToVisible(55);
+					setNPictureBoxesToDisabled(55);
 					break;
 
 				case "Barrows":
-					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_chestplate.png");
-					// Display corrent item quantity over picture box
+					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ahrim's_hood.png");
+					pictureBox1.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ahrim's hood x 1"]);
+					pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Karil's_coif.png");
+					pictureBox2.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Karil's coif x 1"]);
+					pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dharok's_helm.png");
+					pictureBox3.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dharok's helm x 1"]);
+					pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Guthan's_helm.png");
+					pictureBox4.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Guthan's helm x 1"]);
+					pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Torag's_helm.png");
+					pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Torag's helm x 1"]);
+					pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Verac's_helm.png");
+					pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Verac's helm x 1"]);
+					pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mind_rune_generic.png");
+					pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mind rune"]);
+					pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Chaos_rune_generic.png");
+					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Chaos rune"]);
+					pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ahrim's_robetop.png");
+					pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ahrim's robetop x 1"]);
+					pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Karil's_leathertop.png");
+					pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Karil's leathertop x 1"]);
+					pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dharok's_platebody.png");
+					pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dharok's platebody x 1"]);
+					pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Guthan's_platebody.png");
+					pictureBox12.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Guthan's platebody x 1"]);
+					pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Torag's_platebody.png");
+					pictureBox13.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Torag's platebody x 1"]);
+					pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Verac's_brassard.png");
+					pictureBox14.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Verac's brassard x 1"]);
+					pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Death_rune_generic.png");
+					pictureBox15.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Death rune"]);
+					pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Blood_rune_generic.png");
+					pictureBox16.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Blood rune"]);
+					pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ahrim's_robeskirt.png");
+					pictureBox17.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ahrim's robeskrit x 1"]);
+					pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Karil's_leatherskirt.png");
+					pictureBox18.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Karil's leatherskirt x 1"]);
+					pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dharok's_platelegs.png");
+					pictureBox19.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dharok's platelegs x 1"]);
+					pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Guthan's_chainskirt.png");
+					pictureBox20.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Guthan's chainskirt x 1"]);
+					pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Torag's_platelegs.png");
+					pictureBox21.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Torag's platelegs x 1"]);
+					pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Verac's_plateskirt.png");
+					pictureBox22.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Verac's plateskirt x 1"]);
+					pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Loop_half_of_key.png");
+					pictureBox23.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Loop half of key x 1"]);
+					pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Tooth_half_of_key.png");
+					pictureBox24.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Tooth half of key x 1"]);
+					pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ahrim's_staff.png");
+					pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ahrim's staff x 1"]);
+					pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Karil's_crossbow.png");
+					pictureBox26.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Karil's crossbow x 1"]);
+					pictureBox27.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dharok's_greataxe.png");
+					pictureBox27.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dharok's greataxe x 1"]);
+					pictureBox28.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Guthan's_warspear.png");
+					pictureBox28.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Guthan's warspear x 1"]);
+					pictureBox29.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Torag's_hammers.png");
+					pictureBox29.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Torag's hammers x 1"]);
+					pictureBox30.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Verac's_flail.png");
+					pictureBox30.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Verac's flail x 1"]);
+					pictureBox31.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coins_generic.png");
+					pictureBox31.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coins"]);
+					pictureBox32.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png");
+					pictureBox32.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Elite clue scroll x 1"]);
+					pictureBox33.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_med_helm.png");
+					pictureBox33.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon med helm x 1"]);
+					pictureBox34.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bolt_rack_generic.png");
+					pictureBox34.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Bolt rack"]);
+
+					setNPictureBoxesToVisible(34);
+					setNPictureBoxesToDisabled(34);
 					break;
 
 				case "Cerberus":
-					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_chestplate.png");
-					// Display corrent item quantity over picture box
+					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_2h_sword.png");
+					pictureBox1.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune 2h sword x 1"]);
+					pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_halberd.png");
+					pictureBox2.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune halberd x 1"]);
+					pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_axe.png");
+					pictureBox3.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune axe x 1"]);
+					pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_pickaxe.png");
+					pictureBox4.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune pickaxe x 1"]);
+					pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_full_helm.png");
+					pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune full helm x 1"]);
+					pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_platebody.png");
+					pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune platebody x 1"]);
+					pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_chainbody.png");
+					pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune chainbody x 1"]);
+					pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Black_d'hide_body.png");
+					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Black d'hide body x 1"]);
+					pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Battlestaff_noted_generic.png");
+					pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Battlestaff x 6"]);
+					pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Lava_battlestaff.png");
+					pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Lava battlestaff x 1"]);
+					pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pure_essence_noted_generic.png");
+					pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pure essence x 300"]);
+					pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Fire_rune_generic.png");
+					pictureBox12.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Fire rune x 300"]);
+					pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Death_rune_generic.png");
+					pictureBox13.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Death rune x 100"]);
+					pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Blood_rune_generic.png");
+					pictureBox14.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Blood rune x 60"]);
+					pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Soul_rune_generic.png");
+					pictureBox15.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Soul rune x 100"]);
+					pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Runite_bolts_(unf)_generic.png");
+					pictureBox16.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Runite bolts (unf) x 40"]);
+					pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Cannonball_generic.png");
+					pictureBox17.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Cannonball x 50"]);
+					pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Torstol_seed_generic.png");
+					pictureBox18.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Torstol seed x 3"]);
+					pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_torstol_noted_generic.png");
+					pictureBox19.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy torstol x 6"]);
+					pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Super_restore_(4).png");
+					pictureBox20.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Super restore (4) x 2"]);
+					pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coal_noted_generic.png");
+					pictureBox21.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coal x 120"]);
+					pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Runite_ore_noted_generic.png");
+					pictureBox22.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Runite ore x 5"]);
+					pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Wine_of_zamorak_noted_generic.png");
+					pictureBox23.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Wine of zamorak x 15"]);
+					pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Unholy_symbol.png");
+					pictureBox24.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Unholy symbol x 1"]);
+					pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ashes_noted_generic.png");
+					pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ashes x 50"]);
+					pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Summer_pie.png");
+					pictureBox26.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Summer pie x 3"]);
+					pictureBox27.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_bones_noted_generic.png");
+					pictureBox27.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon bones x 20"]);
+					pictureBox28.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Fire_orb_noted_generic.png");
+					pictureBox28.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Fire orb x 20"]);
+					pictureBox29.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_diamond_noted_generic.png");
+					pictureBox29.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut diamond x 5"]);
+					pictureBox30.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coins_generic.png");
+					pictureBox30.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coins"]);
+					pictureBox31.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Key_master_teleport_generic.png");
+					pictureBox31.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Key master teleport x 3"]);
+					pictureBox32.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png");
+					pictureBox32.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Elite clue scroll x 1"]);
+					pictureBox33.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Smouldering_stone.png");
+					pictureBox33.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Smouldering stone x 1"]);
+					pictureBox34.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pegasian_crystal.png");
+					pictureBox34.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pegasian crystal x 1"]);
+					pictureBox35.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Eternal_crystal.png");
+					pictureBox35.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Eternal crystal x 1"]);
+					pictureBox36.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Primordial_crystal.png");
+					pictureBox36.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Primordial crystal x 1"]);
+					pictureBox37.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Jar_of_souls.png");
+					pictureBox37.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Jar of souls x 1"]);
+					pictureBox38.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Hellpuppy.png");
+					pictureBox38.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Hellpuppy x 1"]);
+					pictureBox39.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
+					pictureBox39.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["RDT x 1"]);
+
+					setNPictureBoxesToVisible(39);
+					setNPictureBoxesToDisabled(39);
 					break;
 
 				case "Corporeal Beast":
-					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_chestplate.png");
-					// Display corrent item quantity over picture box
+					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Adamant_arrow_generic.png");
+					pictureBox1.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Adamant arrow x 750"]);
+					pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Runite_bolts_generic.png");
+					pictureBox2.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Runite bolts x 250"]);
+					pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Cannonball_generic.png");
+					pictureBox3.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Cannonball x 2000"]);
+					pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mystic_air_staff.png");
+					pictureBox4.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mystic air staff x 1"]);
+					pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mystic_water_staff.png");
+					pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mystic water staff x 1"]);
+					pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mystic_earth_staff.png");
+					pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mystic earth staff x 1"]);
+					pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mystic_fire_staff.png");
+					pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mystic fire staff x 1"]);
+					pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Nature_talisman.png");
+					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Nature talisman"]);
+					pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_sapphire.png");
+					pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut sapphire"]);
+					pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_emerald.png");
+					pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut emerald"]);
+					pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_ruby.png");
+					pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut ruby"]);
+					pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_diamond.png");
+					pictureBox12.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut diamond"]);
+					pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mystic_robe_top_(blue).png");
+					pictureBox13.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mystic robe top (blue) x 1"]);
+					pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mystic_robe_bottom_(blue).png");
+					pictureBox14.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mystic robe bottom (blue) x 1"]);
+					pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mahogany_logs_noted_generic.png");
+					pictureBox15.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mahogany logs x 150"]);
+					pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Magic_logs_noted_generic.png");
+					pictureBox16.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Magic logs x 75"]);
+					pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pure_essence_noted_generic.png");
+					pictureBox17.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pure essence x 2500"]);
+					pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Law_rune_generic.png");
+					pictureBox18.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Law rune x 250"]);
+					pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Cosmic_rune_generic.png");
+					pictureBox19.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Cosmic rune x 500"]);
+					pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Death_rune_generic.png");
+					pictureBox20.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Death rune x 300"]);
+					pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Soul_rune_generic.png");
+					pictureBox21.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Soul rune x 250"]);
+					pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Adamantite_bar_noted_generic.png");
+					pictureBox22.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Adamantite bar x 35"]);
+					pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Adamantite_ore_noted_generic.png");
+					pictureBox23.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Adamantite ore x 125"]);
+					pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Runite_ore_noted_generic.png");
+					pictureBox24.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Runite ore x 20"]);
+					pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Teak_plank_noted_generic.png");
+					pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Teak plank x 100"]);
+					pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Green_dragonhide_noted_generic.png");
+					pictureBox26.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Green dragonhide x 100"]);
+					pictureBox27.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_shark_noted_generic.png");
+					pictureBox27.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Raw shark x 70"]);
+					pictureBox28.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/White_berries_noted_generic.png");
+					pictureBox28.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Whiteberries x 120"]);
+					pictureBox29.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Desert_goat_horn_noted_generic.png");
+					pictureBox29.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Desert goat horn x 120"]);
+					pictureBox30.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Antidote++_(4)_noted_generic.png");
+					pictureBox30.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Antidote++ (4) x 40"]);
+					pictureBox31.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Watermelon_seed_generic.png");
+					pictureBox31.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Watermelon seed x 24"]);
+					pictureBox32.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ranarr_seed_generic.png");
+					pictureBox32.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ranarr seed x 10"]);
+					pictureBox33.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Tuna_potato.png");
+					pictureBox33.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Tuna potato x 30"]);
+					pictureBox34.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coins_generic.png");
+					pictureBox34.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coins"]);
+					pictureBox35.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Shield_left_half.png");
+					pictureBox35.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Shield left half x 1"]);
+					pictureBox36.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_spear.png");
+					pictureBox36.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon spear x 1"]);
+					pictureBox37.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png");
+					pictureBox37.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Elite clue scroll x 1"]);
+					pictureBox38.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Onyx_bolts_(e)_generic.png");
+					pictureBox38.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Onyx bolts (e) x 175"]);
+					pictureBox39.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Holy_elixir.png");
+					pictureBox39.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Holy elixir x 1"]);
+					pictureBox40.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Spirit_shield.png");
+					pictureBox40.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Spirit shield x 1"]);
+					pictureBox41.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Spectral_sigil.png");
+					pictureBox41.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Spectral sigil x 1"]);
+					pictureBox42.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Arcane_sigil.png");
+					pictureBox42.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Arcane sigil x 1"]);
+					pictureBox43.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elysian_sigil.png");
+					pictureBox43.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Elysian sigil x 1"]);
+					pictureBox44.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pet_dark_core.png");
+					pictureBox44.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pet dark core"]);
+
+					setNPictureBoxesToVisible(44);
+					setNPictureBoxesToDisabled(44);
 					break;
 
 				case "Dagannoth Kings":
-					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_chestplate.png");
-					// Display corrent item quantity over picture box
+					highlightPictureBox(pictureBoxDagannothPrimeLoot);
+					if (selectedDagannothKingLoot == "Dagannoth Prime") {
+						pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Battlestaff_noted_generic.png");
+						pictureBox1.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Battlestaff"]);
+						pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Air_battlestaff.png");
+						pictureBox2.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Air battlestaff x 1"]);
+						pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Water_battlestaff.png");
+						pictureBox3.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Water battlestaff x 1"]);
+						pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Earth_battlestaff.png");
+						pictureBox4.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Earth battlestaff x 1"]);
+						pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pure_essence_noted_generic.png");
+						pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pure essence x 150"]);
+						pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Air_rune_generic.png");
+						pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Air rune x 155"]);
+						pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mud_rune_generic.png");
+						pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mud rune x 32"]);
+						pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Death_rune_generic.png");
+						pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Death rune"]);
+						pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ensouled_dagannoth_head.png");
+						pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ensouled dagannoth head x 1"]);
+						pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Air_talisman.png");
+						pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Air talisman"]);
+						pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Water_talisman.png");
+						pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Water talisman"]);
+						pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Earth_talisman.png");
+						pictureBox12.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Earth talisman"]);
+						pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_ranarr_weed.png");
+						pictureBox13.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy ranarr weed x 1"]);
+						pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Belladonna_seed_generic.png");
+						pictureBox14.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Belladonna seed x 1"]);
+						pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Cactus_seed_generic.png");
+						pictureBox15.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Cactus seed x 1"]);
+						pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Poison_ivy_seed_generic.png");
+						pictureBox16.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Poison ivy seed x 1"]);
+						pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Irit_seed_generic.png");
+						pictureBox17.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Irit seed x 1"]);
+						pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Toadflax_seed_generic.png");
+						pictureBox18.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Toadflax seed x 1"]);
+						pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Avantoe_seed_generic.png");
+						pictureBox19.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Avantoe seed x 1"]);
+						pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Kwuarm_seed_generic.png");
+						pictureBox20.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Kwuarm seed x 1"]);
+						pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Snapdragon_seed_generic.png");
+						pictureBox21.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Snapdragon seed x 1"]);
+						pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Cadantine_seed_generic.png");
+						pictureBox22.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Cadantine seed x 1"]);
+						pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Lantadyme_seed_generic.png");
+						pictureBox23.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Lantadyme seed x 1"]);
+						pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dwarf_weed_seed_generic.png");
+						pictureBox24.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dwarf weed seed x 1"]);
+						pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Fremennik_shield.png");
+						pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Fremennik shield x 1"]);
+						pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Fremennik_helm.png");
+						pictureBox26.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Fremennik helm x 1"]);
+						pictureBox27.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Skeletal_top.png");
+						pictureBox27.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Skeletal top x 1"]);
+						pictureBox28.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Skeletal_bottoms.png");
+						pictureBox28.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Skeletal bottoms x 1"]);
+						pictureBox29.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Farseer_helm.png");
+						pictureBox29.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Farseer helm x 1"]);
+						pictureBox30.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coins_generic.png");
+						pictureBox30.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coins"]);
+						pictureBox31.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Hard_clue_scroll.png");
+						pictureBox31.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Hard clue scroll x 1"]);
+						pictureBox32.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png");
+						pictureBox32.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Elite clue scroll x 1"]);
+						pictureBox33.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_axe.png");
+						pictureBox33.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon axe x 1"]);
+						pictureBox34.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mud_battlestaff.png");
+						pictureBox34.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mud battlestaff x 1"]);
+						pictureBox35.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Seers_ring.png");
+						pictureBox35.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Seers ring x 1"]);
+						pictureBox36.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pet_dagannoth_prime.png");
+						pictureBox36.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pet dagannoth prime x 1"]);
+						pictureBox37.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
+						pictureBox37.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["RDT x 1"]);
+
+						setNPictureBoxesToVisible(37, "Dagannoth Kings Loot");
+						setNPictureBoxesToDisabled(37);
+						break;
+					}
+					if (selectedDagannothKingLoot == "Dagannoth Rex") {
+						pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mithril_warhammer.png");
+						pictureBox1.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mithril warhammer x 1"]);
+						pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mithril_2h_sword.png");
+						pictureBox2.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mithril 2h sword x 1"]);
+						pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mithril_pickaxe.png");
+						pictureBox3.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mithril pickaxe x 1"]);
+						pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Adamant_axe.png");
+						pictureBox4.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Adamant axe x 1"]);
+						pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_Battleaxe.png");
+						pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune battleaxe x 1"]);
+						pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_axe.png");
+						pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune axe x 1"]);
+						pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Fremennik_blade.png");
+						pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Fremennik blade x 1"]);
+						pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Fremennik_helm.png");
+						pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Fremennik helm x 1"]);
+						pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Super_attack_(2).png");
+						pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Super attack (2) x 1"]);
+						pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Super_strength_(2).png");
+						pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Super strength (2) x 1"]);
+						pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Super_defence_(2).png");
+						pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Super defence (2) x 1"]);
+						pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Prayer_potion_(2).png");
+						pictureBox12.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Prayer potion (2) x 1"]);
+						pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Antifire_potion_(2).png");
+						pictureBox13.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Antifire (2) x 1"]);
+						pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Zamorak_brew_(2).png");
+						pictureBox14.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Zamorak brew (2) x 1"]);
+						pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Fremennik_shield.png");
+						pictureBox15.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Fremennik shield x 1"]);
+						pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Steel_kiteshield.png");
+						pictureBox16.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Steel kiteshield x 1"]);
+						pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Air_talisman.png");
+						pictureBox17.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Air talisman x 1"]);
+						pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Fire_talisman.png");
+						pictureBox18.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Fire talisman x 1"]);
+						pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Water_talisman.png");
+						pictureBox19.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Water talisman x 1"]);
+						pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Earth_talisman.png");
+						pictureBox20.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Earth talisman x 1"]);
+						pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mind_talisman.png");
+						pictureBox21.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mind talisman x 1"]);
+						pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Body_talisman.png");
+						pictureBox22.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Body talisman x 1"]);
+						pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Cosmic_talisman.png");
+						pictureBox23.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Cosmic talisman x 1"]);
+						pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Steel_platebody.png");
+						pictureBox24.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Steel platebody x 1"]);
+						pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_ranarr_weed.png");
+						pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy ranarr weed x 1"]);
+						pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ensouled_dagannoth_head.png");
+						pictureBox26.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ensouled dagannoth head x 1"]);
+						pictureBox27.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Iron_ore_noted_generic.png");
+						pictureBox27.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Iron ore x 150"]);
+						pictureBox28.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coal_noted_generic.png");
+						pictureBox28.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coal x 100"]);
+						pictureBox29.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mithril_ore_noted_generic.png");
+						pictureBox29.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mithril ore x 25"]);
+						pictureBox30.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Steel_bar_noted_generic.png");
+						pictureBox30.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Steel bar"]);
+						pictureBox31.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Adamantite_bar.png");
+						pictureBox31.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Adamantite bar x 1"]);
+						pictureBox32.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Adamant_platebody.png");
+						pictureBox32.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Adamant platebody x 1"]);
+						pictureBox33.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bass.png");
+						pictureBox33.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Bass x 5"]);
+						pictureBox34.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Swordfish.png");
+						pictureBox34.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Swordfish x 5"]);
+						pictureBox35.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Shark.png");
+						pictureBox35.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Shark x 5"]);
+						pictureBox36.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coins_generic.png");
+						pictureBox36.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coins"]);
+						pictureBox37.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ring_of_life.png");
+						pictureBox37.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ring of life x 1"]);
+						pictureBox38.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rock-shell_plate.png");
+						pictureBox38.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rock-shell plate x 1"]);
+						pictureBox39.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rock-shell_legs.png");
+						pictureBox39.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rock-shell legs x 1"]);
+						pictureBox40.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Hard_clue_scroll.png");
+						pictureBox40.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Hard clue scroll x 1"]);
+						pictureBox41.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png");
+						pictureBox41.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Elite clue scroll x 1"]);
+						pictureBox42.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_axe.png");
+						pictureBox42.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon axe x 1"]);
+						pictureBox43.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Warrior_ring.png");
+						pictureBox43.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Warrior ring x 1"]);
+						pictureBox44.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Berserker_ring.png");
+						pictureBox44.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Berserker ring x 1"]);
+						pictureBox45.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pet_dagannoth_rex.png");
+						pictureBox45.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pet dagannoth rex x 1"]);
+						pictureBox46.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
+						pictureBox46.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["RDT x 1"]);
+
+						setNPictureBoxesToVisible(46, "Dagannoth Kings Loot");
+						setNPictureBoxesToDisabled(46);
+						break;
+					}
+					if (selectedDagannothKingLoot == "Dagannoth Supreme") {
+						pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Iron_arrow_generic.png");
+						pictureBox1.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Iron arrow"]);
+						pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Steel_arrow_generic.png");
+						pictureBox2.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Steel arrow"]);
+						pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Iron_knife_generic.png");
+						pictureBox3.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Iron knife"]);
+						pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Steel_knife_generic.png");
+						pictureBox4.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Steel knife"]);
+						pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mithril_knife_generic.png");
+						pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mithril knife"]);
+						pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_thrownaxe_generic.png");
+						pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune thrownaxe"]);
+						pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_javelin_generic.png");
+						pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune javelin"]);
+						pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Runite_bolts_generic.png");
+						pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune bolts"]);
+						pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Runite_limbs.png");
+						pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune limbs x 1"]);
+						pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Adamant_axe.png");
+						pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Adamant axe x 1"]);
+						pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Belladonna_seed_generic.png");
+						pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Belladonna seed x 1"]);
+						pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Cactus_seed_generic.png");
+						pictureBox12.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Cactus seed x 1"]);
+						pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Poison_ivy_seed_generic.png");
+						pictureBox13.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Poison ivy seed x 1"]);
+						pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Irit_seed_generic.png");
+						pictureBox14.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Irit seed x 1"]);
+						pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Toadflax_seed_generic.png");
+						pictureBox15.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Toadflax seed x 1"]);
+						pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Avantoe_seed_generic.png");
+						pictureBox16.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Avantoe seed x 1"]);
+						pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Kwuarm_seed_generic.png");
+						pictureBox17.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Kwuarm seed x 1"]);
+						pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Cadantine_seed_generic.png");
+						pictureBox18.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Cadantine seed x 1"]);
+						pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Lantadyme_seed_generic.png");
+						pictureBox19.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Lantadyme seed x 1"]);
+						pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dwarf_weed_seed_generic.png");
+						pictureBox20.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dwarf weed seed x 1"]);
+						pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Torstol_seed_generic.png");
+						pictureBox21.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Torstol seed x 1"]);
+						pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coins_generic.png");
+						pictureBox22.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coins"]);
+						pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Opal_bolt_tips_generic.png");
+						pictureBox23.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Opal bolt tips"]);
+						pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Oyster_pearls.png");
+						pictureBox24.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Oyster x 1"]);
+						pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Shark.png");
+						pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Shark x 5"]);
+						pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Maple_logs_noted_generic.png");
+						pictureBox26.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Maple logs"]);
+						pictureBox27.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Yew_logs_noted_generic.png");
+						pictureBox27.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Yew logs"]);
+						pictureBox28.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_ranarr_weed.png");
+						pictureBox28.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy ranarr weed x 1"]);
+						pictureBox29.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ensouled_dagannoth_head.png");
+						pictureBox29.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ensouled dagannoth head x 1"]);
+						pictureBox30.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Feather.png");
+						pictureBox30.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Feather"]);
+						pictureBox31.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Red_d'hide_vamb.png");
+						pictureBox31.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Red d'hide vambraces"]);
+						pictureBox32.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Fremennik_shield.png");
+						pictureBox32.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Fremennik shield x 1"]);
+						pictureBox33.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Fremennik_helm.png");
+						pictureBox33.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Fremennik helm x 1"]);
+						pictureBox34.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Spined_body.png");
+						pictureBox34.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Spined body x 1"]);
+						pictureBox35.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Spined_chaps.png");
+						pictureBox35.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Spined chaps x 1"]);
+						pictureBox36.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Archer_helm.png");
+						pictureBox36.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Archer helm x 1"]);
+						pictureBox37.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Hard_clue_scroll.png");
+						pictureBox37.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Hard clue scroll x 1"]);
+						pictureBox38.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png");
+						pictureBox38.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Elite clue scroll x 1"]);
+						pictureBox39.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Seercull.png");
+						pictureBox39.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Seercull x 1"]);
+						pictureBox40.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_axe.png");
+						pictureBox40.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon axe x 1"]);
+						pictureBox41.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Archers_ring.png");
+						pictureBox41.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Archers ring x 1"]);
+						pictureBox42.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pet_dagannoth_supreme.png");
+						pictureBox42.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pet dagannoth supreme x 1"]);
+						pictureBox43.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
+						pictureBox43.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["RDT x 1"]);
+
+						setNPictureBoxesToVisible(43, "Dagannoth Kings Loot");
+						setNPictureBoxesToDisabled(43);
+						break;
+
+					}
 					break;
 
 				case "Giant Mole":
-					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_chestplate.png");
-					// Display corrent item quantity over picture box
+					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mithril_battleaxe.png");
+					pictureBox1.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mithril battleaxe x 1"]);
+					pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mithril_axe.png");
+					pictureBox2.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mithril axe x 1"]);
+					pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Adamant_longsword.png");
+					pictureBox3.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Adamant longsword x 1"]);
+					pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mithril_platebody.png");
+					pictureBox4.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mithril platebody x 1"]);
+					pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_med_helm.png");
+					pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune med helm x 1"]);
+					pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Iron_arrow_generic.png");
+					pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Iron arrow x 690"]);
+					pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mithril_bar.png");
+					pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mithril bar x 1"]);
+					pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Iron_ore_noted_generic.png");
+					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Iron ore x 100"]);
+					pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Amulet_of_strength.png");
+					pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Amulet of strength x 1"]);
+					pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Law_rune_generic.png");
+					pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Law rune x 15"]);
+					pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Air_rune_generic.png");
+					pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Air rune x 105"]);
+					pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Fire_rune_generic.png");
+					pictureBox12.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Fire rune x 105"]);
+					pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Blood_rune_generic.png");
+					pictureBox13.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Blood rune x 15"]);
+					pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Death_rune_generic.png");
+					pictureBox14.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Death rune x 7"]);
+					pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Oyster_pearls.png");
+					pictureBox15.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Oyster x 1"]);
+					pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Shark.png");
+					pictureBox16.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Shark x 4"]);
+					pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Yew_logs_noted_generic.png");
+					pictureBox17.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Yew logs x 100"]);
+					pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png");
+					pictureBox18.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Elite clue scroll x 1"]);
+					pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Long_bone.png");
+					pictureBox19.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Long bone x 1"]);
+					pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Curved_bone.png");
+					pictureBox20.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Curved bone x 1"]);
+					pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Baby_mole.png");
+					pictureBox21.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Baby mole x 1"]);
+					pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
+					pictureBox22.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["RDT x 1"]);
+
+					setNPictureBoxesToVisible(22);
+					setNPictureBoxesToDisabled(22);
 					break;
 
 				case "Kalphite Queen":
-					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_chestplate.png");
-					// Display corrent item quantity over picture box
+					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Battlestaff_noted_generic.png");
+					pictureBox1.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Battlestaff x 10"]);
+					pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Lava_battlestaff.png");
+					pictureBox2.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Lava battlestaff x 1"]);
+					pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mithril_arrow_generic.png");
+					pictureBox3.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mithril arrow x 500"]);
+					pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_arrow_generic.png");
+					pictureBox4.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune arrow x 250"]);
+					pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_knife_(p++)_generic.png");
+					pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune knife (p++) x 25"]);
+					pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Red_d'hide_body.png");
+					pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Red d'hide body x 1"]);
+					pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_chainbody.png");
+					pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune chainbody x 1"]);
+					pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grapes_noted_generic.png");
+					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grapes x 100"]);
+					pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Super_combat_potion_(2).png");
+					pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Super combat potion (2) x 1"]);
+					pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Superantipoison_(2).png");
+					pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Superantipoison (2) x 1"]);
+					pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ranging_potion_(3).png");
+					pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ranging potion (3) x 1"]);
+					pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Saradomin_brew_(4).png");
+					pictureBox12.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Saradomin brew (4) x 1"]);
+					pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Super_restore_(4).png");
+					pictureBox13.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Super restore (4) x 1"]);
+					pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Prayer_potion_(4).png");
+					pictureBox14.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Prayer potion (4) x 2"]);
+					pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Weapon_poison_(++)_noted_generic.png");
+					pictureBox15.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Weapon poison (++) x 5"]);
+					pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Wine_of_zamorak_noted_generic.png");
+					pictureBox16.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Wine of zamorak x 60"]);
+					pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_emerald_noted_generic.png");
+					pictureBox17.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut Emerald x 25"]);
+					pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_ruby_noted_generic.png");
+					pictureBox18.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut ruby x 25"]);
+					pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_diamond_noted_generic.png");
+					pictureBox19.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut diamond x 25"]);
+					pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Watermelon_seed_generic.png");
+					pictureBox20.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Watermelon seed x 25"]);
+					pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Torstol_seed_generic.png");
+					pictureBox21.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Torstol seed x 2"]);
+					pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Papaya_tree_seed_generic.png");
+					pictureBox22.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Papaya tree seed x 2"]);
+					pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Palm_tree_seed_generic.png");
+					pictureBox23.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Palm tree seed x 1"]);
+					pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Magic_seed_generic.png");
+					pictureBox24.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Magic seed x 2"]);
+					pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Blood_rune_generic.png");
+					pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Blood rune x 100"]);
+					pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Death_rune_generic.png");
+					pictureBox26.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Death rune x 100"]);
+					pictureBox27.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Potato_cactus_noted_generic.png");
+					pictureBox27.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Potato cactus x 100"]);
+					pictureBox28.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Magic_logs_noted_generic.png");
+					pictureBox28.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Magic logs x 60"]);
+					pictureBox29.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Toadflax_noted_generic.png");
+					pictureBox29.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Toadflax x 25"]);
+					pictureBox30.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ranarr_weed_noted_generic.png");
+					pictureBox30.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ranarr weed x 25"]);
+					pictureBox31.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Snapdragon_noted_generic.png");
+					pictureBox31.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Snapdragon x 25"]);
+					pictureBox32.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Torstol_noted_generic.png");
+					pictureBox32.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Torstol x 25"]);
+					pictureBox33.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Runite_bar_noted_generic.png");
+					pictureBox33.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Runite bar x 3"]);
+					pictureBox34.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bucket_of_sand_noted_generic.png");
+					pictureBox34.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Bucket of sand x 100"]);
+					pictureBox35.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Cactus_spine_noted_generic.png");
+					pictureBox35.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Cactus spine x 10"]);
+					pictureBox36.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Gold_ore_noted_generic.png");
+					pictureBox36.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Gold ore x 250"]);
+					pictureBox37.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ensouled_kalphite_head.png");
+					pictureBox37.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ensouled kalphite head x 1"]);
+					pictureBox38.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Monkfish.png");
+					pictureBox38.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Monkfish x 3"]);
+					pictureBox39.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Shark.png");
+					pictureBox39.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Shark x 2"]);
+					pictureBox40.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dark_crab.png");
+					pictureBox40.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dark crab x 2"]);
+					pictureBox41.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coins_10000.png");
+					pictureBox41.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coins"]);
+					pictureBox42.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png");
+					pictureBox42.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Elite clue scroll x 1"]);
+					pictureBox43.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_2h_sword.png");
+					pictureBox43.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon 2h sword x 1"]);
+					pictureBox44.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_chainbody.png");
+					pictureBox44.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon chainbody x 1"]);
+					pictureBox45.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Kq_head.png");
+					pictureBox45.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Kq head x 1"]);
+					pictureBox46.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Jar_of_sand.png");
+					pictureBox46.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Jar of sand x 1"]);
+					pictureBox47.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Kalphite_princess.png");
+					pictureBox47.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Kalphite princess x 1"]);
+					pictureBox48.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
+					pictureBox48.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["RDT x 1"]);
+
+					setNPictureBoxesToVisible(48);
+					setNPictureBoxesToDisabled(48);
 					break;
 
 				case "Kraken":
-					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_chestplate.png");
-					// Display corrent item quantity over picture box
+					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_warhammer.png");
+					pictureBox1.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune warhammer x 1"]);
+					pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_longsword.png");
+					pictureBox2.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune longsword x 1"]);
+					pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mystic_water_staff.png");
+					pictureBox3.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mystic water staff x 1"]);
+					pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mystic_robe_top_(blue).png");
+					pictureBox4.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mystic robe top (blue) x 1"]);
+					pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mystic_robe_bottom_(blue).png");
+					pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mystic robe bottom (blue) x 1"]);
+					pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Harpoon.png");
+					pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Harpoon x 1"]);
+					pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Seaweed_noted_generic.png");
+					pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Seaweed x 125"]);
+					pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Battlestaff_noted_generic.png");
+					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Battlestaff x 10"]);
+					pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Water_rune_generic.png");
+					pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Water rune x 400"]);
+					pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mist_rune_generic.png");
+					pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mist rune x 100"]);
+					pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Chaos_rune_generic.png");
+					pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Chaos rune x 250"]);
+					pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Death_rune_generic.png");
+					pictureBox12.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Death rune x 150"]);
+					pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Blood_rune_generic.png");
+					pictureBox13.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Blood rune x 60"]);
+					pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Soul_rune_generic.png");
+					pictureBox14.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Soul rune x 50"]);
+					pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Unpowered_orb_noted_generic.png");
+					pictureBox15.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Unpowered orb x 50"]);
+					pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Diamond_noted_generic.png");
+					pictureBox16.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Diamond x 8"]);
+					pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Oak_plank_noted_generic.png");
+					pictureBox17.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Oak plank x 60"]);
+					pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_shark_noted_generic.png");
+					pictureBox18.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Raw shark x 50"]);
+					pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_monkfish_noted_generic.png");
+					pictureBox19.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Raw monkfish x 100"]);
+					pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Runite_bar.png");
+					pictureBox20.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Runite bar x 2"]);
+					pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_snapdragon_noted_generic.png");
+					pictureBox21.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy snapdragon x 6"]);
+					pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Shark.png");
+					pictureBox22.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Shark x 5"]);
+					pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Edible_seaweed.png");
+					pictureBox23.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Edible seaweed x 5"]);
+					pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bucket.png");
+					pictureBox24.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Bucket x 1"]);
+					pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Sanfew_serum_(4).png");
+					pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Sanfew serum (4) x 2"]);
+					pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Crystal_key.png");
+					pictureBox26.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Crystal key x 1"]);
+					pictureBox27.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rusty_sword.png");
+					pictureBox27.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rusty sword x 1"]);
+					pictureBox28.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Antidote++_(4)_noted_generic.png");
+					pictureBox28.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Antidote++ (4) x 2"]);
+					pictureBox29.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Watermelon_seed_generic.png");
+					pictureBox29.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Watermelon seed x 24"]);
+					pictureBox30.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Torstol_seed_generic.png");
+					pictureBox30.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Torstol seed x 2"]);
+					pictureBox31.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Magic_seed_generic.png");
+					pictureBox31.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Magic seed x 1"]);
+					pictureBox32.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pirate_boots.png");
+					pictureBox32.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pirate boots x 1"]);
+					pictureBox33.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coins_generic.png");
+					pictureBox33.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coins"]);
+					pictureBox34.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragonstone_ring.png");
+					pictureBox34.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragonstone ring x 1"]);
+					pictureBox35.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png");
+					pictureBox35.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Elite clue scroll x 1"]);
+					pictureBox36.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Trident_of_the_seas_(full).png");
+					pictureBox36.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Trident of the seas (full) x 1"]);
+					pictureBox37.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Kraken_tentacle.png");
+					pictureBox37.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Kraken tentacle x 1"]);
+					pictureBox38.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Jar_of_dirt.png");
+					pictureBox38.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Jar of dirt x 1"]);
+					pictureBox39.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pet_kraken.png");
+					pictureBox39.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pet kraken x 1"]);
+					pictureBox40.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
+					pictureBox40.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["RDT x 1"]);
+
+					setNPictureBoxesToVisible(40);
+					setNPictureBoxesToDisabled(40);
 					break;
 
 				case "Skotizo":
-					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_chestplate.png");
-					// Display corrent item quantity over picture box
+					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Death_rune_generic.png");
+					pictureBox1.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Death rune x 500"]);
+					pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Soul_rune_generic.png");
+					pictureBox2.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Soul rune x 450"]);
+					pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Blood_rune_generic.png");
+					pictureBox3.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Blood rune x 450"]);
+					pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_platebody_noted_generic.png");
+					pictureBox4.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune platebody x 3"]);
+					pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_kiteshield_noted_generic.png");
+					pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune kiteshield x 3"]);
+					pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_platelegs_noted_generic.png");
+					pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune platelegs x 3"]);
+					pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_plateskirt_noted_generic.png");
+					pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune plateskirt x 3"]);
+					pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_ranarr_weed_noted_generic.png");
+					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy ranarr weed x 40"]);
+					pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_snapdragon_noted_generic.png");
+					pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy snapdragon x 20"]);
+					pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_torstol_noted_generic.png");
+					pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy torstol x 20"]);
+					pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Battlestaff_noted_generic.png");
+					pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Battlestaff x 25"]);
+					pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_dragonstone_noted_generic.png");
+					pictureBox12.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut dragonstone x 10"]);
+					pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Adamantite_ore_noted_generic.png");
+					pictureBox13.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Adamantite ore x 75"]);
+					pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Runite_bar_noted_generic.png");
+					pictureBox14.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Runite bar x 20"]);
+					pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_anglerfish_noted_generic.png");
+					pictureBox15.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Raw anglerfish x 60"]);
+					pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mahogany_plank_noted_generic.png");
+					pictureBox16.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mahogany plank x 150"]);
+					pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Shield_left_half.png");
+					pictureBox17.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Shield left half x 1"]);
+					pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dark_totem_base.png");
+					pictureBox18.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dark totem base x 1"]);
+					pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dark_totem_middle.png");
+					pictureBox19.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dark totem middle x 1"]);
+					pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dark_totem_top.png");
+					pictureBox20.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dark totem top x 1"]);
+					pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dark_totem.png");
+					pictureBox21.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dark totem x 1"]);
+					pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Onyx_bolt_tips_generic.png");
+					pictureBox22.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Onyx bolt tips x 40"]);
+					pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_onyx.png");
+					pictureBox23.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut onyx x 1"]);
+					pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Hard_clue_scroll.png");
+					pictureBox24.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Hard clue scroll x 1"]);
+					pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png");
+					pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Elite clue scroll x 1"]);
+					pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Jar_of_darkness.png");
+					pictureBox26.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Jar of darkness x 1"]);
+
+					setNPictureBoxesToVisible(26);
+					setNPictureBoxesToDisabled(26);
 					break;
 
 				case "Thermonuclear Smoke Devil":
-					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_chestplate.png");
-					// Display corrent item quantity over picture box
+					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_dagger.png");
+					pictureBox1.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune dagger x 1"]);
+					pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_scimitar.png");
+					pictureBox2.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune scimitar x 1"]);
+					pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_battleaxe.png");
+					pictureBox3.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune battleaxe x 1"]);
+					pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mystic_air_staff.png");
+					pictureBox4.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mystic air staff x 1"]);
+					pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mystic_fire_staff.png");
+					pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mystic fire staff x 1"]);
+					pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_scimitar.png");
+					pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon scimitar x 1"]);
+					pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Fire_talisman.png");
+					pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Fire talisman x 1"]);
+					pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ancient_staff.png");
+					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ancient staff x 1"]);
+					pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Red_d'hide_body.png");
+					pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Red d'hide body x 1"]);
+					pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_chainbody.png");
+					pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune chainbody x 1"]);
+					pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Smoke_rune_generic.png");
+					pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dust rune x 100"]);
+					pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Air_rune_generic.png");
+					pictureBox12.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Air rune x 300"]);
+					pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Soul_rune_generic.png");
+					pictureBox13.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Soul rune x 60"]);
+					pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_knife_(p++)_generic.png");
+					pictureBox14.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune knife (p++) x 50"]);
+					pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_arrow_generic.png");
+					pictureBox15.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune arrow x 100"]);
+					pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Snapdragon_seed_generic.png");
+					pictureBox16.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Snapdragon seed x 1"]);
+					pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Magic_seed_generic.png");
+					pictureBox17.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Magic seed x 1"]);
+					pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pure_essence_noted_generic.png");
+					pictureBox18.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pure essence x 300"]);
+					pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Desert_goat_horn_noted_generic.png");
+					pictureBox19.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Desert goat horn x 50"]);
+					pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Molten_glass_noted_generic.png");
+					pictureBox20.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Molten glass x 100"]);
+					pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mithril_bar_noted_generic.png");
+					pictureBox21.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mithril bar x 20"]);
+					pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_toadflax_noted_generic.png");
+					pictureBox22.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy toadflax x 15"]);
+					pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coal_noted_generic.png");
+					pictureBox23.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coal x 150"]);
+					pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Gold_ore_noted_generic.png");
+					pictureBox24.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Gold ore x 200"]);
+					pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Onyx_bolt_tips_generic.png");
+					pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Onyx bolt tips x 12"]);
+					pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grapes_noted_generic.png");
+					pictureBox26.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grapes x 100"]);
+					pictureBox27.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Diamond_noted_generic.png");
+					pictureBox27.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Diamond x 10"]);
+					pictureBox28.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Magic_logs_noted_generic.png");
+					pictureBox28.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Magic logs x 20"]);
+					pictureBox29.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ugthanki_kebab.png");
+					pictureBox29.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ugthanki kebab x 3"]);
+					pictureBox30.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Tuna_potato.png");
+					pictureBox30.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Tuna potato x 3"]);
+					pictureBox31.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Prayer_potion_(4).png");
+					pictureBox31.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Prayer potion (4) x 2"]);
+					pictureBox32.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Sanfew_serum_(4).png");
+					pictureBox32.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Sanfew serum (4) x 2"]);
+					pictureBox33.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Tinderbox.png");
+					pictureBox33.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Tinderbox x 1"]);
+					pictureBox34.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coins_generic.png");
+					pictureBox34.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coins"]);
+					pictureBox35.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bullseye_lantern_(unlit).png");
+					pictureBox35.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Bullseye lantern (unlit) x 1"]);
+					pictureBox36.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragonstone_ring.png");
+					pictureBox36.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragonstone ring x 1"]);
+					pictureBox37.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Crystal_key.png");
+					pictureBox37.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Crystal key x 1"]);
+					pictureBox38.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png");
+					pictureBox38.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Elite clue scroll x 1"]);
+					pictureBox39.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Smoke_battlestaff.png");
+					pictureBox39.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Smoke battlestaff x 1"]);
+					pictureBox40.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Occult_necklace.png");
+					pictureBox40.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Occult necklace x 1"]);
+					pictureBox41.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_chainbody.png");
+					pictureBox41.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon chainbody x 1"]);
+					pictureBox42.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pet_smoke_devil.png");
+					pictureBox42.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pet smoke devil x 1"]);
+					pictureBox43.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
+					pictureBox43.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["RDT x 1"]);
+
+					setNPictureBoxesToVisible(43);
+					setNPictureBoxesToDisabled(43);
 					break;
 
 				case "Wintertodt":
-					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_chestplate.png");
-					// Display corrent item quantity over picture box
+					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Oak_logs_noted_generic.png");
+					pictureBox1.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Oak logs"]);
+					pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Willow_logs_noted_generic.png");
+					pictureBox2.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Willow logs"]);
+					pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Maple_logs_noted_generic.png");
+					pictureBox3.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Maple logs"]);
+					pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Teak_logs_noted_generic.png");
+					pictureBox4.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Teak logs"]);
+					pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mahogany_logs_noted_generic.png");
+					pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mahogany logs"]);
+					pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Yew_logs_noted_generic.png");
+					pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Yew logs"]);
+					pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Magic_logs_noted_generic.png");
+					pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Magic logs"]);
+					pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pure_essence_noted_generic.png");
+					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pure essence"]);
+					pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_sapphire_noted_generic.png");
+					pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut sapphire"]);
+					pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_emerald_noted_generic.png");
+					pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut emerald"]);
+					pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_ruby_noted_generic.png");
+					pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut ruby"]);
+					pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_diamond_noted_generic.png");
+					pictureBox12.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut diamond"]);
+					pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coal_noted_generic.png");
+					pictureBox13.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coal"]);
+					pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Iron_ore_noted_generic.png");
+					pictureBox14.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Iron ore"]);
+					pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Silver_ore_noted_generic.png");
+					pictureBox15.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Silver ore"]);
+					pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Gold_ore_noted_generic.png");
+					pictureBox16.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Gold ore"]);
+					pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mithril_ore_noted_generic.png");
+					pictureBox17.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mithril ore"]);
+					pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Adamantite_ore_noted_generic.png");
+					pictureBox18.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Adamantite ore"]);
+					pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Runite_ore_noted_generic.png");
+					pictureBox19.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Runite ore"]);
+					pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_guam_leaf_noted_generic.png");
+					pictureBox20.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy guam leaf"]);
+					pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_marrentill_noted_generic.png");
+					pictureBox21.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy marrentill"]);
+					pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_harralander_noted_generic.png");
+					pictureBox22.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy harralander"]);
+					pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_ranarr_weed_noted_generic.png");
+					pictureBox23.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy ranarr weed"]);
+					pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_avantoe_noted_generic.png");
+					pictureBox24.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy avantoe"]);
+					pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_cadantine_noted_generic.png");
+					pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy cadantine"]);
+					pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_torstol_noted_generic.png");
+					pictureBox26.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy torstol"]);
+					pictureBox27.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Tarromin_seed_generic.png");
+					pictureBox27.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Tarromin seed"]);
+					pictureBox28.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Harralander_seed_generic.png");
+					pictureBox28.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Harralander seed"]);
+					pictureBox29.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Toadflax_seed_generic.png");
+					pictureBox29.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Toadflax seed"]);
+					pictureBox30.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ranarr_seed_generic.png");
+					pictureBox30.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ranarr seed"]);
+					pictureBox31.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Snapdragon_seed_generic.png");
+					pictureBox31.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Snapdragon seed"]);
+					pictureBox32.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Watermelon_seed_generic.png");
+					pictureBox32.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Watermelon seed"]);
+					pictureBox33.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Banana_tree_seed_generic.png");
+					pictureBox33.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Banana tree seed"]);
+					pictureBox34.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Acorn_generic.png");
+					pictureBox34.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Acorn x 1"]);
+					pictureBox35.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Willow_seed_generic.png");
+					pictureBox35.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Willow seed"]);
+					pictureBox36.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Maple_seed_generic.png");
+					pictureBox36.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Maple seed"]);
+					pictureBox37.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Yew_seed_generic.png");
+					pictureBox37.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Yew seed"]);
+					pictureBox38.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Magic_seed_generic.png");
+					pictureBox38.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Magic seed x 1"]);
+					pictureBox39.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Spirit_seed_generic.png");
+					pictureBox39.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Spirit seed x 1"]);
+					pictureBox40.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_anchovies_noted_generic.png");
+					pictureBox40.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Raw anchovies"]);
+					pictureBox41.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_trout_noted_generic.png");
+					pictureBox41.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Raw trout"]);
+					pictureBox42.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_salmon_noted_generic.png");
+					pictureBox42.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Raw salmon"]);
+					pictureBox43.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_lobster_noted_generic.png");
+					pictureBox43.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Raw lobster"]);
+					pictureBox44.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_tuna_noted_generic.png");
+					pictureBox44.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Raw tuna"]);
+					pictureBox45.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_swordfish_noted_generic.png");
+					pictureBox45.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Raw swordfish"]);
+					pictureBox46.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_shark_noted_generic.png");
+					pictureBox46.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Raw shark"]);
+					pictureBox47.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Saltpetre_noted_generic.png");
+					pictureBox47.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Saltpetre"]);
+					pictureBox48.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Limestone_noted_generic.png");
+					pictureBox48.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Limestone"]);
+					pictureBox49.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dynamite_noted_generic.png");
+					pictureBox49.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dynamite"]);
+					pictureBox50.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coins_generic.png");
+					pictureBox50.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coins"]);
+					pictureBox51.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Burnt_page.png");
+					pictureBox51.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Burnt page"]);
+					pictureBox52.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bruma_torch.png");
+					pictureBox52.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Bruma torch x 1"]);
+					pictureBox53.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pyromancer_hood.png");
+					pictureBox53.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pyromancer hood x 1"]);
+					pictureBox54.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pyromancer_garb.png");
+					pictureBox54.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pyromancer garb x 1"]);
+					pictureBox55.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pyromancer_robe.png");
+					pictureBox55.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pyromancer robe x 1"]);
+					pictureBox56.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pyromancer_boots.png");
+					pictureBox56.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pyromancer boots x 1"]);
+					pictureBox57.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Warm_gloves.png");
+					pictureBox57.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Warm gloves x 1"]);
+					pictureBox58.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Tome_of_fire_(empty).png");
+					pictureBox58.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Tome of fire (empty) x 1"]);
+					pictureBox59.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Phoenix.png");
+					pictureBox59.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Phoenix x 1"]);
+					pictureBox60.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
+					pictureBox60.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["RDT x 1"]);
+
+					setNPictureBoxesToVisible(60);
+					setNPictureBoxesToDisabled(60);
 					break;
 
 				case "Zulrah":
-					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Bandos_chestplate.png");
-					// Display corrent item quantity over picture box
+					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pure_essence_noted_generic.png");
+					pictureBox1.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pure essence x 1500"]);
+					pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Law_rune_generic.png");
+					pictureBox2.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Law rune x 200"]);
+					pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Chaos_rune_generic.png");
+					pictureBox3.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Chaos rune x 500"]);
+					pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Death_rune_generic.png");
+					pictureBox4.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Death rune x 300"]);
+					pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Toadflax_noted_generic.png");
+					pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Toadflax x 20"]);
+					pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Snapdragon_noted_generic.png");
+					pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Snapdragon x 20"]);
+					pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dwarf_weed_noted_generic.png");
+					pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dwarf weed x 20"]);
+					pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Torstol_noted_generic.png");
+					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Torstol x 20"]);
+					pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Toadflax_seed_generic.png");
+					pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Toadflax seed x 2"]);
+					pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Snapdragon_seed_generic.png");
+					pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Snapdragon seed x 2"]);
+					pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dwarf_weed_seed_generic.png");
+					pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dwarf weed seed x 2"]);
+					pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Torstol_seed_generic.png");
+					pictureBox12.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Torstol seed x 2"]);
+					pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Papaya_tree_seed_generic.png");
+					pictureBox13.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Papaya tree seed x 2"]);
+					pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Palm_tree_seed_generic.png");
+					pictureBox14.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Palm tree seed x 1"]);
+					pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Magic_seed_generic.png");
+					pictureBox15.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Magic seed x 1"]);
+					pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Calquat_tree_seed_generic.png");
+					pictureBox16.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Calquat seed x 2"]);
+					pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Spirit_seed_generic.png");
+					pictureBox17.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Spirit seed x 1"]);
+					pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Crystal_seed_generic.png");
+					pictureBox18.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Crystal seed x 1"]);
+					pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Flax_noted_generic.png");
+					pictureBox19.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Flax x 1000"]);
+					pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Snakeskin_noted_generic.png");
+					pictureBox20.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Snakeskin x 35"]);
+					pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_bolt_tips_generic.png");
+					pictureBox21.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon bolt tips x 12"]);
+					pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Magic_logs_noted_generic.png");
+					pictureBox22.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Magic logs x 100"]);
+					pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coal_noted_generic.png");
+					pictureBox23.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coal x 300"]);
+					pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Runite_ore_noted_generic.png");
+					pictureBox24.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Runite ore x 10"]);
+					pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Adamantite_bar_noted_generic.png");
+					pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Adamantite bar x 25"]);
+					pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mahogany_plank_noted_generic.png");
+					pictureBox26.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mahogany plank x 50"]);
+					pictureBox27.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_bones_noted_generic.png");
+					pictureBox27.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon bones x 30"]);
+					pictureBox28.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coconut_noted_generic.png");
+					pictureBox28.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coconut x 20"]);
+					pictureBox29.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grapes_noted_generic.png");
+					pictureBox29.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grapes x 250"]);
+					pictureBox30.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Zul-andra_teleport_generic.png");
+					pictureBox30.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Zul-andra teleport x 1"]);
+					pictureBox31.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Zulrah's_scales_generic.png");
+					pictureBox31.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Zulrah's scales x 500"]);
+					pictureBox32.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Battlestaff_noted_generic.png");
+					pictureBox32.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Battlestaff x 10"]);
+					pictureBox33.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Antidote++_(4)_noted_generic.png");
+					pictureBox33.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Antidote++ (4) x 10"]);
+					pictureBox34.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Raw_shark_noted_generic.png");
+					pictureBox34.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Raw shark x 100"]);
+					pictureBox35.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Swamp_tar_generic.png");
+					pictureBox35.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Swamp tar x 1000"]);
+					pictureBox36.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Saradomin_brew_(4)_noted_generic.png");
+					pictureBox36.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Saradomin brew (4) x 10"]);
+					pictureBox37.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Serpentine_visage.png");
+					pictureBox37.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Serpentine visage x 1"]);
+					pictureBox38.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Magic_fang.png");
+					pictureBox38.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Magic fang x 1"]);
+					pictureBox39.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Tanzanite_fang.png");
+					pictureBox39.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Tanzanite fang x 1"]);
+					pictureBox40.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_onyx.png");
+					pictureBox40.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut onyx x 1"]);
+					pictureBox41.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_med_helm.png");
+					pictureBox41.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon med helm x 1"]);
+					pictureBox42.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_halberd.png");
+					pictureBox42.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon halberd x 1"]);
+					pictureBox43.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png");
+					pictureBox43.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Elite clue scroll x 1"]);
+					pictureBox44.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Tanzanite_mutagen.png");
+					pictureBox44.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Tanzanite mutagen x 1"]);
+					pictureBox45.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Magma_mutagen.png");
+					pictureBox45.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Magma mutagen x 1"]);
+					pictureBox46.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Jar_of_swamp.png");
+					pictureBox46.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Jar of swamp x 1"]);
+					pictureBox47.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pet_snakeling.png");
+					pictureBox47.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pet snakeling x 1"]);
+					pictureBox48.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/RDT.png");
+					pictureBox48.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["RDT x 1"]);
+
+					setNPictureBoxesToVisible(48);
+					setNPictureBoxesToDisabled(48);
 					break;
 				default:
 					break;
@@ -2901,6 +4988,13 @@ namespace dropLogger {
 			this.Size = new Size(490, 434);
 			buttonToggleSidePanel.Location = new Point(440, 28);
 			buttonToggleSidePanel.Text = "❯❯";
+
+			// Set tooltips for sidebar buttons
+			new ToolTip().SetToolTip(buttonSideBarBossKillcounts, "Killcounts");
+			new ToolTip().SetToolTip(buttonSideBarTimers, "Timers");
+			new ToolTip().SetToolTip(buttonSideBarEstimatedGPMade, "Estimated GP made");
+			new ToolTip().SetToolTip(buttonSideBarDropRates, "Drop rates");
+			new ToolTip().SetToolTip(buttonSideBarUniqueDrops, "Unique drops");
 
 			
 		}
@@ -3058,15 +5152,31 @@ namespace dropLogger {
 		}
 		public void setNPictureBoxesToVisible(int n, String boss = "") {
 			if (boss == "Dagannoth Kings") {
+				pictureBoxDagannothPrimeLoot.Hide();
+				pictureBoxDagannothRexLoot.Hide();
+				pictureBoxDagannothSupremeLoot.Hide();
+
 				pictureBoxDagannothPrime.Show();
 				pictureBoxDagannothRex.Show();
 				pictureBoxDagannothSupreme.Show();
-				//make prime selected by default
+			}
+			else if (boss == "Dagannoth Kings Loot") {
+				pictureBoxDagannothPrime.Hide();
+				pictureBoxDagannothRex.Hide();
+				pictureBoxDagannothSupreme.Hide();
+
+				pictureBoxDagannothPrimeLoot.Show();
+				pictureBoxDagannothRexLoot.Show();
+				pictureBoxDagannothSupremeLoot.Show();
 			}
 			else {
 				pictureBoxDagannothPrime.Hide();
 				pictureBoxDagannothRex.Hide();
 				pictureBoxDagannothSupreme.Hide();
+
+				pictureBoxDagannothPrimeLoot.Hide();
+				pictureBoxDagannothRexLoot.Hide();
+				pictureBoxDagannothSupremeLoot.Hide();
 			}
 			switch (n) {
 				case 20:
@@ -6049,9 +8159,7 @@ namespace dropLogger {
  * 
  * Was working on:
  * 
- * - getting the boss kill count to update when a item was logged
- *	- for some reason if you select a boss killcount in the sidebar, go to log more items of that boss, then select the boss kc again (the boss was
- *		already highlighted before this) then it crashed in the listBoxSidebar_SelectedIndexChanged() no idea why
+ * -
  * 
  * 
  * 
