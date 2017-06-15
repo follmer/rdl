@@ -73,7 +73,11 @@ namespace StatisticsForm {
 			return "getCurrentBoss() incomplete";
 		}
 		public Dictionary<String, int> getItemQuantitiesFromBoss(string boss) {
-			return totalDropsFromAllBosses[boss];
+			if (totalDropsFromAllBosses.ContainsKey(boss)) {
+				return totalDropsFromAllBosses[boss];
+			}
+
+			return null;
 		}
 		public Dictionary<String, Dictionary<String, int>> getTotalDropsFromAllBosses() {
 			return totalDropsFromAllBosses;

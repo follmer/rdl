@@ -49,7 +49,10 @@ namespace Config {
 		public void setDefaultBoss() {
 
 			if (settings.ContainsKey("DEFAULT_BOSS")) {
-				if (settings["DEFAULT_BOSS"] != "") { defaultBoss = settings["DEFAULT_BOSS"]; }
+				Console.WriteLine("/" + settings["DEFAULT_BOSS"] + "/");
+				if (settings["DEFAULT_BOSS"] != "") {
+					defaultBoss = settings["DEFAULT_BOSS"];
+				}
 			}
 		}
 

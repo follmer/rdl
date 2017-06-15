@@ -13,6 +13,7 @@ using rareDropTable;
 using Config;
 using StatisticsForm;
 using itemQuantityCreator;
+using System.Windows.Threading;
 
 namespace dropLogger {
 	public partial class OldSchoolDropLogger : Form {
@@ -30,6 +31,26 @@ namespace dropLogger {
 		private Color highlightOrange = Color.FromArgb(179, 107, 0);
 
 		private String activeSidebarWindow = null;
+
+		// Timer declarations
+		readonly int ARMADYL_RESPAWN_TIME = 90;
+		readonly int BANDOS_RESPAWN_TIME = 90;
+		readonly int SARADOMIN_RESPAWN_TIME = 90;
+		readonly int ZAMORAK_RESPAWN_TIME = 90;
+		readonly int CALLISTO_RESPAWN_TIME = -1;
+		readonly int CHAOS_ELEMENTAL_RESPAWN_TIME = 150;
+		readonly int CHAOS_FANATIC_RESPAWN_TIME = 10;
+		readonly int CRAZY_ARCHAEOLOGIST_RESPAWN_TIME = 10;
+		readonly int KING_BLACK_DRAGON_RESPAWN_TIME = 10;
+		readonly int SCORPIA_RESPAWN_TIME = 10;
+		readonly int VENENATIS_RESPAWN_TIME = -1;
+		readonly int VETION_RESPAWN_TIME = -1;
+		readonly int DAGANNOTH_PRIME_RESPAWN_TIME = 90;
+		readonly int DAGANNOTH_REX_RESPAWN_TIME = 90;
+		readonly int DAGANNOTH_SUPREME_RESPAWN_TIME = 90;
+		readonly int GIANT_MOLE_RESPAWN_TIME = 10;
+		readonly int KALPHITE_QUEEN_RESPAWN_TIME = -1;
+		readonly int THERMONUCLEAR_SMOKE_DEVIL_RESPAWN_TIME = -1;
 
 		// Create an instance of this class so data can be passed to it from other forms
 		public static OldSchoolDropLogger instance;
@@ -1789,6 +1810,115 @@ namespace dropLogger {
 			resetItemDropListBox(lastBossSeen);
 			resetAllPictureBoxBackgroundColor();
 		}
+		private void raidsToolStripMenuItem_Click(object sender, EventArgs e) {
+			String lastBossSeen = getCurrentBoss();
+			labelCurrentLogFor.Text = "Current log for: " + raidsToolStripMenuItem.Text;
+			pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Death_rune.png");
+			pictureBox1.Tag = "Varies; Death rune";
+			pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Blood_rune.png");
+			pictureBox2.Tag = "Varies; Blood rune";
+			pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Soul_rune.png");
+			pictureBox3.Tag = "Varies; Soul rune";
+			pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_arrow_generic.png");
+			pictureBox4.Tag = "Varies; Rune arrow";
+			pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_arrow_generic.png");
+			pictureBox5.Tag = "Varies; Dragon arrow";
+			pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_toadflax_noted_generic.png");
+			pictureBox6.Tag = "Varies; Grimy toadflax";
+			pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_ranarr_weed_noted_generic.png");
+			pictureBox7.Tag = "Varies; Grimy ranarr weed";
+			pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_irit_leaf_noted_generic.png");
+			pictureBox8.Tag = "Varies; Grimy irit leaf";
+			pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_avantoe_noted_generic.png");
+			pictureBox9.Tag = "Varies; Grimy avantoe";
+			pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_kwuarm_noted_generic.png");
+			pictureBox10.Tag = "Varies; Grimy kwuarm";
+			pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_snapdragon_noted_generic.png");
+			pictureBox11.Tag = "Varies; Grimy snapdragon";
+			pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_cadantine_noted_generic.png");
+			pictureBox12.Tag = "Varies; Grimy cadantine";
+			pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_lantadyme_noted_generic.png");
+			pictureBox13.Tag = "Varies; Grimy lantadyme";
+			pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_dwarf_weed_noted_generic.png");
+			pictureBox14.Tag = "Varies; Grimy dwarf weed";
+			pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_torstol_noted_generic.png");
+			pictureBox15.Tag = "Varies; Grimy torstol";
+			pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Silver_ore_noted_generic.png");
+			pictureBox16.Tag = "Varies; Silver ore";
+			pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coal_noted_generic.png");
+			pictureBox17.Tag = "Varies; Coal";
+			pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Gold_ore_noted_generic.png");
+			pictureBox18.Tag = "Varies; Gold ore";
+			pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mithril_ore_noted_generic.png");
+			pictureBox19.Tag = "Varies; Mithril ore";
+			pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Adamantite_ore_noted_generic.png");
+			pictureBox20.Tag = "Varies; Adamantite ore";
+			pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Runite_ore_noted_generic.png");
+			pictureBox21.Tag = "Varies; Runite ore";
+			pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_sapphire_noted_generic.png");
+			pictureBox22.Tag = "Varies; Uncut sapphire";
+			pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_emerald_noted_generic.png");
+			pictureBox23.Tag = "Varies; Uncut emerald";
+			pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_ruby_noted_generic.png");
+			pictureBox24.Tag = "Varies; Uncut ruby";
+			pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_diamond_noted_generic.png");
+			pictureBox25.Tag = "Varies; Uncut diamond";
+			pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Lizardman_fang_generic.png");
+			pictureBox26.Tag = "Varies; Lizardman fang";
+			pictureBox27.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pure_essence_noted_generic.png");
+			pictureBox27.Tag = "Varies; Pure essence";
+			pictureBox28.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Saltpetre_noted_generic.png");
+			pictureBox28.Tag = "Varies; Saltpetre";
+			pictureBox29.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Teak_plank_noted_generic.png");
+			pictureBox29.Tag = "Varies; Teak plank";
+			pictureBox30.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mahogany_plank_noted_generic.png");
+			pictureBox30.Tag = "Varies; Mahogany plank";
+			pictureBox31.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dynamite_noted_generic.png");
+			pictureBox31.Tag = "Varies; Dynamite";
+			pictureBox32.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Torn_prayer_scroll.png");
+			pictureBox32.Tag = "Torn prayer scroll x 1";
+			pictureBox33.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ancient_tablet.png");
+			pictureBox33.Tag = "Ancient tablet x 1";
+			pictureBox34.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dark_relic.png");
+			pictureBox34.Tag = "Dark relic x 1";
+			pictureBox35.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png");
+			pictureBox35.Tag = "Elite clue scroll x 1";
+			pictureBox36.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Arcane_prayer_scroll.png");
+			pictureBox36.Tag = "Arcane prayer scroll x 1";
+			pictureBox37.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dexterous_prayer_scroll.png");
+			pictureBox37.Tag = "Dexterous prayer scroll x 1";
+			pictureBox38.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_sword.png");
+			pictureBox38.Tag = "Dragon sword x 1";
+			pictureBox39.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_thrownaxe_100.png");
+			pictureBox39.Tag = "Dragon thrownaxe x 100";
+			pictureBox40.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Twisted_buckler.png");
+			pictureBox40.Tag = "Twisted buckler x 1";
+			pictureBox41.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_hunter_crossbow.png");
+			pictureBox41.Tag = "Dragon hunter crossbow x 1";
+			pictureBox42.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dinh's_bulwark.png");
+			pictureBox42.Tag = "Dinh's bulwark x 1";
+			pictureBox43.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ancestral_hat.png");
+			pictureBox43.Tag = "Ancestral hat x 1";
+			pictureBox44.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ancestral_robe_top.png");
+			pictureBox44.Tag = "Ancestral robe top x 1";
+			pictureBox45.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ancestral_robe_bottom.png");
+			pictureBox45.Tag = "Ancestral robe bottom x 1";
+			pictureBox46.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_claws.png");
+			pictureBox46.Tag = "Dragon claws x 1";
+			pictureBox47.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elder_maul.png");
+			pictureBox47.Tag = "Elder maul x 1";
+			pictureBox48.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Kodai_insignia.png");
+			pictureBox48.Tag = "Kodai insignia x 1";
+			pictureBox49.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Twisted_bow.png");
+			pictureBox49.Tag = "Twisted bow x 1";
+			pictureBox50.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Olmlet.png");
+			pictureBox50.Tag = "Olmlet x 1";
+			setNPictureBoxesToVisible(50);
+			setNPictureBoxesToEnabled(50);
+			removeAllItemQuantityOverlays();
+			resetItemDropListBox(lastBossSeen);
+			resetAllPictureBoxBackgroundColor();
+		}
 		private void skotizoToolStripMenuItem_Click(object sender, EventArgs e) {
 			String lastBossSeen = getCurrentBoss();
 			labelCurrentLogFor.Text = "Current log for: " + skotizoToolStripMenuItem.Text;
@@ -2304,8 +2434,13 @@ namespace dropLogger {
 
 				// Get the tag of the selected item
 				String item = pb.Tag.ToString().Substring(pb.Tag.ToString().IndexOf(";") + 2);
-
-				highlightPictureBox(pbSender);
+				if (isControlPressed) {
+					highlightPictureBox(pbSender, false);
+				}
+				else {
+					highlightPictureBox(pbSender);
+				}
+				
 				labelAddCustomDrop.Text = "Enter amount:";
 
 				// Use the retrieved tag and prepare it for the user to just enter a number after
@@ -2337,13 +2472,13 @@ namespace dropLogger {
 					// Highlight all pictureboxes that are control clicked along with original; resetAll = false
 					highlightPictureBox(pbSender, false);
 
-					//printStringList(listboxItemsList);
-					
 					// Make sure there is at least one item to add a control clicked item to since it will have to be removed
 					if (listboxItemsList.Count <= 1) { return; }
 
+					List<String> loggedItems = getLoggedItemsFromFile(getCurrentBoss());
+
 					// Get second to last item from the listboxItemsList (second to last since the ctrl-clicked item was already added)
-					String lastItemInListBoxItemsList = listboxItemsList[listboxItemsList.Count - 2];
+					String lastItemInListBoxItemsList = loggedItems[loggedItems.Count - 1];
 
 					// Remove last item (it was control clicked) and also remove the one before it, since two items are needed to ctrl click
 					// non-ctrl-clicked item
@@ -2359,7 +2494,7 @@ namespace dropLogger {
 
 					/* File writing */
 					// Write new item to file
-					List<String> loggedItems = getLoggedItemsFromFile(getCurrentBoss());
+					
 
 					// Need to remove the standalone item from the file and then re-add the concatenated items in
 					loggedItems.RemoveAt(loggedItems.Count - 1);
@@ -2383,6 +2518,8 @@ namespace dropLogger {
 					loggedItems = addItemToLoggedItems(loggedItems, unloggedItem);
 					writeLoggedItemsToFile(loggedItems, getCurrentBoss());
 					updateSidebarBossKillcounts();
+					showSidebarBossDroprates();
+
 				}
 			}
 
@@ -2500,7 +2637,7 @@ namespace dropLogger {
 
 			if (unloggedItem == "" || unloggedItem == null) return;
 
-			Console.Write("OldSchoolDropLogger.buttonAddCustomDrop_Click():");
+			Console.WriteLine("OldSchoolDropLogger.buttonAddCustomDrop_Click():");
 
 			// If there is a comma as the first character in the submitted string, we know that it was
 			// control-clicked so it needs to be added to the previous item rather than a new line
@@ -2509,33 +2646,33 @@ namespace dropLogger {
 				// Make sure there is at least one item to add a control clicked item to since it will have to be removed
 				if (listboxItemsList.Count <= 0) { return; }
 
-				// Get second to last item from the listboxItemsList (second to last since the ctrl-clicked item was already added)
-				String lastItemInListBoxItemsList = listboxItemsList[listboxItemsList.Count - 1];
+				List<String> loggedItems = getLoggedItemsFromFile(getCurrentBoss());
 
 				// Remove the item previously logged so we can replace it with itself + the control-clicked item
 				listboxItemsList.RemoveAt(listboxItemsList.Count - 1);
 
-				// Create the new string to add
-				String concatenatedItems = lastItemInListBoxItemsList + unloggedItem;
+				String concatenatedItems = "";
+
+				concatenatedItems = loggedItems[loggedItems.Count - 1] + unloggedItem + " [v]";
 
 				// Add the new item to the listboxItemsList
 				listboxItemsList.Add(concatenatedItems);
 
 				/* File writing */
 				// Write new item to file
-				List<String> loggedItems = getLoggedItemsFromFile(getCurrentBoss());
 
 				// Need to remove the standalone item from the file and then re-add the concatenated items in
 				loggedItems.RemoveAt(loggedItems.Count - 1);
 
 				// Add [v] since it is a varied item - this will help in the future when dealing with showing total loot
-				loggedItems = addItemToLoggedItems(loggedItems, (concatenatedItems + " [v]"));
+				loggedItems = addItemToLoggedItems(loggedItems, (concatenatedItems));
 				writeLoggedItemsToFile(loggedItems, getCurrentBoss());
 				/* End file writing */
 			}
 			else {
 
-				listboxItemsList.Add(unloggedItem);
+				listboxItemsList.Add(unloggedItem + "");
+				//listboxItemsList.Add(unloggedItem + " [v]");
 
 				// Prepare the item and add to list box
 				prepareAndAddItemToListBox(unloggedItem);
@@ -2546,13 +2683,15 @@ namespace dropLogger {
 				// Add [v] since it is a varied item - this will help in the future when dealing with showing total loot
 				loggedItems = addItemToLoggedItems(loggedItems, unloggedItem + " [v]");
 				writeLoggedItemsToFile(loggedItems, getCurrentBoss());
-				
+
+				// Only update the killcounts if the drop logged a new kill (control clicking shouldn't increase the boss kills)
+				updateSidebarBossKillcounts();
 			}
 			// Clear text box
 			textboxCustomDrop.Text = "";
 
 			updateListBox();
-			updateSidebarBossKillcounts();
+			
 		}
 		private void buttonUndoLastDrop_Click(object sender, EventArgs e) {
 
@@ -2562,6 +2701,10 @@ namespace dropLogger {
 			List<String> itemList = getLoggedItemsFromFile(getCurrentBoss());
 			removeLastLoggedItem(itemList, lastItem);
 			writeLoggedItemsToFile(itemList, getCurrentBoss());
+
+			if (activeSidebarWindow == "") {
+
+			}
 			updateSidebarBossKillcounts("removed");
 		}
 
@@ -2686,6 +2829,10 @@ namespace dropLogger {
 			}
 		}
 
+		private void recalculateSidebar() {
+
+		}
+
 		/* Sidebar button clicks */
 		private void listBoxSidebar_SelectedIndexChanged(object sender, EventArgs e) {
 
@@ -2710,17 +2857,26 @@ namespace dropLogger {
 			sidebarViewingLootFromBoss = bossClicked;
 			displayTotalLootFromBoss(bossClicked);
 		}
+
 		private void buttonSideBarBossKillcounts_Click(object sender, EventArgs e) {
+			setSidebarBossTimersToVisible(false);
 			labelSidebarTitle.Text = "Kill counts";
 			showSidebarBossKillcounts();
 		}
 		private void buttonSideBarDropRates_Click(object sender, EventArgs e) {
+			setSidebarBossTimersToVisible(false);
 			labelSidebarTitle.Text = "Drop rates";
 			showSidebarBossDroprates();
 		}
+		private void buttonSideBarTimers_Click(object sender, EventArgs e) {
+			listBoxSidebar.Items.Clear();
+			labelSidebarTitle.Text = "Timers";
+			setSidebarBossTimersToVisible(true);
+		}
+
 		private void showSidebarBossDroprates() {
 			// Don't keep repopulating the BossKillcounts table if the data is already displaying
-			if (activeSidebarWindow == "BossDropRates") return;
+			//if (activeSidebarWindow == "BossDropRates") return;
 
 			activeSidebarWindow = "BossDropRates";
 
@@ -2728,20 +2884,35 @@ namespace dropLogger {
 
 			Dictionary<String, int> allDropsFromBoss = stats.getItemQuantitiesFromBoss(getCurrentBoss());
 
+			if (allDropsFromBoss == null) {
+
+				Console.WriteLine("No drops logged for boss " + getCurrentBoss());
+				return;
+			}
+
 			double totalDrops = 0;
 
 			// Calculate the number of total drops logged
 			foreach (KeyValuePair<String, int> drop in allDropsFromBoss) {
+				Console.WriteLine("---------------------");
+				Console.WriteLine(drop.Key + " = " + drop.Value);
 
-				// Grab the quantity of the drop first, i.e.
+				bool variableDrop = false;
+
+				// Grab the quantity the item is dropped in, i.e.
 				// Law rune x 200 -> get 200
 				int len = drop.Key.ToString().Split(' ').Length;
 				int qty = -1;
 				int.TryParse(drop.Key.ToString().Split(' ')[len - 1], out qty);
-					
+
+				// Check if the drop contains a number, if it doesn't, the drop is variable ([v])
+				if (!drop.Key.Any(char.IsDigit)) {
+					variableDrop = true;
+				}
+
 				// Shouldn't ever hit this please
 				if (qty == -1) {
-					Console.WriteLine("ERROR ==========================================");
+					Console.WriteLine("================== ERROR: qty = -1 ==================");
 				}
 
 				// Calculate how many times the drop was actually dropped
@@ -2749,23 +2920,52 @@ namespace dropLogger {
 				// increments of 200, we know that the numberOfTimesDropped = 5 since
 				// 5 * 200 = 1000.
 				int numberOfTimesDropped = 0;
+				Console.WriteLine(drop.Value);
 				if (qty != 0) {
 					numberOfTimesDropped = drop.Value / qty;
-				}
-				
 
-				// Update the total number of drops
-				totalDrops += numberOfTimesDropped;
+					// Update the total number of drops
+					//totalDrops += numberOfTimesDropped;
+				}
+				else {
+					// Since it's a variable drop we need to access the file and see how many
+					// times it was logged in order to get the drop rate
+					if (variableDrop) {
+						List<String> loggedItems = getLoggedItemsFromFile(getCurrentBoss());
+
+						totalDrops = loggedItems.Count;
+						Console.WriteLine(totalDrops);
+
+
+						printStringList(loggedItems);
+						//foreach (String s in loggedItems) {
+
+						//	Console.WriteLine("checking " + drop.Key + " with " + s);
+						//	if (s.Contains(drop.Key)) {
+						//		if (s.Contains(',')) {
+						//			totalDrops += 2;
+						//		}
+						//		else {
+						//			totalDrops += 1;
+						//		}
+						//			// Update the total number of drops
+						//			totalDrops += 1;
+						//	}
+						//}
+					}
+				}
 			}
 
 			// Since Zulrah drops two items at a time
-			if (getCurrentBoss() == "Zulrah") {
-				totalDrops /= 2;
+			if (getCurrentBoss() == "Zulrah" || getCurrentBoss() == "Raids") {
+				//totalDrops /= 2;
 			}
 
 			List<String> unsortedList = new List<String>();
 
 			foreach (KeyValuePair<String, int> drop in allDropsFromBoss) {
+
+				bool variableDrop = false;
 
 				// Grab the quantity of the drop first, i.e.
 				// Law rune x 200 -> get 200
@@ -2773,22 +2973,76 @@ namespace dropLogger {
 				int qty = -1;
 				int.TryParse(drop.Key.ToString().Split(' ')[len - 1], out qty);
 
+				// Check if the drop contains a number, if it doesn't, the drop is variable ([v])
+				if (!drop.Key.Any(char.IsDigit)) {
+					variableDrop = true;
+				}
+
+				if (qty == -1) {
+					Console.WriteLine("============= qty -1");
+				}
+
 				// Calculate how many times the drop was actually dropped
 				int numberOfTimesDropped = 0;
 				if (qty != 0) {
 					numberOfTimesDropped = drop.Value / qty;
 				}
+				else {
+					// Since it's a variable drop we need to access the file and see how many
+					// times it was logged in order to get the drop rate
+					if (variableDrop) {
+						List<String> loggedItems = getLoggedItemsFromFile(getCurrentBoss());
 
-				double e = Math.Round((double) totalDrops / (double) numberOfTimesDropped, 1);
+						totalDrops = loggedItems.Count;
+
+
+						foreach (String s in loggedItems) {
+
+							//	Console.WriteLine("checking " + drop.Key + " with " + s);
+							if (s.Contains(drop.Key)) {
+
+								numberOfTimesDropped += 1;
+
+								//		if (s.Contains(',')) {
+								//			totalDrops += 2;
+								//		}
+								//		else {
+								//			totalDrops += 1;
+								//		}
+								//			// Update the total number of drops
+								//			totalDrops += 1;
+							}
+						}
+					}
+				}
+
+				double dec = Math.Round((double)numberOfTimesDropped / (double)totalDrops, 2);
+				double reduced = Math.Round((double)numberOfTimesDropped / (double)totalDrops, 1);
 
 				String item = "";
 
 				// Prepare the string to show as a ratio, deal with drops of 0 quantity first
 				if (numberOfTimesDropped == 0) {
-					item = drop.Key + " - 0:" + totalDrops;
+
+					// non reduced
+					//item = drop.Key + " - 0:" + totalDrops;
+
+					// reduced
+					//item = drop.Key + " - 0:" + reduced;
+
+					// decimal:
+					item = drop.Key + " - 0.00";
 				}
 				else {
-					item = drop.Key + " - 1:" + e;
+
+					// non reduced:
+					//item = drop.Key + " - " + numberOfTimesDropped + ":" + totalDrops;
+
+					// reduced
+					//item = drop.Key + " - 1:" + reduced;
+
+					// decimal:
+					item = drop.Key + " - " + dec;
 				}
 
 				if (item == "") {
@@ -2810,7 +3064,7 @@ namespace dropLogger {
 			isStatisticsInstantiated = true;
 		}
 		private void showSidebarBossKillcounts() {
-
+			Console.WriteLine(activeSidebarWindow + "===========================");
 			// Don't keep repopulating the BossKillcounts table if the data is already displaying
 			if (activeSidebarWindow == "BossKillCounts") return;
 
@@ -2835,6 +3089,8 @@ namespace dropLogger {
 			isStatisticsInstantiated = true;
 		}
 		private void updateSidebarBossKillcounts(String itemAddedOrRemoved = "added") {
+
+			Console.WriteLine("updateSidebarBossKillCounts()");
 
 			int lineContainingBoss = -1;
 			int index = -1;
@@ -2866,6 +3122,7 @@ namespace dropLogger {
 				listBoxSidebar.Items[lineContainingBoss] = getCurrentBoss() + ": " + kc;
 			}
 		}
+		
 
 		private void displayTotalLootFromBoss(string boss) {
 
@@ -3743,7 +4000,7 @@ namespace dropLogger {
 					pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ranarr_seed_generic.png");
 					pictureBox17.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ranarr seed x 1"]);
 					pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Snapdragon_seed_generic.png");
-					pictureBox18.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Snapdragon xeed x 2"]);
+					pictureBox18.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Snapdragon seed x 2"]);
 					pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Torstol_seed_generic.png");
 					pictureBox19.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Torstol seed x 2"]);
 					pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Watermelon_seed_generic.png");
@@ -3805,7 +4062,7 @@ namespace dropLogger {
 					pictureBox48.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Chaos_talisman.png");
 					pictureBox48.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Chaos talisman x 1"]);
 					pictureBox49.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Cannonball_generic.png");
-					pictureBox49.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Cannonball x 30"]);
+					pictureBox49.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Cannonball x 300"]);
 					pictureBox50.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_diamond_noted_generic.png");
 					pictureBox50.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut diamond x 15"]);
 					pictureBox51.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coins_10000.png");
@@ -4588,6 +4845,112 @@ namespace dropLogger {
 					setNPictureBoxesToDisabled(40);
 					break;
 
+				case "Raids":
+					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Death_rune_generic.png");
+					pictureBox1.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Death rune"]);
+					pictureBox2.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Blood_rune_generic.png");
+					pictureBox2.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Blood rune"]);
+					pictureBox3.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Soul_rune_generic.png");
+					pictureBox3.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Soul rune"]);
+					pictureBox4.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Rune_arrow_generic.png");
+					pictureBox4.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune arrow"]);
+					pictureBox5.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_arrow_generic.png");
+					pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon arrow"]);
+					pictureBox6.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_toadflax_noted_generic.png");
+					pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy toadflax"]);
+					pictureBox7.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_ranarr_weed_noted_generic.png");
+					pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy ranarr weed"]);
+					pictureBox8.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_irit_leaf_noted_generic.png");
+					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy irit leaf"]);
+					pictureBox9.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_avantoe_noted_generic.png");
+					pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy avantoe"]);
+					pictureBox10.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_kwuarm_noted_generic.png");
+					pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy kwuarm"]);
+					pictureBox11.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_snapdragon_noted_generic.png");
+					pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy snapdragon"]);
+					pictureBox12.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_cadantine_noted_generic.png");
+					pictureBox12.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy cadantine"]);
+					pictureBox13.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_lantadyme_noted_generic.png");
+					pictureBox13.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy lantadyme"]);
+					pictureBox14.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_dwarf_weed_noted_generic.png");
+					pictureBox14.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy dwarf weed"]);
+					pictureBox15.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Grimy_torstol_noted_generic.png");
+					pictureBox15.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy torstol"]);
+					pictureBox16.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Silver_ore_noted_generic.png");
+					pictureBox16.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Silver ore"]);
+					pictureBox17.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Coal_noted_generic.png");
+					pictureBox17.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coal"]);
+					pictureBox18.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Gold_ore_noted_generic.png");
+					pictureBox18.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Gold ore"]);
+					pictureBox19.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mithril_ore_noted_generic.png");
+					pictureBox19.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mithril ore"]);
+					pictureBox20.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Adamantite_ore_noted_generic.png");
+					pictureBox20.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Adamantite ore"]);
+					pictureBox21.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Runite_ore_noted_generic.png");
+					pictureBox21.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Runite ore"]);
+					pictureBox22.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Saltpetre_noted_generic.png");
+					pictureBox22.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Saltpetre"]);
+					pictureBox23.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Teak_plank_noted_generic.png");
+					pictureBox23.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Teak plank"]);
+					pictureBox24.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Mahogany_plank_noted_generic.png");
+					pictureBox24.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mahogany plank"]);
+					pictureBox25.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_sapphire_noted_generic.png");
+					pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut sapphire"]);
+					pictureBox26.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_emerald_noted_generic.png");
+					pictureBox26.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut emerald"]);
+					pictureBox27.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_ruby_noted_generic.png");
+					pictureBox27.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut ruby"]);
+					pictureBox28.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Uncut_diamond_noted_generic.png");
+					pictureBox28.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Uncut diamond"]);
+					pictureBox29.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Pure_essence_noted_generic.png");
+					pictureBox29.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pure essence"]);
+					pictureBox30.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dynamite_noted_generic.png");
+					pictureBox30.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dynamite"]);
+					pictureBox31.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Lizardman_fang_generic.png");
+					pictureBox31.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Lizardman fang"]);
+					pictureBox32.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Torn_prayer_scroll.png");
+					pictureBox32.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Torn prayer scroll x 1"]);
+					pictureBox33.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ancient_tablet.png");
+					pictureBox33.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ancient tablet x 1"]);
+					pictureBox34.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dark_relic.png");
+					pictureBox34.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dark relic x 1"]);
+					pictureBox35.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elite_clue_scroll.png");
+					pictureBox35.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Elite clue scroll x 1"]);
+					pictureBox36.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Arcane_prayer_scroll.png");
+					pictureBox36.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Arcane prayer scroll x 1"]);
+					pictureBox37.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dexterous_prayer_scroll.png");
+					pictureBox37.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dexterous prayer scroll x 1"]);
+					pictureBox38.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_sword.png");
+					pictureBox38.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon sword x 1"]);
+					pictureBox39.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_thrownaxe_generic.png");
+					pictureBox39.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon thrownaxe x 100"]);
+					pictureBox40.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Twisted_buckler.png");
+					pictureBox40.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Twisted buckler x 1"]);
+					pictureBox41.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_hunter_crossbow.png");
+					pictureBox41.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon hunter crossbow x 1"]);
+					pictureBox42.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dinh's_bulwark.png");
+					pictureBox42.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dinh's bulwark x 1"]);
+					pictureBox43.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ancestral_hat.png");
+					pictureBox43.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ancestral hat x 1"]);
+					pictureBox44.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ancestral_robe_top.png");
+					pictureBox44.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ancestral robe top x 1"]);
+					pictureBox45.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Ancestral_robe_bottom.png");
+					pictureBox45.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ancestral robe bottom x 1"]);
+					pictureBox46.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Dragon_claws.png");
+					pictureBox46.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon claws x 1"]);
+					pictureBox47.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Elder_maul.png");
+					pictureBox47.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Elder maul x 1"]);
+					pictureBox48.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Kodai_insignia.png");
+					pictureBox48.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Kodai insignia x 1"]);
+					pictureBox49.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Twisted_bow.png");
+					pictureBox49.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Twisted bow x 1"]);
+					pictureBox50.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Olmlet.png");
+					pictureBox50.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Olmlet x 1"]);
+
+					setNPictureBoxesToVisible(50);
+					setNPictureBoxesToDisabled(50);
+					break;
+
 				case "Skotizo":
 					pictureBox1.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Death_rune_generic.png");
 					pictureBox1.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Death rune x 500"]);
@@ -4966,6 +5329,7 @@ namespace dropLogger {
 					setNPictureBoxesToDisabled(48);
 					break;
 				default:
+					Console.WriteLine("displayTotalLootFromBoss: " + boss + " not found");
 					break;
 
 				
@@ -5102,6 +5466,8 @@ namespace dropLogger {
 					return kalphiteQueenToolStripMenuItem;
 				case "Kraken":
 					return krakenToolStripMenuItem;
+				case "Raids":
+					return raidsToolStripMenuItem;
 				case "Skotizo":
 					return skotizoToolStripMenuItem;
 				case "Thermy":
@@ -5122,6 +5488,29 @@ namespace dropLogger {
 
 			// Since we're removing the quantities
 			sidebarViewingLootFromBoss = "";
+		}
+		private void setSidebarBossTimersToVisible(bool vis) {
+
+			if (vis == true) activeSidebarWindow = "BossTimers";
+
+			labelArmadylTimer.Visible = vis;
+			labelBandosTimer.Visible = vis;
+			labelZamorakTimer.Visible = vis;
+			labelSaradominTimer.Visible = vis;
+			labelCallistoTimer.Visible = vis;
+			labelChaosElementalTimer.Visible = vis;
+			labelChaosFanaticTimer.Visible = vis;
+			labelCrazyArchaeologistTimer.Visible = vis;
+			labelKingBlackDragonTimer.Visible = vis;
+			labelScorpiaTimer.Visible = vis;
+			labelVenenatisTimer.Visible = vis;
+			labelVetionTimer.Visible = vis;
+			labelDagannothPrimeTimer.Visible = vis;
+			labelDagannothRexTimer.Visible = vis;
+			labelDagannothSupremeTimer.Visible = vis;
+			labelGiantMoleTimer.Visible = vis;
+			labelKalphiteQueenTimer.Visible = vis;
+			labelThermonuclearSmokeDevilTimer.Visible = vis;
 		}
 		private void setNPictureBoxesToEnabled(int n) {
 
@@ -8151,15 +8540,560 @@ namespace dropLogger {
 					break;
 			}
 		}
+		
+		Timer armadylTimer = new Timer();
+		Timer bandosTimer = new Timer();
+		Timer saradominTimer = new Timer();
+		Timer zamorakTimer = new Timer();
+		Timer callistoTimer = new Timer();
+		Timer chaosElementalTimer = new Timer();
+		Timer chaosFanaticTimer = new Timer();
+		Timer crazyArchaeologistTimer = new Timer();
+		Timer kingBlackDragonTimer = new Timer();
+		Timer scorpiaTimer = new Timer();
+		Timer venenatisTimer = new Timer();
+		Timer vetionTimer = new Timer();
+		Timer dagannothPrimeTimer = new Timer();
+		Timer dagannothRexTimer = new Timer();
+		Timer dagannothSupremeTimer = new Timer();
+		Timer giantMoleTimer = new Timer();
+		Timer kalphiteQueenTimer = new Timer();
+		Timer thermonuclearSmokeDevilTimer = new Timer();
+		private void labelArmadylTimer_Click(object sender, EventArgs e) {
+			// - 1 to account for delay when clicking timer
+			int time = ARMADYL_RESPAWN_TIME - 1;
+			Console.WriteLine("labelArmadylTimer_Click()");
+			if (labelArmadylTimer.Text != "90") {
+				labelArmadylTimer.Text = "90";
+				labelArmadylTimer.ForeColor = Color.Yellow;
+				armadylTimer.Dispose();
+				time = 89;
+			}
+			else {
+				armadylTimer = new Timer();
+				armadylTimer.Interval = 1000;
+				armadylTimer.Tick += (s, ee) => labelArmadylTimer_Tick(s, ee, time--, armadylTimer);
+				if (time < 0) {
+					armadylTimer.Stop();
+				}
+				armadylTimer.Start();
+			}
+		}
+		private void labelArmadylTimer_Tick(object sender, EventArgs e, int secondsLeft, Timer t) {
+			if (secondsLeft <= 10) {
+				labelArmadylTimer.ForeColor = Color.Red;
+			}
+			if (secondsLeft <= 0) {
+				t.Stop();
+			}
+			labelArmadylTimer.Text = secondsLeft.ToString();
+		}
+		private void labelBandosTimer_Click(object sender, EventArgs e) {
+			// - 1 to account for delay when clicking timer
+			int time = BANDOS_RESPAWN_TIME - 1;
+			Console.WriteLine("labelBandosTimer_Click()");
+			if (labelBandosTimer.Text != "90") {
+				labelBandosTimer.Text = "90";
+				labelBandosTimer.ForeColor = Color.Yellow;
+				bandosTimer.Dispose();
+				time = 89;
+			}
+			else {
+				bandosTimer = new Timer();
+				bandosTimer.Interval = 1000;
+				bandosTimer.Tick += (s, ee) => labelBandosTimer_Tick(s, ee, time--, bandosTimer);
+				if (time < 0) {
+					bandosTimer.Stop();
+				}
+				bandosTimer.Start();
+			}
+		}
+		private void labelBandosTimer_Tick(object sender, EventArgs e, int secondsLeft, Timer t) {
+			if (secondsLeft <= 10) {
+				labelBandosTimer.ForeColor = Color.Red;
+			}
+			if (secondsLeft <= 0) {
+				t.Stop();
+			}
+			labelBandosTimer.Text = secondsLeft.ToString();
+		}
+		private void labelSaradominTimer_Click(object sender, EventArgs e) {
+			// - 1 to account for delay when clicking timer
+			int time = SARADOMIN_RESPAWN_TIME - 1;
+
+			if (labelSaradominTimer.Text != "90") {
+				labelSaradominTimer.Text = "90";
+				labelSaradominTimer.ForeColor = Color.Yellow;
+				saradominTimer.Dispose();
+				time = 89;
+			}
+			else {
+				saradominTimer = new Timer();
+				saradominTimer.Interval = 1000;
+				saradominTimer.Tick += (s, ee) => labelSaradominTimer_Tick(s, ee, time--, saradominTimer);
+				if (time < 0) {
+					saradominTimer.Stop();
+				}
+				saradominTimer.Start();
+			}
+		}
+		private void labelSaradominTimer_Tick(object sender, EventArgs e, int secondsLeft, Timer t) {
+			if (secondsLeft <= 10) {
+				labelSaradominTimer.ForeColor = Color.Red;
+			}
+			if (secondsLeft <= 0) {
+				t.Stop();
+			}
+			labelSaradominTimer.Text = secondsLeft.ToString();
+		}
+		private void labelZamorakTimer_Click(object sender, EventArgs e) {
+			// - 1 to account for delay when clicking timer
+			int time = ZAMORAK_RESPAWN_TIME - 1;
+
+			if (labelZamorakTimer.Text != "90") {
+				labelZamorakTimer.Text = "90";
+				labelZamorakTimer.ForeColor = Color.Yellow;
+				zamorakTimer.Dispose();
+				time = 89;
+			}
+			else {
+				zamorakTimer = new Timer();
+				zamorakTimer.Interval = 1000;
+				zamorakTimer.Tick += (s, ee) => labelZamorakTimer_Tick(s, ee, time--, zamorakTimer);
+				if (time < 0) {
+					zamorakTimer.Stop();
+				}
+				zamorakTimer.Start();
+			}
+		}
+		private void labelZamorakTimer_Tick(object sender, EventArgs e, int secondsLeft, Timer t) {
+			if (secondsLeft <= 10) {
+				labelZamorakTimer.ForeColor = Color.Red;
+			}
+			if (secondsLeft <= 0) {
+				t.Stop();
+			}
+			labelZamorakTimer.Text = secondsLeft.ToString();
+		}
+		private void labelCallistoTimer_Click(object sender, EventArgs e) {
+			// - 1 to account for delay when clicking timer
+			int time = CALLISTO_RESPAWN_TIME - 1;
+
+			if (labelCallistoTimer.Text != "90") {
+				labelCallistoTimer.Text = "90";
+				labelCallistoTimer.ForeColor = Color.Yellow;
+				callistoTimer.Dispose();
+				time = 89;
+			}
+			else {
+				callistoTimer = new Timer();
+				callistoTimer.Interval = 1000;
+				callistoTimer.Tick += (s, ee) => labelCallistoTimer_Tick(s, ee, time--, callistoTimer);
+				if (time < 0) {
+					callistoTimer.Stop();
+				}
+				callistoTimer.Start();
+			}
+		}
+		private void labelCallistoTimer_Tick(object sender, EventArgs e, int secondsLeft, Timer t) {
+			if (secondsLeft <= 10) {
+				labelCallistoTimer.ForeColor = Color.Red;
+			}
+			if (secondsLeft <= 0) {
+				t.Stop();
+			}
+			labelCallistoTimer.Text = secondsLeft.ToString();
+		}
+		private void labelChaosElementalTimer_Click(object sender, EventArgs e) {
+			// - 1 to account for delay when clicking timer
+			int time = CHAOS_ELEMENTAL_RESPAWN_TIME - 1;
+
+			if (labelChaosElementalTimer.Text != "90") {
+				labelChaosElementalTimer.Text = "90";
+				labelChaosElementalTimer.ForeColor = Color.Yellow;
+				chaosElementalTimer.Dispose();
+				time = 89;
+			}
+			else {
+				chaosElementalTimer = new Timer();
+				chaosElementalTimer.Interval = 1000;
+				chaosElementalTimer.Tick += (s, ee) => labelChaosElementalTimer_Tick(s, ee, time--, chaosElementalTimer);
+				if (time < 0) {
+					chaosElementalTimer.Stop();
+				}
+				chaosElementalTimer.Start();
+			}
+		}
+		private void labelChaosElementalTimer_Tick(object sender, EventArgs e, int secondsLeft, Timer t) {
+			if (secondsLeft <= 10) {
+				labelChaosElementalTimer.ForeColor = Color.Red;
+			}
+			if (secondsLeft <= 0) {
+				t.Stop();
+			}
+			labelChaosElementalTimer.Text = secondsLeft.ToString();
+		}
+		private void labelChaosFanaticTimer_Click(object sender, EventArgs e) {
+			// - 1 to account for delay when clicking timer
+			int time = CHAOS_FANATIC_RESPAWN_TIME - 1;
+
+			if (labelChaosFanaticTimer.Text != "90") {
+				labelChaosFanaticTimer.Text = "90";
+				labelChaosFanaticTimer.ForeColor = Color.Yellow;
+				chaosFanaticTimer.Dispose();
+				time = 89;
+			}
+			else {
+				chaosFanaticTimer = new Timer();
+				chaosFanaticTimer.Interval = 1000;
+				chaosFanaticTimer.Tick += (s, ee) => labelChaosFanaticTimer_Tick(s, ee, time--, chaosFanaticTimer);
+				if (time < 0) {
+					chaosFanaticTimer.Stop();
+				}
+				chaosFanaticTimer.Start();
+			}
+		}
+		private void labelChaosFanaticTimer_Tick(object sender, EventArgs e, int secondsLeft, Timer t) {
+			if (secondsLeft <= 10) {
+				labelChaosFanaticTimer.ForeColor = Color.Red;
+			}
+			if (secondsLeft <= 0) {
+				t.Stop();
+			}
+			labelChaosFanaticTimer.Text = secondsLeft.ToString();
+		}
+		private void labelCrazyArchaeologistTimer_Click(object sender, EventArgs e) {
+			// - 1 to account for delay when clicking timer
+			int time = CRAZY_ARCHAEOLOGIST_RESPAWN_TIME - 1;
+
+			if (labelCrazyArchaeologistTimer.Text != "90") {
+				labelCrazyArchaeologistTimer.Text = "90";
+				labelCrazyArchaeologistTimer.ForeColor = Color.Yellow;
+				crazyArchaeologistTimer.Dispose();
+				time = 89;
+			}
+			else {
+				crazyArchaeologistTimer = new Timer();
+				crazyArchaeologistTimer.Interval = 1000;
+				crazyArchaeologistTimer.Tick += (s, ee) => labelCrazyArchaeologistTimer_Tick(s, ee, time--, crazyArchaeologistTimer);
+				if (time < 0) {
+					crazyArchaeologistTimer.Stop();
+				}
+				crazyArchaeologistTimer.Start();
+			}
+		}
+		private void labelCrazyArchaeologistTimer_Tick(object sender, EventArgs e, int secondsLeft, Timer t) {
+			if (secondsLeft <= 10) {
+				labelCrazyArchaeologistTimer.ForeColor = Color.Red;
+			}
+			if (secondsLeft <= 0) {
+				t.Stop();
+			}
+			labelCrazyArchaeologistTimer.Text = secondsLeft.ToString();
+		}
+		private void labelKingBlackDragonTimer_Click(object sender, EventArgs e) {
+			// - 1 to account for delay when clicking timer
+			int time = KING_BLACK_DRAGON_RESPAWN_TIME - 1;
+
+			if (labelKingBlackDragonTimer.Text != "90") {
+				labelKingBlackDragonTimer.Text = "90";
+				labelKingBlackDragonTimer.ForeColor = Color.Yellow;
+				kingBlackDragonTimer.Dispose();
+				time = 89;
+			}
+			else {
+				kingBlackDragonTimer = new Timer();
+				kingBlackDragonTimer.Interval = 1000;
+				kingBlackDragonTimer.Tick += (s, ee) => labelKingBlackDragonTimer_Tick(s, ee, time--, kingBlackDragonTimer);
+				if (time < 0) {
+					kingBlackDragonTimer.Stop();
+				}
+				kingBlackDragonTimer.Start();
+			}
+		}
+		private void labelKingBlackDragonTimer_Tick(object sender, EventArgs e, int secondsLeft, Timer t) {
+			if (secondsLeft <= 10) {
+				labelKingBlackDragonTimer.ForeColor = Color.Red;
+			}
+			if (secondsLeft <= 0) {
+				t.Stop();
+			}
+			labelKingBlackDragonTimer.Text = secondsLeft.ToString();
+		}
+		private void labelScorpiaTimer_Click(object sender, EventArgs e) {
+			// - 1 to account for delay when clicking timer
+			int time = SCORPIA_RESPAWN_TIME - 1;
+
+			if (labelScorpiaTimer.Text != "90") {
+				labelScorpiaTimer.Text = "90";
+				labelScorpiaTimer.ForeColor = Color.Yellow;
+				scorpiaTimer.Dispose();
+				time = 89;
+			}
+			else {
+				scorpiaTimer = new Timer();
+				scorpiaTimer.Interval = 1000;
+				scorpiaTimer.Tick += (s, ee) => labelScorpiaTimer_Tick(s, ee, time--, scorpiaTimer);
+				if (time < 0) {
+					scorpiaTimer.Stop();
+				}
+				scorpiaTimer.Start();
+			}
+		}
+		private void labelScorpiaTimer_Tick(object sender, EventArgs e, int secondsLeft, Timer t) {
+			if (secondsLeft <= 10) {
+				labelScorpiaTimer.ForeColor = Color.Red;
+			}
+			if (secondsLeft <= 0) {
+				t.Stop();
+			}
+			labelScorpiaTimer.Text = secondsLeft.ToString();
+		}
+		private void labelVenenatisTimer_Click(object sender, EventArgs e) {
+			// - 1 to account for delay when clicking timer
+			int time = VENENATIS_RESPAWN_TIME - 1;
+
+			if (labelVenenatisTimer.Text != "90") {
+				labelVenenatisTimer.Text = "90";
+				labelVenenatisTimer.ForeColor = Color.Yellow;
+				venenatisTimer.Dispose();
+				time = 89;
+			}
+			else {
+				venenatisTimer = new Timer();
+				venenatisTimer.Interval = 1000;
+				venenatisTimer.Tick += (s, ee) => labelVenenatisTimer_Tick(s, ee, time--, venenatisTimer);
+				if (time < 0) {
+					venenatisTimer.Stop();
+				}
+				venenatisTimer.Start();
+			}
+		}
+		private void labelVenenatisTimer_Tick(object sender, EventArgs e, int secondsLeft, Timer t) {
+			if (secondsLeft <= 10) {
+				labelVenenatisTimer.ForeColor = Color.Red;
+			}
+			if (secondsLeft <= 0) {
+				t.Stop();
+			}
+			labelVenenatisTimer.Text = secondsLeft.ToString();
+		}
+		private void labelVetionTimer_Click(object sender, EventArgs e) {
+			// - 1 to account for delay when clicking timer
+			int time = VETION_RESPAWN_TIME - 1;
+
+			if (labelVetionTimer.Text != "90") {
+				labelVetionTimer.Text = "90";
+				labelVetionTimer.ForeColor = Color.Yellow;
+				vetionTimer.Dispose();
+				time = 89;
+			}
+			else {
+				vetionTimer = new Timer();
+				vetionTimer.Interval = 1000;
+				vetionTimer.Tick += (s, ee) => labelVetionTimer_Tick(s, ee, time--, vetionTimer);
+				if (time < 0) {
+					vetionTimer.Stop();
+				}
+				vetionTimer.Start();
+			}
+		}
+		private void labelVetionTimer_Tick(object sender, EventArgs e, int secondsLeft, Timer t) {
+			if (secondsLeft <= 10) {
+				labelVetionTimer.ForeColor = Color.Red;
+			}
+			if (secondsLeft <= 0) {
+				t.Stop();
+			}
+			labelVetionTimer.Text = secondsLeft.ToString();
+		}
+		private void labelDagannothPrimeTimer_Click(object sender, EventArgs e) {
+			// - 1 to account for delay when clicking timer
+			int time = DAGANNOTH_PRIME_RESPAWN_TIME - 1;
+
+			if (labelDagannothPrimeTimer.Text != "90") {
+				labelDagannothPrimeTimer.Text = "90";
+				labelDagannothPrimeTimer.ForeColor = Color.Yellow;
+				dagannothPrimeTimer.Dispose();
+				time = 89;
+			}
+			else {
+				dagannothPrimeTimer = new Timer();
+				dagannothPrimeTimer.Interval = 1000;
+				dagannothPrimeTimer.Tick += (s, ee) => labelDagannothPrimeTimer_Tick(s, ee, time--, dagannothPrimeTimer);
+				if (time < 0) {
+					dagannothPrimeTimer.Stop();
+				}
+				dagannothPrimeTimer.Start();
+			}
+		}
+		private void labelDagannothPrimeTimer_Tick(object sender, EventArgs e, int secondsLeft, Timer t) {
+			if (secondsLeft <= 10) {
+				labelDagannothPrimeTimer.ForeColor = Color.Red;
+			}
+			if (secondsLeft <= 0) {
+				t.Stop();
+			}
+			labelDagannothPrimeTimer.Text = secondsLeft.ToString();
+		}
+		private void labelDagannothRexTimer_Click(object sender, EventArgs e) {
+			// - 1 to account for delay when clicking timer
+			int time = DAGANNOTH_REX_RESPAWN_TIME - 1;
+
+			if (labelDagannothRexTimer.Text != "90") {
+				labelDagannothRexTimer.Text = "90";
+				labelDagannothRexTimer.ForeColor = Color.Yellow;
+				dagannothRexTimer.Dispose();
+				time = 89;
+			}
+			else {
+				dagannothRexTimer = new Timer();
+				dagannothRexTimer.Interval = 1000;
+				dagannothRexTimer.Tick += (s, ee) => labelDagannothRexTimer_Tick(s, ee, time--, dagannothRexTimer);
+				if (time < 0) {
+					dagannothRexTimer.Stop();
+				}
+				dagannothRexTimer.Start();
+			}
+		}
+		private void labelDagannothRexTimer_Tick(object sender, EventArgs e, int secondsLeft, Timer t) {
+			if (secondsLeft <= 10) {
+				labelDagannothRexTimer.ForeColor = Color.Red;
+			}
+			if (secondsLeft <= 0) {
+				t.Stop();
+			}
+			labelDagannothRexTimer.Text = secondsLeft.ToString();
+		}
+		private void labelDagannothSupremeTimer_Click(object sender, EventArgs e) {
+			// - 1 to account for delay when clicking timer
+			int time = DAGANNOTH_SUPREME_RESPAWN_TIME - 1;
+
+			if (labelDagannothSupremeTimer.Text != "90") {
+				labelDagannothSupremeTimer.Text = "90";
+				labelDagannothSupremeTimer.ForeColor = Color.Yellow;
+				dagannothSupremeTimer.Dispose();
+				time = 89;
+			}
+			else {
+				dagannothSupremeTimer = new Timer();
+				dagannothSupremeTimer.Interval = 1000;
+				dagannothSupremeTimer.Tick += (s, ee) => labelDagannothSupremeTimer_Tick(s, ee, time--, dagannothSupremeTimer);
+				if (time < 0) {
+					dagannothSupremeTimer.Stop();
+				}
+				dagannothSupremeTimer.Start();
+			}
+		}
+		private void labelDagannothSupremeTimer_Tick(object sender, EventArgs e, int secondsLeft, Timer t) {
+			if (secondsLeft <= 10) {
+				labelDagannothSupremeTimer.ForeColor = Color.Red;
+			}
+			if (secondsLeft <= 0) {
+				t.Stop();
+			}
+			labelDagannothSupremeTimer.Text = secondsLeft.ToString();
+		}
+		private void labelGiantMoleTimer_Click(object sender, EventArgs e) {
+			// - 1 to account for delay when clicking timer
+			int time = GIANT_MOLE_RESPAWN_TIME - 1;
+
+			if (labelGiantMoleTimer.Text != "90") {
+				labelGiantMoleTimer.Text = "90";
+				labelGiantMoleTimer.ForeColor = Color.Yellow;
+				giantMoleTimer.Dispose();
+				time = 89;
+			}
+			else {
+				giantMoleTimer = new Timer();
+				giantMoleTimer.Interval = 1000;
+				giantMoleTimer.Tick += (s, ee) => labelGiantMoleTimer_Tick(s, ee, time--, giantMoleTimer);
+				if (time < 0) {
+					giantMoleTimer.Stop();
+				}
+				giantMoleTimer.Start();
+			}
+		}
+		private void labelGiantMoleTimer_Tick(object sender, EventArgs e, int secondsLeft, Timer t) {
+			if (secondsLeft <= 10) {
+				labelGiantMoleTimer.ForeColor = Color.Red;
+			}
+			if (secondsLeft <= 0) {
+				t.Stop();
+			}
+			labelGiantMoleTimer.Text = secondsLeft.ToString();
+		}
+		private void labelKalphiteQueenTimer_Click(object sender, EventArgs e) {
+			// - 1 to account for delay when clicking timer
+			int time = KALPHITE_QUEEN_RESPAWN_TIME - 1;
+
+			if (labelKalphiteQueenTimer.Text != "90") {
+				labelKalphiteQueenTimer.Text = "90";
+				labelKalphiteQueenTimer.ForeColor = Color.Yellow;
+				kalphiteQueenTimer.Dispose();
+				time = 89;
+			}
+			else {
+				kalphiteQueenTimer = new Timer();
+				kalphiteQueenTimer.Interval = 1000;
+				kalphiteQueenTimer.Tick += (s, ee) => labelKalphiteQueenTimer_Tick(s, ee, time--, kalphiteQueenTimer);
+				if (time < 0) {
+					kalphiteQueenTimer.Stop();
+				}
+				kalphiteQueenTimer.Start();
+			}
+		}
+		private void labelKalphiteQueenTimer_Tick(object sender, EventArgs e, int secondsLeft, Timer t) {
+			if (secondsLeft <= 10) {
+				labelKalphiteQueenTimer.ForeColor = Color.Red;
+			}
+			if (secondsLeft <= 0) {
+				t.Stop();
+			}
+			labelKalphiteQueenTimer.Text = secondsLeft.ToString();
+		}
+		private void labelThermonuclearSmokeDevilTimer_Click(object sender, EventArgs e) {
+			// - 1 to account for delay when clicking timer
+			int time = THERMONUCLEAR_SMOKE_DEVIL_RESPAWN_TIME - 1;
+
+			if (labelThermonuclearSmokeDevilTimer.Text != "90") {
+				labelThermonuclearSmokeDevilTimer.Text = "90";
+				labelThermonuclearSmokeDevilTimer.ForeColor = Color.Yellow;
+				thermonuclearSmokeDevilTimer.Dispose();
+				time = 89;
+			}
+			else {
+				thermonuclearSmokeDevilTimer = new Timer();
+				thermonuclearSmokeDevilTimer.Interval = 1000;
+				thermonuclearSmokeDevilTimer.Tick += (s, ee) => labelThermonuclearSmokeDevilTimer_Tick(s, ee, time--, thermonuclearSmokeDevilTimer);
+				if (time < 0) {
+					thermonuclearSmokeDevilTimer.Stop();
+				}
+				thermonuclearSmokeDevilTimer.Start();
+			}
+		}
+		private void labelThermonuclearSmokeDevilTimer_Tick(object sender, EventArgs e, int secondsLeft, Timer t) {
+			if (secondsLeft <= 10) {
+				labelThermonuclearSmokeDevilTimer.ForeColor = Color.Red;
+			}
+			if (secondsLeft <= 0) {
+				t.Stop();
+			}
+			labelThermonuclearSmokeDevilTimer.Text = secondsLeft.ToString();
+		}
 	}
 }
 
 
 /*
  * 
- * Was working on:
+ * Was working on / TODO list:
  * 
- * -
+ * - Finish inputting boss respawn timers
+ * - Verify drop rates work correctly 
+ *		- Possible setting for example:
+ *			- if item is dropped 4:16, setting should let them choose to display 4:16 or 1:4
+ *			- setting called "Reduce drop rates to simplest form"
  * 
  * 
  * 

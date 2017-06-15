@@ -52,6 +52,7 @@
 			this.giantMoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.kalphiteQueenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.krakenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.raidsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.skotizoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.thermonuclearSmokeDevilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.wintertodtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -140,6 +141,24 @@
 			this.pictureBox57 = new System.Windows.Forms.PictureBox();
 			this.labelSidebarTitle = new System.Windows.Forms.Label();
 			this.panelSidePanel = new System.Windows.Forms.Panel();
+			this.labelKalphiteQueenTimer = new System.Windows.Forms.Label();
+			this.labelGiantMoleTimer = new System.Windows.Forms.Label();
+			this.labelThermonuclearSmokeDevilTimer = new System.Windows.Forms.Label();
+			this.labelDagannothSupremeTimer = new System.Windows.Forms.Label();
+			this.labelDagannothPrimeTimer = new System.Windows.Forms.Label();
+			this.labelDagannothRexTimer = new System.Windows.Forms.Label();
+			this.labelVetionTimer = new System.Windows.Forms.Label();
+			this.labelScorpiaTimer = new System.Windows.Forms.Label();
+			this.labelKingBlackDragonTimer = new System.Windows.Forms.Label();
+			this.labelVenenatisTimer = new System.Windows.Forms.Label();
+			this.labelCrazyArchaeologistTimer = new System.Windows.Forms.Label();
+			this.labelChaosElementalTimer = new System.Windows.Forms.Label();
+			this.labelCallistoTimer = new System.Windows.Forms.Label();
+			this.labelChaosFanaticTimer = new System.Windows.Forms.Label();
+			this.labelZamorakTimer = new System.Windows.Forms.Label();
+			this.labelBandosTimer = new System.Windows.Forms.Label();
+			this.labelArmadylTimer = new System.Windows.Forms.Label();
+			this.labelSaradominTimer = new System.Windows.Forms.Label();
 			this.listBoxSidebar = new System.Windows.Forms.ListBox();
 			this.buttonToggleSidePanel = new System.Windows.Forms.Button();
 			this.buttonSideBarBossKillcounts = new System.Windows.Forms.Button();
@@ -392,6 +411,7 @@
             this.giantMoleToolStripMenuItem,
             this.kalphiteQueenToolStripMenuItem,
             this.krakenToolStripMenuItem,
+            this.raidsToolStripMenuItem,
             this.skotizoToolStripMenuItem,
             this.thermonuclearSmokeDevilToolStripMenuItem,
             this.wintertodtToolStripMenuItem,
@@ -455,6 +475,13 @@
 			this.krakenToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
 			this.krakenToolStripMenuItem.Text = "Kraken";
 			this.krakenToolStripMenuItem.Click += new System.EventHandler(this.krakenToolStripMenuItem_Click);
+			// 
+			// raidsToolStripMenuItem
+			// 
+			this.raidsToolStripMenuItem.Name = "raidsToolStripMenuItem";
+			this.raidsToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+			this.raidsToolStripMenuItem.Text = "Raids";
+			this.raidsToolStripMenuItem.Click += new System.EventHandler(this.raidsToolStripMenuItem_Click);
 			// 
 			// skotizoToolStripMenuItem
 			// 
@@ -1464,12 +1491,282 @@
 			// panelSidePanel
 			// 
 			this.panelSidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+			this.panelSidePanel.Controls.Add(this.labelKalphiteQueenTimer);
+			this.panelSidePanel.Controls.Add(this.labelGiantMoleTimer);
+			this.panelSidePanel.Controls.Add(this.labelThermonuclearSmokeDevilTimer);
+			this.panelSidePanel.Controls.Add(this.labelDagannothSupremeTimer);
+			this.panelSidePanel.Controls.Add(this.labelDagannothPrimeTimer);
+			this.panelSidePanel.Controls.Add(this.labelDagannothRexTimer);
+			this.panelSidePanel.Controls.Add(this.labelVetionTimer);
+			this.panelSidePanel.Controls.Add(this.labelScorpiaTimer);
+			this.panelSidePanel.Controls.Add(this.labelKingBlackDragonTimer);
+			this.panelSidePanel.Controls.Add(this.labelVenenatisTimer);
+			this.panelSidePanel.Controls.Add(this.labelCrazyArchaeologistTimer);
+			this.panelSidePanel.Controls.Add(this.labelChaosElementalTimer);
+			this.panelSidePanel.Controls.Add(this.labelCallistoTimer);
+			this.panelSidePanel.Controls.Add(this.labelChaosFanaticTimer);
+			this.panelSidePanel.Controls.Add(this.labelZamorakTimer);
+			this.panelSidePanel.Controls.Add(this.labelBandosTimer);
+			this.panelSidePanel.Controls.Add(this.labelArmadylTimer);
+			this.panelSidePanel.Controls.Add(this.labelSaradominTimer);
 			this.panelSidePanel.Controls.Add(this.listBoxSidebar);
 			this.panelSidePanel.Controls.Add(this.labelSidebarTitle);
 			this.panelSidePanel.Location = new System.Drawing.Point(467, 30);
 			this.panelSidePanel.Name = "panelSidePanel";
-			this.panelSidePanel.Size = new System.Drawing.Size(178, 349);
+			this.panelSidePanel.Size = new System.Drawing.Size(178, 359);
 			this.panelSidePanel.TabIndex = 149;
+			// 
+			// labelKalphiteQueenTimer
+			// 
+			this.labelKalphiteQueenTimer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.labelKalphiteQueenTimer.Font = new System.Drawing.Font("Runescape Chat Font", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelKalphiteQueenTimer.ForeColor = System.Drawing.Color.Yellow;
+			this.labelKalphiteQueenTimer.Image = ((System.Drawing.Image)(resources.GetObject("labelKalphiteQueenTimer.Image")));
+			this.labelKalphiteQueenTimer.Location = new System.Drawing.Point(7, 170);
+			this.labelKalphiteQueenTimer.Name = "labelKalphiteQueenTimer";
+			this.labelKalphiteQueenTimer.Size = new System.Drawing.Size(42, 35);
+			this.labelKalphiteQueenTimer.TabIndex = 204;
+			this.labelKalphiteQueenTimer.Text = "90";
+			this.labelKalphiteQueenTimer.Visible = false;
+			this.labelKalphiteQueenTimer.Click += new System.EventHandler(this.labelKalphiteQueenTimer_Click);
+			// 
+			// labelGiantMoleTimer
+			// 
+			this.labelGiantMoleTimer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.labelGiantMoleTimer.Font = new System.Drawing.Font("Runescape Chat Font", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelGiantMoleTimer.ForeColor = System.Drawing.Color.Yellow;
+			this.labelGiantMoleTimer.Image = ((System.Drawing.Image)(resources.GetObject("labelGiantMoleTimer.Image")));
+			this.labelGiantMoleTimer.Location = new System.Drawing.Point(130, 136);
+			this.labelGiantMoleTimer.Name = "labelGiantMoleTimer";
+			this.labelGiantMoleTimer.Size = new System.Drawing.Size(42, 35);
+			this.labelGiantMoleTimer.TabIndex = 203;
+			this.labelGiantMoleTimer.Text = "90";
+			this.labelGiantMoleTimer.Visible = false;
+			this.labelGiantMoleTimer.Click += new System.EventHandler(this.labelGiantMoleTimer_Click);
+			// 
+			// labelThermonuclearSmokeDevilTimer
+			// 
+			this.labelThermonuclearSmokeDevilTimer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.labelThermonuclearSmokeDevilTimer.Font = new System.Drawing.Font("Runescape Chat Font", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelThermonuclearSmokeDevilTimer.ForeColor = System.Drawing.Color.Yellow;
+			this.labelThermonuclearSmokeDevilTimer.Image = ((System.Drawing.Image)(resources.GetObject("labelThermonuclearSmokeDevilTimer.Image")));
+			this.labelThermonuclearSmokeDevilTimer.Location = new System.Drawing.Point(48, 170);
+			this.labelThermonuclearSmokeDevilTimer.Name = "labelThermonuclearSmokeDevilTimer";
+			this.labelThermonuclearSmokeDevilTimer.Size = new System.Drawing.Size(42, 35);
+			this.labelThermonuclearSmokeDevilTimer.TabIndex = 202;
+			this.labelThermonuclearSmokeDevilTimer.Text = "90";
+			this.labelThermonuclearSmokeDevilTimer.Visible = false;
+			this.labelThermonuclearSmokeDevilTimer.Click += new System.EventHandler(this.labelThermonuclearSmokeDevilTimer_Click);
+			// 
+			// labelDagannothSupremeTimer
+			// 
+			this.labelDagannothSupremeTimer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.labelDagannothSupremeTimer.Font = new System.Drawing.Font("Runescape Chat Font", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelDagannothSupremeTimer.ForeColor = System.Drawing.Color.Yellow;
+			this.labelDagannothSupremeTimer.Image = ((System.Drawing.Image)(resources.GetObject("labelDagannothSupremeTimer.Image")));
+			this.labelDagannothSupremeTimer.Location = new System.Drawing.Point(89, 136);
+			this.labelDagannothSupremeTimer.Name = "labelDagannothSupremeTimer";
+			this.labelDagannothSupremeTimer.Size = new System.Drawing.Size(42, 35);
+			this.labelDagannothSupremeTimer.TabIndex = 201;
+			this.labelDagannothSupremeTimer.Text = "90";
+			this.labelDagannothSupremeTimer.Visible = false;
+			this.labelDagannothSupremeTimer.Click += new System.EventHandler(this.labelDagannothSupremeTimer_Click);
+			// 
+			// labelDagannothPrimeTimer
+			// 
+			this.labelDagannothPrimeTimer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.labelDagannothPrimeTimer.Font = new System.Drawing.Font("Runescape Chat Font", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelDagannothPrimeTimer.ForeColor = System.Drawing.Color.Yellow;
+			this.labelDagannothPrimeTimer.Image = ((System.Drawing.Image)(resources.GetObject("labelDagannothPrimeTimer.Image")));
+			this.labelDagannothPrimeTimer.Location = new System.Drawing.Point(7, 136);
+			this.labelDagannothPrimeTimer.Name = "labelDagannothPrimeTimer";
+			this.labelDagannothPrimeTimer.Size = new System.Drawing.Size(42, 35);
+			this.labelDagannothPrimeTimer.TabIndex = 200;
+			this.labelDagannothPrimeTimer.Text = "90";
+			this.labelDagannothPrimeTimer.Visible = false;
+			this.labelDagannothPrimeTimer.Click += new System.EventHandler(this.labelDagannothPrimeTimer_Click);
+			// 
+			// labelDagannothRexTimer
+			// 
+			this.labelDagannothRexTimer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.labelDagannothRexTimer.Font = new System.Drawing.Font("Runescape Chat Font", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelDagannothRexTimer.ForeColor = System.Drawing.Color.Yellow;
+			this.labelDagannothRexTimer.Image = ((System.Drawing.Image)(resources.GetObject("labelDagannothRexTimer.Image")));
+			this.labelDagannothRexTimer.Location = new System.Drawing.Point(48, 136);
+			this.labelDagannothRexTimer.Name = "labelDagannothRexTimer";
+			this.labelDagannothRexTimer.Size = new System.Drawing.Size(42, 35);
+			this.labelDagannothRexTimer.TabIndex = 198;
+			this.labelDagannothRexTimer.Text = "90";
+			this.labelDagannothRexTimer.Visible = false;
+			this.labelDagannothRexTimer.Click += new System.EventHandler(this.labelDagannothRexTimer_Click);
+			// 
+			// labelVetionTimer
+			// 
+			this.labelVetionTimer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.labelVetionTimer.Font = new System.Drawing.Font("Runescape Chat Font", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelVetionTimer.ForeColor = System.Drawing.Color.Yellow;
+			this.labelVetionTimer.Image = ((System.Drawing.Image)(resources.GetObject("labelVetionTimer.Image")));
+			this.labelVetionTimer.Location = new System.Drawing.Point(130, 102);
+			this.labelVetionTimer.Name = "labelVetionTimer";
+			this.labelVetionTimer.Size = new System.Drawing.Size(42, 35);
+			this.labelVetionTimer.TabIndex = 197;
+			this.labelVetionTimer.Text = "90";
+			this.labelVetionTimer.Visible = false;
+			this.labelVetionTimer.Click += new System.EventHandler(this.labelVetionTimer_Click);
+			// 
+			// labelScorpiaTimer
+			// 
+			this.labelScorpiaTimer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.labelScorpiaTimer.Font = new System.Drawing.Font("Runescape Chat Font", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelScorpiaTimer.ForeColor = System.Drawing.Color.Yellow;
+			this.labelScorpiaTimer.Image = ((System.Drawing.Image)(resources.GetObject("labelScorpiaTimer.Image")));
+			this.labelScorpiaTimer.Location = new System.Drawing.Point(48, 102);
+			this.labelScorpiaTimer.Name = "labelScorpiaTimer";
+			this.labelScorpiaTimer.Size = new System.Drawing.Size(42, 35);
+			this.labelScorpiaTimer.TabIndex = 196;
+			this.labelScorpiaTimer.Text = "90";
+			this.labelScorpiaTimer.Visible = false;
+			this.labelScorpiaTimer.Click += new System.EventHandler(this.labelScorpiaTimer_Click);
+			// 
+			// labelKingBlackDragonTimer
+			// 
+			this.labelKingBlackDragonTimer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.labelKingBlackDragonTimer.Font = new System.Drawing.Font("Runescape Chat Font", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelKingBlackDragonTimer.ForeColor = System.Drawing.Color.Yellow;
+			this.labelKingBlackDragonTimer.Image = ((System.Drawing.Image)(resources.GetObject("labelKingBlackDragonTimer.Image")));
+			this.labelKingBlackDragonTimer.Location = new System.Drawing.Point(7, 102);
+			this.labelKingBlackDragonTimer.Name = "labelKingBlackDragonTimer";
+			this.labelKingBlackDragonTimer.Size = new System.Drawing.Size(42, 35);
+			this.labelKingBlackDragonTimer.TabIndex = 195;
+			this.labelKingBlackDragonTimer.Text = "90";
+			this.labelKingBlackDragonTimer.Visible = false;
+			this.labelKingBlackDragonTimer.Click += new System.EventHandler(this.labelKingBlackDragonTimer_Click);
+			// 
+			// labelVenenatisTimer
+			// 
+			this.labelVenenatisTimer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.labelVenenatisTimer.Font = new System.Drawing.Font("Runescape Chat Font", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelVenenatisTimer.ForeColor = System.Drawing.Color.Yellow;
+			this.labelVenenatisTimer.Image = ((System.Drawing.Image)(resources.GetObject("labelVenenatisTimer.Image")));
+			this.labelVenenatisTimer.Location = new System.Drawing.Point(89, 102);
+			this.labelVenenatisTimer.Name = "labelVenenatisTimer";
+			this.labelVenenatisTimer.Size = new System.Drawing.Size(42, 35);
+			this.labelVenenatisTimer.TabIndex = 194;
+			this.labelVenenatisTimer.Text = "90";
+			this.labelVenenatisTimer.Visible = false;
+			this.labelVenenatisTimer.Click += new System.EventHandler(this.labelVenenatisTimer_Click);
+			// 
+			// labelCrazyArchaeologistTimer
+			// 
+			this.labelCrazyArchaeologistTimer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.labelCrazyArchaeologistTimer.Font = new System.Drawing.Font("Runescape Chat Font", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelCrazyArchaeologistTimer.ForeColor = System.Drawing.Color.Yellow;
+			this.labelCrazyArchaeologistTimer.Image = ((System.Drawing.Image)(resources.GetObject("labelCrazyArchaeologistTimer.Image")));
+			this.labelCrazyArchaeologistTimer.Location = new System.Drawing.Point(130, 68);
+			this.labelCrazyArchaeologistTimer.Name = "labelCrazyArchaeologistTimer";
+			this.labelCrazyArchaeologistTimer.Size = new System.Drawing.Size(42, 35);
+			this.labelCrazyArchaeologistTimer.TabIndex = 193;
+			this.labelCrazyArchaeologistTimer.Text = "90";
+			this.labelCrazyArchaeologistTimer.Visible = false;
+			this.labelCrazyArchaeologistTimer.Click += new System.EventHandler(this.labelCrazyArchaeologistTimer_Click);
+			// 
+			// labelChaosElementalTimer
+			// 
+			this.labelChaosElementalTimer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.labelChaosElementalTimer.Font = new System.Drawing.Font("Runescape Chat Font", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelChaosElementalTimer.ForeColor = System.Drawing.Color.Yellow;
+			this.labelChaosElementalTimer.Image = ((System.Drawing.Image)(resources.GetObject("labelChaosElementalTimer.Image")));
+			this.labelChaosElementalTimer.Location = new System.Drawing.Point(48, 68);
+			this.labelChaosElementalTimer.Name = "labelChaosElementalTimer";
+			this.labelChaosElementalTimer.Size = new System.Drawing.Size(42, 35);
+			this.labelChaosElementalTimer.TabIndex = 192;
+			this.labelChaosElementalTimer.Text = "90";
+			this.labelChaosElementalTimer.Visible = false;
+			this.labelChaosElementalTimer.Click += new System.EventHandler(this.labelChaosElementalTimer_Click);
+			// 
+			// labelCallistoTimer
+			// 
+			this.labelCallistoTimer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.labelCallistoTimer.Font = new System.Drawing.Font("Runescape Chat Font", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelCallistoTimer.ForeColor = System.Drawing.Color.Yellow;
+			this.labelCallistoTimer.Image = ((System.Drawing.Image)(resources.GetObject("labelCallistoTimer.Image")));
+			this.labelCallistoTimer.Location = new System.Drawing.Point(7, 68);
+			this.labelCallistoTimer.Name = "labelCallistoTimer";
+			this.labelCallistoTimer.Size = new System.Drawing.Size(42, 35);
+			this.labelCallistoTimer.TabIndex = 191;
+			this.labelCallistoTimer.Text = "90";
+			this.labelCallistoTimer.Visible = false;
+			this.labelCallistoTimer.Click += new System.EventHandler(this.labelCallistoTimer_Click);
+			// 
+			// labelChaosFanaticTimer
+			// 
+			this.labelChaosFanaticTimer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.labelChaosFanaticTimer.Font = new System.Drawing.Font("Runescape Chat Font", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelChaosFanaticTimer.ForeColor = System.Drawing.Color.Yellow;
+			this.labelChaosFanaticTimer.Image = ((System.Drawing.Image)(resources.GetObject("labelChaosFanaticTimer.Image")));
+			this.labelChaosFanaticTimer.Location = new System.Drawing.Point(89, 68);
+			this.labelChaosFanaticTimer.Name = "labelChaosFanaticTimer";
+			this.labelChaosFanaticTimer.Size = new System.Drawing.Size(42, 35);
+			this.labelChaosFanaticTimer.TabIndex = 190;
+			this.labelChaosFanaticTimer.Text = "90";
+			this.labelChaosFanaticTimer.Visible = false;
+			this.labelChaosFanaticTimer.Click += new System.EventHandler(this.labelChaosFanaticTimer_Click);
+			// 
+			// labelZamorakTimer
+			// 
+			this.labelZamorakTimer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.labelZamorakTimer.Font = new System.Drawing.Font("Runescape Chat Font", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelZamorakTimer.ForeColor = System.Drawing.Color.Yellow;
+			this.labelZamorakTimer.Image = ((System.Drawing.Image)(resources.GetObject("labelZamorakTimer.Image")));
+			this.labelZamorakTimer.Location = new System.Drawing.Point(130, 34);
+			this.labelZamorakTimer.Name = "labelZamorakTimer";
+			this.labelZamorakTimer.Size = new System.Drawing.Size(42, 35);
+			this.labelZamorakTimer.TabIndex = 189;
+			this.labelZamorakTimer.Text = "90";
+			this.labelZamorakTimer.Visible = false;
+			this.labelZamorakTimer.Click += new System.EventHandler(this.labelZamorakTimer_Click);
+			// 
+			// labelBandosTimer
+			// 
+			this.labelBandosTimer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.labelBandosTimer.Font = new System.Drawing.Font("Runescape Chat Font", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelBandosTimer.ForeColor = System.Drawing.Color.Yellow;
+			this.labelBandosTimer.Image = ((System.Drawing.Image)(resources.GetObject("labelBandosTimer.Image")));
+			this.labelBandosTimer.Location = new System.Drawing.Point(48, 34);
+			this.labelBandosTimer.Name = "labelBandosTimer";
+			this.labelBandosTimer.Size = new System.Drawing.Size(42, 35);
+			this.labelBandosTimer.TabIndex = 188;
+			this.labelBandosTimer.Text = "90";
+			this.labelBandosTimer.Visible = false;
+			this.labelBandosTimer.Click += new System.EventHandler(this.labelBandosTimer_Click);
+			// 
+			// labelArmadylTimer
+			// 
+			this.labelArmadylTimer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.labelArmadylTimer.Font = new System.Drawing.Font("Runescape Chat Font", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelArmadylTimer.ForeColor = System.Drawing.Color.Yellow;
+			this.labelArmadylTimer.Image = ((System.Drawing.Image)(resources.GetObject("labelArmadylTimer.Image")));
+			this.labelArmadylTimer.Location = new System.Drawing.Point(7, 34);
+			this.labelArmadylTimer.Name = "labelArmadylTimer";
+			this.labelArmadylTimer.Size = new System.Drawing.Size(42, 35);
+			this.labelArmadylTimer.TabIndex = 187;
+			this.labelArmadylTimer.Text = "90";
+			this.labelArmadylTimer.Visible = false;
+			this.labelArmadylTimer.Click += new System.EventHandler(this.labelArmadylTimer_Click);
+			// 
+			// labelSaradominTimer
+			// 
+			this.labelSaradominTimer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.labelSaradominTimer.Font = new System.Drawing.Font("Runescape Chat Font", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelSaradominTimer.ForeColor = System.Drawing.Color.Yellow;
+			this.labelSaradominTimer.Image = ((System.Drawing.Image)(resources.GetObject("labelSaradominTimer.Image")));
+			this.labelSaradominTimer.Location = new System.Drawing.Point(89, 34);
+			this.labelSaradominTimer.Name = "labelSaradominTimer";
+			this.labelSaradominTimer.Size = new System.Drawing.Size(42, 35);
+			this.labelSaradominTimer.TabIndex = 185;
+			this.labelSaradominTimer.Text = "90";
+			this.labelSaradominTimer.Visible = false;
+			this.labelSaradominTimer.Click += new System.EventHandler(this.labelSaradominTimer_Click);
 			// 
 			// listBoxSidebar
 			// 
@@ -1479,7 +1776,7 @@
 			this.listBoxSidebar.FormattingEnabled = true;
 			this.listBoxSidebar.Location = new System.Drawing.Point(3, 31);
 			this.listBoxSidebar.Name = "listBoxSidebar";
-			this.listBoxSidebar.Size = new System.Drawing.Size(170, 312);
+			this.listBoxSidebar.Size = new System.Drawing.Size(170, 325);
 			this.listBoxSidebar.TabIndex = 149;
 			this.listBoxSidebar.SelectedIndexChanged += new System.EventHandler(this.listBoxSidebar_SelectedIndexChanged);
 			// 
@@ -1523,6 +1820,7 @@
 			this.buttonSideBarTimers.Size = new System.Drawing.Size(29, 30);
 			this.buttonSideBarTimers.TabIndex = 152;
 			this.buttonSideBarTimers.UseVisualStyleBackColor = false;
+			this.buttonSideBarTimers.Click += new System.EventHandler(this.buttonSideBarTimers_Click);
 			// 
 			// buttonSideBarEstimatedGPMade
 			// 
@@ -1916,6 +2214,25 @@
 		internal System.Windows.Forms.PictureBox pictureBoxDagannothSupremeLoot;
 		internal System.Windows.Forms.PictureBox pictureBoxDagannothRexLoot;
 		internal System.Windows.Forms.PictureBox pictureBoxDagannothPrimeLoot;
+		private System.Windows.Forms.Label labelZamorakTimer;
+		private System.Windows.Forms.Label labelBandosTimer;
+		private System.Windows.Forms.Label labelArmadylTimer;
+		private System.Windows.Forms.Label labelSaradominTimer;
+		private System.Windows.Forms.Label labelKalphiteQueenTimer;
+		private System.Windows.Forms.Label labelGiantMoleTimer;
+		private System.Windows.Forms.Label labelThermonuclearSmokeDevilTimer;
+		private System.Windows.Forms.Label labelDagannothSupremeTimer;
+		private System.Windows.Forms.Label labelDagannothPrimeTimer;
+		private System.Windows.Forms.Label labelDagannothRexTimer;
+		private System.Windows.Forms.Label labelVetionTimer;
+		private System.Windows.Forms.Label labelScorpiaTimer;
+		private System.Windows.Forms.Label labelKingBlackDragonTimer;
+		private System.Windows.Forms.Label labelVenenatisTimer;
+		private System.Windows.Forms.Label labelCrazyArchaeologistTimer;
+		private System.Windows.Forms.Label labelChaosElementalTimer;
+		private System.Windows.Forms.Label labelCallistoTimer;
+		private System.Windows.Forms.Label labelChaosFanaticTimer;
+		private System.Windows.Forms.ToolStripMenuItem raidsToolStripMenuItem;
 	}
 }
 
