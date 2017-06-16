@@ -13,7 +13,6 @@ using rareDropTable;
 using Config;
 using StatisticsForm;
 using itemQuantityCreator;
-using System.Windows.Threading;
 
 namespace dropLogger {
 	public partial class OldSchoolDropLogger : Form {
@@ -9084,6 +9083,7 @@ namespace dropLogger {
 	}
 }
 
+// Test commit 
 
 /*
  * 
