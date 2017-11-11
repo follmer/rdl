@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using rareDropTable;
+using splitDrop;
 using Config;
 using StatisticsForm;
 using itemQuantityCreator;
@@ -2706,6 +2707,14 @@ namespace dropLogger {
 			}
 			updateSidebarBossKillcounts("removed");
 		}
+		private void buttonSplitDrop_Click(object sender, EventArgs e) {
+			if (!isFormOpen("SplitDropForm")) {
+				SplitDropForm sdf = new SplitDropForm();
+				// TODO give specific coordinates to where the sdf window opens
+				//sdf.StartPosition = FormStartPosition.CenterParent;
+				sdf.Show();
+			}
+		}
 
 		// Unused
 		private void saveTripToFile(String boss, String item) {
@@ -2836,6 +2845,7 @@ namespace dropLogger {
 		private void listBoxSidebar_SelectedIndexChanged(object sender, EventArgs e) {
 
 			if (activeSidebarWindow == "BossDropRates") return;
+			if (activeSidebarWindow == "BossUniques") return;
 			if (listBoxSidebar.SelectedIndex == -1) {
 				Console.WriteLine("listBoxSidebar_SelectedIndexChanged(): No item selected");
 			}
@@ -2872,6 +2882,11 @@ namespace dropLogger {
 			labelSidebarTitle.Text = "Timers";
 			setSidebarBossTimersToVisible(true);
 		}
+		private void buttonSideBarUniqueDrops_Click(object sender, EventArgs e) {
+			setSidebarBossTimersToVisible(false);
+			labelSidebarTitle.Text = "Unique drops";
+			showSidebarBossUniques();
+		}
 
 		private void showSidebarBossDroprates() {
 			// Don't keep repopulating the BossKillcounts table if the data is already displaying
@@ -2893,8 +2908,6 @@ namespace dropLogger {
 
 			// Calculate the number of total drops logged
 			foreach (KeyValuePair<String, int> drop in allDropsFromBoss) {
-				Console.WriteLine("---------------------");
-				Console.WriteLine(drop.Key + " = " + drop.Value);
 
 				bool variableDrop = false;
 
@@ -3024,30 +3037,41 @@ namespace dropLogger {
 				if (numberOfTimesDropped == 0) {
 
 					// non reduced
-					//item = drop.Key + " - 0:" + totalDrops;
+					//item = drop.Key + " – 0:" + totalDrops;
 
 					// reduced
-					//item = drop.Key + " - 0:" + reduced;
+					//item = drop.Key + " – 0:" + reduced;
 
 					// decimal:
-					item = drop.Key + " - 0.00";
+					// Remove the x 1 from the end of the string
+					item = drop.Key;
+					int endOfDropIndex = item.IndexOf(" x ");
+					if (endOfDropIndex > 0) {
+						item = item.Substring(0, endOfDropIndex);
+					}
+					item = item + " – 0.00%";
 				}
 				else {
 
 					// non reduced:
-					//item = drop.Key + " - " + numberOfTimesDropped + ":" + totalDrops;
+					//item = drop.Key + " – " + numberOfTimesDropped + ":" + totalDrops;
 
 					// reduced
-					//item = drop.Key + " - 1:" + reduced;
+					//item = drop.Key + " – 1:" + reduced;
 
 					// decimal:
-					item = drop.Key + " - " + dec;
+					item = drop.Key;
+					int endOfDropIndex = item.IndexOf(" x ");
+					if (endOfDropIndex > 0) {
+						item = item.Substring(0, endOfDropIndex);
+					}
+					item = item + " – " + dec + "% ";
 				}
 
 				if (item == "") {
 					Console.WriteLine("============================= showSidebarBossDroprates() ERROR ========================");
 				}
-				
+
 				unsortedList.Add(item);
 			}
 
@@ -3086,6 +3110,85 @@ namespace dropLogger {
 			}
 
 			isStatisticsInstantiated = true;
+		}
+		private void showSidebarBossUniques() {
+
+			if (activeSidebarWindow == "BossUniques") return;
+
+			activeSidebarWindow = "BossUniques";
+
+			Dictionary<String, int> allDropsFromBoss = stats.getItemQuantitiesFromBoss(getCurrentBoss());
+
+			if (allDropsFromBoss == null) {
+
+				Console.WriteLine("No drops logged for boss " + getCurrentBoss());
+				return;
+			}
+
+			List<String> uniqueList = stats.getUniquesFromBoss(getCurrentBoss());
+
+			Dictionary<String, int> uniqueAmounts = new Dictionary<string, int>();
+
+			foreach (KeyValuePair<String, int> drop in allDropsFromBoss) {
+
+				// Check if the current drop is a unique
+				if (uniqueList.Contains(drop.Key)) {
+
+					// Add unique and quantity to dict
+					if (drop.Key == "Dragon thrownaxe x 100") {
+						if (drop.Value > 0) {
+							uniqueAmounts.Add(drop.Key, 1);
+						}
+						else {
+							uniqueAmounts.Add(drop.Key, 0);
+						}
+					}
+					else {
+						uniqueAmounts.Add(drop.Key, drop.Value);
+					}
+				}
+			}
+
+			// Add total kills and drop rates to textbox
+			listBoxSidebar.Items.Clear();
+
+			// Get total number of uniques
+			int uniquesCount = 0;
+			foreach (KeyValuePair<String, int> unique in uniqueAmounts) {
+				uniquesCount += unique.Value;
+			}
+
+			listBoxSidebar.Items.Add("Total uniques – " + uniquesCount);
+
+			int totalBossKills = stats.getTotalKillsLoggedPerBoss()[getCurrentBoss()];
+			listBoxSidebar.Items.Add("Total kills – " + totalBossKills);
+
+			// Calculate unique drop ratedecimalVar.ToString ("0.##"); // returns "0"  when decimalVar == 0
+			double uniqueDropRate = ((double) uniquesCount / (double) totalBossKills);
+			String formattedDropRate = uniqueDropRate.ToString("0.##");
+			listBoxSidebar.Items.Add("Unique drop rate – " + formattedDropRate + "%");
+
+			// Line spacer
+			listBoxSidebar.Items.Add("");
+
+			uniqueList.Sort();
+
+			// Add uniques to textbox
+			foreach (String unique in uniqueList) {
+
+				// Get unique count, if it exists
+				if (uniqueAmounts.Keys.Contains(unique)) {
+
+					// Remove the x 1 from the end of the string
+					int endOfDropIndex = unique.IndexOf(" x ");
+					String subUnique = unique.Substring(0, endOfDropIndex);
+
+					listBoxSidebar.Items.Add(subUnique + " – " + uniqueAmounts[unique]);
+				}
+				else {
+					listBoxSidebar.Items.Add(unique + " – 0");
+				}
+			}
 		}
 		private void updateSidebarBossKillcounts(String itemAddedOrRemoved = "added") {
 
@@ -9080,6 +9183,8 @@ namespace dropLogger {
 			}
 			labelThermonuclearSmokeDevilTimer.Text = secondsLeft.ToString();
 		}
+
+		
 	}
 }
 

@@ -45,11 +45,11 @@ namespace itemQuantityCreator {
 			if (quantity >= 0 && quantity < 10) {
 
 				// Create a new bitmap with the same dimensions as our number
-				Bitmap firstShifted = new Bitmap(first.Width, first.Height);
+				Bitmap firstShifted = new Bitmap(first.Width, first.Height + 2);
 
 				// Draw the number with an offset of 2 from the left (to match real item quantities)
 				Graphics gr = Graphics.FromImage(firstShifted);
-				gr.DrawImageUnscaled(first, 2, 0);
+				gr.DrawImageUnscaled(first, 2, 2);
 
 				return firstShifted;
 			}
@@ -67,7 +67,7 @@ namespace itemQuantityCreator {
 				Bitmap second = new Bitmap(getNumberImage((int)Char.GetNumericValue(number[i]), textColor));
 
 				// Add the widths, height does not matter as they are both the same height always
-				result = new Bitmap(first.Width + second.Width + modifyOffset, first.Height);
+				result = new Bitmap(first.Width + second.Width + modifyOffset, first.Height + 2);
 
 				if (number[i - 1] == '1') {
 					modifyOffset = -1;
@@ -77,14 +77,14 @@ namespace itemQuantityCreator {
 				}
 
 				// If we reach the end of the number, but there's no K or M to append,
-				// shift the entire bitmap 2 px to the right so it looks correct
+				// shift the entire bitmap 2 px to the right and 2 px down so it looks correct
 				//
 				// Else continue on as normal
 				if (i == (number.Length - 1) && endingLetter == "") {
-					result = new Bitmap(first.Width + second.Width + 2, first.Height);
+					result = new Bitmap(first.Width + second.Width + 2, first.Height + 2);
 					Graphics g = Graphics.FromImage(result);
-					g.DrawImageUnscaled(first, 2, 0);
-					g.DrawImageUnscaled(second, first.Width + 2 + modifyOffset, 0);
+					g.DrawImageUnscaled(first, 2, 2);
+					g.DrawImageUnscaled(second, first.Width + 2 + modifyOffset, 2);
 				}
 				else {
 					Graphics g = Graphics.FromImage(result);

@@ -169,6 +169,7 @@
 			this.pictureBoxDagannothSupremeLoot = new System.Windows.Forms.PictureBox();
 			this.pictureBoxDagannothRexLoot = new System.Windows.Forms.PictureBox();
 			this.pictureBoxDagannothPrimeLoot = new System.Windows.Forms.PictureBox();
+			this.buttonSplitDrop = new System.Windows.Forms.Button();
 			this.menuStripLogger.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothPrime)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothRex)).BeginInit();
@@ -624,7 +625,7 @@
 			// 
 			this.labelAddCustomDrop.AutoSize = true;
 			this.labelAddCustomDrop.ForeColor = System.Drawing.Color.Silver;
-			this.labelAddCustomDrop.Location = new System.Drawing.Point(11, 343);
+			this.labelAddCustomDrop.Location = new System.Drawing.Point(11, 326);
 			this.labelAddCustomDrop.Name = "labelAddCustomDrop";
 			this.labelAddCustomDrop.Size = new System.Drawing.Size(93, 13);
 			this.labelAddCustomDrop.TabIndex = 73;
@@ -635,7 +636,7 @@
 			this.textboxCustomDrop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
 			this.textboxCustomDrop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.textboxCustomDrop.ForeColor = System.Drawing.Color.Silver;
-			this.textboxCustomDrop.Location = new System.Drawing.Point(12, 359);
+			this.textboxCustomDrop.Location = new System.Drawing.Point(12, 342);
 			this.textboxCustomDrop.Name = "textboxCustomDrop";
 			this.textboxCustomDrop.Size = new System.Drawing.Size(100, 20);
 			this.textboxCustomDrop.TabIndex = 74;
@@ -646,7 +647,7 @@
 			this.buttonAddCustomDrop.FlatAppearance.BorderSize = 0;
 			this.buttonAddCustomDrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.buttonAddCustomDrop.ForeColor = System.Drawing.Color.Silver;
-			this.buttonAddCustomDrop.Location = new System.Drawing.Point(118, 359);
+			this.buttonAddCustomDrop.Location = new System.Drawing.Point(118, 342);
 			this.buttonAddCustomDrop.Name = "buttonAddCustomDrop";
 			this.buttonAddCustomDrop.Size = new System.Drawing.Size(54, 20);
 			this.buttonAddCustomDrop.TabIndex = 75;
@@ -1864,6 +1865,7 @@
 			this.buttonSideBarUniqueDrops.Size = new System.Drawing.Size(29, 30);
 			this.buttonSideBarUniqueDrops.TabIndex = 155;
 			this.buttonSideBarUniqueDrops.UseVisualStyleBackColor = false;
+			this.buttonSideBarUniqueDrops.Click += new System.EventHandler(this.buttonSideBarUniqueDrops_Click);
 			// 
 			// pictureBoxDagannothSupremeLoot
 			// 
@@ -1906,6 +1908,20 @@
 			this.pictureBoxDagannothPrimeLoot.Visible = false;
 			this.pictureBoxDagannothPrimeLoot.Click += new System.EventHandler(this.pictureBoxDagannothPrimeLoot_Click);
 			// 
+			// buttonSplitDrop
+			// 
+			this.buttonSplitDrop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+			this.buttonSplitDrop.FlatAppearance.BorderSize = 0;
+			this.buttonSplitDrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonSplitDrop.ForeColor = System.Drawing.Color.Silver;
+			this.buttonSplitDrop.Location = new System.Drawing.Point(12, 368);
+			this.buttonSplitDrop.Name = "buttonSplitDrop";
+			this.buttonSplitDrop.Size = new System.Drawing.Size(160, 20);
+			this.buttonSplitDrop.TabIndex = 160;
+			this.buttonSplitDrop.Text = "Split Drop";
+			this.buttonSplitDrop.UseVisualStyleBackColor = false;
+			this.buttonSplitDrop.Click += new System.EventHandler(this.buttonSplitDrop_Click);
+			// 
 			// OldSchoolDropLogger
 			// 
 			this.AcceptButton = this.buttonAddCustomDrop;
@@ -1913,6 +1929,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
 			this.ClientSize = new System.Drawing.Size(684, 395);
+			this.Controls.Add(this.buttonSplitDrop);
 			this.Controls.Add(this.pictureBoxDagannothSupremeLoot);
 			this.Controls.Add(this.pictureBoxDagannothRexLoot);
 			this.Controls.Add(this.pictureBoxDagannothPrimeLoot);
@@ -2233,6 +2250,7 @@
 		private System.Windows.Forms.Label labelCallistoTimer;
 		private System.Windows.Forms.Label labelChaosFanaticTimer;
 		private System.Windows.Forms.ToolStripMenuItem raidsToolStripMenuItem;
+		internal System.Windows.Forms.Button buttonSplitDrop;
 	}
 }
 

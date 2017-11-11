@@ -69,6 +69,24 @@ namespace StatisticsForm {
 		private List<String> getAllBossStrings() {
 			return allBossStrings;
 		}
+		public List<String> getUniquesFromBoss(string boss) {
+
+			if (File.Exists(logsFilePath + boss + " Uniques.txt")) {
+
+				// Get the lines from the file
+				var file = File.ReadAllLines(logsFilePath + boss + " Uniques.txt");
+
+				// Convert the lines in the file to a list
+				List<String> drops = new List<String>(file);
+
+				return drops;
+			}
+			else {
+				Console.WriteLine("[ERROR]: " + boss + " Uniques.txt at path: " + logsFilePath + " does not exist.");
+			}
+
+			return null;
+		}
 		private String getCurrentBoss() {
 			return "getCurrentBoss() incomplete";
 		}
@@ -248,6 +266,7 @@ namespace StatisticsForm {
 				}
 			}
 		}
+		
 
 		/* Class functions */
 		private void totalDropsPerBoss() { }
@@ -272,6 +291,13 @@ namespace StatisticsForm {
 
 
 		/* Helper functions */
+		private void printList(List<String> list) {
+			Console.WriteLine("========= List contents ==========");
+			foreach (String item in list) {
+				Console.WriteLine(item);
+			}
+			Console.WriteLine("==================================");
+		}
 		private void printDictionary(Dictionary<String, int> dict) {
 			Console.WriteLine("========= Dictionary contents =========");
 			foreach (KeyValuePair<String, int> kvp in dict) {
