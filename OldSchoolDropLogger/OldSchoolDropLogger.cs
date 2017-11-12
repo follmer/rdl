@@ -3163,7 +3163,7 @@ namespace dropLogger {
 
 			// Calculate unique drop ratedecimalVar.ToString ("0.##"); // returns "0"  when decimalVar == 0
 			double uniqueDropRate = ((double) uniquesCount / (double) totalBossKills);
-			String formattedDropRate = uniqueDropRate.ToString("0.##");
+			String formattedDropRate = uniqueDropRate.ToString("0.00");
 			listBoxSidebar.Items.Add("Unique drop rate – " + formattedDropRate + "%");
 
 			// Line spacer
