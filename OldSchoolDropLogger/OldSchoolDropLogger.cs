@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using rareDropTable;
@@ -14,6 +11,7 @@ using splitDrop;
 using Config;
 using StatisticsForm;
 using itemQuantityCreator;
+using OldSchoolDropLogger.Properties;
 
 namespace dropLogger {
 	public partial class OldSchoolDropLogger : Form {
@@ -5044,7 +5042,8 @@ namespace dropLogger {
 					pictureBox47.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Elder maul x 1"]);
 					pictureBox48.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Kodai_insignia.png");
 					pictureBox48.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Kodai insignia x 1"]);
-					pictureBox49.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Twisted_bow.png");
+					//pictureBox49.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Twisted_bow.png");
+					pictureBox49.BackgroundImage = Resources.Twisted_bow;
 					pictureBox49.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Twisted bow x 1"]);
 					pictureBox50.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Olmlet.png");
 					pictureBox50.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Olmlet x 1"]);

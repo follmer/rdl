@@ -232,7 +232,7 @@ namespace StatisticsForm {
 		}
 		private void setAllBossStrings() {
 
-			OldSchoolDropLogger f = OldSchoolDropLogger.instance;
+			dropLogger.OldSchoolDropLogger f = dropLogger.OldSchoolDropLogger.instance;
 
 			foreach (ToolStripMenuItem item in f.bossToolStripMenuItem.DropDownItems) {
 
