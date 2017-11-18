@@ -171,6 +171,7 @@
 			this.pictureBoxDagannothPrimeLoot = new System.Windows.Forms.PictureBox();
 			this.buttonSplitDrop = new System.Windows.Forms.Button();
 			this.buttonSidebarItemSplits = new System.Windows.Forms.Button();
+			this.grotesqueGuardiansToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStripLogger.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothPrime)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothRex)).BeginInit();
@@ -272,12 +273,12 @@
 			// toolStripSeparator1
 			// 
 			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new System.Drawing.Size(89, 6);
+			this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
 			// 
 			// exitToolStripMenuItem
 			// 
 			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-			this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.exitToolStripMenuItem.Text = "Exit";
 			this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
 			// 
@@ -300,7 +301,7 @@
             this.saradominToolStripMenuItem,
             this.zamorakToolStripMenuItem});
 			this.godwarsToolStripMenuItem.Name = "godwarsToolStripMenuItem";
-			this.godwarsToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+			this.godwarsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.godwarsToolStripMenuItem.Text = "Godwars";
 			// 
 			// armadylToolStripMenuItem
@@ -343,7 +344,7 @@
             this.venenatisToolStripMenuItem,
             this.vetionToolStripMenuItem});
 			this.wildernessToolStripMenuItem.Name = "wildernessToolStripMenuItem";
-			this.wildernessToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+			this.wildernessToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.wildernessToolStripMenuItem.Text = "Wilderness";
 			// 
 			// callistoToolStripMenuItem
@@ -411,6 +412,7 @@
             this.corporealBeastToolStripMenuItem,
             this.dagannothKingsToolStripMenuItem,
             this.giantMoleToolStripMenuItem,
+            this.grotesqueGuardiansToolStripMenuItem,
             this.kalphiteQueenToolStripMenuItem,
             this.krakenToolStripMenuItem,
             this.raidsToolStripMenuItem,
@@ -419,7 +421,7 @@
             this.wintertodtToolStripMenuItem,
             this.zulrahToolStripMenuItem});
 			this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
-			this.otherToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+			this.otherToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.otherToolStripMenuItem.Text = "Other";
 			// 
 			// abyssalSireToolStripMenuItem
@@ -1926,7 +1928,7 @@
 			// buttonSidebarItemSplits
 			// 
 			this.buttonSidebarItemSplits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-			this.buttonSidebarItemSplits.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonItemSplits.BackgroundImage")));
+			this.buttonSidebarItemSplits.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSidebarItemSplits.BackgroundImage")));
 			this.buttonSidebarItemSplits.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.buttonSidebarItemSplits.FlatAppearance.BorderSize = 0;
 			this.buttonSidebarItemSplits.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1937,6 +1939,13 @@
 			this.buttonSidebarItemSplits.TabIndex = 161;
 			this.buttonSidebarItemSplits.UseVisualStyleBackColor = false;
 			this.buttonSidebarItemSplits.Click += new System.EventHandler(this.buttonSidebarItemSplits_Click);
+			// 
+			// grotesqueGuardiansToolStripMenuItem
+			// 
+			this.grotesqueGuardiansToolStripMenuItem.Name = "grotesqueGuardiansToolStripMenuItem";
+			this.grotesqueGuardiansToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+			this.grotesqueGuardiansToolStripMenuItem.Text = "Grotesque Guardians";
+			this.grotesqueGuardiansToolStripMenuItem.Click += new System.EventHandler(this.grotesqueGuardiansToolStripMenuItem_Click);
 			// 
 			// OldSchoolDropLogger
 			// 
@@ -2269,6 +2278,7 @@
 		private System.Windows.Forms.ToolStripMenuItem raidsToolStripMenuItem;
 		internal System.Windows.Forms.Button buttonSplitDrop;
 		internal System.Windows.Forms.Button buttonSidebarItemSplits;
+		private System.Windows.Forms.ToolStripMenuItem grotesqueGuardiansToolStripMenuItem;
 	}
 }
 

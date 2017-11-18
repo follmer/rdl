@@ -28,19 +28,14 @@ namespace splitDrop {
 			String splitAmountText = textBoxSplitAmount.Text;
 
 			if (string.IsNullOrWhiteSpace(splitItem)) {
-				Console.WriteLine("[DEBUG]: splitItem is empty or null");
 				return;
 			}
 
 			if (string.IsNullOrWhiteSpace(splitAmountText)) {
-				Console.WriteLine("[DEBUG]: splitAmountText is empty or null");
 				return;
 			}
 
 			int splitAmount = Int32.Parse(splitAmountText);
-
-			Console.WriteLine("[DEBUG]: splitItem = " + splitItem);
-			Console.WriteLine("[DEBUG]: splitAmount = " + splitAmount);
 
 			// if: 
 			//		file does not exist, create it
@@ -119,8 +114,6 @@ namespace splitDrop {
 				// 4. Saradomin[3 kc], Armadyl crossbow[sy = 13850000]
 
 				for (int i = 0; i < splitList.Count; i++) {
-
-					Console.WriteLine("[DEBUG]: getSplitsFromFile - LINE: " + splitList[i]);
 
 					int periodIndexPlus2 = splitList[i].IndexOf(".") + 2; // + 2 to skip the period and the following space
 					int longItemLength = splitList[i].Length;
