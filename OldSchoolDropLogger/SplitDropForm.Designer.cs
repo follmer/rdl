@@ -28,7 +28,9 @@
 			this.textBoxSplitDropName = new System.Windows.Forms.TextBox();
 			this.labelSplitDropItemName = new System.Windows.Forms.Label();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.pictureBoxTest = new System.Windows.Forms.PictureBox();
 			this.panel1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxTest)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// buttonSplitCancel
@@ -40,7 +42,7 @@
 			this.buttonSplitCancel.Location = new System.Drawing.Point(117, 97);
 			this.buttonSplitCancel.Name = "buttonSplitCancel";
 			this.buttonSplitCancel.Size = new System.Drawing.Size(75, 23);
-			this.buttonSplitCancel.TabIndex = 29;
+			this.buttonSplitCancel.TabIndex = 6;
 			this.buttonSplitCancel.Text = "Cancel";
 			this.buttonSplitCancel.UseVisualStyleBackColor = false;
 			this.buttonSplitCancel.Click += new System.EventHandler(this.buttonSplitCancel_Click);
@@ -62,7 +64,8 @@
 			this.radioButtonOwnDropYes.Location = new System.Drawing.Point(3, 3);
 			this.radioButtonOwnDropYes.Name = "radioButtonOwnDropYes";
 			this.radioButtonOwnDropYes.Size = new System.Drawing.Size(43, 17);
-			this.radioButtonOwnDropYes.TabIndex = 32;
+			this.radioButtonOwnDropYes.TabIndex = 3;
+			this.radioButtonOwnDropYes.TabStop = true;
 			this.radioButtonOwnDropYes.Text = "Yes";
 			this.radioButtonOwnDropYes.UseVisualStyleBackColor = true;
 			// 
@@ -75,7 +78,7 @@
 			this.buttonSplitOk.Location = new System.Drawing.Point(36, 97);
 			this.buttonSplitOk.Name = "buttonSplitOk";
 			this.buttonSplitOk.Size = new System.Drawing.Size(75, 23);
-			this.buttonSplitOk.TabIndex = 28;
+			this.buttonSplitOk.TabIndex = 5;
 			this.buttonSplitOk.Text = "OK";
 			this.buttonSplitOk.UseVisualStyleBackColor = false;
 			this.buttonSplitOk.Click += new System.EventHandler(this.buttonSplitOk_Click);
@@ -88,7 +91,7 @@
 			this.radioButtonOwnDropNo.Location = new System.Drawing.Point(51, 3);
 			this.radioButtonOwnDropNo.Name = "radioButtonOwnDropNo";
 			this.radioButtonOwnDropNo.Size = new System.Drawing.Size(39, 17);
-			this.radioButtonOwnDropNo.TabIndex = 33;
+			this.radioButtonOwnDropNo.TabIndex = 4;
 			this.radioButtonOwnDropNo.TabStop = true;
 			this.radioButtonOwnDropNo.Text = "No";
 			this.radioButtonOwnDropNo.UseVisualStyleBackColor = true;
@@ -111,7 +114,7 @@
 			this.textBoxSplitAmount.Location = new System.Drawing.Point(87, 38);
 			this.textBoxSplitAmount.Name = "textBoxSplitAmount";
 			this.textBoxSplitAmount.Size = new System.Drawing.Size(124, 20);
-			this.textBoxSplitAmount.TabIndex = 75;
+			this.textBoxSplitAmount.TabIndex = 2;
 			// 
 			// textBoxSplitDropName
 			// 
@@ -121,7 +124,7 @@
 			this.textBoxSplitDropName.Location = new System.Drawing.Point(63, 7);
 			this.textBoxSplitDropName.Name = "textBoxSplitDropName";
 			this.textBoxSplitDropName.Size = new System.Drawing.Size(148, 20);
-			this.textBoxSplitDropName.TabIndex = 77;
+			this.textBoxSplitDropName.TabIndex = 1;
 			// 
 			// labelSplitDropItemName
 			// 
@@ -142,12 +145,21 @@
 			this.panel1.Size = new System.Drawing.Size(94, 23);
 			this.panel1.TabIndex = 78;
 			// 
+			// pictureBoxTest
+			// 
+			this.pictureBoxTest.Location = new System.Drawing.Point(199, 107);
+			this.pictureBoxTest.Name = "pictureBoxTest";
+			this.pictureBoxTest.Size = new System.Drawing.Size(18, 12);
+			this.pictureBoxTest.TabIndex = 79;
+			this.pictureBoxTest.TabStop = false;
+			// 
 			// SplitDropForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
 			this.ClientSize = new System.Drawing.Size(229, 132);
+			this.Controls.Add(this.pictureBoxTest);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.textBoxSplitDropName);
 			this.Controls.Add(this.labelSplitDropItemName);
@@ -161,6 +173,7 @@
 			this.Text = "Split Drop";
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxTest)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -178,5 +191,6 @@
 		internal System.Windows.Forms.TextBox textBoxSplitDropName;
 		private System.Windows.Forms.Label labelSplitDropItemName;
 		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.PictureBox pictureBoxTest;
 	}
 }

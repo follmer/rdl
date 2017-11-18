@@ -27,6 +27,9 @@ namespace StatisticsForm {
 
 		/* Getters & Setters */
 		public Dictionary<String, int> getTotalKillsLoggedPerBoss() {
+			return killsPerBoss;
+		}
+		public Dictionary<String, int> setTotalKillsLoggedPerBoss() {
 			killsPerBoss = new Dictionary<String, int>();
 
 			foreach (String s in allBossStrings) {
@@ -41,11 +44,11 @@ namespace StatisticsForm {
 				}
 			}
 
-			Console.WriteLine("Statistics.getTotalKillsLoggedPerBoss()");
+			Console.WriteLine("Statistics.setTotalKillsLoggedPerBoss()");
 
 			return killsPerBoss;
 		}
-		private int getBossKills(String boss) {
+		public int getBossKills(String boss) {
 			return killsPerBoss[boss];
 		}
 		public int getTotalKills() {
@@ -334,6 +337,7 @@ namespace StatisticsForm {
 			iqc = new ItemQuantityCreator();
 			totalDropsFromAllBosses = new Dictionary<string, Dictionary<string, int>>();
 
+			setTotalKillsLoggedPerBoss();
 			print2LevelDictionary(totalDropsFromAllBosses);
 
 

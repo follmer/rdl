@@ -170,6 +170,7 @@
 			this.pictureBoxDagannothRexLoot = new System.Windows.Forms.PictureBox();
 			this.pictureBoxDagannothPrimeLoot = new System.Windows.Forms.PictureBox();
 			this.buttonSplitDrop = new System.Windows.Forms.Button();
+			this.buttonSidebarItemSplits = new System.Windows.Forms.Button();
 			this.menuStripLogger.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothPrime)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothRex)).BeginInit();
@@ -1922,6 +1923,21 @@
 			this.buttonSplitDrop.UseVisualStyleBackColor = false;
 			this.buttonSplitDrop.Click += new System.EventHandler(this.buttonSplitDrop_Click);
 			// 
+			// buttonSidebarItemSplits
+			// 
+			this.buttonSidebarItemSplits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+			this.buttonSidebarItemSplits.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonItemSplits.BackgroundImage")));
+			this.buttonSidebarItemSplits.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.buttonSidebarItemSplits.FlatAppearance.BorderSize = 0;
+			this.buttonSidebarItemSplits.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.buttonSidebarItemSplits.ForeColor = System.Drawing.Color.Silver;
+			this.buttonSidebarItemSplits.Location = new System.Drawing.Point(650, 237);
+			this.buttonSidebarItemSplits.Name = "buttonSidebarItemSplits";
+			this.buttonSidebarItemSplits.Size = new System.Drawing.Size(29, 30);
+			this.buttonSidebarItemSplits.TabIndex = 161;
+			this.buttonSidebarItemSplits.UseVisualStyleBackColor = false;
+			this.buttonSidebarItemSplits.Click += new System.EventHandler(this.buttonSidebarItemSplits_Click);
+			// 
 			// OldSchoolDropLogger
 			// 
 			this.AcceptButton = this.buttonAddCustomDrop;
@@ -1929,6 +1945,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
 			this.ClientSize = new System.Drawing.Size(684, 395);
+			this.Controls.Add(this.buttonSidebarItemSplits);
 			this.Controls.Add(this.buttonSplitDrop);
 			this.Controls.Add(this.pictureBoxDagannothSupremeLoot);
 			this.Controls.Add(this.pictureBoxDagannothRexLoot);
@@ -2251,6 +2268,7 @@
 		private System.Windows.Forms.Label labelChaosFanaticTimer;
 		private System.Windows.Forms.ToolStripMenuItem raidsToolStripMenuItem;
 		internal System.Windows.Forms.Button buttonSplitDrop;
+		internal System.Windows.Forms.Button buttonSidebarItemSplits;
 	}
 }
 

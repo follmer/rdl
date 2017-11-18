@@ -72,8 +72,45 @@ namespace dropLogger {
 		private String getSelectedDagannothKingLoot() {
 			return selectedDagannothKingLoot;
 		}
+		public int getBossKillcount(String boss) {
+			if (stats == null) {
+				stats = new Statistics();
+			}
+			return stats.getBossKills(boss);
+		}
+		public List<String> getSplitsFromFile() {
+			List<String> loggedSplitItems = new List<String>();
 
-		private String getCurrentBoss() {
+			// If a log file exists for the given boss, tries to get the log file for that boss
+			// and convert it to a list, stripping any preceeding numbers, periods, and whitespace
+			try {
+
+				String splitsFileLocation = AppDomain.CurrentDomain.BaseDirectory + "/logs/Splits.txt";
+				var logsFile = File.ReadAllLines(splitsFileLocation);
+
+				List<String> splitList = new List<String>(logsFile);
+
+				// 1. Raids[1 kc], Twisted bow x 1[sy = 201470000]
+				// 2. Raids[4 kc], Dexterous prayer scroll x 1[sn = 21000000]
+				// 3. Saradomin, Saradomin hilt x 1[sn = 20000000]
+				// 4. Saradomin[3 kc], Armadyl crossbow[sy = 13850000]
+
+				for (int i = 0; i < splitList.Count; i++) {
+
+					int periodIndexPlus2 = splitList[i].IndexOf(".") + 2; // + 2 to skip the period and the following space
+					int longItemLength = splitList[i].Length;
+					int shortItemLength = longItemLength - periodIndexPlus2;
+
+					String item = splitList[i].Substring(periodIndexPlus2);
+					loggedSplitItems.Add(item);
+				}
+			}
+			catch (FileNotFoundException) { }
+
+			return loggedSplitItems;
+		}
+
+		public String getCurrentBoss() {
 			return labelCurrentLogFor.Text.Replace("Current log for: ", "").Trim();
 		}
 		private String getViewingDropsFromBoss() {
@@ -2387,7 +2424,7 @@ namespace dropLogger {
 			return hpb;
 		}
 		public void pictureBox_Click(object sender, EventArgs e) {
-
+			
 			Boolean isControlPressed = false;
 			PictureBox pbSender = (PictureBox)sender;
 			
@@ -2411,7 +2448,7 @@ namespace dropLogger {
 				return;
 			}
 
-			String unloggedItem = pbSender.Tag.ToString();
+			String unloggedItem = unloggedItem = pbSender.Tag.ToString();
 
 			// Open new window and handle RDT drops
 			if (pbSender.Tag.ToString() == "RDT") {
@@ -2427,7 +2464,7 @@ namespace dropLogger {
 
 			// Else so RDT and "Varies" case don't occur together - never will unless RDT is updated with varying item amounts
 			// Handle items that drop varying amounts
-			else if (pbSender.Tag.ToString().Substring(0, 6) == "Varies") {
+			else if (pbSender.Tag.ToString().Length > 5 && pbSender.Tag.ToString().Substring(0, 6) == "Varies") {
 				PictureBox pb = (PictureBox)sender;
 
 				// Get the tag of the selected item
@@ -2516,13 +2553,34 @@ namespace dropLogger {
 					loggedItems = addItemToLoggedItems(loggedItems, unloggedItem);
 					writeLoggedItemsToFile(loggedItems, getCurrentBoss());
 					updateSidebarBossKillcounts();
-					showSidebarBossDroprates();
 
 				}
 			}
 
 			// Update the list box
+			updateSidebarWindow();
 			updateListBox();
+		}
+
+		private void updateSidebarWindow() {
+
+			switch (activeSidebarWindow) {
+				case "BossDropRates":
+					showSidebarBossDroprates();
+					break;
+				case "BossUniques":
+					showSidebarBossUniques();
+					break;
+				case "BossSplits":
+					showSidebarBossSplits();
+					break;
+				case "BossKillCounts":
+					showSidebarBossKillcounts();
+					break;
+				case "BossTimers":
+					showSidebarBossTimers();
+					break;
+			}
 		}
 		
 		private void updateListBox() {
@@ -2844,6 +2902,8 @@ namespace dropLogger {
 
 			if (activeSidebarWindow == "BossDropRates") return;
 			if (activeSidebarWindow == "BossUniques") return;
+			if (activeSidebarWindow == "BossSplits") return;
+
 			if (listBoxSidebar.SelectedIndex == -1) {
 				Console.WriteLine("listBoxSidebar_SelectedIndexChanged(): No item selected");
 			}
@@ -2866,31 +2926,32 @@ namespace dropLogger {
 		}
 
 		private void buttonSideBarBossKillcounts_Click(object sender, EventArgs e) {
-			setSidebarBossTimersToVisible(false);
-			labelSidebarTitle.Text = "Kill counts";
 			showSidebarBossKillcounts();
 		}
 		private void buttonSideBarDropRates_Click(object sender, EventArgs e) {
-			setSidebarBossTimersToVisible(false);
-			labelSidebarTitle.Text = "Drop rates";
 			showSidebarBossDroprates();
 		}
 		private void buttonSideBarTimers_Click(object sender, EventArgs e) {
+			showSidebarBossTimers();
+		}
+		private void buttonSideBarUniqueDrops_Click(object sender, EventArgs e) {
+			showSidebarBossUniques();
+		}
+		private void buttonSidebarItemSplits_Click(object sender, EventArgs e) {
+			showSidebarBossSplits();
+		}
+		private void showSidebarBossTimers() {
 			listBoxSidebar.Items.Clear();
 			labelSidebarTitle.Text = "Timers";
 			setSidebarBossTimersToVisible(true);
 		}
-		private void buttonSideBarUniqueDrops_Click(object sender, EventArgs e) {
-			setSidebarBossTimersToVisible(false);
-			labelSidebarTitle.Text = "Unique drops";
-			showSidebarBossUniques();
-		}
-
 		private void showSidebarBossDroprates() {
 			// Don't keep repopulating the BossKillcounts table if the data is already displaying
-			//if (activeSidebarWindow == "BossDropRates") return;
+			if (activeSidebarWindow == "BossDropRates") return;
 
 			activeSidebarWindow = "BossDropRates";
+			setSidebarBossTimersToVisible(false);
+			labelSidebarTitle.Text = "Drop rates";
 
 			Console.WriteLine("OldSchoolDropLogger.buttonSideBarBossDroprates_Click():");
 
@@ -3085,10 +3146,12 @@ namespace dropLogger {
 			isStatisticsInstantiated = true;
 		}
 		private void showSidebarBossKillcounts() {
+
 			Console.WriteLine(activeSidebarWindow + "===========================");
 			// Don't keep repopulating the BossKillcounts table if the data is already displaying
-			if (activeSidebarWindow == "BossKillCounts") return;
-
+			//if (activeSidebarWindow == "BossKillCounts") return;
+			setSidebarBossTimersToVisible(false);
+			labelSidebarTitle.Text = "Kill counts";
 			activeSidebarWindow = "BossKillCounts";
 
 			Console.WriteLine("OldSchoolDropLogger.buttonSideBarBossKillcounts_Click():");
@@ -3110,9 +3173,10 @@ namespace dropLogger {
 			isStatisticsInstantiated = true;
 		}
 		private void showSidebarBossUniques() {
-
-			if (activeSidebarWindow == "BossUniques") return;
-
+			Console.WriteLine("here");
+			//if (activeSidebarWindow == "BossUniques") return;
+			setSidebarBossTimersToVisible(false);
+			labelSidebarTitle.Text = "Unique drops";
 			activeSidebarWindow = "BossUniques";
 
 			Dictionary<String, int> allDropsFromBoss = stats.getItemQuantitiesFromBoss(getCurrentBoss());
@@ -3186,6 +3250,86 @@ namespace dropLogger {
 				else {
 					listBoxSidebar.Items.Add(unique + " – 0");
 				}
+			}
+		}
+		private void showSidebarBossSplits() {
+
+			//if (activeSidebarWindow == "BossSplits") return;
+			setSidebarBossTimersToVisible(false);
+			labelSidebarTitle.Text = "Split drops";
+			activeSidebarWindow = "BossSplits";
+
+			listBoxSidebar.Items.Clear();
+
+			List<String> splits = getSplitsFromFile();
+
+			int personalSplits = 0;
+			int totalSplitAmount = 0;
+
+			List<String> formattedList = new List<string>();
+
+			int splitNumber = 1;
+			foreach (String line in splits) {
+
+				Console.WriteLine("[DEBUG]: " + line.Substring(0, line.IndexOf(",")));
+				if (line.Substring(0, line.IndexOf(",")).Contains(getCurrentBoss())) {
+
+					int commaIndex = line.IndexOf(",");
+
+					// Raids [54 kc], Twisted buckler x 1 [sy=1]
+					String precom = line.Substring(0, commaIndex);
+					String postcom = line.Substring(commaIndex);
+
+					// check if drop is in own name by checking if there is a 'sy' in the second part of the string
+					// if there is, log the kc, otherwise nothing
+
+					String kc = null;
+					Console.WriteLine("====================");
+					// drop is in our name
+					if (postcom.Contains("[sy=")) {
+						int kcBracketIndex1 = precom.IndexOf("[");
+						int kcBracketIndex2 = precom.IndexOf("]");
+
+						kc = precom.Substring(kcBracketIndex1 + 1, kcBracketIndex2 - kcBracketIndex1 - 3 /* to remove the bracket and the "kc" */);
+						Console.WriteLine("[DEBUG]: kc = " + kc);
+
+						personalSplits++;
+					}
+
+					int splitBracketIndex1 = postcom.IndexOf("[");
+					int splitBracketIndex2 = postcom.IndexOf("]");
+					int xIndex = postcom.IndexOf(" x ");
+
+					Console.WriteLine("[DEBUG]: postcom = " + postcom);
+					Console.WriteLine("[DEBUG]: " + splitBracketIndex1 + ", " + splitBracketIndex2);
+					String splitAmount = postcom.Substring(splitBracketIndex1 + 4 /* 1 + 3 characters "sn=" */, splitBracketIndex2 - splitBracketIndex1 - 4 /* to make up for the + 4 from earlier*/);
+					totalSplitAmount += int.Parse(splitAmount);
+
+					String item = splitNumber.ToString() + ". " + postcom.Substring(2, xIndex - 2) + ", ";
+
+					// Add in the split amount
+					String formatted = item; 
+					formatted += String.Format("{0:n0}", int.Parse(splitAmount)) + " gp";
+
+					if (kc != null) {
+						formatted += " (" + kc + " kc)";
+					}
+
+					formattedList.Add(formatted);
+
+					splitNumber++;
+
+				}
+			}
+
+			listBoxSidebar.Items.Add("Total splits – " + String.Format("{0:n0}", splitNumber - 1));
+			listBoxSidebar.Items.Add("Personal splits – " + String.Format("{0:n0}", personalSplits));
+			listBoxSidebar.Items.Add("Total split value – " + String.Format("{0:n0}", totalSplitAmount) + " gp");
+			listBoxSidebar.Items.Add("");
+
+			// Add all splits to the listbox
+			foreach (String split in formattedList) {
+				listBoxSidebar.Items.Add(split);
 			}
 		}
 		private void updateSidebarBossKillcounts(String itemAddedOrRemoved = "added") {
@@ -5430,7 +5574,7 @@ namespace dropLogger {
 					setNPictureBoxesToDisabled(48);
 					break;
 				default:
-					Console.WriteLine("displayTotalLootFromBoss: " + boss + " not found");
+					Console.WriteLine("displayTotalLootFromBoss(): " + boss + " not found");
 					break;
 
 				
@@ -5460,6 +5604,7 @@ namespace dropLogger {
 			new ToolTip().SetToolTip(buttonSideBarEstimatedGPMade, "Estimated GP made");
 			new ToolTip().SetToolTip(buttonSideBarDropRates, "Drop rates");
 			new ToolTip().SetToolTip(buttonSideBarUniqueDrops, "Unique drops");
+			new ToolTip().SetToolTip(buttonSidebarItemSplits, "Split drops");
 
 			
 		}
@@ -8641,7 +8786,7 @@ namespace dropLogger {
 					break;
 			}
 		}
-		
+
 		Timer armadylTimer = new Timer();
 		Timer bandosTimer = new Timer();
 		Timer saradominTimer = new Timer();
