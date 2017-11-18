@@ -9476,8 +9476,6 @@ namespace dropLogger {
 			}
 			labelThermonuclearSmokeDevilTimer.Text = secondsLeft.ToString();
 		}
-
-		
 	}
 }
 
