@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using OldSchoolDropLogger.Properties;
 
 namespace splitDrop {
 	public partial class SplitDropForm : Form {
+
+		private stats.StatisticsForm stats = null;
+		private Color highlightOrange = Color.FromArgb(179, 107, 0);
 
 		public static SplitDropForm instance;
 		private String splitsFileLocation = AppDomain.CurrentDomain.BaseDirectory + "/logs/Splits.txt";
@@ -18,13 +18,224 @@ namespace splitDrop {
 		public SplitDropForm() {
 			InitializeComponent();
 
-			ToolTip itemNameTooltip = new ToolTip();
-			itemNameTooltip.SetToolTip(labelSplitDropItemName, "Please enter the item exactly as it appears in-game");
+			// Add click listener to each picturebox
+			foreach (Control c in this.Controls) {
+				if (c is PictureBox) c.Click += pictureBox_Click;
+			}
+			putAllPictureBoxesIntoList();
+
+			String currentBoss = dropLogger.OldSchoolDropLogger.instance.getCurrentBoss();
+
+			if (stats == null) {
+				stats = new stats.StatisticsForm();
+			}
+
+			showUniques(currentBoss);
+
+			int numUniques = stats.getUniquesFromBoss(currentBoss).Count;
+			resizeSplitWindow(numUniques);
+		}
+
+		private void showUniques(String boss) {
+
+			int numUniques = stats.getUniquesFromBoss(boss).Count;
+
+			switch (boss) {
+				case "Armadyl":
+					pictureBox1.BackgroundImage = Resources.Armadyl_helmet;
+					pictureBox1.Tag = "Armadyl helmet x 1";
+					pictureBox2.BackgroundImage = Resources.Armadyl_chestplate;
+					pictureBox2.Tag = "Armadyl chestplate x 1";
+					pictureBox3.BackgroundImage = Resources.Armadyl_chainskirt;
+					pictureBox3.Tag = "Armadyl chainskirt x 1";
+					pictureBox4.BackgroundImage = Resources.Armadyl_hilt;
+					pictureBox4.Tag = "Armadyl hilt x 1";
+					break;
+				case "Bandos":
+					pictureBox1.BackgroundImage = Resources.Bandos_chestplate;
+					pictureBox1.Tag = "Bandos chestplate x 1";
+					pictureBox2.BackgroundImage = Resources.Bandos_tassets;
+					pictureBox2.Tag = "Bandos tassets x 1";
+					pictureBox3.BackgroundImage = Resources.Bandos_boots;
+					pictureBox3.Tag = "Bandos boots x 1";
+					pictureBox4.BackgroundImage = Resources.Bandos_hilt;
+					pictureBox4.Tag = "Bandos hilt x 1";
+					break;
+				case "Saradomin":
+					pictureBox1.BackgroundImage = Resources.Saradomin_s_light;
+					pictureBox1.Tag = "Saradomin's light x 1";
+					pictureBox2.BackgroundImage = Resources.Saradomin_sword;
+					pictureBox2.Tag = "Saradomin sword x 1";
+					pictureBox3.BackgroundImage = Resources.Armadyl_crossbow;
+					pictureBox3.Tag = "Armadyl crossbow x 1";
+					pictureBox4.BackgroundImage = Resources.Saradomin_hilt;
+					pictureBox4.Tag = "Saradomin hilt x 1";
+					break;
+				case "Zamorak":
+					pictureBox1.BackgroundImage = Resources.Steam_battlestaff;
+					pictureBox1.Tag = "Steam battlestaff x 1";
+					pictureBox2.BackgroundImage = Resources.Staff_of_the_dead;
+					pictureBox2.Tag = "Staff of the dead x 1";
+					pictureBox3.BackgroundImage = Resources.Zamorakian_spear;
+					pictureBox3.Tag = "Zamorakian spear x 1";
+					pictureBox4.BackgroundImage = Resources.Zamorak_hilt;
+					pictureBox4.Tag = "Zamorak hilt x 1";
+					break;
+				case "Barrows":
+					// none
+					break;
+				case "Corporeal Beast":
+					pictureBox1.BackgroundImage = Resources.Onyx_bolts__e__175;
+					pictureBox1.Tag = "Onyx bolts (e) x 175";
+					pictureBox2.BackgroundImage = Resources.Holy_elixir;
+					pictureBox2.Tag = "Holy elixir x 1";
+					pictureBox3.BackgroundImage = Resources.Spectral_sigil;
+					pictureBox3.Tag = "Spectral sigil x 1";
+					pictureBox4.BackgroundImage = Resources.Arcane_sigil;
+					pictureBox4.Tag = "Arcane sigil x 1";
+					pictureBox5.BackgroundImage = Resources.Elysian_sigil;
+					pictureBox5.Tag = "Elysian sigil x 1";
+					pictureBox6.BackgroundImage = Resources.Spirit_shield;
+					pictureBox6.Tag = "Spirit shield x 1";
+					break;
+				case "Dagannoth Kings":
+					pictureBox1.BackgroundImage = Resources.Warrior_ring;
+					pictureBox1.Tag = "Warrior ring x 1";
+					pictureBox2.BackgroundImage = Resources.Seers_ring;
+					pictureBox2.Tag = "Seers ring x 1";
+					pictureBox3.BackgroundImage = Resources.Archers_ring;
+					pictureBox3.Tag = "Archers ring x 1";
+					pictureBox4.BackgroundImage = Resources.Berserker_ring;
+					pictureBox4.Tag = "Berserker ring x 1";
+					break;
+				case "Giant Mole":
+					// none
+					break;
+				case "Kalphite Queen":
+					pictureBox1.BackgroundImage = Resources.Dragon_2h_sword;
+					pictureBox1.Tag = "Dragon 2h sword x 1";
+					pictureBox2.BackgroundImage = Resources.Dragon_chainbody;
+					pictureBox2.Tag = "Dragon chainbody x 1";
+					break;
+				case "Raids":
+					pictureBox1.BackgroundImage = Resources.Dragon_thrownaxe_100;
+					pictureBox1.Tag = "Dragon thrownaxe x 100";
+					pictureBox2.BackgroundImage = Resources.Dragon_sword;
+					pictureBox2.Tag = "Dragon sword x 1";
+					pictureBox3.BackgroundImage = Resources.Dinh_s_bulwark;
+					pictureBox3.Tag = "Dinh's bulwark x 1";
+					pictureBox4.BackgroundImage = Resources.Twisted_buckler;
+					pictureBox4.Tag = "Twisted buckler x 1";
+					pictureBox5.BackgroundImage = Resources.Dragon_hunter_crossbow;
+					pictureBox5.Tag = "Dragon hunter crossbow x 1";
+					pictureBox6.BackgroundImage = Resources.Ancestral_hat;
+					pictureBox6.Tag = "Ancestral hat x 1";
+					pictureBox7.BackgroundImage = Resources.Ancestral_robe_top;
+					pictureBox7.Tag = "Ancestral robe top x 1";
+					pictureBox8.BackgroundImage = Resources.Ancestral_robe_bottom;
+					pictureBox8.Tag = "Ancestral robe bottom x 1";
+					pictureBox9.BackgroundImage = Resources.Arcane_prayer_scroll;
+					pictureBox9.Tag = "Arcane prayer scroll x 1";
+					pictureBox10.BackgroundImage = Resources.Dexterous_prayer_scroll;
+					pictureBox10.Tag = "Dexterous prayer scroll x 1";
+					pictureBox11.BackgroundImage = Resources.Dragon_claws;
+					pictureBox11.Tag = "Dragon claws x 1";
+					pictureBox12.BackgroundImage = Resources.Elder_maul;
+					pictureBox12.Tag = "Elder maul x 1";
+					pictureBox13.BackgroundImage = Resources.Kodai_insignia;
+					pictureBox13.Tag = "Kodai insignia x 1";
+					pictureBox14.BackgroundImage = Resources.Twisted_bow;
+					pictureBox14.Tag = "Twisted bow x 1";
+					break;
+				case "Skotizo":
+					// none
+					break;
+				case "Wintertodt":
+					// none
+					break;
+				case "Zulrah":
+					// none
+					break;
+				case "Abyssal Sire":
+					// none
+					break;
+				case "Cerberus":
+					// none
+					break;
+				case "Grotesque Guardians":
+					// none
+					break;
+				case "Kraken":
+					// none
+					break;
+				case "Thermonuclear Smoke Devil":
+					// none
+					break;
+				case "Callisto":
+					pictureBox1.BackgroundImage = Resources.Dragon_pickaxe;
+					pictureBox1.Tag = "Dragon pickaxe x 1";
+					pictureBox2.BackgroundImage = Resources.Dragon_2h_sword;
+					pictureBox2.Tag = "Dragon 2h sword x 1";
+					pictureBox3.BackgroundImage = Resources.Tyrannical_ring;
+					pictureBox3.Tag = "Tyrannical ring x 1";
+					break;
+				case "Chaos Elemental":
+					// none
+					break;
+				case "Chaos Fanatic":
+					pictureBox1.BackgroundImage = Resources.Odium_shard_1;
+					pictureBox1.Tag = "Odium shard 1 x 1";
+					pictureBox2.BackgroundImage = Resources.Malediction_shard_1;
+					pictureBox2.Tag = "Malediction shard 1 x 1";
+					break;
+				case "Crazy Archaeologist":
+					pictureBox1.BackgroundImage = Resources.Fedora;
+					pictureBox1.Tag = "Fedora x 1";
+					pictureBox2.BackgroundImage = Resources.Odium_shard_2;
+					pictureBox2.Tag = "Odium shard 2 x 1";
+					pictureBox3.BackgroundImage = Resources.Malediction_shard_2;
+					pictureBox3.Tag = "Malediction shard 2 x 1";
+					break;
+				case "King Black Dragon":
+					pictureBox1.BackgroundImage = Resources.Dragon_pickaxe;
+					pictureBox1.Tag = "Dragon pickaxe x 1";
+					pictureBox2.BackgroundImage = Resources.Draconic_visage;
+					pictureBox2.Tag = "Draconic visage x 1";
+					break;
+				case "Scorpia":
+					pictureBox1.BackgroundImage = Resources.Odium_shard_3;
+					pictureBox1.Tag = "Odium shard 3 x 1";
+					pictureBox2.BackgroundImage = Resources.Malediction_shard_3;
+					pictureBox2.Tag = "Malediction shard 3 x 1";
+					break;
+				case "Venenatis":
+					pictureBox1.BackgroundImage = Resources.Dragon_2h_sword;
+					pictureBox1.Tag = "Dragon 2h sword x 1";
+					pictureBox2.BackgroundImage = Resources.Dragon_pickaxe;
+					pictureBox2.Tag = "Dragon pickaxe x 1";
+					pictureBox3.BackgroundImage = Resources.Treasonous_ring;
+					pictureBox3.Tag = "Treasonous ring x 1";
+					break;
+				case "Vet'ion":
+					pictureBox1.BackgroundImage = Resources.Dragon_2h_sword;
+					pictureBox1.Tag = "Dragon 2h sword x 1";
+					pictureBox2.BackgroundImage = Resources.Dragon_pickaxe;
+					pictureBox2.Tag = "Dragon pickaxe x 1";
+					pictureBox3.BackgroundImage = Resources.Ring_of_the_gods;
+					pictureBox3.Tag = "Ring of the gods x 1";
+					break;
+				default:
+					Console.WriteLine("[ERROR]: Unable to find boss to show uniques for. (Boss = " + boss + ")");
+					break;
+			}
+			resizeSplitWindow(numUniques);
 		}
 
 		private void buttonSplitOk_Click(object sender, EventArgs e) {
 
-			String splitItem = textBoxSplitDropName.Text;
+			if (getCurrentSelectedPictureBox() == null) return;
+
+			String splitItem = getCurrentSelectedPictureBox().Tag.ToString();
 			String splitAmountText = textBoxSplitAmount.Text;
 
 			if (string.IsNullOrWhiteSpace(splitItem)) {
@@ -58,17 +269,17 @@ namespace splitDrop {
 			String formattedSplit = "";
 
 			int currentBossKillcount = dropLogger.OldSchoolDropLogger.instance.getBossKillcount(currentBoss);
-			int splitItemQuantity = 1;
-			if (splitItem == "Dragon thrownaxe") splitItemQuantity = 100;
+			//int splitItemQuantity = 1;
+			//if (splitItem == "Dragon thrownaxe x 100") splitItemQuantity = 100;
 
 			if (dropInOwnName) {
-				formattedSplit = currentBoss + " [" + currentBossKillcount.ToString() + " kc], " + splitItem + " x " + splitItemQuantity + " [sy=" + splitAmountText + "]";
+				formattedSplit = currentBoss + " [" + currentBossKillcount.ToString() + " kc], " + splitItem + /*" x " + splitItemQuantity +*/ " [sy=" + splitAmountText + "]";
 
-				pictureBoxTest.Tag = splitItem + " x " + splitItemQuantity.ToString();
+				pictureBoxTest.Tag = splitItem/* + " x " + splitItemQuantity.ToString()*/;
 				dropLogger.OldSchoolDropLogger.instance.pictureBox_Click(pictureBoxTest, null);
 			}
 			else {
-				formattedSplit = currentBoss + ", " + splitItem + " x " + splitItemQuantity + " [sn=" + splitAmountText + "]";
+				formattedSplit = currentBoss + ", " + splitItem + /*" x " + splitItemQuantity + */" [sn=" + splitAmountText + "]";
 			}
 			// 3. Saradomin, Saradomin hilt x 1[sn = 20000000]
 			// 4. Saradomin[3 kc], Armadyl crossbow[sy = 13850000]
@@ -78,6 +289,8 @@ namespace splitDrop {
 			newLoggedSplits.Add(formattedSplit);
 
 			writeSplitsToFile(alreadyLoggedSplits);
+
+			this.Close();
 
 		}
 
@@ -126,6 +339,687 @@ namespace splitDrop {
 			catch (FileNotFoundException) { }
 
 			return loggedSplitItems;
+		}
+
+		private void resizeSplitWindow(int numberOfUniques) {
+
+			int numberOfRowsHidden = 4;
+
+			// calculate number of rows to hide
+			int numberUniquesCopy = numberOfUniques;
+
+			for (int i = 0; i < numberOfUniques; i++) {
+				if (numberUniquesCopy > 0) {
+					numberUniquesCopy -= 5;
+					numberOfRowsHidden--;
+				}
+				else {
+					break;
+				}
+			}
+
+			int totalDistModifier = 35 * numberOfRowsHidden;
+
+			if (numberOfUniques == 0) {
+				this.Size = new Size(245, 292 - 105);
+				labelSplitAmountText.Location = new Point(12, 162 - 105);
+				textBoxSplitAmount.Location = new Point(87, 160 - 105);
+				labelDropInYourNameText.Location = new Point(12, 192 - 105);
+				panelYesNoRadio.Location = new Point(117, 187 - 105);
+				buttonSplitOk.Location = new Point(36, 219 - 105);
+				buttonSplitCancel.Location = new Point(117, 219 - 105);
+			}
+			else if (numberOfUniques <= 5) {
+				this.Size = new Size(245, 292 - totalDistModifier);
+				labelSplitAmountText.Location = new Point(12, 162 - totalDistModifier);
+				textBoxSplitAmount.Location = new Point(87, 160 - totalDistModifier);
+				labelDropInYourNameText.Location = new Point(12, 192 - totalDistModifier);
+				panelYesNoRadio.Location = new Point(117, 187 - totalDistModifier);
+				buttonSplitOk.Location = new Point(36, 219 - totalDistModifier);
+				buttonSplitCancel.Location = new Point(117, 219 - totalDistModifier);
+			}
+			else if (numberOfUniques <= 10) {
+				this.Size = new Size(245, 292 - totalDistModifier);
+				labelSplitAmountText.Location = new Point(12, 162 - totalDistModifier);
+				textBoxSplitAmount.Location = new Point(87, 160 - totalDistModifier);
+				labelDropInYourNameText.Location = new Point(12, 192 - totalDistModifier);
+				panelYesNoRadio.Location = new Point(117, 187 - totalDistModifier);
+				buttonSplitOk.Location = new Point(36, 219 - totalDistModifier);
+				buttonSplitCancel.Location = new Point(117, 219 - totalDistModifier);
+			}
+			else if (numberOfUniques <= 15) {
+				this.Size = new Size(245, 292 - totalDistModifier);
+				labelSplitAmountText.Location = new Point(12, 162 - totalDistModifier);
+				textBoxSplitAmount.Location = new Point(87, 160 - totalDistModifier);
+				labelDropInYourNameText.Location = new Point(12, 192 - totalDistModifier);
+				panelYesNoRadio.Location = new Point(117, 187 - totalDistModifier);
+				buttonSplitOk.Location = new Point(36, 219 - totalDistModifier);
+				buttonSplitCancel.Location = new Point(117, 219 - totalDistModifier);
+			}
+			else if (numberOfUniques <= 20) {
+				this.Size = new Size(245, 292 - totalDistModifier);
+				labelSplitAmountText.Location = new Point(12, 162 - totalDistModifier);
+				textBoxSplitAmount.Location = new Point(87, 160 - totalDistModifier);
+				labelDropInYourNameText.Location = new Point(12, 192 - totalDistModifier);
+				panelYesNoRadio.Location = new Point(117, 187 - totalDistModifier);
+				buttonSplitOk.Location = new Point(36, 219 - totalDistModifier);
+				buttonSplitCancel.Location = new Point(117, 219 - totalDistModifier);
+			}
+
+			setNPictureBoxesAsVisible(numberOfUniques);
+		}
+
+		private void setNPictureBoxesAsVisible(int n) {
+			switch (n) {
+				case 0:
+					labelNoUniquesForBoss.Visible = true;
+					buttonSplitOk.Enabled = false;
+					textBoxSplitAmount.Enabled = false;
+					radioButtonOwnDropNo.Enabled = false;
+					radioButtonOwnDropYes.Enabled = false;
+					pictureBox1.Visible = false;
+					pictureBox2.Visible = false;
+					pictureBox3.Visible = false;
+					pictureBox4.Visible = false;
+					pictureBox5.Visible = false;
+					pictureBox6.Visible = false;
+					pictureBox7.Visible = false;
+					pictureBox8.Visible = false;
+					pictureBox9.Visible = false;
+					pictureBox10.Visible = false;
+					pictureBox11.Visible = false;
+					pictureBox12.Visible = false;
+					pictureBox13.Visible = false;
+					pictureBox14.Visible = false;
+					pictureBox15.Visible = false;
+					pictureBox16.Visible = false;
+					pictureBox17.Visible = false;
+					pictureBox18.Visible = false;
+					pictureBox19.Visible = false;
+					pictureBox20.Visible = false;
+					break;
+				case 1:
+					labelNoUniquesForBoss.Visible = false;
+					buttonSplitOk.Enabled = true;
+					textBoxSplitAmount.Enabled = true;
+					radioButtonOwnDropNo.Enabled = true;
+					radioButtonOwnDropYes.Enabled = true;
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = false;
+					pictureBox3.Visible = false;
+					pictureBox4.Visible = false;
+					pictureBox5.Visible = false;
+					pictureBox6.Visible = false;
+					pictureBox7.Visible = false;
+					pictureBox8.Visible = false;
+					pictureBox9.Visible = false;
+					pictureBox10.Visible = false;
+					pictureBox11.Visible = false;
+					pictureBox12.Visible = false;
+					pictureBox13.Visible = false;
+					pictureBox14.Visible = false;
+					pictureBox15.Visible = false;
+					pictureBox16.Visible = false;
+					pictureBox17.Visible = false;
+					pictureBox18.Visible = false;
+					pictureBox19.Visible = false;
+					pictureBox20.Visible = false;
+					break;
+				case 2:
+					labelNoUniquesForBoss.Visible = false;
+					buttonSplitOk.Enabled = true;
+					textBoxSplitAmount.Enabled = true;
+					radioButtonOwnDropNo.Enabled = true;
+					radioButtonOwnDropYes.Enabled = true;
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = false;
+					pictureBox4.Visible = false;
+					pictureBox5.Visible = false;
+					pictureBox6.Visible = false;
+					pictureBox7.Visible = false;
+					pictureBox8.Visible = false;
+					pictureBox9.Visible = false;
+					pictureBox10.Visible = false;
+					pictureBox11.Visible = false;
+					pictureBox12.Visible = false;
+					pictureBox13.Visible = false;
+					pictureBox14.Visible = false;
+					pictureBox15.Visible = false;
+					pictureBox16.Visible = false;
+					pictureBox17.Visible = false;
+					pictureBox18.Visible = false;
+					pictureBox19.Visible = false;
+					pictureBox20.Visible = false;
+					break;
+				case 3:
+					labelNoUniquesForBoss.Visible = false;
+					buttonSplitOk.Enabled = true;
+					textBoxSplitAmount.Enabled = true;
+					radioButtonOwnDropNo.Enabled = true;
+					radioButtonOwnDropYes.Enabled = true;
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = false;
+					pictureBox5.Visible = false;
+					pictureBox6.Visible = false;
+					pictureBox7.Visible = false;
+					pictureBox8.Visible = false;
+					pictureBox9.Visible = false;
+					pictureBox10.Visible = false;
+					pictureBox11.Visible = false;
+					pictureBox12.Visible = false;
+					pictureBox13.Visible = false;
+					pictureBox14.Visible = false;
+					pictureBox15.Visible = false;
+					pictureBox16.Visible = false;
+					pictureBox17.Visible = false;
+					pictureBox18.Visible = false;
+					pictureBox19.Visible = false;
+					pictureBox20.Visible = false;
+					break;
+				case 4:
+					labelNoUniquesForBoss.Visible = false;
+					buttonSplitOk.Enabled = true;
+					textBoxSplitAmount.Enabled = true;
+					radioButtonOwnDropNo.Enabled = true;
+					radioButtonOwnDropYes.Enabled = true;
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = false;
+					pictureBox6.Visible = false;
+					pictureBox7.Visible = false;
+					pictureBox8.Visible = false;
+					pictureBox9.Visible = false;
+					pictureBox10.Visible = false;
+					pictureBox11.Visible = false;
+					pictureBox12.Visible = false;
+					pictureBox13.Visible = false;
+					pictureBox14.Visible = false;
+					pictureBox15.Visible = false;
+					pictureBox16.Visible = false;
+					pictureBox17.Visible = false;
+					pictureBox18.Visible = false;
+					pictureBox19.Visible = false;
+					pictureBox20.Visible = false;
+					break;
+				case 5:
+					labelNoUniquesForBoss.Visible = false;
+					buttonSplitOk.Enabled = true;
+					textBoxSplitAmount.Enabled = true;
+					radioButtonOwnDropNo.Enabled = true;
+					radioButtonOwnDropYes.Enabled = true;
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = true;
+					pictureBox6.Visible = false;
+					pictureBox7.Visible = false;
+					pictureBox8.Visible = false;
+					pictureBox9.Visible = false;
+					pictureBox10.Visible = false;
+					pictureBox11.Visible = false;
+					pictureBox12.Visible = false;
+					pictureBox13.Visible = false;
+					pictureBox14.Visible = false;
+					pictureBox15.Visible = false;
+					pictureBox16.Visible = false;
+					pictureBox17.Visible = false;
+					pictureBox18.Visible = false;
+					pictureBox19.Visible = false;
+					pictureBox20.Visible = false;
+					break;
+				case 6:
+					labelNoUniquesForBoss.Visible = false;
+					buttonSplitOk.Enabled = true;
+					textBoxSplitAmount.Enabled = true;
+					radioButtonOwnDropNo.Enabled = true;
+					radioButtonOwnDropYes.Enabled = true;
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = true;
+					pictureBox6.Visible = true;
+					pictureBox7.Visible = false;
+					pictureBox8.Visible = false;
+					pictureBox9.Visible = false;
+					pictureBox10.Visible = false;
+					pictureBox11.Visible = false;
+					pictureBox12.Visible = false;
+					pictureBox13.Visible = false;
+					pictureBox14.Visible = false;
+					pictureBox15.Visible = false;
+					pictureBox16.Visible = false;
+					pictureBox17.Visible = false;
+					pictureBox18.Visible = false;
+					pictureBox19.Visible = false;
+					pictureBox20.Visible = false;
+					break;
+				case 7:
+					labelNoUniquesForBoss.Visible = false;
+					buttonSplitOk.Enabled = true;
+					textBoxSplitAmount.Enabled = true;
+					radioButtonOwnDropNo.Enabled = true;
+					radioButtonOwnDropYes.Enabled = true;
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = true;
+					pictureBox6.Visible = true;
+					pictureBox7.Visible = true;
+					pictureBox8.Visible = false;
+					pictureBox9.Visible = false;
+					pictureBox10.Visible = false;
+					pictureBox11.Visible = false;
+					pictureBox12.Visible = false;
+					pictureBox13.Visible = false;
+					pictureBox14.Visible = false;
+					pictureBox15.Visible = false;
+					pictureBox16.Visible = false;
+					pictureBox17.Visible = false;
+					pictureBox18.Visible = false;
+					pictureBox19.Visible = false;
+					pictureBox20.Visible = false;
+					break;
+				case 8:
+					labelNoUniquesForBoss.Visible = false;
+					buttonSplitOk.Enabled = true;
+					textBoxSplitAmount.Enabled = true;
+					radioButtonOwnDropNo.Enabled = true;
+					radioButtonOwnDropYes.Enabled = true;
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = true;
+					pictureBox6.Visible = true;
+					pictureBox7.Visible = true;
+					pictureBox8.Visible = false;
+					pictureBox9.Visible = false;
+					pictureBox10.Visible = false;
+					pictureBox11.Visible = false;
+					pictureBox12.Visible = false;
+					pictureBox13.Visible = false;
+					pictureBox14.Visible = false;
+					pictureBox15.Visible = false;
+					pictureBox16.Visible = false;
+					pictureBox17.Visible = false;
+					pictureBox18.Visible = false;
+					pictureBox19.Visible = false;
+					pictureBox20.Visible = false;
+					break;
+				case 9:
+					labelNoUniquesForBoss.Visible = false;
+					buttonSplitOk.Enabled = true;
+					textBoxSplitAmount.Enabled = true;
+					radioButtonOwnDropNo.Enabled = true;
+					radioButtonOwnDropYes.Enabled = true;
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = true;
+					pictureBox6.Visible = true;
+					pictureBox7.Visible = true;
+					pictureBox8.Visible = true;
+					pictureBox9.Visible = true;
+					pictureBox10.Visible = false;
+					pictureBox11.Visible = false;
+					pictureBox12.Visible = false;
+					pictureBox13.Visible = false;
+					pictureBox14.Visible = false;
+					pictureBox15.Visible = false;
+					pictureBox16.Visible = false;
+					pictureBox17.Visible = false;
+					pictureBox18.Visible = false;
+					pictureBox19.Visible = false;
+					pictureBox20.Visible = false;
+					break;
+				case 10:
+					labelNoUniquesForBoss.Visible = false;
+					buttonSplitOk.Enabled = true;
+					textBoxSplitAmount.Enabled = true;
+					radioButtonOwnDropNo.Enabled = true;
+					radioButtonOwnDropYes.Enabled = true;
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = true;
+					pictureBox6.Visible = true;
+					pictureBox7.Visible = true;
+					pictureBox8.Visible = true;
+					pictureBox9.Visible = true;
+					pictureBox10.Visible = true;
+					pictureBox11.Visible = true;
+					pictureBox12.Visible = true;
+					pictureBox13.Visible = true;
+					pictureBox14.Visible = true;
+					pictureBox15.Visible = true;
+					pictureBox16.Visible = true;
+					pictureBox17.Visible = true;
+					pictureBox18.Visible = true;
+					pictureBox19.Visible = true;
+					pictureBox20.Visible = true;
+					break;
+				case 11:
+					labelNoUniquesForBoss.Visible = false;
+					buttonSplitOk.Enabled = true;
+					textBoxSplitAmount.Enabled = true;
+					radioButtonOwnDropNo.Enabled = true;
+					radioButtonOwnDropYes.Enabled = true;
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = true;
+					pictureBox6.Visible = true;
+					pictureBox7.Visible = true;
+					pictureBox8.Visible = true;
+					pictureBox9.Visible = true;
+					pictureBox10.Visible = true;
+					pictureBox11.Visible = true;
+					pictureBox12.Visible = false;
+					pictureBox13.Visible = false;
+					pictureBox14.Visible = false;
+					pictureBox15.Visible = false;
+					pictureBox16.Visible = false;
+					pictureBox17.Visible = false;
+					pictureBox18.Visible = false;
+					pictureBox19.Visible = false;
+					pictureBox20.Visible = false;
+					break;
+				case 12:
+					labelNoUniquesForBoss.Visible = false;
+					buttonSplitOk.Enabled = true;
+					textBoxSplitAmount.Enabled = true;
+					radioButtonOwnDropNo.Enabled = true;
+					radioButtonOwnDropYes.Enabled = true;
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = true;
+					pictureBox6.Visible = true;
+					pictureBox7.Visible = true;
+					pictureBox8.Visible = true;
+					pictureBox9.Visible = true;
+					pictureBox10.Visible = true;
+					pictureBox11.Visible = true;
+					pictureBox12.Visible = true;
+					pictureBox13.Visible = false;
+					pictureBox14.Visible = false;
+					pictureBox15.Visible = false;
+					pictureBox16.Visible = false;
+					pictureBox17.Visible = false;
+					pictureBox18.Visible = false;
+					pictureBox19.Visible = false;
+					pictureBox20.Visible = false;
+					break;
+				case 13:
+					labelNoUniquesForBoss.Visible = false;
+					buttonSplitOk.Enabled = true;
+					textBoxSplitAmount.Enabled = true;
+					radioButtonOwnDropNo.Enabled = true;
+					radioButtonOwnDropYes.Enabled = true;
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = true;
+					pictureBox6.Visible = true;
+					pictureBox7.Visible = true;
+					pictureBox8.Visible = true;
+					pictureBox9.Visible = true;
+					pictureBox10.Visible = true;
+					pictureBox11.Visible = true;
+					pictureBox12.Visible = true;
+					pictureBox13.Visible = true;
+					pictureBox14.Visible = false;
+					pictureBox15.Visible = false;
+					pictureBox16.Visible = false;
+					pictureBox17.Visible = false;
+					pictureBox18.Visible = false;
+					pictureBox19.Visible = false;
+					pictureBox20.Visible = false;
+					break;
+				case 14:
+					labelNoUniquesForBoss.Visible = false;
+					buttonSplitOk.Enabled = true;
+					textBoxSplitAmount.Enabled = true;
+					radioButtonOwnDropNo.Enabled = true;
+					radioButtonOwnDropYes.Enabled = true;
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = true;
+					pictureBox6.Visible = true;
+					pictureBox7.Visible = true;
+					pictureBox8.Visible = true;
+					pictureBox9.Visible = true;
+					pictureBox10.Visible = true;
+					pictureBox11.Visible = true;
+					pictureBox12.Visible = true;
+					pictureBox13.Visible = true;
+					pictureBox14.Visible = true;
+					pictureBox15.Visible = false;
+					pictureBox16.Visible = false;
+					pictureBox17.Visible = false;
+					pictureBox18.Visible = false;
+					pictureBox19.Visible = false;
+					pictureBox20.Visible = false;
+					break;
+				case 15:
+					labelNoUniquesForBoss.Visible = false;
+					buttonSplitOk.Enabled = true;
+					textBoxSplitAmount.Enabled = true;
+					radioButtonOwnDropNo.Enabled = true;
+					radioButtonOwnDropYes.Enabled = true;
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = true;
+					pictureBox6.Visible = true;
+					pictureBox7.Visible = true;
+					pictureBox8.Visible = true;
+					pictureBox9.Visible = true;
+					pictureBox10.Visible = true;
+					pictureBox11.Visible = true;
+					pictureBox12.Visible = true;
+					pictureBox13.Visible = true;
+					pictureBox14.Visible = true;
+					pictureBox15.Visible = true;
+					pictureBox16.Visible = false;
+					pictureBox17.Visible = false;
+					pictureBox18.Visible = false;
+					pictureBox19.Visible = false;
+					pictureBox20.Visible = false;
+					break;
+				case 16:
+					labelNoUniquesForBoss.Visible = false;
+					buttonSplitOk.Enabled = true;
+					textBoxSplitAmount.Enabled = true;
+					radioButtonOwnDropNo.Enabled = true;
+					radioButtonOwnDropYes.Enabled = true;
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = true;
+					pictureBox6.Visible = true;
+					pictureBox7.Visible = true;
+					pictureBox8.Visible = true;
+					pictureBox9.Visible = true;
+					pictureBox10.Visible = true;
+					pictureBox11.Visible = true;
+					pictureBox12.Visible = true;
+					pictureBox13.Visible = true;
+					pictureBox14.Visible = true;
+					pictureBox15.Visible = true;
+					pictureBox16.Visible = true;
+					pictureBox17.Visible = false;
+					pictureBox18.Visible = false;
+					pictureBox19.Visible = false;
+					pictureBox20.Visible = false;
+					break;
+				case 17:
+					labelNoUniquesForBoss.Visible = false;
+					buttonSplitOk.Enabled = true;
+					textBoxSplitAmount.Enabled = true;
+					radioButtonOwnDropNo.Enabled = true;
+					radioButtonOwnDropYes.Enabled = true;
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = true;
+					pictureBox6.Visible = true;
+					pictureBox7.Visible = true;
+					pictureBox8.Visible = true;
+					pictureBox9.Visible = true;
+					pictureBox10.Visible = true;
+					pictureBox11.Visible = true;
+					pictureBox12.Visible = true;
+					pictureBox13.Visible = true;
+					pictureBox14.Visible = true;
+					pictureBox15.Visible = true;
+					pictureBox16.Visible = true;
+					pictureBox17.Visible = true;
+					pictureBox18.Visible = false;
+					pictureBox19.Visible = false;
+					pictureBox20.Visible = false;
+					break;
+				case 18:
+					labelNoUniquesForBoss.Visible = false;
+					buttonSplitOk.Enabled = true;
+					textBoxSplitAmount.Enabled = true;
+					radioButtonOwnDropNo.Enabled = true;
+					radioButtonOwnDropYes.Enabled = true;
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = true;
+					pictureBox6.Visible = true;
+					pictureBox7.Visible = true;
+					pictureBox8.Visible = true;
+					pictureBox9.Visible = true;
+					pictureBox10.Visible = true;
+					pictureBox11.Visible = true;
+					pictureBox12.Visible = true;
+					pictureBox13.Visible = true;
+					pictureBox14.Visible = true;
+					pictureBox15.Visible = true;
+					pictureBox16.Visible = true;
+					pictureBox17.Visible = true;
+					pictureBox18.Visible = true;
+					pictureBox19.Visible = false;
+					pictureBox20.Visible = false;
+					break;
+				case 19:
+					labelNoUniquesForBoss.Visible = false;
+					buttonSplitOk.Enabled = true;
+					textBoxSplitAmount.Enabled = true;
+					radioButtonOwnDropNo.Enabled = true;
+					radioButtonOwnDropYes.Enabled = true;
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = true;
+					pictureBox6.Visible = true;
+					pictureBox7.Visible = true;
+					pictureBox8.Visible = true;
+					pictureBox9.Visible = true;
+					pictureBox10.Visible = true;
+					pictureBox11.Visible = true;
+					pictureBox12.Visible = true;
+					pictureBox13.Visible = true;
+					pictureBox14.Visible = true;
+					pictureBox15.Visible = true;
+					pictureBox16.Visible = true;
+					pictureBox17.Visible = true;
+					pictureBox18.Visible = true;
+					pictureBox19.Visible = true;
+					pictureBox20.Visible = false;
+					break;
+				case 20:
+					labelNoUniquesForBoss.Visible = false;
+					buttonSplitOk.Enabled = true;
+					textBoxSplitAmount.Enabled = true;
+					radioButtonOwnDropNo.Enabled = true;
+					radioButtonOwnDropYes.Enabled = true;
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = true;
+					pictureBox6.Visible = true;
+					pictureBox7.Visible = true;
+					pictureBox8.Visible = true;
+					pictureBox9.Visible = true;
+					pictureBox10.Visible = true;
+					pictureBox11.Visible = true;
+					pictureBox12.Visible = true;
+					pictureBox13.Visible = true;
+					pictureBox14.Visible = true;
+					pictureBox15.Visible = true;
+					pictureBox16.Visible = true;
+					pictureBox17.Visible = true;
+					pictureBox18.Visible = true;
+					pictureBox19.Visible = true;
+					pictureBox20.Visible = true;
+					break;
+			}
+		}
+		private PictureBox getCurrentSelectedPictureBox() {
+			foreach (PictureBox p in allPictureBoxes) {
+				if (p.BackColor == highlightOrange) {
+					return p;
+				}
+			}
+			return null;
+		}
+		private void pictureBox_Click(object sender, EventArgs e) {
+			PictureBox pbSender = (PictureBox)sender;
+
+			highlightPictureBox(pbSender);
+		}
+		private void highlightPictureBox(PictureBox pb, Boolean resetAll = true) {
+
+			// Only reset the pictures if it is set - this will not reset pictures when control is held
+			if (resetAll) {
+				resetAllPictureBoxBackgroundColor();
+			}
+
+			// Still change the picture box that was clicked
+			pb.BackColor = highlightOrange;
+		}
+		List<PictureBox> allPictureBoxes = new List<PictureBox>();
+		private void putAllPictureBoxesIntoList() {
+			// Put all pictureboxes into allPictureBoxes list
+			Control[] c;
+			for (int i = 1; i <= 20; i++) {
+				c = this.Controls.Find("pictureBox" + i.ToString(), true);
+				allPictureBoxes.Add((PictureBox)c[0]);
+			}
+		}
+		private void resetAllPictureBoxBackgroundColor() {
+			foreach (PictureBox p in allPictureBoxes) {
+				p.BackColor = Color.Transparent;
+			}
+		}
+
+		private void SplitDropForm_Load(object sender, EventArgs e) {
+			this.Location = new Point(this.Owner.Location.X - 230, this.Owner.Location.Y);
 		}
 	}
 }

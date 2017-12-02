@@ -34,15 +34,6 @@
 			this.bandosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.saradominToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.zamorakToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.wildernessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.callistoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.chaosElementalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.chaosFanaticToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.crazyArchaeologistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.kingBlackDragonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.scorpiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.venenatisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.vetionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.otherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.barrowsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.corporealBeastToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,8 +50,18 @@
 			this.grotesqueGuardiansToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.krakenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.thermonuclearSmokeDevilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.wildernessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.callistoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.chaosElementalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.chaosFanaticToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.crazyArchaeologistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.kingBlackDragonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.scorpiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.venenatisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.vetionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.alwaysOnTopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.statsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.twitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -254,6 +255,7 @@
             this.fileToolStripMenuItem,
             this.bossToolStripMenuItem,
             this.settingsToolStripMenuItem,
+            this.statsToolStripMenuItem,
             this.helpToolStripMenuItem});
 			this.menuStripLogger.Location = new System.Drawing.Point(0, 0);
 			this.menuStripLogger.Name = "menuStripLogger";
@@ -303,7 +305,7 @@
             this.saradominToolStripMenuItem,
             this.zamorakToolStripMenuItem});
 			this.godwarsToolStripMenuItem.Name = "godwarsToolStripMenuItem";
-			this.godwarsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.godwarsToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
 			this.godwarsToolStripMenuItem.Text = "Godwars";
 			// 
 			// armadylToolStripMenuItem
@@ -334,77 +336,6 @@
 			this.zamorakToolStripMenuItem.Text = "Zamorak";
 			this.zamorakToolStripMenuItem.Click += new System.EventHandler(this.zamorakToolStripMenuItem_Click);
 			// 
-			// wildernessToolStripMenuItem
-			// 
-			this.wildernessToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.callistoToolStripMenuItem,
-            this.chaosElementalToolStripMenuItem,
-            this.chaosFanaticToolStripMenuItem,
-            this.crazyArchaeologistToolStripMenuItem,
-            this.kingBlackDragonToolStripMenuItem,
-            this.scorpiaToolStripMenuItem,
-            this.venenatisToolStripMenuItem,
-            this.vetionToolStripMenuItem});
-			this.wildernessToolStripMenuItem.Name = "wildernessToolStripMenuItem";
-			this.wildernessToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.wildernessToolStripMenuItem.Text = "Wilderness";
-			// 
-			// callistoToolStripMenuItem
-			// 
-			this.callistoToolStripMenuItem.Name = "callistoToolStripMenuItem";
-			this.callistoToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-			this.callistoToolStripMenuItem.Text = "Callisto";
-			this.callistoToolStripMenuItem.Click += new System.EventHandler(this.callistoToolStripMenuItem_Click);
-			// 
-			// chaosElementalToolStripMenuItem
-			// 
-			this.chaosElementalToolStripMenuItem.Name = "chaosElementalToolStripMenuItem";
-			this.chaosElementalToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-			this.chaosElementalToolStripMenuItem.Text = "Chaos Elemental";
-			this.chaosElementalToolStripMenuItem.Click += new System.EventHandler(this.chaosElementalToolStripMenuItem_Click);
-			// 
-			// chaosFanaticToolStripMenuItem
-			// 
-			this.chaosFanaticToolStripMenuItem.Name = "chaosFanaticToolStripMenuItem";
-			this.chaosFanaticToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-			this.chaosFanaticToolStripMenuItem.Text = "Chaos Fanatic";
-			this.chaosFanaticToolStripMenuItem.Click += new System.EventHandler(this.chaosFanaticToolStripMenuItem_Click);
-			// 
-			// crazyArchaeologistToolStripMenuItem
-			// 
-			this.crazyArchaeologistToolStripMenuItem.Name = "crazyArchaeologistToolStripMenuItem";
-			this.crazyArchaeologistToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-			this.crazyArchaeologistToolStripMenuItem.Text = "Crazy Archaeologist";
-			this.crazyArchaeologistToolStripMenuItem.Click += new System.EventHandler(this.crazyArchaeologistToolStripMenuItem_Click);
-			// 
-			// kingBlackDragonToolStripMenuItem
-			// 
-			this.kingBlackDragonToolStripMenuItem.Name = "kingBlackDragonToolStripMenuItem";
-			this.kingBlackDragonToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-			this.kingBlackDragonToolStripMenuItem.Text = "King Black Dragon";
-			this.kingBlackDragonToolStripMenuItem.Click += new System.EventHandler(this.kingBlackDragonToolStripMenuItem_Click);
-			// 
-			// scorpiaToolStripMenuItem
-			// 
-			this.scorpiaToolStripMenuItem.Name = "scorpiaToolStripMenuItem";
-			this.scorpiaToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-			this.scorpiaToolStripMenuItem.Text = "Scorpia";
-			this.scorpiaToolStripMenuItem.Click += new System.EventHandler(this.scorpiaToolStripMenuItem_Click);
-			// 
-			// venenatisToolStripMenuItem
-			// 
-			this.venenatisToolStripMenuItem.Name = "venenatisToolStripMenuItem";
-			this.venenatisToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-			this.venenatisToolStripMenuItem.Text = "Venenatis";
-			this.venenatisToolStripMenuItem.Click += new System.EventHandler(this.venenatisToolStripMenuItem_Click);
-			// 
-			// vetionToolStripMenuItem
-			// 
-			this.vetionToolStripMenuItem.Name = "vetionToolStripMenuItem";
-			this.vetionToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-			this.vetionToolStripMenuItem.Text = "Vet\'ion";
-			this.vetionToolStripMenuItem.Click += new System.EventHandler(this.vetionToolStripMenuItem_Click);
-			// 
 			// otherToolStripMenuItem
 			// 
 			this.otherToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -418,7 +349,7 @@
             this.wintertodtToolStripMenuItem,
             this.zulrahToolStripMenuItem});
 			this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
-			this.otherToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.otherToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
 			this.otherToolStripMenuItem.Text = "Other";
 			// 
 			// barrowsToolStripMenuItem
@@ -493,7 +424,7 @@
             this.krakenToolStripMenuItem,
             this.thermonuclearSmokeDevilToolStripMenuItem});
 			this.slayerToolStripMenuItem.Name = "slayerToolStripMenuItem";
-			this.slayerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.slayerToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
 			this.slayerToolStripMenuItem.Text = "Slayer";
 			// 
 			// abyssalSireToolStripMenuItem
@@ -531,6 +462,77 @@
 			this.thermonuclearSmokeDevilToolStripMenuItem.Text = "Thermonuclear Smoke Devil";
 			this.thermonuclearSmokeDevilToolStripMenuItem.Click += new System.EventHandler(this.thermonuclearSmokeDevilToolStripMenuItem_Click);
 			// 
+			// wildernessToolStripMenuItem
+			// 
+			this.wildernessToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.callistoToolStripMenuItem,
+            this.chaosElementalToolStripMenuItem,
+            this.chaosFanaticToolStripMenuItem,
+            this.crazyArchaeologistToolStripMenuItem,
+            this.kingBlackDragonToolStripMenuItem,
+            this.scorpiaToolStripMenuItem,
+            this.venenatisToolStripMenuItem,
+            this.vetionToolStripMenuItem});
+			this.wildernessToolStripMenuItem.Name = "wildernessToolStripMenuItem";
+			this.wildernessToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+			this.wildernessToolStripMenuItem.Text = "Wilderness";
+			// 
+			// callistoToolStripMenuItem
+			// 
+			this.callistoToolStripMenuItem.Name = "callistoToolStripMenuItem";
+			this.callistoToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+			this.callistoToolStripMenuItem.Text = "Callisto";
+			this.callistoToolStripMenuItem.Click += new System.EventHandler(this.callistoToolStripMenuItem_Click);
+			// 
+			// chaosElementalToolStripMenuItem
+			// 
+			this.chaosElementalToolStripMenuItem.Name = "chaosElementalToolStripMenuItem";
+			this.chaosElementalToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+			this.chaosElementalToolStripMenuItem.Text = "Chaos Elemental";
+			this.chaosElementalToolStripMenuItem.Click += new System.EventHandler(this.chaosElementalToolStripMenuItem_Click);
+			// 
+			// chaosFanaticToolStripMenuItem
+			// 
+			this.chaosFanaticToolStripMenuItem.Name = "chaosFanaticToolStripMenuItem";
+			this.chaosFanaticToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+			this.chaosFanaticToolStripMenuItem.Text = "Chaos Fanatic";
+			this.chaosFanaticToolStripMenuItem.Click += new System.EventHandler(this.chaosFanaticToolStripMenuItem_Click);
+			// 
+			// crazyArchaeologistToolStripMenuItem
+			// 
+			this.crazyArchaeologistToolStripMenuItem.Name = "crazyArchaeologistToolStripMenuItem";
+			this.crazyArchaeologistToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+			this.crazyArchaeologistToolStripMenuItem.Text = "Crazy Archaeologist";
+			this.crazyArchaeologistToolStripMenuItem.Click += new System.EventHandler(this.crazyArchaeologistToolStripMenuItem_Click);
+			// 
+			// kingBlackDragonToolStripMenuItem
+			// 
+			this.kingBlackDragonToolStripMenuItem.Name = "kingBlackDragonToolStripMenuItem";
+			this.kingBlackDragonToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+			this.kingBlackDragonToolStripMenuItem.Text = "King Black Dragon";
+			this.kingBlackDragonToolStripMenuItem.Click += new System.EventHandler(this.kingBlackDragonToolStripMenuItem_Click);
+			// 
+			// scorpiaToolStripMenuItem
+			// 
+			this.scorpiaToolStripMenuItem.Name = "scorpiaToolStripMenuItem";
+			this.scorpiaToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+			this.scorpiaToolStripMenuItem.Text = "Scorpia";
+			this.scorpiaToolStripMenuItem.Click += new System.EventHandler(this.scorpiaToolStripMenuItem_Click);
+			// 
+			// venenatisToolStripMenuItem
+			// 
+			this.venenatisToolStripMenuItem.Name = "venenatisToolStripMenuItem";
+			this.venenatisToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+			this.venenatisToolStripMenuItem.Text = "Venenatis";
+			this.venenatisToolStripMenuItem.Click += new System.EventHandler(this.venenatisToolStripMenuItem_Click);
+			// 
+			// vetionToolStripMenuItem
+			// 
+			this.vetionToolStripMenuItem.Name = "vetionToolStripMenuItem";
+			this.vetionToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+			this.vetionToolStripMenuItem.Text = "Vet\'ion";
+			this.vetionToolStripMenuItem.Click += new System.EventHandler(this.vetionToolStripMenuItem_Click);
+			// 
 			// settingsToolStripMenuItem
 			// 
 			this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -546,6 +548,14 @@
 			this.alwaysOnTopToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
 			this.alwaysOnTopToolStripMenuItem.Text = "Always on top";
 			this.alwaysOnTopToolStripMenuItem.Click += new System.EventHandler(this.alwaysOnTopToolStripMenuItem_Click);
+			// 
+			// statsToolStripMenuItem
+			// 
+			this.statsToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+			this.statsToolStripMenuItem.Name = "statsToolStripMenuItem";
+			this.statsToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+			this.statsToolStripMenuItem.Text = "Stats";
+			this.statsToolStripMenuItem.Click += new System.EventHandler(this.statsToolStripMenuItem_Click);
 			// 
 			// helpToolStripMenuItem
 			// 
@@ -680,7 +690,7 @@
 			this.pictureBoxDagannothPrime.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxDagannothPrime.BackgroundImage")));
 			this.pictureBoxDagannothPrime.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.pictureBoxDagannothPrime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.pictureBoxDagannothPrime.Location = new System.Drawing.Point(356, 56);
+			this.pictureBoxDagannothPrime.Location = new System.Drawing.Point(356, 61);
 			this.pictureBoxDagannothPrime.Name = "pictureBoxDagannothPrime";
 			this.pictureBoxDagannothPrime.Size = new System.Drawing.Size(35, 35);
 			this.pictureBoxDagannothPrime.TabIndex = 76;
@@ -694,7 +704,7 @@
 			this.pictureBoxDagannothRex.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxDagannothRex.BackgroundImage")));
 			this.pictureBoxDagannothRex.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.pictureBoxDagannothRex.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.pictureBoxDagannothRex.Location = new System.Drawing.Point(390, 56);
+			this.pictureBoxDagannothRex.Location = new System.Drawing.Point(390, 61);
 			this.pictureBoxDagannothRex.Name = "pictureBoxDagannothRex";
 			this.pictureBoxDagannothRex.Size = new System.Drawing.Size(35, 35);
 			this.pictureBoxDagannothRex.TabIndex = 77;
@@ -708,7 +718,7 @@
 			this.pictureBoxDagannothSupreme.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxDagannothSupreme.BackgroundImage")));
 			this.pictureBoxDagannothSupreme.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.pictureBoxDagannothSupreme.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.pictureBoxDagannothSupreme.Location = new System.Drawing.Point(424, 56);
+			this.pictureBoxDagannothSupreme.Location = new System.Drawing.Point(424, 61);
 			this.pictureBoxDagannothSupreme.Name = "pictureBoxDagannothSupreme";
 			this.pictureBoxDagannothSupreme.Size = new System.Drawing.Size(35, 35);
 			this.pictureBoxDagannothSupreme.TabIndex = 78;
@@ -1892,7 +1902,7 @@
 			this.pictureBoxDagannothSupremeLoot.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxDagannothSupremeLoot.BackgroundImage")));
 			this.pictureBoxDagannothSupremeLoot.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.pictureBoxDagannothSupremeLoot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.pictureBoxDagannothSupremeLoot.Location = new System.Drawing.Point(424, 56);
+			this.pictureBoxDagannothSupremeLoot.Location = new System.Drawing.Point(424, 61);
 			this.pictureBoxDagannothSupremeLoot.Name = "pictureBoxDagannothSupremeLoot";
 			this.pictureBoxDagannothSupremeLoot.Size = new System.Drawing.Size(35, 35);
 			this.pictureBoxDagannothSupremeLoot.TabIndex = 159;
@@ -1906,7 +1916,7 @@
 			this.pictureBoxDagannothRexLoot.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxDagannothRexLoot.BackgroundImage")));
 			this.pictureBoxDagannothRexLoot.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.pictureBoxDagannothRexLoot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.pictureBoxDagannothRexLoot.Location = new System.Drawing.Point(390, 56);
+			this.pictureBoxDagannothRexLoot.Location = new System.Drawing.Point(390, 61);
 			this.pictureBoxDagannothRexLoot.Name = "pictureBoxDagannothRexLoot";
 			this.pictureBoxDagannothRexLoot.Size = new System.Drawing.Size(35, 35);
 			this.pictureBoxDagannothRexLoot.TabIndex = 158;
@@ -1919,7 +1929,7 @@
 			this.pictureBoxDagannothPrimeLoot.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxDagannothPrimeLoot.BackgroundImage")));
 			this.pictureBoxDagannothPrimeLoot.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.pictureBoxDagannothPrimeLoot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.pictureBoxDagannothPrimeLoot.Location = new System.Drawing.Point(356, 56);
+			this.pictureBoxDagannothPrimeLoot.Location = new System.Drawing.Point(356, 61);
 			this.pictureBoxDagannothPrimeLoot.Name = "pictureBoxDagannothPrimeLoot";
 			this.pictureBoxDagannothPrimeLoot.Size = new System.Drawing.Size(35, 35);
 			this.pictureBoxDagannothPrimeLoot.TabIndex = 157;
@@ -2289,6 +2299,7 @@
 		private System.Windows.Forms.ToolStripMenuItem grotesqueGuardiansToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem krakenToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem thermonuclearSmokeDevilToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem statsToolStripMenuItem;
 	}
 }
 

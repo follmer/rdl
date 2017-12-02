@@ -83,6 +83,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Acorn_generic {
+            get {
+                object obj = ResourceManager.GetObject("Acorn_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Adamant_arrow_5 {
             get {
                 object obj = ResourceManager.GetObject("Adamant_arrow_5", resourceCulture);
@@ -103,9 +113,29 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Adamant_arrow_generic {
+            get {
+                object obj = ResourceManager.GetObject("Adamant_arrow_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Adamant_axe {
             get {
                 object obj = ResourceManager.GetObject("Adamant_axe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Adamant_boots {
+            get {
+                object obj = ResourceManager.GetObject("Adamant_boots", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -176,6 +206,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Adamantite_bar_noted_35 {
             get {
                 object obj = ResourceManager.GetObject("Adamantite_bar_noted_35", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Adamantite_bar_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Adamantite_bar_noted_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -293,6 +333,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Air_battlestaff_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Air_battlestaff_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Air_rune {
             get {
                 object obj = ResourceManager.GetObject("Air_rune", resourceCulture);
@@ -336,6 +386,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Air_rune_500 {
             get {
                 object obj = ResourceManager.GetObject("Air_rune_500", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Air_rune_generic {
+            get {
+                object obj = ResourceManager.GetObject("Air_rune_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -423,6 +483,26 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Anchovy_pizza_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Anchovy_pizza_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Anchovy_pizza_noted_generic1 {
+            get {
+                object obj = ResourceManager.GetObject("Anchovy_pizza_noted_generic1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Ancient_shard {
             get {
                 object obj = ResourceManager.GetObject("Ancient_shard", resourceCulture);
@@ -486,6 +566,26 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Antidote____4__noted_40 {
             get {
                 object obj = ResourceManager.GetObject("Antidote____4__noted_40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Antidote____4__noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Antidote____4__noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Antidote____4__noted_generic1 {
+            get {
+                object obj = ResourceManager.GetObject("Antidote____4__noted_generic1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -613,6 +713,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Ashes_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Ashes_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Avantoe_seed_1 {
             get {
                 object obj = ResourceManager.GetObject("Avantoe_seed_1", resourceCulture);
@@ -663,6 +773,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Avantoe_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Avantoe_seed_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Baby_mole {
             get {
                 object obj = ResourceManager.GetObject("Baby_mole", resourceCulture);
@@ -686,6 +806,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Banana_tree_seed_1 {
             get {
                 object obj = ResourceManager.GetObject("Banana_tree_seed_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Banana_tree_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Banana_tree_seed_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -823,6 +953,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Belladonna_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Belladonna_seed_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Berserker_ring {
             get {
                 object obj = ResourceManager.GetObject("Berserker_ring", resourceCulture);
@@ -863,9 +1003,29 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Binding_necklace_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Binding_necklace_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Black_d_hide_body {
             get {
                 object obj = ResourceManager.GetObject("Black_d_hide_body", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Black_tourmaline_core {
+            get {
+                object obj = ResourceManager.GetObject("Black_tourmaline_core", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1003,6 +1163,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Bolt_rack_generic {
+            get {
+                object obj = ResourceManager.GetObject("Bolt_rack_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Bones {
             get {
                 object obj = ResourceManager.GetObject("Bones", resourceCulture);
@@ -1063,6 +1233,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Bucket_of_sand_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Bucket_of_sand_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Bullseye_lantern__unlit_ {
             get {
                 object obj = ResourceManager.GetObject("Bullseye_lantern__unlit_", resourceCulture);
@@ -1093,6 +1273,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Cactus_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Cactus_seed_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cactus_spine {
             get {
                 object obj = ResourceManager.GetObject("Cactus_spine", resourceCulture);
@@ -1106,6 +1296,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Cactus_spine_noted_10 {
             get {
                 object obj = ResourceManager.GetObject("Cactus_spine_noted_10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Cactus_spine_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Cactus_spine_noted_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1156,6 +1356,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Cadantine_seed_5 {
             get {
                 object obj = ResourceManager.GetObject("Cadantine_seed_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Cadantine_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Cadantine_seed_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1223,6 +1433,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Calquat_tree_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Calquat_tree_seed_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cannonball {
             get {
                 object obj = ResourceManager.GetObject("Cannonball", resourceCulture);
@@ -1283,6 +1503,26 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Cannonball_generic {
+            get {
+                object obj = ResourceManager.GetObject("Cannonball_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Cannonball_generic1 {
+            get {
+                object obj = ResourceManager.GetObject("Cannonball_generic1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Chaos_rune {
             get {
                 object obj = ResourceManager.GetObject("Chaos_rune", resourceCulture);
@@ -1326,6 +1566,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Chaos_rune_500 {
             get {
                 object obj = ResourceManager.GetObject("Chaos_rune_500", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Chaos_rune_generic {
+            get {
+                object obj = ResourceManager.GetObject("Chaos_rune_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1443,6 +1693,26 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Coconut_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Coconut_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Coconut_noted_generic1 {
+            get {
+                object obj = ResourceManager.GetObject("Coconut_noted_generic1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Coins_1000 {
             get {
                 object obj = ResourceManager.GetObject("Coins_1000", resourceCulture);
@@ -1483,6 +1753,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Coins_generic {
+            get {
+                object obj = ResourceManager.GetObject("Coins_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cosmic_rune {
             get {
                 object obj = ResourceManager.GetObject("Cosmic_rune", resourceCulture);
@@ -1506,6 +1786,26 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Cosmic_rune_500 {
             get {
                 object obj = ResourceManager.GetObject("Cosmic_rune_500", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Cosmic_rune_generic {
+            get {
+                object obj = ResourceManager.GetObject("Cosmic_rune_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Cosmic_rune_generic1 {
+            get {
+                object obj = ResourceManager.GetObject("Cosmic_rune_generic1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1543,6 +1843,26 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Crushed_nest_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Crushed_nest_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Crushed_nest_noted_generic1 {
+            get {
+                object obj = ResourceManager.GetObject("Crushed_nest_noted_generic1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Crystal_key {
             get {
                 object obj = ResourceManager.GetObject("Crystal_key", resourceCulture);
@@ -1556,6 +1876,26 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Crystal_seed {
             get {
                 object obj = ResourceManager.GetObject("Crystal_seed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Crystal_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Crystal_seed_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Crystal_seed_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Crystal_seed_noted_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1626,6 +1966,26 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Dark_fishing_bait_375 {
             get {
                 object obj = ResourceManager.GetObject("Dark_fishing_bait_375", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Dark_fishing_bait_generic {
+            get {
+                object obj = ResourceManager.GetObject("Dark_fishing_bait_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Dark_fishing_bait_generic1 {
+            get {
+                object obj = ResourceManager.GetObject("Dark_fishing_bait_generic1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1803,6 +2163,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Desert_goat_horn_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Desert_goat_horn_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Dexterous_prayer_scroll {
             get {
                 object obj = ResourceManager.GetObject("Dexterous_prayer_scroll", resourceCulture);
@@ -1863,6 +2233,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Diamond_bolt_tips_5 {
+            get {
+                object obj = ResourceManager.GetObject("Diamond_bolt_tips_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Diamond_bolts__e__100 {
             get {
                 object obj = ResourceManager.GetObject("Diamond_bolts__e__100", resourceCulture);
@@ -1876,6 +2256,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Diamond_bolts__e__5 {
             get {
                 object obj = ResourceManager.GetObject("Diamond_bolts__e__5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Diamond_bolts__e__generic {
+            get {
+                object obj = ResourceManager.GetObject("Diamond_bolts__e__generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1906,6 +2296,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Diamond_noted_8 {
             get {
                 object obj = ResourceManager.GetObject("Diamond_noted_8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Diamond_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Diamond_noted_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1983,6 +2383,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Dragon_arrowtips_generic {
+            get {
+                object obj = ResourceManager.GetObject("Dragon_arrowtips_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Dragon_axe {
             get {
                 object obj = ResourceManager.GetObject("Dragon_axe", resourceCulture);
@@ -2003,9 +2413,39 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Dragon_bolt_tips_5 {
+            get {
+                object obj = ResourceManager.GetObject("Dragon_bolt_tips_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Dragon_bolt_tips_generic {
+            get {
+                object obj = ResourceManager.GetObject("Dragon_bolt_tips_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Dragon_bolts__e__5 {
             get {
                 object obj = ResourceManager.GetObject("Dragon_bolts__e__5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Dragon_bolts__e__generic {
+            get {
+                object obj = ResourceManager.GetObject("Dragon_bolts__e__generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2046,6 +2486,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Dragon_bones_noted_30 {
             get {
                 object obj = ResourceManager.GetObject("Dragon_bones_noted_30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Dragon_bones_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Dragon_bones_noted_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2146,6 +2596,26 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Dragon_javelin_heads_5 {
             get {
                 object obj = ResourceManager.GetObject("Dragon_javelin_heads_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Dragon_javelin_heads_generic {
+            get {
+                object obj = ResourceManager.GetObject("Dragon_javelin_heads_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Dragon_longsword {
+            get {
+                object obj = ResourceManager.GetObject("Dragon_longsword", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2353,6 +2823,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Dwarf_weed_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Dwarf_weed_seed_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Dynamite_noted_generic {
             get {
                 object obj = ResourceManager.GetObject("Dynamite_noted_generic", resourceCulture);
@@ -2543,6 +3023,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Fire_orb_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Fire_orb_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Fire_rune {
             get {
                 object obj = ResourceManager.GetObject("Fire_rune", resourceCulture);
@@ -2583,6 +3073,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Fire_rune_generic {
+            get {
+                object obj = ResourceManager.GetObject("Fire_rune_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Fire_talisman {
             get {
                 object obj = ResourceManager.GetObject("Fire_talisman", resourceCulture);
@@ -2596,6 +3096,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Flax_noted_1000 {
             get {
                 object obj = ResourceManager.GetObject("Flax_noted_1000", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Flax_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Flax_noted_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2663,6 +3173,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Gold_bar_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Gold_bar_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Gold_ore {
             get {
                 object obj = ResourceManager.GetObject("Gold_ore", resourceCulture);
@@ -2723,6 +3243,46 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Granite_gloves {
+            get {
+                object obj = ResourceManager.GetObject("Granite_gloves", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Granite_hammer {
+            get {
+                object obj = ResourceManager.GetObject("Granite_hammer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Granite_maul {
+            get {
+                object obj = ResourceManager.GetObject("Granite_maul", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Granite_ring {
+            get {
+                object obj = ResourceManager.GetObject("Granite_ring", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Grapes {
             get {
                 object obj = ResourceManager.GetObject("Grapes", resourceCulture);
@@ -2763,6 +3323,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Grapes_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Grapes_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Green_dragonhide {
             get {
                 object obj = ResourceManager.GetObject("Green_dragonhide", resourceCulture);
@@ -2776,6 +3346,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Green_dragonhide_noted_100 {
             get {
                 object obj = ResourceManager.GetObject("Green_dragonhide_noted_100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Green_dragonhide_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Green_dragonhide_noted_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2896,6 +3476,26 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Grimy_harralander {
             get {
                 object obj = ResourceManager.GetObject("Grimy_harralander", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Grimy_harralander_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Grimy_harralander_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Grimy_harralander_noted_generic1 {
+            get {
+                object obj = ResourceManager.GetObject("Grimy_harralander_noted_generic1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -3253,6 +3853,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Guam_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Guam_seed_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Guthan_s_chainskirt {
             get {
                 object obj = ResourceManager.GetObject("Guthan_s_chainskirt", resourceCulture);
@@ -3356,6 +3966,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Harralander_seed_5 {
             get {
                 object obj = ResourceManager.GetObject("Harralander_seed_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Harralander_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Harralander_seed_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -3523,6 +4143,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Irit_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Irit_seed_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Iron_arrow_5 {
             get {
                 object obj = ResourceManager.GetObject("Iron_arrow_5", resourceCulture);
@@ -3543,9 +4173,29 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Iron_arrow_generic {
+            get {
+                object obj = ResourceManager.GetObject("Iron_arrow_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Iron_knife {
             get {
                 object obj = ResourceManager.GetObject("Iron_knife", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Iron_knife_generic {
+            get {
+                object obj = ResourceManager.GetObject("Iron_knife_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -3626,6 +4276,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Jar_of_souls {
             get {
                 object obj = ResourceManager.GetObject("Jar_of_souls", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Jar_of_stone {
+            get {
+                object obj = ResourceManager.GetObject("Jar_of_stone", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -3743,6 +4403,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Key_master_teleport_generic {
+            get {
+                object obj = ResourceManager.GetObject("Key_master_teleport_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Kodai_insignia {
             get {
                 object obj = ResourceManager.GetObject("Kodai_insignia", resourceCulture);
@@ -3786,6 +4456,26 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Kwuarm_noted_4 {
             get {
                 object obj = ResourceManager.GetObject("Kwuarm_noted_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Kwuarm_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Kwuarm_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Kwuarm_noted_generic1 {
+            get {
+                object obj = ResourceManager.GetObject("Kwuarm_noted_generic1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -3843,6 +4533,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Kwuarm_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Kwuarm_seed_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Lantadyme_seed_1 {
             get {
                 object obj = ResourceManager.GetObject("Lantadyme_seed_1", resourceCulture);
@@ -3886,6 +4586,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Lantadyme_seed_5 {
             get {
                 object obj = ResourceManager.GetObject("Lantadyme_seed_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Lantadyme_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Lantadyme_seed_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -3963,6 +4673,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Law_rune_generic {
+            get {
+                object obj = ResourceManager.GetObject("Law_rune_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Limestone_noted_generic {
             get {
                 object obj = ResourceManager.GetObject("Limestone_noted_generic", resourceCulture);
@@ -3986,6 +4706,26 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Limpwurt_root_noted_50 {
             get {
                 object obj = ResourceManager.GetObject("Limpwurt_root_noted_50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Limpwurt_root_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Limpwurt_root_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Limpwurt_root_noted_generic1 {
+            get {
+                object obj = ResourceManager.GetObject("Limpwurt_root_noted_generic1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -4103,6 +4843,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Magic_potion_2_ {
+            get {
+                object obj = ResourceManager.GetObject("Magic_potion_2_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Magic_seed_1 {
             get {
                 object obj = ResourceManager.GetObject("Magic_seed_1", resourceCulture);
@@ -4116,6 +4866,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Magic_seed_2 {
             get {
                 object obj = ResourceManager.GetObject("Magic_seed_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Magic_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Magic_seed_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -4273,6 +5033,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Maple_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Maple_seed_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Marrentill_seed_1 {
             get {
                 object obj = ResourceManager.GetObject("Marrentill_seed_1", resourceCulture);
@@ -4323,6 +5093,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Marrentill_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Marrentill_seed_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Master_clue_scroll {
             get {
                 object obj = ResourceManager.GetObject("Master_clue_scroll", resourceCulture);
@@ -4346,6 +5126,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Mind_rune {
             get {
                 object obj = ResourceManager.GetObject("Mind_rune", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Mind_rune_generic {
+            get {
+                object obj = ResourceManager.GetObject("Mind_rune_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -4383,6 +5173,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Mist_rune_generic {
+            get {
+                object obj = ResourceManager.GetObject("Mist_rune_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Mithril_2h_sword {
             get {
                 object obj = ResourceManager.GetObject("Mithril_2h_sword", resourceCulture);
@@ -4406,6 +5206,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Mithril_arrow_500 {
             get {
                 object obj = ResourceManager.GetObject("Mithril_arrow_500", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Mithril_arrow_generic {
+            get {
+                object obj = ResourceManager.GetObject("Mithril_arrow_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -4443,6 +5253,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Mithril_bar_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Mithril_bar_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Mithril_battleaxe {
             get {
                 object obj = ResourceManager.GetObject("Mithril_battleaxe", resourceCulture);
@@ -4473,9 +5293,39 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Mithril_dart_generic {
+            get {
+                object obj = ResourceManager.GetObject("Mithril_dart_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Mithril_dart_generic1 {
+            get {
+                object obj = ResourceManager.GetObject("Mithril_dart_generic1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Mithril_knife {
             get {
                 object obj = ResourceManager.GetObject("Mithril_knife", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Mithril_knife_generic {
+            get {
+                object obj = ResourceManager.GetObject("Mithril_knife_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -4553,6 +5403,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Molten_glass_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Molten_glass_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Monkfish {
             get {
                 object obj = ResourceManager.GetObject("Monkfish", resourceCulture);
@@ -4576,6 +5436,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Mort_myre_fungus_noted_200 {
             get {
                 object obj = ResourceManager.GetObject("Mort_myre_fungus_noted_200", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Mort_myre_fungus_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Mort_myre_fungus_noted_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -4623,9 +5493,29 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Mud_rune_generic {
+            get {
+                object obj = ResourceManager.GetObject("Mud_rune_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Muddy_key {
             get {
                 object obj = ResourceManager.GetObject("Muddy_key", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Mushroom_potato {
+            get {
+                object obj = ResourceManager.GetObject("Mushroom_potato", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -4656,6 +5546,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Mystic_air_staff_noted_2 {
             get {
                 object obj = ResourceManager.GetObject("Mystic_air_staff_noted_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Mystic_air_staff_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Mystic_air_staff_noted_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -4696,6 +5596,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Mystic_lava_staff_noted_2 {
             get {
                 object obj = ResourceManager.GetObject("Mystic_lava_staff_noted_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Mystic_lava_staff_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Mystic_lava_staff_noted_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -4773,6 +5683,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Noon {
+            get {
+                object obj = ResourceManager.GetObject("Noon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Oak_logs_noted_generic {
             get {
                 object obj = ResourceManager.GetObject("Oak_logs_noted_generic", resourceCulture);
@@ -4806,6 +5726,26 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Oak_plank_noted_60 {
             get {
                 object obj = ResourceManager.GetObject("Oak_plank_noted_60", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Oak_plank_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Oak_plank_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Oak_plank_noted_generic1 {
+            get {
+                object obj = ResourceManager.GetObject("Oak_plank_noted_generic1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -4873,6 +5813,26 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Ogre_coffin_key_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Ogre_coffin_key_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ogre_coffin_key_noted_generic1 {
+            get {
+                object obj = ResourceManager.GetObject("Ogre_coffin_key_noted_generic1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Olmlet {
             get {
                 object obj = ResourceManager.GetObject("Olmlet", resourceCulture);
@@ -4933,6 +5893,26 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Onyx_bolt_tips_generic {
+            get {
+                object obj = ResourceManager.GetObject("Onyx_bolt_tips_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Onyx_bolt_tips_generic1 {
+            get {
+                object obj = ResourceManager.GetObject("Onyx_bolt_tips_generic1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Onyx_bolts__e__175 {
             get {
                 object obj = ResourceManager.GetObject("Onyx_bolts__e__175", resourceCulture);
@@ -4953,9 +5933,29 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Onyx_bolts__e__generic {
+            get {
+                object obj = ResourceManager.GetObject("Onyx_bolts__e__generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Opal_bolt_tips_5 {
             get {
                 object obj = ResourceManager.GetObject("Opal_bolt_tips_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Opal_bolt_tips_generic {
+            get {
+                object obj = ResourceManager.GetObject("Opal_bolt_tips_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -5023,9 +6023,29 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Palm_tree_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Palm_tree_seed_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Papaya_tree_seed_2 {
             get {
                 object obj = ResourceManager.GetObject("Papaya_tree_seed_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Papaya_tree_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Papaya_tree_seed_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -5203,6 +6223,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Poison_ivy_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Poison_ivy_seed_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Potato_cactus {
             get {
                 object obj = ResourceManager.GetObject("Potato_cactus", resourceCulture);
@@ -5216,6 +6246,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Potato_cactus_noted_100 {
             get {
                 object obj = ResourceManager.GetObject("Potato_cactus_noted_100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Potato_cactus_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Potato_cactus_noted_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -5453,6 +6493,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Ranarr_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Ranarr_seed_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Ranarr_weed {
             get {
                 object obj = ResourceManager.GetObject("Ranarr_weed", resourceCulture);
@@ -5473,9 +6523,29 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Ranarr_weed_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Ranarr_weed_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Ranging_potion__3_ {
             get {
                 object obj = ResourceManager.GetObject("Ranging_potion__3_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ranging_potion_2_ {
+            get {
+                object obj = ResourceManager.GetObject("Ranging_potion_2_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -5503,6 +6573,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Raw_anglerfish_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Raw_anglerfish_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Raw_lobster_noted_generic {
             get {
                 object obj = ResourceManager.GetObject("Raw_lobster_noted_generic", resourceCulture);
@@ -5516,6 +6596,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Raw_monkfish_noted_100 {
             get {
                 object obj = ResourceManager.GetObject("Raw_monkfish_noted_100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Raw_monkfish_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Raw_monkfish_noted_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -5693,6 +6783,26 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Red_dragonhide_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Red_dragonhide_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Red_dragonhide_noted_generic1 {
+            get {
+                object obj = ResourceManager.GetObject("Red_dragonhide_noted_generic1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Red_spiders__eggs {
             get {
                 object obj = ResourceManager.GetObject("Red_spiders__eggs", resourceCulture);
@@ -5706,6 +6816,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Red_spiders__eggs_noted_500 {
             get {
                 object obj = ResourceManager.GetObject("Red_spiders__eggs_noted_500", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Red_spiders__eggs_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Red_spiders__eggs_noted_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -5913,6 +7033,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Rune_full_helm_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Rune_full_helm_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Rune_halberd {
             get {
                 object obj = ResourceManager.GetObject("Rune_halberd", resourceCulture);
@@ -5943,6 +7073,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Rune_javelin_generic {
+            get {
+                object obj = ResourceManager.GetObject("Rune_javelin_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Rune_kiteshield {
             get {
                 object obj = ResourceManager.GetObject("Rune_kiteshield", resourceCulture);
@@ -5966,6 +7106,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Rune_kiteshield_noted_3 {
             get {
                 object obj = ResourceManager.GetObject("Rune_kiteshield_noted_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rune_kiteshield_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Rune_kiteshield_noted_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -6013,6 +7163,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Rune_knife__p____generic {
+            get {
+                object obj = ResourceManager.GetObject("Rune_knife__p____generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Rune_knife_10 {
             get {
                 object obj = ResourceManager.GetObject("Rune_knife_10", resourceCulture);
@@ -6026,6 +7186,26 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Rune_knife_60 {
             get {
                 object obj = ResourceManager.GetObject("Rune_knife_60", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rune_knife_generic {
+            get {
+                object obj = ResourceManager.GetObject("Rune_knife_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rune_knife_generic1 {
+            get {
+                object obj = ResourceManager.GetObject("Rune_knife_generic1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -6093,6 +7273,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Rune_platebody_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Rune_platebody_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Rune_platelegs {
             get {
                 object obj = ResourceManager.GetObject("Rune_platelegs", resourceCulture);
@@ -6113,6 +7303,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Rune_platelegs_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Rune_platelegs_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Rune_plateskirt {
             get {
                 object obj = ResourceManager.GetObject("Rune_plateskirt", resourceCulture);
@@ -6126,6 +7326,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Rune_plateskirt_noted_3 {
             get {
                 object obj = ResourceManager.GetObject("Rune_plateskirt_noted_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rune_plateskirt_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Rune_plateskirt_noted_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -6183,9 +7393,29 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Rune_sword_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Rune_sword_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Rune_thrownaxe {
             get {
                 object obj = ResourceManager.GetObject("Rune_thrownaxe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rune_thrownaxe_generic {
+            get {
+                object obj = ResourceManager.GetObject("Rune_thrownaxe_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -6243,6 +7473,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Runite_bar_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Runite_bar_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Runite_bolts__unf__40 {
             get {
                 object obj = ResourceManager.GetObject("Runite_bolts__unf__40", resourceCulture);
@@ -6263,6 +7503,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Runite_bolts__unf__generic {
+            get {
+                object obj = ResourceManager.GetObject("Runite_bolts__unf__generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Runite_bolts_250 {
             get {
                 object obj = ResourceManager.GetObject("Runite_bolts_250", resourceCulture);
@@ -6276,6 +7526,26 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Runite_bolts_5 {
             get {
                 object obj = ResourceManager.GetObject("Runite_bolts_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Runite_bolts_generic {
+            get {
+                object obj = ResourceManager.GetObject("Runite_bolts_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Runite_bolts_generic1 {
+            get {
+                object obj = ResourceManager.GetObject("Runite_bolts_generic1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -6393,6 +7663,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Sanfew_serum__4__noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Sanfew_serum__4__noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Saradomin_brew__3_ {
             get {
                 object obj = ResourceManager.GetObject("Saradomin_brew__3_", resourceCulture);
@@ -6416,6 +7696,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Saradomin_brew__4__noted_10 {
             get {
                 object obj = ResourceManager.GetObject("Saradomin_brew__4__noted_10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Saradomin_brew__4__noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Saradomin_brew__4__noted_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -6453,6 +7743,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Scb_range_magic_potion__2_ {
+            get {
+                object obj = ResourceManager.GetObject("Scb_range_magic_potion__2_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Scorpia_s_offspring {
             get {
                 object obj = ResourceManager.GetObject("Scorpia_s_offspring", resourceCulture);
@@ -6466,6 +7766,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Seaweed_noted_125 {
             get {
                 object obj = ResourceManager.GetObject("Seaweed_noted_125", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Seaweed_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Seaweed_noted_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -6653,6 +7963,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Smoke_rune_generic {
+            get {
+                object obj = ResourceManager.GetObject("Smoke_rune_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Smouldering_stone {
             get {
                 object obj = ResourceManager.GetObject("Smouldering_stone", resourceCulture);
@@ -6666,6 +7986,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Snakeskin_noted_35 {
             get {
                 object obj = ResourceManager.GetObject("Snakeskin_noted_35", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Snakeskin_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Snakeskin_noted_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -6696,6 +8026,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Snapdragon_noted_25 {
             get {
                 object obj = ResourceManager.GetObject("Snapdragon_noted_25", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Snapdragon_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Snapdragon_noted_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -6746,6 +8086,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Snapdragon_seed_5 {
             get {
                 object obj = ResourceManager.GetObject("Snapdragon_seed_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Snapdragon_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Snapdragon_seed_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -6873,6 +8223,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Spirit_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Spirit_seed_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Spirit_shield {
             get {
                 object obj = ResourceManager.GetObject("Spirit_shield", resourceCulture);
@@ -6943,6 +8303,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Steel_arrow_generic {
+            get {
+                object obj = ResourceManager.GetObject("Steel_arrow_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Steel_bar {
             get {
                 object obj = ResourceManager.GetObject("Steel_bar", resourceCulture);
@@ -6983,6 +8353,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Steel_knife_generic {
+            get {
+                object obj = ResourceManager.GetObject("Steel_knife_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Steel_platebody {
             get {
                 object obj = ResourceManager.GetObject("Steel_platebody", resourceCulture);
@@ -7006,6 +8386,26 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Strange_fruit_noted_10 {
             get {
                 object obj = ResourceManager.GetObject("Strange_fruit_noted_10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Strange_fruit_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Strange_fruit_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Strange_fruit_noted_generic1 {
+            get {
+                object obj = ResourceManager.GetObject("Strange_fruit_noted_generic1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -7183,9 +8583,29 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Supercompost_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Supercompost_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Swamp_tar_1000 {
             get {
                 object obj = ResourceManager.GetObject("Swamp_tar_1000", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Swamp_tar_generic {
+            get {
+                object obj = ResourceManager.GetObject("Swamp_tar_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -7273,6 +8693,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Tarromin_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Tarromin_seed_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Teak_logs_noted_generic {
             get {
                 object obj = ResourceManager.GetObject("Teak_logs_noted_generic", resourceCulture);
@@ -7353,6 +8783,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Toadflax_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Toadflax_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Toadflax_seed_1 {
             get {
                 object obj = ResourceManager.GetObject("Toadflax_seed_1", resourceCulture);
@@ -7396,6 +8836,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Toadflax_seed_5 {
             get {
                 object obj = ResourceManager.GetObject("Toadflax_seed_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Toadflax_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Toadflax_seed_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -7513,6 +8963,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Torstol_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Torstol_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Torstol_seed_1 {
             get {
                 object obj = ResourceManager.GetObject("Torstol_seed_1", resourceCulture);
@@ -7556,6 +9016,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Torstol_seed_5 {
             get {
                 object obj = ResourceManager.GetObject("Torstol_seed_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Torstol_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Torstol_seed_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -7723,6 +9193,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Uncut_dragonstone_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Uncut_dragonstone_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Uncut_emerald {
             get {
                 object obj = ResourceManager.GetObject("Uncut_emerald", resourceCulture);
@@ -7883,9 +9363,39 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Unicorn_horn_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Unicorn_horn_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Unicorn_horn_noted_generic1 {
+            get {
+                object obj = ResourceManager.GetObject("Unicorn_horn_noted_generic1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Unpowered_orb_noted_50 {
             get {
                 object obj = ResourceManager.GetObject("Unpowered_orb_noted_50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Unpowered_orb_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Unpowered_orb_noted_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -8013,6 +9523,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Water_rune_generic {
+            get {
+                object obj = ResourceManager.GetObject("Water_rune_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Water_talisman {
             get {
                 object obj = ResourceManager.GetObject("Water_talisman", resourceCulture);
@@ -8073,6 +9593,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Watermelon_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Watermelon_seed_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Weapon_poison_____ {
             get {
                 object obj = ResourceManager.GetObject("Weapon_poison_____", resourceCulture);
@@ -8086,6 +9616,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Weapon_poison______noted_5 {
             get {
                 object obj = ResourceManager.GetObject("Weapon_poison______noted_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Weapon_poison______noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Weapon_poison______noted_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -8123,6 +9663,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap White_berries_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("White_berries_noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Willow_logs_noted_generic {
             get {
                 object obj = ResourceManager.GetObject("Willow_logs_noted_generic", resourceCulture);
@@ -8146,6 +9696,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Willow_seed_2 {
             get {
                 object obj = ResourceManager.GetObject("Willow_seed_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Willow_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Willow_seed_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -8186,6 +9746,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Wine_of_zamorak_noted_60 {
             get {
                 object obj = ResourceManager.GetObject("Wine_of_zamorak_noted_60", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Wine_of_zamorak_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Wine_of_zamorak_noted_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -8246,6 +9816,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Yew_seed_2 {
             get {
                 object obj = ResourceManager.GetObject("Yew_seed_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Yew_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Yew_seed_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -8323,6 +9903,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Zul_andra_teleport_generic {
+            get {
+                object obj = ResourceManager.GetObject("Zul_andra_teleport_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Zulrah_s_scales {
             get {
                 object obj = ResourceManager.GetObject("Zulrah_s_scales", resourceCulture);
@@ -8336,6 +9926,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Zulrah_s_scales_500 {
             get {
                 object obj = ResourceManager.GetObject("Zulrah_s_scales_500", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Zulrah_s_scales_generic {
+            get {
+                object obj = ResourceManager.GetObject("Zulrah_s_scales_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

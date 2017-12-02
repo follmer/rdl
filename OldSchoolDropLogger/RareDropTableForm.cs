@@ -81,5 +81,9 @@ namespace rareDropTable {
 		private void buttonCloseRDT_Click(object sender, EventArgs e) {
 			this.Close();
 		}
+
+		private void RareDropTableForm_Load(object sender, EventArgs e) {
+			this.Location = new Point(this.Owner.Location.X - 230, this.Owner.Location.Y);
+		}
 	}
 }
