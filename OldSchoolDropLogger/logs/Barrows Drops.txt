@@ -19,7 +19,7 @@ Karil's leatherskirt x 1
 Dharok's platelegs x 1
 Guthan's chainskirt x 1
 Torag's platelegs x 1
-Verac's skirt x 1
+Verac's plateskirt x 1
 Loop half of key x 1
 Tooth half of key x 1
 Ahrim's staff x 1
@@ -29,6 +29,6 @@ Guthan's warspear x 1
 Torag's hammers x 1
 Verac's flail x 1
 Coins
-Eltie clue scroll x 1
+Elite clue scroll x 1
 Dragon med helm x 1
-Bolt rack x 1
+Bolt rack

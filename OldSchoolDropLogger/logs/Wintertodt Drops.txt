@@ -19,15 +19,21 @@ Adamantite ore
 Runite ore
 Grimy guam leaf
 Grimy marrentill
-Grimy ranarr weed
+Grimy harralander
 Grimy avantoe
 Grimy cadantine
+Grimy ranarr weed
+Grimy torstol
+Grimy kwuarm
 Tarromin seed
 Harralander seed
 Toadflax seed
 Ranarr seed
+Avantoe seed
 Snapdragon seed
 Banana tree seed
+Teak seed
+Mahogany seed
 Acorn x 1
 Willow seed
 Watermelon seed
@@ -48,6 +54,7 @@ Dynamite
 Coins
 Burnt page
 Bruma torch x 1
+Dragon axe x 1
 Pyromancer hood x 1
 Pyromancer garb x 1
 Pyromancer robe x 1

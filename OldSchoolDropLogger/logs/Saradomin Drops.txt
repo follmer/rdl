@@ -16,8 +16,8 @@ Magic potion (3) x 3
 Coins
 Elite clue scroll x 1
 Godsword shard 1 x 1
-Godsword shard 1 x 2
-Godsword shard 1 x 3
+Godsword shard 2 x 1
+Godsword shard 3 x 1
 Saradomin's light x 1
 Saradomin sword x 1
 Armadyl crossbow x 1

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Media;
+using OldSchoolDropLogger.Properties;
 
 namespace itemQuantityCreator {
 	class ItemQuantityCreator {
@@ -35,7 +36,10 @@ namespace itemQuantityCreator {
 			if (number[0] == '1') {
 				modifyOffset = -1;
 			}
-				
+			//else if (number[0] == '4') {
+			//	modifyOffset = -1;
+			//}
+
 			// Fetch a bitmap of the first number in the quantity with the correct text color
 			// This is the starting image that other images will be "appended" to
 			Bitmap first = new Bitmap(getNumberImage((int) Char.GetNumericValue(number[0]), textColor));
@@ -72,6 +76,9 @@ namespace itemQuantityCreator {
 				if (number[i - 1] == '1') {
 					modifyOffset = -1;
 				}
+				else if (number[i - 1] == '4') {
+					modifyOffset = -2;
+				}
 				else {
 					modifyOffset = 0;
 				}
@@ -100,13 +107,17 @@ namespace itemQuantityCreator {
 					if (endingLetter != "") {
 						Bitmap orig = new Bitmap(getNumberImage((int)Char.GetNumericValue(number[i]), textColor, endingLetter));
 
+						if (orig == null) {
+							Console.WriteLine("[DEBUG]: IQC 'orig' was null.");
+							Console.Read();
+						}
 						// Combine bitmaps again // + 2 offset to move entire bitmap 2px right
 						result = new Bitmap(first.Width + orig.Width + 2, first.Height);
 
 						// Redraw, same as above // + 2 offset to move entire bitmap 2px right
 						Graphics gr = Graphics.FromImage(result);
-						gr.DrawImageUnscaled(first, 2, 0); // Place 2px right
-						gr.DrawImageUnscaled(orig, first.Width + 2, 0);
+						gr.DrawImageUnscaled(first, 2, 2); // Place 2px right
+						gr.DrawImageUnscaled(orig, first.Width + 2 + modifyOffset, 2);
 					}
 				}
 			}
@@ -119,11 +130,28 @@ namespace itemQuantityCreator {
 
 			// Item is more than 100k so need to fetch a letter K or M
 			if (endingLetter != "") {
-				return (Bitmap)Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Numbers/" + endingLetter + ".png");
-			}
 
+				if (Resources.ResourceManager.GetObject(endingLetter) == null) {
+					Console.WriteLine("[DEBUG]: Resource manager unable to fetch IQC letter image.");
+					Console.ReadLine();
+				}
+				else {
+					return (Bitmap)Resources.ResourceManager.GetObject(endingLetter);
+				}
+					
+				//return (Bitmap)Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Numbers/" + endingLetter + ".png");
+			}
+			// TODO the above is returning just a letter, while below its returning a color, not 100% if thats right, but i think it is
 			// Fetch the correct number with the correct color
-			return (Bitmap)Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Numbers/" + number.ToString() + textColor + ".png");
+			if (Resources.ResourceManager.GetObject("_" + number.ToString() + textColor) == null) {
+				Console.WriteLine("[DEBUG]: Resource manager unable to fetch IQC number image.");
+				Console.ReadLine();
+			}
+			else {
+				return (Bitmap)Resources.ResourceManager.GetObject("_" + number.ToString() + textColor);
+			}
+			return null;
+			//return (Bitmap)Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "/Assets/Numbers/" + number.ToString() + textColor + ".png");
 		}
 
 		public ItemQuantityCreator() {

@@ -15,8 +15,8 @@ Long bone x 1
 Curved bone x 1
 Elite clue scroll x 1
 Godsword shard 1 x 1
-Godsword shard 1 x 2
-Godsword shard 1 x 3
+Godsword shard 2 x 1
+Godsword shard 3 x 1
 Bandos chestplate x 1
 Bandos tassets x 1
 Bandos boots x 1

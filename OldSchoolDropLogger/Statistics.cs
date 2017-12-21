@@ -20,7 +20,7 @@ namespace stats {
 		ToolTip tt = new ToolTip();
 		ItemQuantityCreator iqc;
 		//Dictionary<String, int> itemQuantities = new Dictionary<String, int>();
-		private String logsFilePath = AppDomain.CurrentDomain.BaseDirectory + "/logs/";
+		private String logsFilePath = Directory.GetCurrentDirectory() + "/logs/";
 		private List<String> allBossStrings = new List<String>();
 		private Dictionary<String, Boolean> sidebarActiveStatistic = new Dictionary<String, Boolean>();
 		private TreeView treeView1;
@@ -99,6 +99,7 @@ namespace stats {
 			return "getCurrentBoss() incomplete";
 		}
 		public Dictionary<String, int> getItemQuantitiesFromBoss(string boss) {
+
 			if (totalDropsFromAllBosses.ContainsKey(boss)) {
 				return totalDropsFromAllBosses[boss];
 			}
@@ -253,6 +254,8 @@ namespace stats {
 			allBossStrings.Sort();
 		}
 		private void createAllDropsWithZeroQuantity() {
+
+			Console.WriteLine("[DEBUG]: " + logsFilePath + "Kraken" + " Drops.txt");
 
 			foreach (String boss in getAllBossStrings()) {
 

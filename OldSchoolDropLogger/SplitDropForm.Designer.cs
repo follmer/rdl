@@ -203,7 +203,7 @@
 			// pictureBox3
 			// 
 			this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox3.BackgroundImage = global::OldSchoolDropLogger.Properties.Resources.Dinh_s_bulwark;
+			this.pictureBox3.BackgroundImage = global::OldSchoolDropLogger.Properties.Resources.Dragon_harpoon;
 			this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.pictureBox3.Location = new System.Drawing.Point(100, 12);
@@ -211,13 +211,13 @@
 			this.pictureBox3.Size = new System.Drawing.Size(35, 35);
 			this.pictureBox3.TabIndex = 134;
 			this.pictureBox3.TabStop = false;
-			this.pictureBox3.Tag = "Dinh\'s bulwark x 1";
+			this.pictureBox3.Tag = "Dragon harpoon x 1";
 			this.pictureBox3.Visible = false;
 			// 
 			// pictureBox4
 			// 
 			this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox4.BackgroundImage = global::OldSchoolDropLogger.Properties.Resources.Twisted_buckler;
+			this.pictureBox4.BackgroundImage = global::OldSchoolDropLogger.Properties.Resources.Dinh_s_bulwark;
 			this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.pictureBox4.Location = new System.Drawing.Point(134, 12);
@@ -225,13 +225,13 @@
 			this.pictureBox4.Size = new System.Drawing.Size(35, 35);
 			this.pictureBox4.TabIndex = 135;
 			this.pictureBox4.TabStop = false;
-			this.pictureBox4.Tag = "Twisted buckler x 1";
+			this.pictureBox4.Tag = "Dinh\'s bulwark x 1";
 			this.pictureBox4.Visible = false;
 			// 
 			// pictureBox5
 			// 
 			this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox5.BackgroundImage = global::OldSchoolDropLogger.Properties.Resources.Dragon_hunter_crossbow;
+			this.pictureBox5.BackgroundImage = global::OldSchoolDropLogger.Properties.Resources.Twisted_buckler;
 			this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.pictureBox5.Location = new System.Drawing.Point(168, 12);
@@ -239,13 +239,13 @@
 			this.pictureBox5.Size = new System.Drawing.Size(35, 35);
 			this.pictureBox5.TabIndex = 136;
 			this.pictureBox5.TabStop = false;
-			this.pictureBox5.Tag = "Dragon hunter crossbow x 1";
+			this.pictureBox5.Tag = "Twisted buckler x 1";
 			this.pictureBox5.Visible = false;
 			// 
 			// pictureBox10
 			// 
 			this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox10.BackgroundImage = global::OldSchoolDropLogger.Properties.Resources.Dexterous_prayer_scroll;
+			this.pictureBox10.BackgroundImage = global::OldSchoolDropLogger.Properties.Resources.Dragon_hunter_crossbow;
 			this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.pictureBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.pictureBox10.Location = new System.Drawing.Point(168, 46);
@@ -253,13 +253,13 @@
 			this.pictureBox10.Size = new System.Drawing.Size(35, 35);
 			this.pictureBox10.TabIndex = 141;
 			this.pictureBox10.TabStop = false;
-			this.pictureBox10.Tag = "Dexterous prayer scroll x 1";
+			this.pictureBox10.Tag = "Dragon hunter crossbow x 1";
 			this.pictureBox10.Visible = false;
 			// 
 			// pictureBox9
 			// 
 			this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox9.BackgroundImage = global::OldSchoolDropLogger.Properties.Resources.Arcane_prayer_scroll;
+			this.pictureBox9.BackgroundImage = global::OldSchoolDropLogger.Properties.Resources.Ancestral_robe_bottom;
 			this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.pictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.pictureBox9.Location = new System.Drawing.Point(134, 46);
@@ -267,13 +267,13 @@
 			this.pictureBox9.Size = new System.Drawing.Size(35, 35);
 			this.pictureBox9.TabIndex = 140;
 			this.pictureBox9.TabStop = false;
-			this.pictureBox9.Tag = "Arcane prayer scroll x 1";
+			this.pictureBox9.Tag = "Ancestral robe bottom x 1";
 			this.pictureBox9.Visible = false;
 			// 
 			// pictureBox8
 			// 
 			this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox8.BackgroundImage = global::OldSchoolDropLogger.Properties.Resources.Ancestral_robe_bottom;
+			this.pictureBox8.BackgroundImage = global::OldSchoolDropLogger.Properties.Resources.Ancestral_robe_top;
 			this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.pictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.pictureBox8.Location = new System.Drawing.Point(100, 46);
@@ -281,13 +281,13 @@
 			this.pictureBox8.Size = new System.Drawing.Size(35, 35);
 			this.pictureBox8.TabIndex = 139;
 			this.pictureBox8.TabStop = false;
-			this.pictureBox8.Tag = "Ancestral robe bottom x 1";
+			this.pictureBox8.Tag = "Ancestral robe top x 1";
 			this.pictureBox8.Visible = false;
 			// 
 			// pictureBox7
 			// 
 			this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox7.BackgroundImage = global::OldSchoolDropLogger.Properties.Resources.Ancestral_robe_top;
+			this.pictureBox7.BackgroundImage = global::OldSchoolDropLogger.Properties.Resources.Ancestral_hat;
 			this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.pictureBox7.Location = new System.Drawing.Point(66, 46);
@@ -295,13 +295,13 @@
 			this.pictureBox7.Size = new System.Drawing.Size(35, 35);
 			this.pictureBox7.TabIndex = 138;
 			this.pictureBox7.TabStop = false;
-			this.pictureBox7.Tag = "Ancestral robe top x 1";
+			this.pictureBox7.Tag = "Ancestral hat x 1";
 			this.pictureBox7.Visible = false;
 			// 
 			// pictureBox6
 			// 
 			this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox6.BackgroundImage = global::OldSchoolDropLogger.Properties.Resources.Ancestral_hat;
+			this.pictureBox6.BackgroundImage = global::OldSchoolDropLogger.Properties.Resources.Arcane_prayer_scroll;
 			this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.pictureBox6.Location = new System.Drawing.Point(32, 46);
@@ -309,12 +309,13 @@
 			this.pictureBox6.Size = new System.Drawing.Size(35, 35);
 			this.pictureBox6.TabIndex = 137;
 			this.pictureBox6.TabStop = false;
-			this.pictureBox6.Tag = "Ancestral hat x 1";
+			this.pictureBox6.Tag = "Arcane prayer scroll x 1";
 			this.pictureBox6.Visible = false;
 			// 
 			// pictureBox15
 			// 
 			this.pictureBox15.BackColor = System.Drawing.Color.Transparent;
+			this.pictureBox15.BackgroundImage = global::OldSchoolDropLogger.Properties.Resources.Twisted_bow;
 			this.pictureBox15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.pictureBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.pictureBox15.Location = new System.Drawing.Point(168, 80);
@@ -322,12 +323,13 @@
 			this.pictureBox15.Size = new System.Drawing.Size(35, 35);
 			this.pictureBox15.TabIndex = 146;
 			this.pictureBox15.TabStop = false;
+			this.pictureBox15.Tag = "Twisted bow x 1";
 			this.pictureBox15.Visible = false;
 			// 
 			// pictureBox14
 			// 
 			this.pictureBox14.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox14.BackgroundImage = global::OldSchoolDropLogger.Properties.Resources.Twisted_bow;
+			this.pictureBox14.BackgroundImage = global::OldSchoolDropLogger.Properties.Resources.Kodai_insignia;
 			this.pictureBox14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.pictureBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.pictureBox14.Location = new System.Drawing.Point(134, 80);
@@ -335,13 +337,13 @@
 			this.pictureBox14.Size = new System.Drawing.Size(35, 35);
 			this.pictureBox14.TabIndex = 145;
 			this.pictureBox14.TabStop = false;
-			this.pictureBox14.Tag = "Twisted bow x 1";
+			this.pictureBox14.Tag = "Kodai insignia x 1";
 			this.pictureBox14.Visible = false;
 			// 
 			// pictureBox13
 			// 
 			this.pictureBox13.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox13.BackgroundImage = global::OldSchoolDropLogger.Properties.Resources.Kodai_insignia;
+			this.pictureBox13.BackgroundImage = global::OldSchoolDropLogger.Properties.Resources.Elder_maul;
 			this.pictureBox13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.pictureBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.pictureBox13.Location = new System.Drawing.Point(100, 80);
@@ -349,13 +351,13 @@
 			this.pictureBox13.Size = new System.Drawing.Size(35, 35);
 			this.pictureBox13.TabIndex = 144;
 			this.pictureBox13.TabStop = false;
-			this.pictureBox13.Tag = "Kodai insignia x 1";
+			this.pictureBox13.Tag = "Elder maul x 1";
 			this.pictureBox13.Visible = false;
 			// 
 			// pictureBox12
 			// 
 			this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox12.BackgroundImage = global::OldSchoolDropLogger.Properties.Resources.Elder_maul;
+			this.pictureBox12.BackgroundImage = global::OldSchoolDropLogger.Properties.Resources.Dragon_claws;
 			this.pictureBox12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.pictureBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.pictureBox12.Location = new System.Drawing.Point(66, 80);
@@ -363,13 +365,13 @@
 			this.pictureBox12.Size = new System.Drawing.Size(35, 35);
 			this.pictureBox12.TabIndex = 143;
 			this.pictureBox12.TabStop = false;
-			this.pictureBox12.Tag = "Elder maul x 1";
+			this.pictureBox12.Tag = "Dragon claws x 1";
 			this.pictureBox12.Visible = false;
 			// 
 			// pictureBox11
 			// 
 			this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox11.BackgroundImage = global::OldSchoolDropLogger.Properties.Resources.Dragon_claws;
+			this.pictureBox11.BackgroundImage = global::OldSchoolDropLogger.Properties.Resources.Dexterous_prayer_scroll;
 			this.pictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.pictureBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.pictureBox11.Location = new System.Drawing.Point(32, 80);
@@ -377,7 +379,7 @@
 			this.pictureBox11.Size = new System.Drawing.Size(35, 35);
 			this.pictureBox11.TabIndex = 142;
 			this.pictureBox11.TabStop = false;
-			this.pictureBox11.Tag = "Dragon claws x 1";
+			this.pictureBox11.Tag = "Dexterous prayer scroll x 1";
 			this.pictureBox11.Visible = false;
 			// 
 			// pictureBox20

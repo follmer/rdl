@@ -11,7 +11,6 @@ using splitDrop;
 using Config;
 using itemQuantityCreator;
 using OldSchoolDropLogger.Properties;
-using stats;
 
 namespace dropLogger {
 	public partial class OldSchoolDropLogger : Form {
@@ -87,6 +86,7 @@ namespace dropLogger {
 			try {
 
 				String splitsFileLocation = AppDomain.CurrentDomain.BaseDirectory + "/logs/Splits.txt";
+				Console.WriteLine("[DEBUG]: " + splitsFileLocation);
 				var logsFile = File.ReadAllLines(splitsFileLocation);
 
 				List<String> splitList = new List<String>(logsFile);
@@ -2357,24 +2357,24 @@ namespace dropLogger {
 			pictureBox3.Tag = "Chaos rune x 500";
 			pictureBox4.BackgroundImage = Resources.Death_rune_300;
 			pictureBox4.Tag = "Death rune x 300";
-			pictureBox5.BackgroundImage = Resources.Toadflax_noted_20;
-			pictureBox5.Tag = "Toadflax x 20";
-			pictureBox6.BackgroundImage = Resources.Snapdragon_noted_20;
-			pictureBox6.Tag = "Snapdragon x 20";
-			pictureBox7.BackgroundImage = Resources.Dwarf_weed_noted_20;
-			pictureBox7.Tag = "Dwarf weed x 20";
-			pictureBox8.BackgroundImage = Resources.Torstol_noted_20;
-			pictureBox8.Tag = "Torstol x 20";
+			pictureBox5.BackgroundImage = Resources.Toadflax_noted_25;
+			pictureBox5.Tag = "Toadflax x 25";
+			pictureBox6.BackgroundImage = Resources.Snapdragon_noted_10;
+			pictureBox6.Tag = "Snapdragon x 10";
+			pictureBox7.BackgroundImage = Resources.Dwarf_weed_noted_30;
+			pictureBox7.Tag = "Dwarf weed x 30";
+			pictureBox8.BackgroundImage = Resources.Torstol_noted_10;
+			pictureBox8.Tag = "Torstol x 10";
 			pictureBox9.BackgroundImage = Resources.Toadflax_seed_2;
 			pictureBox9.Tag = "Toadflax seed x 2";
-			pictureBox10.BackgroundImage = Resources.Snapdragon_seed_2;
-			pictureBox10.Tag = "Snapdragon seed x 2";
+			pictureBox10.BackgroundImage = Resources.Snapdragon_seed_1;
+			pictureBox10.Tag = "Snapdragon seed x 1";
 			pictureBox11.BackgroundImage = Resources.Dwarf_weed_seed_2;
 			pictureBox11.Tag = "Dwarf weed seed x 2";
-			pictureBox12.BackgroundImage = Resources.Torstol_seed_2;
-			pictureBox12.Tag = "Torstol seed x 2";
-			pictureBox13.BackgroundImage = Resources.Papaya_tree_seed_2;
-			pictureBox13.Tag = "Papaya tree seed x 2";
+			pictureBox12.BackgroundImage = Resources.Torstol_seed_1;
+			pictureBox12.Tag = "Torstol seed x 1";
+			pictureBox13.BackgroundImage = Resources.Papaya_tree_seed_3;
+			pictureBox13.Tag = "Papaya tree seed x 3";
 			pictureBox14.BackgroundImage = Resources.Palm_tree_seed_1;
 			pictureBox14.Tag = "Palm tree seed x 1";
 			pictureBox15.BackgroundImage = Resources.Magic_seed_1;
@@ -2391,36 +2391,36 @@ namespace dropLogger {
 			pictureBox20.Tag = "Snakeskin x 35";
 			pictureBox21.BackgroundImage = Resources.Dragon_bolt_tips_12;
 			pictureBox21.Tag = "Dragon bolt tips x 12";
-			pictureBox22.BackgroundImage = Resources.Magic_logs_noted_100;
-			pictureBox22.Tag = "Magic logs x 100";
-			pictureBox23.BackgroundImage = Resources.Coal_noted_300;
-			pictureBox23.Tag = "Coal x 300";
-			pictureBox24.BackgroundImage = Resources.Runite_ore_noted_10;
-			pictureBox24.Tag = "Runite ore x 10";
-			pictureBox25.BackgroundImage = Resources.Adamantite_bar_noted_25;
-			pictureBox25.Tag = "Adamantite bar x 25";
-			pictureBox26.BackgroundImage = Resources.Mahogany_plank_noted_50;
-			pictureBox26.Tag = "Mahogany plank x 50";
-			pictureBox27.BackgroundImage = Resources.Dragon_bones_noted_30;
-			pictureBox27.Tag = "Dragon bones x 30";
+			pictureBox22.BackgroundImage = Resources.Yew_logs_noted_35;
+			pictureBox22.Tag = "Yew logs x 35";
+			pictureBox23.BackgroundImage = Resources.Coal_noted_200;
+			pictureBox23.Tag = "Coal x 200";
+			pictureBox24.BackgroundImage = Resources.Runite_ore_noted_2;
+			pictureBox24.Tag = "Runite ore x 2";
+			pictureBox25.BackgroundImage = Resources.Adamantite_bar_noted_20;
+			pictureBox25.Tag = "Adamantite bar x 20";
+			pictureBox26.BackgroundImage = Resources.Mahogany_logs_noted_50;
+			pictureBox26.Tag = "Mahogany logs x 50";
+			pictureBox27.BackgroundImage = Resources.Dragon_bones_noted_12;
+			pictureBox27.Tag = "Dragon bones x 12";
 			pictureBox28.BackgroundImage = Resources.Coconut_noted_20;
 			pictureBox28.Tag = "Coconut x 20";
 			pictureBox29.BackgroundImage = Resources.Grapes_noted_250;
 			pictureBox29.Tag = "Grapes x 250";
-			pictureBox30.BackgroundImage = Resources.Zul_andra_teleport;
-			pictureBox30.Tag = "Zul-andra teleport x 1";
+			pictureBox30.BackgroundImage = Resources.Zul_andra_teleport_4;
+			pictureBox30.Tag = "Zul-andra teleport x 4";
 			pictureBox31.BackgroundImage = Resources.Zulrah_s_scales_500;
 			pictureBox31.Tag = "Zulrah's scales x 500";
 			pictureBox32.BackgroundImage = Resources.Battlestaff_noted_10;
 			pictureBox32.Tag = "Battlestaff x 10";
 			pictureBox33.BackgroundImage = Resources.Antidote____4__noted_10;
 			pictureBox33.Tag = "Antidote++ (4) x 10";
-			pictureBox34.BackgroundImage = Resources.Raw_shark_noted_100;
-			pictureBox34.Tag = "Raw shark x 100";
+			pictureBox34.BackgroundImage = Resources.Manta_ray_noted_35;
+			pictureBox34.Tag = "Manta ray x 35";
 			pictureBox35.BackgroundImage = Resources.Swamp_tar_1000;
 			pictureBox35.Tag = "Swamp tar x 1000";
-			pictureBox36.BackgroundImage = Resources.Saradomin_brew__4__noted_10;
-			pictureBox36.Tag = "Saradomin brew (4) x 10";
+			pictureBox36.BackgroundImage = Resources.Crushed_nest_noted_10;
+			pictureBox36.Tag = "Crushed nest x 10";
 			pictureBox37.BackgroundImage = Resources.Serpentine_visage;
 			pictureBox37.Tag = "Serpentine visage x 1";
 			pictureBox38.BackgroundImage = Resources.Magic_fang;
@@ -2660,11 +2660,12 @@ namespace dropLogger {
 					List<String> loggedItems = getLoggedItemsFromFile(getCurrentBoss());
 					loggedItems = addItemToLoggedItems(loggedItems, unloggedItem);
 					writeLoggedItemsToFile(loggedItems, getCurrentBoss());
-					updateSidebarBossKillcounts();
+					
 
 				}
 			}
 
+			updateSidebarBossKillcounts();
 			// Update the list box
 			updateSidebarWindow();
 			updateListBox();
@@ -3065,8 +3066,6 @@ namespace dropLogger {
 			// Don't keep repopulating the BossKillcounts table if the data is already displaying
 			if (activeSidebarWindow == "BossDropRates" && (bossChanged() == false)) return;
 
-			Console.WriteLine("pass");
-
 			activeSidebarWindow = "BossDropRates";
 			setSidebarBossTimersToVisible(false);
 			labelSidebarTitle.Text = "Drop rates";
@@ -3076,7 +3075,9 @@ namespace dropLogger {
 			Dictionary<String, int> allDropsFromBoss = stats.getItemQuantitiesFromBoss(getCurrentBoss());
 
 			if (allDropsFromBoss == null) {
-
+				listBoxSidebar.Items.Clear();
+				listBoxSidebar.Items.Add("");
+				listBoxSidebar.Items.Add("No drops logged for " + getCurrentBoss());
 				Console.WriteLine("No drops logged for boss " + getCurrentBoss());
 				return;
 			}
@@ -3261,9 +3262,8 @@ namespace dropLogger {
 		}
 		private void showSidebarBossKillcounts() {
 
-			Console.WriteLine(activeSidebarWindow + "===========================");
 			// Don't keep repopulating the BossKillcounts table if the data is already displaying
-			//if (activeSidebarWindow == "BossKillCounts") return;
+			if (activeSidebarWindow == "BossKillCounts") return;
 			setSidebarBossTimersToVisible(false);
 			labelSidebarTitle.Text = "Kill counts";
 			activeSidebarWindow = "BossKillCounts";
@@ -3295,7 +3295,9 @@ namespace dropLogger {
 			Dictionary<String, int> allDropsFromBoss = stats.getItemQuantitiesFromBoss(getCurrentBoss());
 
 			if (allDropsFromBoss == null) {
-
+				listBoxSidebar.Items.Clear();
+				listBoxSidebar.Items.Add("");
+				listBoxSidebar.Items.Add("No drops logged for " + getCurrentBoss());
 				Console.WriteLine("showSidebarBossUniques(): No drops logged for boss " + getCurrentBoss());
 				return;
 			}
@@ -3381,7 +3383,7 @@ namespace dropLogger {
 
 			List<String> formattedList = new List<string>();
 
-			int splitNumber = 1;
+			int splitNumber = 0;
 			foreach (String line in splits) {
 
 				if (line.Substring(0, line.IndexOf(",")).Contains(getCurrentBoss())) {
@@ -3413,7 +3415,8 @@ namespace dropLogger {
 					String splitAmount = postcom.Substring(splitBracketIndex1 + 4 /* 1 + 3 characters "sn=" */, splitBracketIndex2 - splitBracketIndex1 - 4 /* to make up for the + 4 from earlier*/);
 					totalSplitAmount += int.Parse(splitAmount);
 
-					String item = splitNumber.ToString() + ". " + postcom.Substring(2, xIndex - 2) + ", ";
+					//                          + 1 so the numbering of the items in the box starts at 1. instead of 0.
+					String item = ((splitNumber + 1).ToString()) + ". " + postcom.Substring(2, xIndex - 2) + ", ";
 
 					// Add in the split amount
 					String formatted = item; 
@@ -3430,9 +3433,17 @@ namespace dropLogger {
 				}
 			}
 
-			listBoxSidebar.Items.Add("Total splits – " + String.Format("{0:n0}", splitNumber - 1));
+
+			double avgSplitAmount = 0;
+
+			if (splitNumber != 0) {
+				avgSplitAmount = totalSplitAmount / splitNumber;
+			}
+
+			listBoxSidebar.Items.Add("Total splits – " + String.Format("{0:n0}", splitNumber));
 			listBoxSidebar.Items.Add("Personal splits – " + String.Format("{0:n0}", personalSplits));
 			listBoxSidebar.Items.Add("Total split value – " + String.Format("{0:n0}", totalSplitAmount) + " gp");
+			listBoxSidebar.Items.Add("Avg split value – " + String.Format("{0:n0}", avgSplitAmount) + " gp");
 			listBoxSidebar.Items.Add("");
 
 			// Add all splits to the listbox
@@ -3463,8 +3474,12 @@ namespace dropLogger {
 					int updateKillcount = 0;
 					int.TryParse(entryArr[entryArr.Length - 1], out updateKillcount);
 
-					if (itemAddedOrRemoved == "added") kc = updateKillcount + 1;
-					else kc = updateKillcount - 1;
+					if (itemAddedOrRemoved == "added") {
+						kc = updateKillcount + 1;
+					}
+					else {
+						kc = updateKillcount - 1;
+					}
 
 					break;
 				}
@@ -3487,11 +3502,8 @@ namespace dropLogger {
 
 			Dictionary<String, int> allItemQuantitiesFromCurrentBoss = stats.getItemQuantitiesFromBoss(boss);
 
-			//pictureBox65.Image = iqc.createQuantityImage(3333);
-
 			switch (boss) {
 				case "Armadyl":
-
 					pictureBox1.BackgroundImage = Resources.Rune_crossbow;
 					pictureBox1.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune crossbow x 1"]);
 					pictureBox2.BackgroundImage = Resources.Rune_sword;
@@ -3508,9 +3520,9 @@ namespace dropLogger {
 					pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coins"]);
 					pictureBox8.BackgroundImage = Resources.Dwarf_weed_noted_generic;
 					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dwarf weed"]);
-					pictureBox9.BackgroundImage = Resources.Dwarf_weed_seed_3;
+					pictureBox9.BackgroundImage = Resources.Dwarf_weed_seed_generic;
 					pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dwarf weed seed x 3"]);
-					pictureBox10.BackgroundImage = Resources.Yew_seed_1;
+					pictureBox10.BackgroundImage = Resources.Yew_seed_generic;
 					pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Yew seed x 1"]);
 					pictureBox11.BackgroundImage = Resources.Ranging_potion__3_;
 					pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ranging potion (3) x 3"]);
@@ -3544,7 +3556,6 @@ namespace dropLogger {
 					pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pet kree'arra x 1"]);
 					pictureBox26.BackgroundImage = Resources.RDT;
 					pictureBox26.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["RDT x 1"]);
-
 					setNPictureBoxesToVisible(26);
 					setNPictureBoxesToDisabled(26);
 					break;
@@ -3568,7 +3579,7 @@ namespace dropLogger {
 					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coal"]);
 					pictureBox9.BackgroundImage = Resources.Magic_logs_noted_generic;
 					pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Magic logs"]);
-					pictureBox10.BackgroundImage = Resources.Snapdragon_seed_1;
+					pictureBox10.BackgroundImage = Resources.Snapdragon_seed_generic;
 					pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Snapdragon seed x 1"]);
 					pictureBox11.BackgroundImage = Resources.Grimy_snapdragon_noted_generic;
 					pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy snapdragon x 3"]);
@@ -3618,9 +3629,9 @@ namespace dropLogger {
 					pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune kiteshield x 1"]);
 					pictureBox6.BackgroundImage = Resources.Law_rune;
 					pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Law rune"]);
-					pictureBox7.BackgroundImage = Resources.Ranarr_seed_2;
+					pictureBox7.BackgroundImage = Resources.Ranarr_seed_generic;
 					pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ranarr seed x 2"]);
-					pictureBox8.BackgroundImage = Resources.Magic_seed_1;
+					pictureBox8.BackgroundImage = Resources.Magic_seed_generic;
 					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Magic seed x 1"]);
 					pictureBox9.BackgroundImage = Resources.Diamond_noted_generic;
 					pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Diamond x 6"]);
@@ -3676,7 +3687,7 @@ namespace dropLogger {
 					pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Adamant platebody x 1"]);
 					pictureBox6.BackgroundImage = Resources.Rune_platelegs;
 					pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Rune platelegs x 1"]);
-					pictureBox7.BackgroundImage = Resources.Lantadyme_seed_3;
+					pictureBox7.BackgroundImage = Resources.Lantadyme_seed_generic;
 					pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Lantadyme seed x 3"]);
 					pictureBox8.BackgroundImage = Resources.Grimy_lantadyme_noted_generic;
 					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy lantadyme"]);
@@ -5536,77 +5547,87 @@ namespace dropLogger {
 					pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy cadantine"]);
 					pictureBox26.BackgroundImage = Resources.Grimy_torstol_noted_generic;
 					pictureBox26.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy torstol"]);
-					pictureBox27.BackgroundImage = Resources.Tarromin_seed_generic;
-					pictureBox27.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Tarromin seed"]);
-					pictureBox28.BackgroundImage = Resources.Harralander_seed_generic;
-					pictureBox28.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Harralander seed"]);
-					pictureBox29.BackgroundImage = Resources.Toadflax_seed_generic;
-					pictureBox29.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Toadflax seed"]);
-					pictureBox30.BackgroundImage = Resources.Ranarr_seed_generic;
-					pictureBox30.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ranarr seed"]);
-					pictureBox31.BackgroundImage = Resources.Snapdragon_seed_generic;
-					pictureBox31.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Snapdragon seed"]);
-					pictureBox32.BackgroundImage = Resources.Watermelon_seed_generic;
-					pictureBox32.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Watermelon seed"]);
-					pictureBox33.BackgroundImage = Resources.Banana_tree_seed_generic;
-					pictureBox33.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Banana tree seed"]);
-					pictureBox34.BackgroundImage = Resources.Acorn_generic;
-					pictureBox34.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Acorn x 1"]);
-					pictureBox35.BackgroundImage = Resources.Willow_seed_generic;
-					pictureBox35.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Willow seed"]);
-					pictureBox36.BackgroundImage = Resources.Maple_seed_generic;
-					pictureBox36.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Maple seed"]);
-					pictureBox37.BackgroundImage = Resources.Yew_seed_generic;
-					pictureBox37.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Yew seed"]);
-					pictureBox38.BackgroundImage = Resources.Magic_seed_generic;
-					pictureBox38.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Magic seed x 1"]);
-					pictureBox39.BackgroundImage = Resources.Spirit_seed_generic;
-					pictureBox39.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Spirit seed x 1"]);
-					pictureBox40.BackgroundImage = Resources.Raw_anchovies_noted_generic;
-					pictureBox40.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Raw anchovies"]);
-					pictureBox41.BackgroundImage = Resources.Raw_trout_noted_generic;
-					pictureBox41.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Raw trout"]);
-					pictureBox42.BackgroundImage = Resources.Raw_salmon_noted_generic;
-					pictureBox42.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Raw salmon"]);
-					pictureBox43.BackgroundImage = Resources.Raw_lobster_noted_generic;
-					pictureBox43.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Raw lobster"]);
-					pictureBox44.BackgroundImage = Resources.Raw_tuna_noted_generic;
-					pictureBox44.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Raw tuna"]);
-					pictureBox45.BackgroundImage = Resources.Raw_swordfish_noted_generic;
-					pictureBox45.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Raw swordfish"]);
-					pictureBox46.BackgroundImage = Resources.Raw_shark_noted_generic;
-					pictureBox46.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Raw shark"]);
-					pictureBox47.BackgroundImage = Resources.Saltpetre_noted_generic;
-					pictureBox47.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Saltpetre"]);
-					pictureBox48.BackgroundImage = Resources.Limestone_noted_generic;
-					pictureBox48.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Limestone"]);
-					pictureBox49.BackgroundImage = Resources.Dynamite_noted_generic;
-					pictureBox49.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dynamite"]);
-					pictureBox50.BackgroundImage = Resources.Coins_generic;
-					pictureBox50.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coins"]);
-					pictureBox51.BackgroundImage = Resources.Burnt_page;
-					pictureBox51.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Burnt page"]);
-					pictureBox52.BackgroundImage = Resources.Bruma_torch;
-					pictureBox52.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Bruma torch x 1"]);
-					pictureBox53.BackgroundImage = Resources.Pyromancer_hood;
-					pictureBox53.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pyromancer hood x 1"]);
-					pictureBox54.BackgroundImage = Resources.Pyromancer_garb;
-					pictureBox54.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pyromancer garb x 1"]);
-					pictureBox55.BackgroundImage = Resources.Pyromancer_robe;
-					pictureBox55.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pyromancer robe x 1"]);
-					pictureBox56.BackgroundImage = Resources.Pyromancer_boots;
-					pictureBox56.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pyromancer boots x 1"]);
-					pictureBox57.BackgroundImage = Resources.Warm_gloves;
-					pictureBox57.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Warm gloves x 1"]);
-					pictureBox58.BackgroundImage = Resources.Tome_of_fire__empty_;
-					pictureBox58.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Tome of fire (empty) x 1"]);
-					pictureBox59.BackgroundImage = Resources.Phoenix;
-					pictureBox59.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Phoenix x 1"]);
-					pictureBox60.BackgroundImage = Resources.RDT;
-					pictureBox60.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["RDT x 1"]);
+					pictureBox27.BackgroundImage = Resources.Grimy_kwuarm_noted_generic;
+					pictureBox27.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grimy kwuarm"]);
+					pictureBox28.BackgroundImage = Resources.Tarromin_seed_generic;
+					pictureBox28.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Tarromin seed"]);
+					pictureBox29.BackgroundImage = Resources.Harralander_seed_generic;
+					pictureBox29.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Harralander seed"]);
+					pictureBox30.BackgroundImage = Resources.Toadflax_seed_generic;
+					pictureBox30.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Toadflax seed"]);
+					pictureBox31.BackgroundImage = Resources.Ranarr_seed_generic;
+					pictureBox31.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Ranarr seed"]);
+					pictureBox32.BackgroundImage = Resources.Avantoe_seed_generic;
+					pictureBox32.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Avantoe seed"]);
+					pictureBox33.BackgroundImage = Resources.Snapdragon_seed_generic;
+					pictureBox33.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Snapdragon seed"]);
+					pictureBox34.BackgroundImage = Resources.Watermelon_seed_generic;
+					pictureBox34.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Watermelon seed"]);
+					pictureBox35.BackgroundImage = Resources.Teak_seed_generic;
+					pictureBox35.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Teak seed"]);
+					pictureBox36.BackgroundImage = Resources.Mahogany_seed_generic;
+					pictureBox36.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mahogany seed"]);
+					pictureBox37.BackgroundImage = Resources.Banana_tree_seed_generic;
+					pictureBox37.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Banana tree seed"]);
+					pictureBox38.BackgroundImage = Resources.Acorn_generic;
+					pictureBox38.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Acorn x 1"]);
+					pictureBox39.BackgroundImage = Resources.Willow_seed_generic;
+					pictureBox39.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Willow seed"]);
+					pictureBox40.BackgroundImage = Resources.Maple_seed_generic;
+					pictureBox40.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Maple seed"]);
+					pictureBox41.BackgroundImage = Resources.Yew_seed_generic;
+					pictureBox41.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Yew seed"]);
+					pictureBox42.BackgroundImage = Resources.Magic_seed_generic;
+					pictureBox42.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Magic seed x 1"]);
+					pictureBox43.BackgroundImage = Resources.Spirit_seed_generic;
+					pictureBox43.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Spirit seed x 1"]);
+					pictureBox44.BackgroundImage = Resources.Raw_anchovies_noted_generic;
+					pictureBox44.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Raw anchovies"]);
+					pictureBox45.BackgroundImage = Resources.Raw_trout_noted_generic;
+					pictureBox45.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Raw trout"]);
+					pictureBox46.BackgroundImage = Resources.Raw_salmon_noted_generic;
+					pictureBox46.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Raw salmon"]);
+					pictureBox47.BackgroundImage = Resources.Raw_lobster_noted_generic;
+					pictureBox47.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Raw lobster"]);
+					pictureBox48.BackgroundImage = Resources.Raw_tuna_noted_generic;
+					pictureBox48.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Raw tuna"]);
+					pictureBox49.BackgroundImage = Resources.Raw_swordfish_noted_generic;
+					pictureBox49.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Raw swordfish"]);
+					pictureBox50.BackgroundImage = Resources.Raw_shark_noted_generic;
+					pictureBox50.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Raw shark"]);
+					pictureBox51.BackgroundImage = Resources.Saltpetre_noted_generic;
+					pictureBox51.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Saltpetre"]);
+					pictureBox52.BackgroundImage = Resources.Limestone_noted_generic;
+					pictureBox52.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Limestone"]);
+					pictureBox53.BackgroundImage = Resources.Dynamite_noted_generic;
+					pictureBox53.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dynamite"]);
+					pictureBox54.BackgroundImage = Resources.Coins_generic;
+					pictureBox54.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coins"]);
+					pictureBox55.BackgroundImage = Resources.Burnt_page;
+					pictureBox55.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Burnt page"]);
+					pictureBox56.BackgroundImage = Resources.Bruma_torch;
+					pictureBox56.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Bruma torch x 1"]);
+					pictureBox57.BackgroundImage = Resources.Dragon_axe;
+					pictureBox57.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon axe x 1"]);
+					pictureBox58.BackgroundImage = Resources.Pyromancer_hood;
+					pictureBox58.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pyromancer hood x 1"]);
+					pictureBox59.BackgroundImage = Resources.Pyromancer_garb;
+					pictureBox59.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pyromancer garb x 1"]);
+					pictureBox60.BackgroundImage = Resources.Pyromancer_robe;
+					pictureBox60.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pyromancer robe x 1"]);
+					pictureBox61.BackgroundImage = Resources.Pyromancer_boots;
+					pictureBox61.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Pyromancer boots x 1"]);
+					pictureBox62.BackgroundImage = Resources.Warm_gloves;
+					pictureBox62.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Warm gloves x 1"]);
+					pictureBox63.BackgroundImage = Resources.Tome_of_fire__empty_;
+					pictureBox63.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Tome of fire (empty) x 1"]);
+					pictureBox64.BackgroundImage = Resources.Phoenix;
+					pictureBox64.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Phoenix x 1"]);
+					pictureBox65.BackgroundImage = Resources.RDT;
+					pictureBox65.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["RDT x 1"]);
 
-					setNPictureBoxesToVisible(60);
-					setNPictureBoxesToDisabled(60);
+					setNPictureBoxesToVisible(65);
+					setNPictureBoxesToDisabled(65);
 					break;
 
 				case "Zulrah":
@@ -5619,23 +5640,23 @@ namespace dropLogger {
 					pictureBox4.BackgroundImage = Resources.Death_rune_generic;
 					pictureBox4.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Death rune x 300"]);
 					pictureBox5.BackgroundImage = Resources.Toadflax_noted_generic;
-					pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Toadflax x 20"]);
+					pictureBox5.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Toadflax x 25"]);
 					pictureBox6.BackgroundImage = Resources.Snapdragon_noted_generic;
-					pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Snapdragon x 20"]);
+					pictureBox6.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Snapdragon x 10"]);
 					pictureBox7.BackgroundImage = Resources.Dwarf_weed_noted_generic;
-					pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dwarf weed x 20"]);
+					pictureBox7.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dwarf weed x 30"]);
 					pictureBox8.BackgroundImage = Resources.Torstol_noted_generic;
-					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Torstol x 20"]);
+					pictureBox8.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Torstol x 10"]);
 					pictureBox9.BackgroundImage = Resources.Toadflax_seed_generic;
 					pictureBox9.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Toadflax seed x 2"]);
 					pictureBox10.BackgroundImage = Resources.Snapdragon_seed_generic;
-					pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Snapdragon seed x 2"]);
+					pictureBox10.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Snapdragon seed x 1"]);
 					pictureBox11.BackgroundImage = Resources.Dwarf_weed_seed_generic;
 					pictureBox11.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dwarf weed seed x 2"]);
 					pictureBox12.BackgroundImage = Resources.Torstol_seed_generic;
-					pictureBox12.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Torstol seed x 2"]);
+					pictureBox12.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Torstol seed x 1"]);
 					pictureBox13.BackgroundImage = Resources.Papaya_tree_seed_generic;
-					pictureBox13.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Papaya tree seed x 2"]);
+					pictureBox13.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Papaya tree seed x 3"]);
 					pictureBox14.BackgroundImage = Resources.Palm_tree_seed_generic;
 					pictureBox14.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Palm tree seed x 1"]);
 					pictureBox15.BackgroundImage = Resources.Magic_seed_generic;
@@ -5652,36 +5673,36 @@ namespace dropLogger {
 					pictureBox20.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Snakeskin x 35"]);
 					pictureBox21.BackgroundImage = Resources.Dragon_bolt_tips_generic;
 					pictureBox21.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon bolt tips x 12"]);
-					pictureBox22.BackgroundImage = Resources.Magic_logs_noted_generic;
-					pictureBox22.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Magic logs x 100"]);
+					pictureBox22.BackgroundImage = Resources.Yew_logs_noted_generic;
+					pictureBox22.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Yew logs x 35"]);
 					pictureBox23.BackgroundImage = Resources.Coal_noted_generic;
-					pictureBox23.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coal x 300"]);
+					pictureBox23.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coal x 200"]);
 					pictureBox24.BackgroundImage = Resources.Runite_ore_noted_generic;
-					pictureBox24.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Runite ore x 10"]);
+					pictureBox24.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Runite ore x 2"]);
 					pictureBox25.BackgroundImage = Resources.Adamantite_bar_noted_generic;
-					pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Adamantite bar x 25"]);
-					pictureBox26.BackgroundImage = Resources.Mahogany_plank_noted_generic;
-					pictureBox26.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mahogany plank x 50"]);
+					pictureBox25.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Adamantite bar x 20"]);
+					pictureBox26.BackgroundImage = Resources.Mahogany_logs_noted_generic;
+					pictureBox26.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Mahogany logs x 50"]);
 					pictureBox27.BackgroundImage = Resources.Dragon_bones_noted_generic;
-					pictureBox27.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon bones x 30"]);
+					pictureBox27.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Dragon bones x 12"]);
 					pictureBox28.BackgroundImage = Resources.Coconut_noted_generic;
 					pictureBox28.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Coconut x 20"]);
 					pictureBox29.BackgroundImage = Resources.Grapes_noted_generic;
 					pictureBox29.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Grapes x 250"]);
 					pictureBox30.BackgroundImage = Resources.Zul_andra_teleport_generic;
-					pictureBox30.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Zul-andra teleport x 1"]);
+					pictureBox30.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Zul-andra teleport x 4"]);
 					pictureBox31.BackgroundImage = Resources.Zulrah_s_scales_generic;
 					pictureBox31.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Zulrah's scales x 500"]);
 					pictureBox32.BackgroundImage = Resources.Battlestaff_noted_generic;
 					pictureBox32.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Battlestaff x 10"]);
 					pictureBox33.BackgroundImage = Resources.Antidote____4__noted_generic;
 					pictureBox33.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Antidote++ (4) x 10"]);
-					pictureBox34.BackgroundImage = Resources.Raw_shark_noted_generic;
-					pictureBox34.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Raw shark x 100"]);
+					pictureBox34.BackgroundImage = Resources.Manta_ray_noted_generic;
+					pictureBox34.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Manta ray x 35"]);
 					pictureBox35.BackgroundImage = Resources.Swamp_tar_generic;
 					pictureBox35.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Swamp tar x 1000"]);
-					pictureBox36.BackgroundImage = Resources.Saradomin_brew__4__noted_generic;
-					pictureBox36.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Saradomin brew (4) x 10"]);
+					pictureBox36.BackgroundImage = Resources.Crushed_nest_noted_generic;
+					pictureBox36.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Crushed nest x 10"]);
 					pictureBox37.BackgroundImage = Resources.Serpentine_visage;
 					pictureBox37.Image = iqc.createQuantityImage(allItemQuantitiesFromCurrentBoss["Serpentine visage x 1"]);
 					pictureBox38.BackgroundImage = Resources.Magic_fang;
@@ -5713,8 +5734,6 @@ namespace dropLogger {
 				default:
 					Console.WriteLine("displayTotalLootFromBoss(): " + boss + " not found");
 					break;
-
-				
 			}
 		}
 
@@ -5793,7 +5812,7 @@ namespace dropLogger {
 		private void putAllPictureBoxesIntoList() {
 			// Put all pictureboxes into allPictureBoxes list
 			Control[] c;
-			for (int i = 1; i <= 64; i++) {
+			for (int i = 1; i <= 72; i++) {
 				c = this.Controls.Find("pictureBox" + i.ToString(), true);
 				allPictureBoxes.Add((PictureBox)c[0]);
 			}
@@ -6014,6 +6033,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 21:
 					pictureBox1.Visible = true;
@@ -6080,6 +6107,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 22:
 					pictureBox1.Visible = true;
@@ -6146,6 +6181,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 23:
 					pictureBox1.Visible = true;
@@ -6212,6 +6255,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 24:
 					pictureBox1.Visible = true;
@@ -6278,6 +6329,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 25:
 					pictureBox1.Visible = true;
@@ -6344,6 +6403,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 26:
 					pictureBox1.Visible = true;
@@ -6410,6 +6477,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 27:
 					pictureBox1.Visible = true;
@@ -6476,6 +6551,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 28:
 					pictureBox1.Visible = true;
@@ -6542,6 +6625,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 29:
 					pictureBox1.Visible = true;
@@ -6608,6 +6699,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 30:
 					pictureBox1.Visible = true;
@@ -6674,6 +6773,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 31:
 					pictureBox1.Visible = true;
@@ -6740,6 +6847,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 32:
 					pictureBox1.Visible = true;
@@ -6806,6 +6921,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 33:
 					pictureBox1.Visible = true;
@@ -6872,6 +6995,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 34:
 					pictureBox1.Visible = true;
@@ -6938,6 +7069,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 35:
 					pictureBox1.Visible = true;
@@ -7004,6 +7143,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 36:
 					pictureBox1.Visible = true;
@@ -7070,6 +7217,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 37:
 					pictureBox1.Visible = true;
@@ -7136,6 +7291,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 38:
 					pictureBox1.Visible = true;
@@ -7202,6 +7365,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 39:
 					pictureBox1.Visible = true;
@@ -7268,6 +7439,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 40:
 					pictureBox1.Visible = true;
@@ -7334,6 +7513,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 41:
 					pictureBox1.Visible = true;
@@ -7400,6 +7587,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 42:
 					pictureBox1.Visible = true;
@@ -7466,6 +7661,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 43:
 					pictureBox1.Visible = true;
@@ -7532,6 +7735,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 44:
 					pictureBox1.Visible = true;
@@ -7598,6 +7809,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 45:
 					pictureBox1.Visible = true;
@@ -7664,6 +7883,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 46:
 					pictureBox1.Visible = true;
@@ -7730,6 +7957,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 47:
 					pictureBox1.Visible = true;
@@ -7796,6 +8031,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 48:
 					pictureBox1.Visible = true;
@@ -7862,6 +8105,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 49:
 					pictureBox1.Visible = true;
@@ -7928,6 +8179,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 50:
 					pictureBox1.Visible = true;
@@ -7994,6 +8253,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 51:
 					pictureBox1.Visible = true;
@@ -8060,6 +8327,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 52:
 					pictureBox1.Visible = true;
@@ -8126,6 +8401,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 53:
 					pictureBox1.Visible = true;
@@ -8192,6 +8475,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 54:
 					pictureBox1.Visible = true;
@@ -8258,6 +8549,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 55:
 					pictureBox1.Visible = true;
@@ -8324,6 +8623,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 56:
 					pictureBox1.Visible = true;
@@ -8390,6 +8697,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 57:
 					pictureBox1.Visible = true;
@@ -8456,6 +8771,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 58:
 					pictureBox1.Visible = true;
@@ -8522,6 +8845,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 59:
 					pictureBox1.Visible = true;
@@ -8588,6 +8919,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 60:
 					pictureBox1.Visible = true;
@@ -8654,6 +8993,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 61:
 					pictureBox1.Visible = true;
@@ -8720,6 +9067,14 @@ namespace dropLogger {
 					pictureBox62.Visible = false;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 62:
 					pictureBox1.Visible = true;
@@ -8786,6 +9141,14 @@ namespace dropLogger {
 					pictureBox62.Visible = true;
 					pictureBox63.Visible = false;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 63:
 					pictureBox1.Visible = true;
@@ -8852,6 +9215,14 @@ namespace dropLogger {
 					pictureBox62.Visible = true;
 					pictureBox63.Visible = true;
 					pictureBox64.Visible = false;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
 					break;
 				case 64:
 					pictureBox1.Visible = true;
@@ -8918,6 +9289,606 @@ namespace dropLogger {
 					pictureBox62.Visible = true;
 					pictureBox63.Visible = true;
 					pictureBox64.Visible = true;
+					pictureBox65.Visible = false;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
+					break;
+				case 65:
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = true;
+					pictureBox6.Visible = true;
+					pictureBox7.Visible = true;
+					pictureBox8.Visible = true;
+					pictureBox9.Visible = true;
+					pictureBox10.Visible = true;
+					pictureBox11.Visible = true;
+					pictureBox12.Visible = true;
+					pictureBox13.Visible = true;
+					pictureBox14.Visible = true;
+					pictureBox15.Visible = true;
+					pictureBox16.Visible = true;
+					pictureBox17.Visible = true;
+					pictureBox18.Visible = true;
+					pictureBox19.Visible = true;
+					pictureBox20.Visible = true;
+					pictureBox21.Visible = true;
+					pictureBox22.Visible = true;
+					pictureBox23.Visible = true;
+					pictureBox24.Visible = true;
+					pictureBox25.Visible = true;
+					pictureBox26.Visible = true;
+					pictureBox27.Visible = true;
+					pictureBox28.Visible = true;
+					pictureBox29.Visible = true;
+					pictureBox30.Visible = true;
+					pictureBox31.Visible = true;
+					pictureBox32.Visible = true;
+					pictureBox33.Visible = true;
+					pictureBox34.Visible = true;
+					pictureBox35.Visible = true;
+					pictureBox36.Visible = true;
+					pictureBox37.Visible = true;
+					pictureBox38.Visible = true;
+					pictureBox39.Visible = true;
+					pictureBox40.Visible = true;
+					pictureBox41.Visible = true;
+					pictureBox42.Visible = true;
+					pictureBox43.Visible = true;
+					pictureBox44.Visible = true;
+					pictureBox45.Visible = true;
+					pictureBox46.Visible = true;
+					pictureBox47.Visible = true;
+					pictureBox48.Visible = true;
+					pictureBox49.Visible = true;
+					pictureBox50.Visible = true;
+					pictureBox51.Visible = true;
+					pictureBox52.Visible = true;
+					pictureBox53.Visible = true;
+					pictureBox54.Visible = true;
+					pictureBox55.Visible = true;
+					pictureBox56.Visible = true;
+					pictureBox57.Visible = true;
+					pictureBox58.Visible = true;
+					pictureBox59.Visible = true;
+					pictureBox60.Visible = true;
+					pictureBox61.Visible = true;
+					pictureBox62.Visible = true;
+					pictureBox63.Visible = true;
+					pictureBox64.Visible = true;
+					pictureBox65.Visible = true;
+					pictureBox66.Visible = false;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
+					break;
+				case 66:
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = true;
+					pictureBox6.Visible = true;
+					pictureBox7.Visible = true;
+					pictureBox8.Visible = true;
+					pictureBox9.Visible = true;
+					pictureBox10.Visible = true;
+					pictureBox11.Visible = true;
+					pictureBox12.Visible = true;
+					pictureBox13.Visible = true;
+					pictureBox14.Visible = true;
+					pictureBox15.Visible = true;
+					pictureBox16.Visible = true;
+					pictureBox17.Visible = true;
+					pictureBox18.Visible = true;
+					pictureBox19.Visible = true;
+					pictureBox20.Visible = true;
+					pictureBox21.Visible = true;
+					pictureBox22.Visible = true;
+					pictureBox23.Visible = true;
+					pictureBox24.Visible = true;
+					pictureBox25.Visible = true;
+					pictureBox26.Visible = true;
+					pictureBox27.Visible = true;
+					pictureBox28.Visible = true;
+					pictureBox29.Visible = true;
+					pictureBox30.Visible = true;
+					pictureBox31.Visible = true;
+					pictureBox32.Visible = true;
+					pictureBox33.Visible = true;
+					pictureBox34.Visible = true;
+					pictureBox35.Visible = true;
+					pictureBox36.Visible = true;
+					pictureBox37.Visible = true;
+					pictureBox38.Visible = true;
+					pictureBox39.Visible = true;
+					pictureBox40.Visible = true;
+					pictureBox41.Visible = true;
+					pictureBox42.Visible = true;
+					pictureBox43.Visible = true;
+					pictureBox44.Visible = true;
+					pictureBox45.Visible = true;
+					pictureBox46.Visible = true;
+					pictureBox47.Visible = true;
+					pictureBox48.Visible = true;
+					pictureBox49.Visible = true;
+					pictureBox50.Visible = true;
+					pictureBox51.Visible = true;
+					pictureBox52.Visible = true;
+					pictureBox53.Visible = true;
+					pictureBox54.Visible = true;
+					pictureBox55.Visible = true;
+					pictureBox56.Visible = true;
+					pictureBox57.Visible = true;
+					pictureBox58.Visible = true;
+					pictureBox59.Visible = true;
+					pictureBox60.Visible = true;
+					pictureBox61.Visible = true;
+					pictureBox62.Visible = true;
+					pictureBox63.Visible = true;
+					pictureBox64.Visible = true;
+					pictureBox65.Visible = true;
+					pictureBox66.Visible = true;
+					pictureBox67.Visible = false;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
+					break;
+				case 67:
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = true;
+					pictureBox6.Visible = true;
+					pictureBox7.Visible = true;
+					pictureBox8.Visible = true;
+					pictureBox9.Visible = true;
+					pictureBox10.Visible = true;
+					pictureBox11.Visible = true;
+					pictureBox12.Visible = true;
+					pictureBox13.Visible = true;
+					pictureBox14.Visible = true;
+					pictureBox15.Visible = true;
+					pictureBox16.Visible = true;
+					pictureBox17.Visible = true;
+					pictureBox18.Visible = true;
+					pictureBox19.Visible = true;
+					pictureBox20.Visible = true;
+					pictureBox21.Visible = true;
+					pictureBox22.Visible = true;
+					pictureBox23.Visible = true;
+					pictureBox24.Visible = true;
+					pictureBox25.Visible = true;
+					pictureBox26.Visible = true;
+					pictureBox27.Visible = true;
+					pictureBox28.Visible = true;
+					pictureBox29.Visible = true;
+					pictureBox30.Visible = true;
+					pictureBox31.Visible = true;
+					pictureBox32.Visible = true;
+					pictureBox33.Visible = true;
+					pictureBox34.Visible = true;
+					pictureBox35.Visible = true;
+					pictureBox36.Visible = true;
+					pictureBox37.Visible = true;
+					pictureBox38.Visible = true;
+					pictureBox39.Visible = true;
+					pictureBox40.Visible = true;
+					pictureBox41.Visible = true;
+					pictureBox42.Visible = true;
+					pictureBox43.Visible = true;
+					pictureBox44.Visible = true;
+					pictureBox45.Visible = true;
+					pictureBox46.Visible = true;
+					pictureBox47.Visible = true;
+					pictureBox48.Visible = true;
+					pictureBox49.Visible = true;
+					pictureBox50.Visible = true;
+					pictureBox51.Visible = true;
+					pictureBox52.Visible = true;
+					pictureBox53.Visible = true;
+					pictureBox54.Visible = true;
+					pictureBox55.Visible = true;
+					pictureBox56.Visible = true;
+					pictureBox57.Visible = true;
+					pictureBox58.Visible = true;
+					pictureBox59.Visible = true;
+					pictureBox60.Visible = true;
+					pictureBox61.Visible = true;
+					pictureBox62.Visible = true;
+					pictureBox63.Visible = true;
+					pictureBox64.Visible = true;
+					pictureBox65.Visible = true;
+					pictureBox66.Visible = true;
+					pictureBox67.Visible = true;
+					pictureBox68.Visible = false;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
+					break;
+				case 68:
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = true;
+					pictureBox6.Visible = true;
+					pictureBox7.Visible = true;
+					pictureBox8.Visible = true;
+					pictureBox9.Visible = true;
+					pictureBox10.Visible = true;
+					pictureBox11.Visible = true;
+					pictureBox12.Visible = true;
+					pictureBox13.Visible = true;
+					pictureBox14.Visible = true;
+					pictureBox15.Visible = true;
+					pictureBox16.Visible = true;
+					pictureBox17.Visible = true;
+					pictureBox18.Visible = true;
+					pictureBox19.Visible = true;
+					pictureBox20.Visible = true;
+					pictureBox21.Visible = true;
+					pictureBox22.Visible = true;
+					pictureBox23.Visible = true;
+					pictureBox24.Visible = true;
+					pictureBox25.Visible = true;
+					pictureBox26.Visible = true;
+					pictureBox27.Visible = true;
+					pictureBox28.Visible = true;
+					pictureBox29.Visible = true;
+					pictureBox30.Visible = true;
+					pictureBox31.Visible = true;
+					pictureBox32.Visible = true;
+					pictureBox33.Visible = true;
+					pictureBox34.Visible = true;
+					pictureBox35.Visible = true;
+					pictureBox36.Visible = true;
+					pictureBox37.Visible = true;
+					pictureBox38.Visible = true;
+					pictureBox39.Visible = true;
+					pictureBox40.Visible = true;
+					pictureBox41.Visible = true;
+					pictureBox42.Visible = true;
+					pictureBox43.Visible = true;
+					pictureBox44.Visible = true;
+					pictureBox45.Visible = true;
+					pictureBox46.Visible = true;
+					pictureBox47.Visible = true;
+					pictureBox48.Visible = true;
+					pictureBox49.Visible = true;
+					pictureBox50.Visible = true;
+					pictureBox51.Visible = true;
+					pictureBox52.Visible = true;
+					pictureBox53.Visible = true;
+					pictureBox54.Visible = true;
+					pictureBox55.Visible = true;
+					pictureBox56.Visible = true;
+					pictureBox57.Visible = true;
+					pictureBox58.Visible = true;
+					pictureBox59.Visible = true;
+					pictureBox60.Visible = true;
+					pictureBox61.Visible = true;
+					pictureBox62.Visible = true;
+					pictureBox63.Visible = true;
+					pictureBox64.Visible = true;
+					pictureBox65.Visible = true;
+					pictureBox66.Visible = true;
+					pictureBox67.Visible = true;
+					pictureBox68.Visible = true;
+					pictureBox69.Visible = false;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
+					break;
+				case 69:
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = true;
+					pictureBox6.Visible = true;
+					pictureBox7.Visible = true;
+					pictureBox8.Visible = true;
+					pictureBox9.Visible = true;
+					pictureBox10.Visible = true;
+					pictureBox11.Visible = true;
+					pictureBox12.Visible = true;
+					pictureBox13.Visible = true;
+					pictureBox14.Visible = true;
+					pictureBox15.Visible = true;
+					pictureBox16.Visible = true;
+					pictureBox17.Visible = true;
+					pictureBox18.Visible = true;
+					pictureBox19.Visible = true;
+					pictureBox20.Visible = true;
+					pictureBox21.Visible = true;
+					pictureBox22.Visible = true;
+					pictureBox23.Visible = true;
+					pictureBox24.Visible = true;
+					pictureBox25.Visible = true;
+					pictureBox26.Visible = true;
+					pictureBox27.Visible = true;
+					pictureBox28.Visible = true;
+					pictureBox29.Visible = true;
+					pictureBox30.Visible = true;
+					pictureBox31.Visible = true;
+					pictureBox32.Visible = true;
+					pictureBox33.Visible = true;
+					pictureBox34.Visible = true;
+					pictureBox35.Visible = true;
+					pictureBox36.Visible = true;
+					pictureBox37.Visible = true;
+					pictureBox38.Visible = true;
+					pictureBox39.Visible = true;
+					pictureBox40.Visible = true;
+					pictureBox41.Visible = true;
+					pictureBox42.Visible = true;
+					pictureBox43.Visible = true;
+					pictureBox44.Visible = true;
+					pictureBox45.Visible = true;
+					pictureBox46.Visible = true;
+					pictureBox47.Visible = true;
+					pictureBox48.Visible = true;
+					pictureBox49.Visible = true;
+					pictureBox50.Visible = true;
+					pictureBox51.Visible = true;
+					pictureBox52.Visible = true;
+					pictureBox53.Visible = true;
+					pictureBox54.Visible = true;
+					pictureBox55.Visible = true;
+					pictureBox56.Visible = true;
+					pictureBox57.Visible = true;
+					pictureBox58.Visible = true;
+					pictureBox59.Visible = true;
+					pictureBox60.Visible = true;
+					pictureBox61.Visible = true;
+					pictureBox62.Visible = true;
+					pictureBox63.Visible = true;
+					pictureBox64.Visible = true;
+					pictureBox65.Visible = true;
+					pictureBox66.Visible = true;
+					pictureBox67.Visible = true;
+					pictureBox68.Visible = true;
+					pictureBox69.Visible = true;
+					pictureBox70.Visible = false;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
+					break;
+				case 70:
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = true;
+					pictureBox6.Visible = true;
+					pictureBox7.Visible = true;
+					pictureBox8.Visible = true;
+					pictureBox9.Visible = true;
+					pictureBox10.Visible = true;
+					pictureBox11.Visible = true;
+					pictureBox12.Visible = true;
+					pictureBox13.Visible = true;
+					pictureBox14.Visible = true;
+					pictureBox15.Visible = true;
+					pictureBox16.Visible = true;
+					pictureBox17.Visible = true;
+					pictureBox18.Visible = true;
+					pictureBox19.Visible = true;
+					pictureBox20.Visible = true;
+					pictureBox21.Visible = true;
+					pictureBox22.Visible = true;
+					pictureBox23.Visible = true;
+					pictureBox24.Visible = true;
+					pictureBox25.Visible = true;
+					pictureBox26.Visible = true;
+					pictureBox27.Visible = true;
+					pictureBox28.Visible = true;
+					pictureBox29.Visible = true;
+					pictureBox30.Visible = true;
+					pictureBox31.Visible = true;
+					pictureBox32.Visible = true;
+					pictureBox33.Visible = true;
+					pictureBox34.Visible = true;
+					pictureBox35.Visible = true;
+					pictureBox36.Visible = true;
+					pictureBox37.Visible = true;
+					pictureBox38.Visible = true;
+					pictureBox39.Visible = true;
+					pictureBox40.Visible = true;
+					pictureBox41.Visible = true;
+					pictureBox42.Visible = true;
+					pictureBox43.Visible = true;
+					pictureBox44.Visible = true;
+					pictureBox45.Visible = true;
+					pictureBox46.Visible = true;
+					pictureBox47.Visible = true;
+					pictureBox48.Visible = true;
+					pictureBox49.Visible = true;
+					pictureBox50.Visible = true;
+					pictureBox51.Visible = true;
+					pictureBox52.Visible = true;
+					pictureBox53.Visible = true;
+					pictureBox54.Visible = true;
+					pictureBox55.Visible = true;
+					pictureBox56.Visible = true;
+					pictureBox57.Visible = true;
+					pictureBox58.Visible = true;
+					pictureBox59.Visible = true;
+					pictureBox60.Visible = true;
+					pictureBox61.Visible = true;
+					pictureBox62.Visible = true;
+					pictureBox63.Visible = true;
+					pictureBox64.Visible = true;
+					pictureBox65.Visible = true;
+					pictureBox66.Visible = true;
+					pictureBox67.Visible = true;
+					pictureBox68.Visible = true;
+					pictureBox69.Visible = true;
+					pictureBox70.Visible = true;
+					pictureBox71.Visible = false;
+					pictureBox72.Visible = false;
+					break;
+				case 71:
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = true;
+					pictureBox6.Visible = true;
+					pictureBox7.Visible = true;
+					pictureBox8.Visible = true;
+					pictureBox9.Visible = true;
+					pictureBox10.Visible = true;
+					pictureBox11.Visible = true;
+					pictureBox12.Visible = true;
+					pictureBox13.Visible = true;
+					pictureBox14.Visible = true;
+					pictureBox15.Visible = true;
+					pictureBox16.Visible = true;
+					pictureBox17.Visible = true;
+					pictureBox18.Visible = true;
+					pictureBox19.Visible = true;
+					pictureBox20.Visible = true;
+					pictureBox21.Visible = true;
+					pictureBox22.Visible = true;
+					pictureBox23.Visible = true;
+					pictureBox24.Visible = true;
+					pictureBox25.Visible = true;
+					pictureBox26.Visible = true;
+					pictureBox27.Visible = true;
+					pictureBox28.Visible = true;
+					pictureBox29.Visible = true;
+					pictureBox30.Visible = true;
+					pictureBox31.Visible = true;
+					pictureBox32.Visible = true;
+					pictureBox33.Visible = true;
+					pictureBox34.Visible = true;
+					pictureBox35.Visible = true;
+					pictureBox36.Visible = true;
+					pictureBox37.Visible = true;
+					pictureBox38.Visible = true;
+					pictureBox39.Visible = true;
+					pictureBox40.Visible = true;
+					pictureBox41.Visible = true;
+					pictureBox42.Visible = true;
+					pictureBox43.Visible = true;
+					pictureBox44.Visible = true;
+					pictureBox45.Visible = true;
+					pictureBox46.Visible = true;
+					pictureBox47.Visible = true;
+					pictureBox48.Visible = true;
+					pictureBox49.Visible = true;
+					pictureBox50.Visible = true;
+					pictureBox51.Visible = true;
+					pictureBox52.Visible = true;
+					pictureBox53.Visible = true;
+					pictureBox54.Visible = true;
+					pictureBox55.Visible = true;
+					pictureBox56.Visible = true;
+					pictureBox57.Visible = true;
+					pictureBox58.Visible = true;
+					pictureBox59.Visible = true;
+					pictureBox60.Visible = true;
+					pictureBox61.Visible = true;
+					pictureBox62.Visible = true;
+					pictureBox63.Visible = true;
+					pictureBox64.Visible = true;
+					pictureBox65.Visible = true;
+					pictureBox66.Visible = true;
+					pictureBox67.Visible = true;
+					pictureBox68.Visible = true;
+					pictureBox69.Visible = true;
+					pictureBox70.Visible = true;
+					pictureBox71.Visible = true;
+					pictureBox72.Visible = false;
+					break;
+				case 72:
+					pictureBox1.Visible = true;
+					pictureBox2.Visible = true;
+					pictureBox3.Visible = true;
+					pictureBox4.Visible = true;
+					pictureBox5.Visible = true;
+					pictureBox6.Visible = true;
+					pictureBox7.Visible = true;
+					pictureBox8.Visible = true;
+					pictureBox9.Visible = true;
+					pictureBox10.Visible = true;
+					pictureBox11.Visible = true;
+					pictureBox12.Visible = true;
+					pictureBox13.Visible = true;
+					pictureBox14.Visible = true;
+					pictureBox15.Visible = true;
+					pictureBox16.Visible = true;
+					pictureBox17.Visible = true;
+					pictureBox18.Visible = true;
+					pictureBox19.Visible = true;
+					pictureBox20.Visible = true;
+					pictureBox21.Visible = true;
+					pictureBox22.Visible = true;
+					pictureBox23.Visible = true;
+					pictureBox24.Visible = true;
+					pictureBox25.Visible = true;
+					pictureBox26.Visible = true;
+					pictureBox27.Visible = true;
+					pictureBox28.Visible = true;
+					pictureBox29.Visible = true;
+					pictureBox30.Visible = true;
+					pictureBox31.Visible = true;
+					pictureBox32.Visible = true;
+					pictureBox33.Visible = true;
+					pictureBox34.Visible = true;
+					pictureBox35.Visible = true;
+					pictureBox36.Visible = true;
+					pictureBox37.Visible = true;
+					pictureBox38.Visible = true;
+					pictureBox39.Visible = true;
+					pictureBox40.Visible = true;
+					pictureBox41.Visible = true;
+					pictureBox42.Visible = true;
+					pictureBox43.Visible = true;
+					pictureBox44.Visible = true;
+					pictureBox45.Visible = true;
+					pictureBox46.Visible = true;
+					pictureBox47.Visible = true;
+					pictureBox48.Visible = true;
+					pictureBox49.Visible = true;
+					pictureBox50.Visible = true;
+					pictureBox51.Visible = true;
+					pictureBox52.Visible = true;
+					pictureBox53.Visible = true;
+					pictureBox54.Visible = true;
+					pictureBox55.Visible = true;
+					pictureBox56.Visible = true;
+					pictureBox57.Visible = true;
+					pictureBox58.Visible = true;
+					pictureBox59.Visible = true;
+					pictureBox60.Visible = true;
+					pictureBox61.Visible = true;
+					pictureBox62.Visible = true;
+					pictureBox63.Visible = true;
+					pictureBox64.Visible = true;
+					pictureBox65.Visible = true;
+					pictureBox66.Visible = true;
+					pictureBox67.Visible = true;
+					pictureBox68.Visible = true;
+					pictureBox69.Visible = true;
+					pictureBox70.Visible = true;
+					pictureBox71.Visible = true;
+					pictureBox72.Visible = true;
 					break;
 			}
 		}

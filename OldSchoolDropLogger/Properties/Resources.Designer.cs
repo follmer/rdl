@@ -63,10 +63,382 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _0_green {
+            get {
+                object obj = ResourceManager.GetObject("_0_green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _0_white {
+            get {
+                object obj = ResourceManager.GetObject("_0_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _0_yellow {
+            get {
+                object obj = ResourceManager.GetObject("_0_yellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1_green {
+            get {
+                object obj = ResourceManager.GetObject("_1_green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1_white {
+            get {
+                object obj = ResourceManager.GetObject("_1_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1_yellow {
+            get {
+                object obj = ResourceManager.GetObject("_1_yellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _2_green {
+            get {
+                object obj = ResourceManager.GetObject("_2_green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _2_white {
+            get {
+                object obj = ResourceManager.GetObject("_2_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _2_yellow {
+            get {
+                object obj = ResourceManager.GetObject("_2_yellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3_green {
+            get {
+                object obj = ResourceManager.GetObject("_3_green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3_white {
+            get {
+                object obj = ResourceManager.GetObject("_3_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3_yellow {
+            get {
+                object obj = ResourceManager.GetObject("_3_yellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4_green {
+            get {
+                object obj = ResourceManager.GetObject("_4_green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4_white {
+            get {
+                object obj = ResourceManager.GetObject("_4_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4_yellow {
+            get {
+                object obj = ResourceManager.GetObject("_4_yellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _5_green {
+            get {
+                object obj = ResourceManager.GetObject("_5_green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _5_white {
+            get {
+                object obj = ResourceManager.GetObject("_5_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _5_yellow {
+            get {
+                object obj = ResourceManager.GetObject("_5_yellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _6_green {
+            get {
+                object obj = ResourceManager.GetObject("_6_green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _6_white {
+            get {
+                object obj = ResourceManager.GetObject("_6_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _6_yellow {
+            get {
+                object obj = ResourceManager.GetObject("_6_yellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _7_green {
+            get {
+                object obj = ResourceManager.GetObject("_7_green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _7_white {
+            get {
+                object obj = ResourceManager.GetObject("_7_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _7_yellow {
+            get {
+                object obj = ResourceManager.GetObject("_7_yellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _8_green {
+            get {
+                object obj = ResourceManager.GetObject("_8_green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _8_white {
+            get {
+                object obj = ResourceManager.GetObject("_8_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _8_yellow {
+            get {
+                object obj = ResourceManager.GetObject("_8_yellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _9_green {
+            get {
+                object obj = ResourceManager.GetObject("_9_green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _9_white {
+            get {
+                object obj = ResourceManager.GetObject("_9_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _9_yellow {
+            get {
+                object obj = ResourceManager.GetObject("_9_yellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Abyssal_orphan {
             get {
                 object obj = ResourceManager.GetObject("Abyssal_orphan", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1. Rune sword x 3
+        ///2. Battlestaff x 10
+        ///3. Air battlestaff x 6
+        ///4. Mystic air staff x 2
+        ///5. Mystic lava staff x 2
+        ///6. Grimy kwuarm x 25
+        ///7. Grimy lantadyme x 25
+        ///8. Grimy cadantine x 25
+        ///9. Grimy dwarf weed x 25
+        ///10. Chili potato x 10
+        ///11. Saradomin brew (3) x 6
+        ///12. Super restore (4) x 4
+        ///13. Air talisman x 1
+        ///14. Water talisman x 1
+        ///15. Fire talisman x 1
+        ///16. Earth talisman x 1
+        ///17. Binding necklace x 25
+        ///.
+        /// </summary>
+        internal static string Abyssal_Sire {
+            get {
+                return ResourceManager.GetString("Abyssal_Sire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rune sword x 3
+        ///Rune full helm x 3
+        ///Rune platebody x 2
+        ///Rune kiteshield x 2
+        ///Battlestaff x 10
+        ///Air battlestaff x 6
+        ///Mystic air staff x 2
+        ///Mystic lava staff x 2
+        ///Cosmic rune x 350
+        ///Law rune x 250
+        ///Death rune
+        ///Blood rune
+        ///Soul rune
+        ///Pure essence x 600
+        ///Earth orb
+        ///Magic logs
+        ///Ranarr seed x 1
+        ///Snapdragon seed x 2
+        ///Torstol seed x 2
+        ///Watermelon seed x 30
+        ///Papaya tree seed x 2
+        ///Palm tree seed x 2
+        ///Willow seed x 2
+        ///Maple seed x 2
+        ///Yew seed x 2
+        ///Magic seed x 2
+        ///Spirit seed x 2
+        ///Grimy kwuarm x 25
+        ///Grimy lantadyme x 2 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Abyssal_Sire_Drops {
+            get {
+                return ResourceManager.GetString("Abyssal_Sire_Drops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Abyssal_Sire_Uniques {
+            get {
+                return ResourceManager.GetString("Abyssal_Sire_Uniques", resourceCulture);
             }
         }
         
@@ -186,6 +558,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Adamantite_bar {
             get {
                 object obj = ResourceManager.GetObject("Adamantite_bar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Adamantite_bar_noted_20 {
+            get {
+                object obj = ResourceManager.GetObject("Adamantite_bar_noted_20", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -403,6 +785,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Air_rune1 {
+            get {
+                object obj = ResourceManager.GetObject("Air_rune1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Air_talisman {
             get {
                 object obj = ResourceManager.GetObject("Air_talisman", resourceCulture);
@@ -493,16 +885,6 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Anchovy_pizza_noted_generic1 {
-            get {
-                object obj = ResourceManager.GetObject("Anchovy_pizza_noted_generic1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Ancient_shard {
             get {
                 object obj = ResourceManager.GetObject("Ancient_shard", resourceCulture);
@@ -583,16 +965,6 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Antidote____4__noted_generic1 {
-            get {
-                object obj = ResourceManager.GetObject("Antidote____4__noted_generic1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Antifire_potion__2_ {
             get {
                 object obj = ResourceManager.GetObject("Antifire_potion__2_", resourceCulture);
@@ -641,6 +1013,36 @@ namespace OldSchoolDropLogger.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 1. Rune sword x 1
+        ///2. Rune crossbow x 1
+        ///3. Rune sword x 1
+        ///4. Runite bolts x 915412 [v]
+        ///5. Rune arrow x 12734727 [v]
+        ///6. Mind rune x 19283433828383 [v]
+        ///7. Dwarf weed x 1 [v]
+        ///8. Armadyl chainskirt x 1
+        ///9. Armadyl hilt x 1
+        ///10. Armadyl chainskirt x 1
+        ///11. Armadyl hilt x 1
+        ///12. Curved bone x 1
+        ///13. Armadyl hilt x 1
+        ///14. Armadyl chainskirt x 1
+        ///15. Armadyl hilt x 1
+        ///16. Armadyl chainskirt x 1
+        ///17. Curved bone x 1
+        ///18. Armadyl hilt x 1
+        ///19. Armadyl chainskirt x 1
+        ///20. Armadyl hilt x 1
+        ///21. Long bone x 1
+        ///22. [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Armadyl {
+            get {
+                return ResourceManager.GetString("Armadyl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Armadyl_chainskirt {
@@ -671,6 +1073,40 @@ namespace OldSchoolDropLogger.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rune crossbow x 1
+        ///Rune sword x 1
+        ///Runite bolts
+        ///Rune arrow
+        ///Dragon bolts (e)
+        ///Mind rune
+        ///Coins
+        ///Dwarf weed
+        ///Dwarf weed seed x 3
+        ///Yew seed x 1
+        ///Ranging potion (3) x 3
+        ///Super defence (3) x 3
+        ///Crystal key x 1
+        ///Black d&apos;hide body x 1
+        ///Long bone x 1
+        ///Curved bone x 1
+        ///Godsword shard 1 x 1
+        ///Godsword shard 1 x 2
+        ///Godsword shard 1 x 3
+        ///Elite clue scroll x 1
+        ///Armadyl helmet x 1
+        ///Armadyl chestplate x 1
+        ///Armadyl chainskirt x 1
+        ///Armadyl hilt x 1
+        ///Pet kree&apos;arra x 1
+        ///RDT x 1.
+        /// </summary>
+        internal static string Armadyl_Drops {
+            get {
+                return ResourceManager.GetString("Armadyl_Drops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Armadyl_helmet {
@@ -687,6 +1123,18 @@ namespace OldSchoolDropLogger.Properties {
             get {
                 object obj = ResourceManager.GetObject("Armadyl_hilt", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Armadyl helmet x 1
+        ///Armadyl chestplate x 1
+        ///Armadyl chainskirt x 1
+        ///Armadyl hilt x 1.
+        /// </summary>
+        internal static string Armadyl_Uniques {
+            get {
+                return ResourceManager.GetString("Armadyl_Uniques", resourceCulture);
             }
         }
         
@@ -821,6 +1269,15 @@ namespace OldSchoolDropLogger.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Bandos {
+            get {
+                return ResourceManager.GetString("Bandos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Bandos_boots {
@@ -841,6 +1298,39 @@ namespace OldSchoolDropLogger.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rune 2h sword x 1
+        ///Rune pickaxe x 1
+        ///Rune longsword x 1
+        ///Rune sword x 1
+        ///Rune platebody x 1
+        ///Nature rune
+        ///Adamantite ore
+        ///Coal
+        ///Magic logs
+        ///Snapdragon seed x 1
+        ///Grimy snapdragon x 3
+        ///Super restore (4) x 3
+        ///Coins
+        ///Long bone x 1
+        ///Curved bone x 1
+        ///Elite clue scroll x 1
+        ///Godsword shard 1 x 1
+        ///Godsword shard 2 x 1
+        ///Godsword shard 3 x 1
+        ///Bandos chestplate x 1
+        ///Bandos tassets x 1
+        ///Bandos boots x 1
+        ///Bandos hilt x 1
+        ///Pet general graardor x 1
+        ///RDT x 1.
+        /// </summary>
+        internal static string Bandos_Drops {
+            get {
+                return ResourceManager.GetString("Bandos_Drops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Bandos_hilt {
@@ -857,6 +1347,81 @@ namespace OldSchoolDropLogger.Properties {
             get {
                 object obj = ResourceManager.GetObject("Bandos_tassets", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bandos chestplate x 1
+        ///Bandos tassets x 1
+        ///Bandos boots x 1
+        ///Bandos hilt x 1.
+        /// </summary>
+        internal static string Bandos_Uniques {
+            get {
+                return ResourceManager.GetString("Bandos_Uniques", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1. Ahrim&apos;s hood x 1
+        ///2. Karil&apos;s coif x 1
+        ///3. Karil&apos;s coif x 1
+        ///4. Loop half of key x 1
+        ///5. Tooth half of key x 1
+        ///6. Ahrim&apos;s staff x 1
+        ///7. Karil&apos;s crossbow x 1
+        ///8. Dharok&apos;s greataxe x 1
+        ///9. Guthan&apos;s warspear x 1
+        ///10. Torag&apos;s hammers x 1
+        ///11. Verac&apos;s flail x 1
+        ///.
+        /// </summary>
+        internal static string Barrows {
+            get {
+                return ResourceManager.GetString("Barrows", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ahrim&apos;s hood x 1
+        ///Karil&apos;s coif x 1
+        ///Dharok&apos;s helm x 1
+        ///Guthan&apos;s helm x 1
+        ///Torag&apos;s helm x 1
+        ///Verac&apos;s helm x 1
+        ///Mind rune
+        ///Chaos rune
+        ///Ahrim&apos;s robetop x 1
+        ///Karil&apos;s leathertop x 1
+        ///Dharok&apos;s platebody x 1
+        ///Guthan&apos;s platebody x 1
+        ///Torag&apos;s platebody x 1
+        ///Verac&apos;s brassard x 1
+        ///Death rune
+        ///Blood rune
+        ///Ahrim&apos;s robeskrit x 1
+        ///Karil&apos;s leatherskirt x 1
+        ///Dharok&apos;s platelegs x 1
+        ///Guthan&apos;s chainskirt x 1
+        ///Torag&apos;s platelegs x 1
+        ///Verac&apos;s plateskirt x 1
+        ///Loop half of key x 1
+        ///Tooth half of key x 1
+        ///Ahrim&apos;s staff x 1
+        ///Karil&apos;s  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Barrows_Drops {
+            get {
+                return ResourceManager.GetString("Barrows_Drops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Barrows_Uniques {
+            get {
+                return ResourceManager.GetString("Barrows_Uniques", resourceCulture);
             }
         }
         
@@ -1371,12 +1936,67 @@ namespace OldSchoolDropLogger.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Callisto {
+            get {
+                return ResourceManager.GetString("Callisto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Callisto_cub {
             get {
                 object obj = ResourceManager.GetObject("Callisto_cub", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rune pickaxe x 1
+        ///Rune 2h sword x 1
+        ///Soul rune x 250
+        ///Death rune x 300
+        ///Chaos rune x 400
+        ///Blood rune x 200
+        ///Mahogany logs x 400
+        ///Magic logs x 100
+        ///Ranarr seed x 5
+        ///Snapdragon seed x 3
+        ///Palm tree seed x 1
+        ///Yew seed x 1
+        ///Magic seed x 1
+        ///Grimy toadflax x 100
+        ///Dark fishing bait x 375
+        ///Dark crab x 8
+        ///Super restore (4) x 3
+        ///Mysterious emblem x 1
+        ///Limpwurt root x 50
+        ///Coconut x 60
+        ///Crushed birds nest x 75
+        ///Supercompost x 100
+        ///Cannonball x 250
+        ///Red dragonhide x 75
+        ///Uncut ruby x 20
+        ///Uncut diamond x 10
+        ///Uncut dragonst [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Callisto_Drops {
+            get {
+                return ResourceManager.GetString("Callisto_Drops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dragon pickaxe x 1
+        ///Dragon 2h sword x 1
+        ///Tyrannical ring x 1.
+        /// </summary>
+        internal static string Callisto_Uniques {
+            get {
+                return ResourceManager.GetString("Callisto_Uniques", resourceCulture);
             }
         }
         
@@ -1511,12 +2131,198 @@ namespace OldSchoolDropLogger.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized string similar to 1. Black d&apos;hide body x 1
+        ///2. Battlestaff x 6
+        ///3. Lava battlestaff x 1
+        ///4. Runite bolts (unf) x 40
+        ///5. Super restore (4) x 2
+        ///6. Unholy symbol x 1
+        ///7. Wine of zamorak x 15
+        ///8. Summer pie x 3
+        ///9. Key master teleport x 3
+        ///10. Pegasian crystal x 1
+        ///11. Smouldering stone x 1
+        ///12. Eternal crystal x 1
+        ///13. Primordial crystal x 1
+        ///14. Jar of souls x 1
+        ///15. Hellpuppy x 1
+        ///16. Rune chainbody x 1
+        ///17. Black d&apos;hide body x 1
+        ///18. Grimy torstol x 6
+        ///.
         /// </summary>
-        internal static System.Drawing.Bitmap Cannonball_generic1 {
+        internal static string Cerberus {
             get {
-                object obj = ResourceManager.GetObject("Cannonball_generic1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("Cerberus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rune 2h sword x 1
+        ///Rune halberd x 1
+        ///Rune axe x 1
+        ///Rune pickaxe x 1
+        ///Rune full helm x 1
+        ///Rune platebody x 1
+        ///Rune chainbody x 1
+        ///Black d&apos;hide body x 1
+        ///Battlestaff x 6
+        ///Lava battlestaff x 1
+        ///Pure essence x 300
+        ///Fire rune x 300
+        ///Death rune x 100
+        ///Blood rune x 60
+        ///Soul rune x 100
+        ///Runite bolts (unf) x 40
+        ///Cannonball x 50
+        ///Torstol seed x 3
+        ///Grimy torstol x 6
+        ///Super restore (4) x 2
+        ///Coal x 120
+        ///Runite ore x 5
+        ///Wine of zamorak x 15
+        ///Unholy symbol x 1
+        ///Ashes x 50
+        ///Summer pie x 3
+        ///Dragon bones x 20
+        ///Fire orb x 20        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Cerberus_Drops {
+            get {
+                return ResourceManager.GetString("Cerberus_Drops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Cerberus_Uniques {
+            get {
+                return ResourceManager.GetString("Cerberus_Uniques", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Chaos_Elemental {
+            get {
+                return ResourceManager.GetString("Chaos_Elemental", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mithril dart x 300
+        ///Rune arrow x 150
+        ///Chaos rune x 250
+        ///Air rune x 500
+        ///Death rune x 125
+        ///Blood rune x 75
+        ///Anchovy pizza x 3
+        ///Tuna x 5
+        ///Grimy guam leaf
+        ///Grimy marrentil
+        ///Grimy tarromin
+        ///Grimy harralander
+        ///Grimy ranarr weed
+        ///Grimy irit leaf
+        ///Grimy avantoe
+        ///Grimy kwuarm
+        ///Grimy snapdragon
+        ///Grimy lantadyme
+        ///Grimy dwarf weed
+        ///Super attack (4) x 1
+        ///Super strength (4) x 1
+        ///Super defence (4) x 1
+        ///Weapon poison (++) x 1
+        ///Antidote++ (4) x 1
+        ///Strange fruit x 10
+        ///Bones x 4
+        ///Bat bones x 5
+        ///Big bones x 3
+        ///Babydragon bone [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Chaos_Elemental_Drops {
+            get {
+                return ResourceManager.GetString("Chaos_Elemental_Drops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Chaos_Elemental_Uniques {
+            get {
+                return ResourceManager.GetString("Chaos_Elemental_Uniques", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1. Ring of life x 1
+        ///2. Zamorak robe (top) x 1
+        ///3. Zamorak robe (bottom) x 1
+        ///4. Splitbark body x 1
+        ///5. Splitbark legs x 1
+        ///6. Prayer potion (4) x 1
+        ///7. Anchovy pizza x 8
+        ///8. Monkfish x 3
+        ///9. Shark x 1
+        ///10. Battlestaff x 5
+        ///11. Wine of zamorak x 10
+        ///12. Splitbark legs x 1
+        ///13. Sinister key x 1
+        ///14. Odium shard 1 x 1
+        ///15. Malediction shard 1 x 1
+        ///.
+        /// </summary>
+        internal static string Chaos_Fanatic {
+            get {
+                return ResourceManager.GetString("Chaos_Fanatic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fire rune x 250
+        ///Smoke rune x 30
+        ///Chaos rune x 175
+        ///Blood rune x 50
+        ///Pure essence x 250
+        ///Uncut sapphire x 4
+        ///Uncut emerald x 6
+        ///Ring of life x 1
+        ///Chaos talisman x 1
+        ///Nature talisman x 1
+        ///Zamorak robe (top) x 1
+        ///Zamorak robe (bottom) x 1
+        ///Splitbark body x 1
+        ///Splitbark legs x 1
+        ///Prayer potion (4) x 1
+        ///Grimy lantadyme x 4
+        ///Anchovy pizza x 8
+        ///Monkfish x 3
+        ///Shark x 1
+        ///Battlestaff x 5
+        ///Wine of zamorak x 10
+        ///Coins
+        ///Sinister key x 1
+        ///Mysterious emblem x 1
+        ///Ancient staff x 1
+        ///Elite clue scroll x 1
+        ///Odium shard 1 x 1 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Chaos_Fanatic_Drops {
+            get {
+                return ResourceManager.GetString("Chaos_Fanatic_Drops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Odium shard 1 x 1
+        ///Malediction shard 1 x 1.
+        /// </summary>
+        internal static string Chaos_Fanatic_Uniques {
+            get {
+                return ResourceManager.GetString("Chaos_Fanatic_Uniques", resourceCulture);
             }
         }
         
@@ -1643,6 +2449,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Coal_noted_200 {
+            get {
+                object obj = ResourceManager.GetObject("Coal_noted_200", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Coal_noted_300 {
             get {
                 object obj = ResourceManager.GetObject("Coal_noted_300", resourceCulture);
@@ -1703,16 +2519,6 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Coconut_noted_generic1 {
-            get {
-                object obj = ResourceManager.GetObject("Coconut_noted_generic1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Coins_1000 {
             get {
                 object obj = ResourceManager.GetObject("Coins_1000", resourceCulture);
@@ -1761,6 +2567,74 @@ namespace OldSchoolDropLogger.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 1. Mystic air staff x 1
+        ///2. Mystic water staff x 1
+        ///3. Mystic earth staff x 1
+        ///4. Mystic fire staff x 1
+        ///5. Mystic robe top (blue) x 1
+        ///6. Mystic robe bottom (blue) x 1
+        ///7. Death rune x 300
+        ///8. Antidote++ (4) x 40
+        ///9. Tuna potato x 30
+        ///10. Shield left half x 1
+        ///11. Holy elixir x 1
+        ///.
+        /// </summary>
+        internal static string Corporeal_Beast {
+            get {
+                return ResourceManager.GetString("Corporeal_Beast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adamant arrow x 750
+        ///Runite bolts x 250
+        ///Cannonball x 2000
+        ///Mystic air staff x 1
+        ///Mystic water staff x 1
+        ///Mystic earth staff x 1
+        ///Mystic fire staff x 1
+        ///Nature talisman
+        ///Uncut sapphire
+        ///Uncut emerald
+        ///Uncut ruby
+        ///Uncut diamond
+        ///Mystic robe top (blue) x 1
+        ///Mystic robe bottom (blue) x 1
+        ///Mahogany logs x 150
+        ///Magic logs x 75
+        ///Pure essence x 2500
+        ///Law rune x 250
+        ///Cosmic rune x 500
+        ///Death rune x 300
+        ///Soul rune x 250
+        ///Adamantite bar x 35
+        ///Adamantite ore x 125
+        ///Runite ore x 20
+        ///Teak plank x 100
+        ///Green dragonhide x [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Corporeal_Beast_Drops {
+            get {
+                return ResourceManager.GetString("Corporeal_Beast_Drops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Onyx bolts (e) x 175
+        ///Holy elixir x 1
+        ///Spirit shield x 1
+        ///Spectral sigil x 1
+        ///Arcane sigil x 1
+        ///Elysian sigil x 1.
+        /// </summary>
+        internal static string Corporeal_Beast_Uniques {
+            get {
+                return ResourceManager.GetString("Corporeal_Beast_Uniques", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Cosmic_rune {
@@ -1803,20 +2677,80 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Cosmic_rune_generic1 {
+        internal static System.Drawing.Bitmap Cosmic_talisman {
             get {
-                object obj = ResourceManager.GetObject("Cosmic_rune_generic1", resourceCulture);
+                object obj = ResourceManager.GetObject("Cosmic_talisman", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized string similar to 1. Potato with cheese x 3
+        ///2. Shark x 1
+        ///3. Prayer potion (4) x 1
+        ///4. Muddy key x 1
+        ///5. Rusty sword x 1
+        ///6. Red d&apos;hide body x 1
+        ///7. Fedora x 1
+        ///8. Odium shard 2 x 1
+        ///9. Malediction shard 2 x 1
+        ///10. Grimy dwarf weed x 4
+        ///11. Dragon arrow x 75
+        ///12. Malediction shard 2 x 1
+        ///13. Odium shard 2 x 1
+        ///.
         /// </summary>
-        internal static System.Drawing.Bitmap Cosmic_talisman {
+        internal static string Crazy_Archaeologist {
             get {
-                object obj = ResourceManager.GetObject("Cosmic_talisman", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("Crazy_Archaeologist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rune crossbox x 1
+        ///Rune knife x 10
+        ///Amulet of power x 1
+        ///Mud rune x 30
+        ///Potato with cheese x 3
+        ///Anchovy pizza x 8
+        ///Shark x 1
+        ///Prayer potion (4) x 1
+        ///Uncut sapphire x 4
+        ///Uncut emerald x 6
+        ///Silver ore x 40
+        ///Muddy key x 1
+        ///Rusty sword x 1
+        ///Grimy dwarf weed x 4
+        ///Whiteberries x 10
+        ///Cannonball x 150
+        ///Red d&apos;hide body x 1
+        ///Red dragonhide x 10
+        ///Coins
+        ///Onyx bolt tips x 12
+        ///Mysterious emblem x 1
+        ///Dragon arrow x 75
+        ///Long bone x 1
+        ///Elite clue scroll x 1
+        ///Fedora x 1
+        ///Odium shard 2 x 1
+        ///Malediction shard 2 x 1
+        ///RDT x 1
+        ///.
+        /// </summary>
+        internal static string Crazy_Archaeologist_Drops {
+            get {
+                return ResourceManager.GetString("Crazy_Archaeologist_Drops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fedora x 1
+        ///Odium shard 2 x 1
+        ///Malediction shard 2 x 1.
+        /// </summary>
+        internal static string Crazy_Archaeologist_Uniques {
+            get {
+                return ResourceManager.GetString("Crazy_Archaeologist_Uniques", resourceCulture);
             }
         }
         
@@ -1826,6 +2760,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Crushed_nest {
             get {
                 object obj = ResourceManager.GetObject("Crushed_nest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Crushed_nest_noted_10 {
+            get {
+                object obj = ResourceManager.GetObject("Crushed_nest_noted_10", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1846,16 +2790,6 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Crushed_nest_noted_generic {
             get {
                 object obj = ResourceManager.GetObject("Crushed_nest_noted_generic", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Crushed_nest_noted_generic1 {
-            get {
-                object obj = ResourceManager.GetObject("Crushed_nest_noted_generic1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1907,6 +2841,85 @@ namespace OldSchoolDropLogger.Properties {
             get {
                 object obj = ResourceManager.GetObject("Curved_bone", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1. Air battlestaff x 1
+        ///2. Water battlestaff x 1
+        ///3. Earth battlestaff x 1
+        ///4. Grimy ranarr weed x 1
+        ///5. Belladonna seed x 1
+        ///6. Cactus seed x 1
+        ///7. Poison ivy seed x 1
+        ///8. Irit seed x 1
+        ///9. Fremennik shield x 1
+        ///10. Fremennik helm x 1
+        ///11. Skeletal top x 1
+        ///12. Skeletal bottoms x 1
+        ///13. Farseer helm x 1
+        ///14. Mud battlestaff x 1
+        ///15. Pet dagannoth prime x 1
+        ///16. Bass x 5
+        ///17. Swordfish x 5
+        ///18. Shark x 5
+        ///19. Ring of life x 1
+        ///20. Adamantite bar x 1
+        ///22. Rock-shell plate x 1
+        ///23. Poison ivy seed x 1
+        ///24. Sp [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Dagannoth_Kings {
+            get {
+                return ResourceManager.GetString("Dagannoth_Kings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battlestaff
+        ///Air battlestaff x 1
+        ///Water battlestaff x 1
+        ///Earth battlestaff x 1
+        ///Pure essence x 150
+        ///Air rune x 155
+        ///Mud rune x 32
+        ///Death rune
+        ///Ensouled dagannoth head x 1
+        ///Air talisman
+        ///Water talisman
+        ///Earth talisman
+        ///Grimy ranarr weed x 1
+        ///Belladonna seed x 1
+        ///Cactus seed x 1
+        ///Poison ivy seed x 1
+        ///Irit seed x 1
+        ///Toadflax seed x 1
+        ///Avantoe seed x 1
+        ///Kwuarm seed x 1
+        ///Snapdragon seed x 1
+        ///Cadantine seed x 1
+        ///Lantadyme seed x 1
+        ///Dwarf weed seed x 1
+        ///Fremennik shield x 1
+        ///Fremennik helm x 1
+        ///Skeletal top x 1
+        ///S [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Dagannoth_Kings_Drops {
+            get {
+                return ResourceManager.GetString("Dagannoth_Kings_Drops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Seers ring x 1
+        ///Warrior ring x 1
+        ///Archers ring x 1
+        ///Berserker ring x 1.
+        /// </summary>
+        internal static string Dagannoth_Kings_Uniques {
+            get {
+                return ResourceManager.GetString("Dagannoth_Kings_Uniques", resourceCulture);
             }
         }
         
@@ -1976,16 +2989,6 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Dark_fishing_bait_generic {
             get {
                 object obj = ResourceManager.GetObject("Dark_fishing_bait_generic", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Dark_fishing_bait_generic1 {
-            get {
-                object obj = ResourceManager.GetObject("Dark_fishing_bait_generic1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2473,6 +3476,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Dragon_bones_noted_12 {
+            get {
+                object obj = ResourceManager.GetObject("Dragon_bones_noted_12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Dragon_bones_noted_20 {
             get {
                 object obj = ResourceManager.GetObject("Dragon_bones_noted_20", resourceCulture);
@@ -2756,6 +3769,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Dwarf_weed_noted_20 {
             get {
                 object obj = ResourceManager.GetObject("Dwarf_weed_noted_20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Dwarf_weed_noted_30 {
+            get {
+                object obj = ResourceManager.GetObject("Dwarf_weed_noted_30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -3141,6 +4164,56 @@ namespace OldSchoolDropLogger.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 1. Shark x 4
+        ///2. Baby mole x 1
+        ///.
+        /// </summary>
+        internal static string Giant_Mole {
+            get {
+                return ResourceManager.GetString("Giant_Mole", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mithril battleaxe x 1
+        ///Mithril axe x 1
+        ///Adamant longsword x 1
+        ///Mithril platebody x 1
+        ///Rune med helm x 1
+        ///Iron arrow x 690
+        ///Mithril bar x 1
+        ///Iron ore x 100
+        ///Amulet of strength x 1
+        ///Law rune x 15
+        ///Air rune x 105
+        ///Fire rune x 105
+        ///Blood rune x 15
+        ///Death rune x 7
+        ///Oyster x 1
+        ///Shark x 4
+        ///Yew logs x 100
+        ///Elite clue scroll x 1
+        ///Long bone x 1
+        ///Curved bone x 1
+        ///Baby mole x 1
+        ///RDT x 1.
+        /// </summary>
+        internal static string Giant_Mole_Drops {
+            get {
+                return ResourceManager.GetString("Giant_Mole_Drops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Giant_Mole_Uniques {
+            get {
+                return ResourceManager.GetString("Giant_Mole_Uniques", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Godsword_shard_1 {
@@ -3493,16 +4566,6 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Grimy_harralander_noted_generic1 {
-            get {
-                object obj = ResourceManager.GetObject("Grimy_harralander_noted_generic1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Grimy_irit_leaf {
             get {
                 object obj = ResourceManager.GetObject("Grimy_irit_leaf", resourceCulture);
@@ -3801,6 +4864,60 @@ namespace OldSchoolDropLogger.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Grotesque_Guardians {
+            get {
+                return ResourceManager.GetString("Grotesque_Guardians", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chaos rune
+        ///Death rune
+        ///Diamond bolt tips
+        ///Dragon bolt tips
+        ///Onyx bolt tips
+        ///Dragon dart tip
+        ///Dragon arrowtips
+        ///Prayer potion (4) x 1
+        ///Coal
+        ///Gold ore
+        ///Runite ore
+        ///Gold bar
+        ///Mithril bar
+        ///Adamantite bar
+        ///Runite bar
+        ///Saradomin brew (4) x 2
+        ///Rune pickaxe x 1
+        ///Rune battleaxe x 1
+        ///Rune 2h sword x 1
+        ///Rune full helm x 1
+        ///Rune platelegs x 1
+        ///Dragon longsword x 1
+        ///Dragon med helm x 1
+        ///Super combat potion (2) x 1, ranging potion (2) x 1, magic potion (2) x 1
+        ///Adamant boots x 1
+        ///Mushroom potato x 5
+        ///Crystal key x 1
+        ///Gr [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Grotesque_Guardians_Drops {
+            get {
+                return ResourceManager.GetString("Grotesque_Guardians_Drops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Grotesque_Guardians_Uniques {
+            get {
+                return ResourceManager.GetString("Grotesque_Guardians_Uniques", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Guam_seed_1 {
@@ -4007,16 +5124,6 @@ namespace OldSchoolDropLogger.Properties {
             get {
                 object obj = ResourceManager.GetObject("Herb_seed_5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] herb_seeds {
-            get {
-                object obj = ResourceManager.GetObject("herb_seeds", resourceCulture);
-                return ((byte[])(obj));
             }
         }
         
@@ -4323,10 +5430,93 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap K {
+            get {
+                object obj = ResourceManager.GetObject("K", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Kalphite_princess {
             get {
                 object obj = ResourceManager.GetObject("Kalphite_princess", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1. Battlestaff x 10
+        ///2. Lava battlestaff x 1
+        ///3. Rune knife (p++) x 25
+        ///4. Super combat potion (2) x 1
+        ///5. Superantipoison (2) x 1
+        ///6. Ranging potion (3) x 1
+        ///7. Saradomin brew (4) x 1
+        ///8. Super restore (4) x 1
+        ///9. Prayer potion (4) x 2
+        ///10. Weapon poison (++) x 5
+        ///11. Toadflax x 25
+        ///12. Ranarr weed x 25
+        ///13. Snapdragon x 25
+        ///14. Torstol x 25
+        ///15. Ensouled kalphite head x 1
+        ///16. Monkfish x 3
+        ///17. Shark x 2
+        ///18. Dark crab x 2
+        ///19. Magic seed x 2
+        ///20. Kq head x 1
+        ///21. Jar of sand x 1
+        ///22. Kalphite princess x  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Kalphite_Queen {
+            get {
+                return ResourceManager.GetString("Kalphite_Queen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Battlestaff x 10
+        ///Lava battlestaff x 1
+        ///Mithril arrow x 500
+        ///Rune arrow x 250
+        ///Rune knife (p++) x 25
+        ///Red d&apos;hide body x 1
+        ///Rune chainbody x 1
+        ///Grapes x 100
+        ///Super combat potion (2) x 1
+        ///Superantipoison (2) x 1
+        ///Ranging potion (3) x 1
+        ///Saradomin brew (4) x 1
+        ///Super restore (4) x 1
+        ///Prayer potion (4) x 2
+        ///Weapon poison (++) x 5
+        ///Wine of zamorak x 60
+        ///Uncut Emerald x 25
+        ///Uncut ruby x 25
+        ///Uncut diamond x 25
+        ///Watermelon seed x 25
+        ///Torstol seed x 2
+        ///Papaya tree seed x 2
+        ///Palm tree seed x 1
+        ///Magic seed x 2
+        ///Blood  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Kalphite_Queen_Drops {
+            get {
+                return ResourceManager.GetString("Kalphite_Queen_Drops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dragon 2h sword x 1
+        ///Dragon chainbody x 1.
+        /// </summary>
+        internal static string Kalphite_Queen_Uniques {
+            get {
+                return ResourceManager.GetString("Kalphite_Queen_Uniques", resourceCulture);
             }
         }
         
@@ -4411,6 +5601,66 @@ namespace OldSchoolDropLogger.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 1. Dragon javelin heads x 15
+        ///2. Shark x 4
+        ///3. Runite limbs x 1
+        ///4. Adamantite bar x 3
+        ///5. Runite bar x 1
+        ///6. Kbd heads x 1
+        ///7. Prince black dragon x 1
+        ///.
+        /// </summary>
+        internal static string King_Black_Dragon {
+            get {
+                return ResourceManager.GetString("King_Black_Dragon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rune longsword x 1
+        ///Adamant platebody x 1
+        ///Adamant kiteshield x 1
+        ///Iron arrow x 690
+        ///Rune bolts
+        ///Dragon dart tips
+        ///Dragon arrowtips
+        ///Dragon javelin heads x 15
+        ///Fire rune x 300
+        ///Air rune x 300
+        ///Blood rune x 30
+        ///Law rune x 30
+        ///Amulet of power x 1
+        ///Yew logs x 150
+        ///Shark x 4
+        ///Gold ore x 100
+        ///Runite limbs x 1
+        ///Adamantite bar x 3
+        ///Runite bar x 1
+        ///Elite clue scroll x 1
+        ///Dragon med helm x 1
+        ///Kbd heads x 1
+        ///Dragon pickaxe x 1
+        ///Draconic visage x 1
+        ///Prince black dragon x 1
+        ///RDT x 1.
+        /// </summary>
+        internal static string King_Black_Dragon_Drops {
+            get {
+                return ResourceManager.GetString("King_Black_Dragon_Drops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dragon pickaxe x 1
+        ///Draconic visage x 1.
+        /// </summary>
+        internal static string King_Black_Dragon_Uniques {
+            get {
+                return ResourceManager.GetString("King_Black_Dragon_Uniques", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Kodai_insignia {
@@ -4431,12 +5681,78 @@ namespace OldSchoolDropLogger.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 1. Mystic water staff x 1
+        ///2. Mystic robe top (blue) x 1
+        ///3. Mystic robe bottom (blue) x 1
+        ///4. Grimy snapdragon x 6
+        ///5. Shark x 5
+        ///6. Edible seaweed x 5
+        ///7. Bucket x 1
+        ///8. Sanfew serum (4) x 2
+        ///9. Pirate boots x 1
+        ///10. Trident of the seas (full) x 1
+        ///11. Kraken tentacle x 1
+        ///12. Jar of dirt x 1
+        ///.
+        /// </summary>
+        internal static string Kraken {
+            get {
+                return ResourceManager.GetString("Kraken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rune warhammer x 1
+        ///Rune longsword x 1
+        ///Mystic water staff x 1
+        ///Mystic robe top (blue) x 1
+        ///Mystic robe bottom (blue) x 1
+        ///Harpoon x 1
+        ///Seaweed x 125
+        ///Battlestaff x 10
+        ///Water rune x 400
+        ///Mist rune x 100
+        ///Chaos rune x 250
+        ///Death rune x 150
+        ///Blood rune x 60
+        ///Soul rune x 50
+        ///Unpowered orb x 50
+        ///Diamond x 8
+        ///Oak plank x 60
+        ///Raw shark x 50
+        ///Raw monkfish x 100
+        ///Runite bar x 2
+        ///Grimy snapdragon x 6
+        ///Shark x 5
+        ///Edible seaweed x 5
+        ///Bucket x 1
+        ///Sanfew serum (4) x 2
+        ///Crystal key x 1
+        ///Rusty sword x 1
+        ///Antidote++ (4) x  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Kraken_Drops {
+            get {
+                return ResourceManager.GetString("Kraken_Drops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Kraken_tentacle {
             get {
                 object obj = ResourceManager.GetObject("Kraken_tentacle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Kraken_Uniques {
+            get {
+                return ResourceManager.GetString("Kraken_Uniques", resourceCulture);
             }
         }
         
@@ -4466,16 +5782,6 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Kwuarm_noted_generic {
             get {
                 object obj = ResourceManager.GetObject("Kwuarm_noted_generic", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Kwuarm_noted_generic1 {
-            get {
-                object obj = ResourceManager.GetObject("Kwuarm_noted_generic1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -4723,16 +6029,6 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Limpwurt_root_noted_generic1 {
-            get {
-                object obj = ResourceManager.GetObject("Limpwurt_root_noted_generic1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Lizardman_fang_generic {
             get {
                 object obj = ResourceManager.GetObject("Lizardman_fang_generic", resourceCulture);
@@ -4756,6 +6052,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Loop_half_of_key {
             get {
                 object obj = ResourceManager.GetObject("Loop_half_of_key", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap M {
+            get {
+                object obj = ResourceManager.GetObject("M", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -4923,6 +6229,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Mahogany_logs_noted_50 {
+            get {
+                object obj = ResourceManager.GetObject("Mahogany_logs_noted_50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Mahogany_logs_noted_generic {
             get {
                 object obj = ResourceManager.GetObject("Mahogany_logs_noted_generic", resourceCulture);
@@ -4963,6 +6279,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Mahogany_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Mahogany_seed_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Malediction_shard_1 {
             get {
                 object obj = ResourceManager.GetObject("Malediction_shard_1", resourceCulture);
@@ -4986,6 +6312,26 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Malediction_shard_3 {
             get {
                 object obj = ResourceManager.GetObject("Malediction_shard_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Manta_ray_noted_35 {
+            get {
+                object obj = ResourceManager.GetObject("Manta_ray_noted_35", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Manta_ray_noted_generic {
+            get {
+                object obj = ResourceManager.GetObject("Manta_ray_noted_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -5143,6 +6489,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Mind_rune1 {
+            get {
+                object obj = ResourceManager.GetObject("Mind_rune1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Mind_talisman {
             get {
                 object obj = ResourceManager.GetObject("Mind_talisman", resourceCulture);
@@ -5176,6 +6532,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Mist_rune_generic {
             get {
                 object obj = ResourceManager.GetObject("Mist_rune_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Mist_rune1 {
+            get {
+                object obj = ResourceManager.GetObject("Mist_rune1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -5296,16 +6662,6 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Mithril_dart_generic {
             get {
                 object obj = ResourceManager.GetObject("Mithril_dart_generic", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Mithril_dart_generic1 {
-            get {
-                object obj = ResourceManager.GetObject("Mithril_dart_generic1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -5496,6 +6852,26 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Mud_rune_generic {
             get {
                 object obj = ResourceManager.GetObject("Mud_rune_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Mud_rune1 {
+            get {
+                object obj = ResourceManager.GetObject("Mud_rune1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Mud_rune2 {
+            get {
+                object obj = ResourceManager.GetObject("Mud_rune2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -5743,16 +7119,6 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Oak_plank_noted_generic1 {
-            get {
-                object obj = ResourceManager.GetObject("Oak_plank_noted_generic1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Occult_necklace {
             get {
                 object obj = ResourceManager.GetObject("Occult_necklace", resourceCulture);
@@ -5823,16 +7189,6 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Ogre_coffin_key_noted_generic1 {
-            get {
-                object obj = ResourceManager.GetObject("Ogre_coffin_key_noted_generic1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Olmlet {
             get {
                 object obj = ResourceManager.GetObject("Olmlet", resourceCulture);
@@ -5896,16 +7252,6 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Onyx_bolt_tips_generic {
             get {
                 object obj = ResourceManager.GetObject("Onyx_bolt_tips_generic", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Onyx_bolt_tips_generic1 {
-            get {
-                object obj = ResourceManager.GetObject("Onyx_bolt_tips_generic1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -6036,6 +7382,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Papaya_tree_seed_2 {
             get {
                 object obj = ResourceManager.GetObject("Papaya_tree_seed_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Papaya_tree_seed_3 {
+            get {
+                object obj = ResourceManager.GetObject("Papaya_tree_seed_3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -6431,6 +7787,89 @@ namespace OldSchoolDropLogger.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 1. Uncut emerald x 217 [v], Uncut diamond x 60 [v]
+        ///2. Grimy ranarr weed x 21 [v], Grimy toadflax x 32 [v]
+        ///3. Soul rune x 914 [v], Uncut sapphire x 97 [v]
+        ///4. Blood rune x 621 [v], Saltpetre x 829 [v]
+        ///5. Torn prayer scroll x 1, Death rune x 560 [v]
+        ///6. Grimy dwarf weed x 115 [v], Uncut sapphire x 122 [v]
+        ///7. Uncut emerald x 144 [v], Adamantite ore x 123 [v]
+        ///8. Grimy kwuarm x 64 [v], Silver ore x 1215 [v]
+        ///9. Mahogany plank x 82 [v], Pure essence x 9839 [v]
+        ///10. Dragon arrow x 101 [v], Grimy kwuarm x 54 [ [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Raids {
+            get {
+                return ResourceManager.GetString("Raids", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Death rune
+        ///Blood rune
+        ///Soul rune
+        ///Rune arrow
+        ///Dragon arrow
+        ///Grimy toadflax
+        ///Grimy ranarr weed
+        ///Grimy irit leaf
+        ///Grimy avantoe
+        ///Grimy kwuarm
+        ///Grimy snapdragon
+        ///Grimy cadantine
+        ///Grimy lantadyme
+        ///Grimy dwarf weed
+        ///Grimy torstol
+        ///Silver ore
+        ///Coal
+        ///Gold ore
+        ///Mithril ore
+        ///Adamantite ore
+        ///Runite ore
+        ///Uncut sapphire
+        ///Uncut emerald
+        ///Uncut ruby
+        ///Uncut diamond
+        ///Lizardman fang
+        ///Pure essence
+        ///Saltpetre
+        ///Teak plank
+        ///Mahogany plank
+        ///Dynamite
+        ///Torn prayer scroll x 1
+        ///Ancient tablet x 1
+        ///Dark relic x 1
+        ///Elite clue scroll x [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Raids_Drops {
+            get {
+                return ResourceManager.GetString("Raids_Drops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arcane prayer scroll x 1
+        ///Dexterous prayer scroll x 1
+        ///Dragon sword x 1
+        ///Dragon thrownaxe x 100
+        ///Twisted buckler x 1
+        ///Dragon hunter crossbow x 1
+        ///Dinh&apos;s bulwark x 1
+        ///Ancestral hat x 1
+        ///Ancestral robe top x 1
+        ///Ancestral robe bottom x 1
+        ///Dragon claws x 1
+        ///Elder maul x 1
+        ///Kodai insignia x 1
+        ///Twisted bow x 1.
+        /// </summary>
+        internal static string Raids_Uniques {
+            get {
+                return ResourceManager.GetString("Raids_Uniques", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Ranarr_seed_1 {
@@ -6691,16 +8130,6 @@ namespace OldSchoolDropLogger.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] Raw_swordfish_noted_generic1 {
-            get {
-                object obj = ResourceManager.GetObject("Raw_swordfish_noted_generic1", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Raw_trout_noted_generic {
@@ -6786,16 +8215,6 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Red_dragonhide_noted_generic {
             get {
                 object obj = ResourceManager.GetObject("Red_dragonhide_noted_generic", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Red_dragonhide_noted_generic1 {
-            get {
-                object obj = ResourceManager.GetObject("Red_dragonhide_noted_generic1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -7203,16 +8622,6 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Rune_knife_generic1 {
-            get {
-                object obj = ResourceManager.GetObject("Rune_knife_generic1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Rune_longsword {
             get {
                 object obj = ResourceManager.GetObject("Rune_longsword", resourceCulture);
@@ -7543,16 +8952,6 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Runite_bolts_generic1 {
-            get {
-                object obj = ResourceManager.GetObject("Runite_bolts_generic1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Runite_limbs {
             get {
                 object obj = ResourceManager.GetObject("Runite_limbs", resourceCulture);
@@ -7576,6 +8975,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Runite_ore_noted_10 {
             get {
                 object obj = ResourceManager.GetObject("Runite_ore_noted_10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Runite_ore_noted_2 {
+            get {
+                object obj = ResourceManager.GetObject("Runite_ore_noted_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -7671,6 +9080,15 @@ namespace OldSchoolDropLogger.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Saradomin {
+            get {
+                return ResourceManager.GetString("Saradomin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Saradomin_brew__3_ {
@@ -7711,6 +9129,40 @@ namespace OldSchoolDropLogger.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Rune dart
+        ///Rune sword x 1
+        ///Adamant platebody x 1
+        ///Rune skirt x 1
+        ///Rune kiteshield x 1
+        ///Law rune
+        ///Ranarr seed x 2
+        ///Magic seed x 1
+        ///Diamond x 6
+        ///Grimy ranarr weed x 5
+        ///Prayer potion (4) x 3
+        ///Saradomin brew (3) x 3
+        ///Super restore (4) x 3
+        ///Super defence (4) x 3
+        ///Magic potion (3) x 3
+        ///Coins
+        ///Elite clue scroll x 1
+        ///Godsword shard 1 x 1
+        ///Godsword shard 2 x 1
+        ///Godsword shard 3 x 1
+        ///Saradomin&apos;s light x 1
+        ///Saradomin sword x 1
+        ///Armadyl crossbow x 1
+        ///Saradomin hilt x 1
+        ///Pet zilyana x 1
+        ///RDT x 1.
+        /// </summary>
+        internal static string Saradomin_Drops {
+            get {
+                return ResourceManager.GetString("Saradomin_Drops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Saradomin_hilt {
@@ -7741,6 +9193,18 @@ namespace OldSchoolDropLogger.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Saradomin&apos;s light x 1
+        ///Saradomin sword x 1
+        ///Armadyl crossbow x 1
+        ///Saradomin hilt x 1.
+        /// </summary>
+        internal static string Saradomin_Uniques {
+            get {
+                return ResourceManager.GetString("Saradomin_Uniques", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Scb_range_magic_potion__2_ {
@@ -7751,12 +9215,76 @@ namespace OldSchoolDropLogger.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 1. Phoenix necklace x 1
+        ///2. Admiral pie x 3
+        ///3. Shark x 1
+        ///4. Prayer potion (4) x 1
+        ///5. Superantipoison (4) x 1
+        ///6. Ensouled scorpion head x 1
+        ///7. Odium shard 3 x 1
+        ///8. Malediction shard 3 x 1
+        ///10. Anchovy pizza x 8
+        ///11. Kwuarm x 4
+        ///.
+        /// </summary>
+        internal static string Scorpia {
+            get {
+                return ResourceManager.GetString("Scorpia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rune scimitar x 1
+        ///Rune sword x 1
+        ///Rune warhammer x 1
+        ///Rune 2h sword x 1
+        ///Rune spear x 1
+        ///Rune pickaxe x 1
+        ///Rune chainbody x 1
+        ///Phoenix necklace x 1
+        ///Dust rune x 30
+        ///Uncut sapphire x 4
+        ///Uncut emerald x 5
+        ///Coins
+        ///Admiral pie x 3
+        ///Anchovy pizza x 8
+        ///Shark x 1
+        ///Cactus spine x 10
+        ///Prayer potion (4) x 1
+        ///Superantipoison (4) x 1
+        ///Ensouled scorpion head x 1
+        ///Bucket of sand x 25
+        ///Kwuarm x 4
+        ///Mysterious emblem x 1
+        ///Dragon scimitar x 1
+        ///Elite clue scroll x 1
+        ///Odium shard 3 x 1
+        ///Malediction shard 3 x 1
+        ///Scorpia&apos;s offs [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Scorpia_Drops {
+            get {
+                return ResourceManager.GetString("Scorpia_Drops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Scorpia_s_offspring {
             get {
                 object obj = ResourceManager.GetObject("Scorpia_s_offspring", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Odium shard 3 x 1
+        ///Malediction shard 3 x 1.
+        /// </summary>
+        internal static string Scorpia_Uniques {
+            get {
+                return ResourceManager.GetString("Scorpia_Uniques", resourceCulture);
             }
         }
         
@@ -7911,6 +9439,74 @@ namespace OldSchoolDropLogger.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 1. Grimy ranarr weed x 40
+        ///2. Grimy snapdragon x 20
+        ///3. Grimy torstol x 20
+        ///4. Grimy snapdragon x 20
+        ///5. Grimy torstol x 20
+        ///6. Battlestaff x 25
+        ///7. Raw anglerfish x 60
+        ///8. Dark totem base x 1
+        ///9. Dark totem middle x 1
+        ///10. Dark totem x 1
+        ///11. Dark totem top x 1
+        ///12. Jar of darkness x 1
+        ///13. Jar of darkness x 1
+        ///14. Jar of darkness x 1
+        ///15. Jar of darkness x 1
+        ///16. Jar of darkness x 1
+        ///.
+        /// </summary>
+        internal static string Skotizo {
+            get {
+                return ResourceManager.GetString("Skotizo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Death rune x 500
+        ///Soul rune x 450
+        ///Blood rune x 450
+        ///Rune platebody x 3
+        ///Rune kiteshield x 3
+        ///Rune platelegs x 3
+        ///Rune plateskirt x 3
+        ///Grimy ranarr weed x 40
+        ///Grimy snapdragon x 20
+        ///Grimy torstol x 20
+        ///Battlestaff x 25
+        ///Uncut dragonstone x 10
+        ///Adamantite ore x 75
+        ///Runite bar x 20
+        ///Raw anglerfish x 60
+        ///Mahogany plank x 150
+        ///Shield left half x 1
+        ///Dark totem base x 1
+        ///Dark totem middle x 1
+        ///Dark totem top x 1
+        ///Dark totem x 1
+        ///Onyx bolt tips x 40
+        ///Uncut onyx x 1
+        ///Hard clue scroll x 1
+        ///Elite clue scroll x 1
+        ///Jar [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Skotizo_Drops {
+            get {
+                return ResourceManager.GetString("Skotizo_Drops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Skotizo_Uniques {
+            get {
+                return ResourceManager.GetString("Skotizo_Uniques", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Slayer_icon_grayscale {
@@ -7973,6 +9569,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Smoke_rune1 {
+            get {
+                object obj = ResourceManager.GetObject("Smoke_rune1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Smouldering_stone {
             get {
                 object obj = ResourceManager.GetObject("Smouldering_stone", resourceCulture);
@@ -8006,6 +9612,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Snapdragon {
             get {
                 object obj = ResourceManager.GetObject("Snapdragon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Snapdragon_noted_10 {
+            get {
+                object obj = ResourceManager.GetObject("Snapdragon_noted_10", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -8261,6 +9877,20 @@ namespace OldSchoolDropLogger.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 1. Raids, Dexterous prayer scroll x 1 [sn=19561000]
+        ///2. Raids, Dexterous prayer scroll x 1 [sn=12000000]
+        ///3. Raids, Arcane prayer scroll x 1 [sn=2360000]
+        ///4. Raids, Ancestral robe bottom x 1 [sn=19475000]
+        ///5. Raids, Dragon harpoon x 1 [sn=1966000]
+        ///.
+        /// </summary>
+        internal static string Splits {
+            get {
+                return ResourceManager.GetString("Splits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Staff_of_the_dead {
@@ -8396,16 +10026,6 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Strange_fruit_noted_generic {
             get {
                 object obj = ResourceManager.GetObject("Strange_fruit_noted_generic", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Strange_fruit_noted_generic1 {
-            get {
-                object obj = ResourceManager.GetObject("Strange_fruit_noted_generic1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -8743,6 +10363,86 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Teak_seed_generic {
+            get {
+                object obj = ResourceManager.GetObject("Teak_seed_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1. Mystic air staff x 1
+        ///2. Mystic fire staff x 1
+        ///3. Fire talisman x 1
+        ///4. Ancient staff x 1
+        ///5. Red d&apos;hide body x 1
+        ///6. Rune chainbody x 1
+        ///7. Rune knife (p++) x 50
+        ///8. Ugthanki kebab x 3
+        ///9. Tuna potato x 3
+        ///10. Prayer potion (4) x 2
+        ///11. Sanfew serum (4) x 2
+        ///12. Bullseye lantern (unlit) x 1
+        ///13. Smoke battlestaff x 1
+        ///14. Occult necklace x 1
+        ///15. Tinderbox x 1
+        ///16. Dragonstone ring x 1
+        ///.
+        /// </summary>
+        internal static string Thermonuclear_Smoke_Devil {
+            get {
+                return ResourceManager.GetString("Thermonuclear_Smoke_Devil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rune dagger x 1
+        ///Rune scimitar x 1
+        ///Rune battleaxe x 1
+        ///Mystic air staff x 1
+        ///Mystic fire staff x 1
+        ///Dragon scimitar x 1
+        ///Fire talisman x 1
+        ///Ancient staff x 1
+        ///Red d&apos;hide body x 1
+        ///Rune chainbody x 1
+        ///Dust rune x 100
+        ///Air rune x 300
+        ///Soul rune x 60
+        ///Rune knife (p++) x 50
+        ///Rune arrow x 100
+        ///Snapdragon seed x 1
+        ///Magic seed x 1
+        ///Pure essence x 300
+        ///Desert goat horn x 50
+        ///Molten glass x 100
+        ///Mithril bar x 20
+        ///Grimy toadflax x 15
+        ///Coal x 150
+        ///Gold ore x 200
+        ///Onyx bolt tips x 12
+        ///Grapes x 100
+        ///Diamond x 10
+        ///Magic [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Thermonuclear_Smoke_Devil_Drops {
+            get {
+                return ResourceManager.GetString("Thermonuclear_Smoke_Devil_Drops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Thermonuclear_Smoke_Devil_Uniques {
+            get {
+                return ResourceManager.GetString("Thermonuclear_Smoke_Devil_Uniques", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Tinderbox {
             get {
                 object obj = ResourceManager.GetObject("Tinderbox", resourceCulture);
@@ -8926,6 +10626,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Torstol {
             get {
                 object obj = ResourceManager.GetObject("Torstol", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Torstol_noted_10 {
+            get {
+                object obj = ResourceManager.GetObject("Torstol_noted_10", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -9373,16 +11083,6 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Unicorn_horn_noted_generic1 {
-            get {
-                object obj = ResourceManager.GetObject("Unicorn_horn_noted_generic1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Unpowered_orb_noted_50 {
             get {
                 object obj = ResourceManager.GetObject("Unpowered_orb_noted_50", resourceCulture);
@@ -9411,12 +11111,74 @@ namespace OldSchoolDropLogger.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 1. Dark crab x 8
+        ///2. Uncut dragonstone x 1
+        ///3. Super restore (4) x 3
+        ///5. Red spiders&apos; eggs x 500
+        ///6. Grimy snapdragon x 100
+        ///7. Antidote++ (4) x 10
+        ///8. Treasonous ring x 1
+        ///.
+        /// </summary>
+        internal static string Venenatis {
+            get {
+                return ResourceManager.GetString("Venenatis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rune pickaxe x 1
+        ///Rune 2h sword x 1
+        ///Rune knife x 60
+        ///Diamond bolts (e) x 100
+        ///Cannonball x 250
+        ///Chaos rune x 400
+        ///Death rune x 300
+        ///Blood rune x 200
+        ///Dark fishing bait x 375
+        ///Dark crab x 8
+        ///Supercompost x 100
+        ///Unicorn horn x 100
+        ///Red spiders&apos; eggs x 500
+        ///Uncut ruby x 20
+        ///Uncut diamond x 10
+        ///Uncut dragonstone x 1
+        ///Gold ore x 300
+        ///Limpwurt root x 50
+        ///Grimy snapdragon x 100
+        ///Antidote++ (4) x 10
+        ///Super restore (4) x 3
+        ///Palm tree seed x 1
+        ///Yew seed x 1
+        ///Magic seed x 1
+        ///Magic logs x 100
+        ///Coins
+        ///Mysterious emblem [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Venenatis_Drops {
+            get {
+                return ResourceManager.GetString("Venenatis_Drops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Venenatis_spiderling {
             get {
                 object obj = ResourceManager.GetObject("Venenatis_spiderling", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dragon 2h sword x 1
+        ///Dragon pickaxe x 1
+        ///Treasonous ring x 1.
+        /// </summary>
+        internal static string Venenatis_Uniques {
+            get {
+                return ResourceManager.GetString("Venenatis_Uniques", resourceCulture);
             }
         }
         
@@ -9461,12 +11223,74 @@ namespace OldSchoolDropLogger.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 1. Dark crab x 8
+        ///2. Grimy ranarr weed x 100
+        ///3. Sanfew serum (4) x 10
+        ///4. Super restore (4) x 3
+        ///5. Cannonball x 250
+        ///6. Vet&apos;ion jr x 1
+        ///7. Mort myre fungus x 200
+        ///.
+        /// </summary>
+        internal static string Vet_ion {
+            get {
+                return ResourceManager.GetString("Vet_ion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rune pickaxe x 1
+        ///Rune 2h sword x 1
+        ///Ancient staff x 1
+        ///Gold ore x 300
+        ///Magic logs x 100
+        ///Chaos rune x 400
+        ///Death rune x 300
+        ///Blood rune x 200
+        ///Dark fishing bait x 375
+        ///Dark crab x 8
+        ///Supercompost x 100
+        ///Limpwurt root x 50
+        ///Dragon bones x 100
+        ///Uncut ruby x 20
+        ///Uncut diamond x 10
+        ///Uncut dragonstone x 1
+        ///Oak plank x 300
+        ///Mort myre fungus x 200
+        ///Grimy ranarr weed x 100
+        ///Sanfew serum (4) x 10
+        ///Super restore (4) x 3
+        ///Palm tree seed x 1
+        ///Yew seed x 1
+        ///Magic seed x 1
+        ///Ogre coffin key x 10
+        ///Cannonball x 250
+        ///Coins        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Vet_ion_Drops {
+            get {
+                return ResourceManager.GetString("Vet_ion_Drops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Vet_ion_jr {
             get {
                 object obj = ResourceManager.GetObject("Vet_ion_jr", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dragon 2h sword x 1
+        ///Dragon pickaxe x 1
+        ///Ring of the gods x 1.
+        /// </summary>
+        internal static string Vet_ion_Uniques {
+            get {
+                return ResourceManager.GetString("Vet_ion_Uniques", resourceCulture);
             }
         }
         
@@ -9526,6 +11350,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Water_rune_generic {
             get {
                 object obj = ResourceManager.GetObject("Water_rune_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Water_rune1 {
+            get {
+                object obj = ResourceManager.GetObject("Water_rune1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -9761,6 +11595,82 @@ namespace OldSchoolDropLogger.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 1. Acorn x 1
+        ///2. Magic seed x 1
+        ///3. Spirit seed x 1
+        ///4. Pyromancer hood x 1
+        ///5. Pyromancer garb x 1
+        ///6. Pyromancer robe x 1
+        ///7. Pyromancer boots x 1
+        ///8. Pyromancer boots x 1
+        ///9. Warm gloves x 1
+        ///10. Tome of fire (empty) x 1
+        ///11. Phoenix x 1
+        ///12. Oak logs x 50000 [v]
+        ///13. Magic logs x 99999999 [v]
+        ///.
+        /// </summary>
+        internal static string Wintertodt {
+            get {
+                return ResourceManager.GetString("Wintertodt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Oak logs
+        ///Willow logs
+        ///Maple logs
+        ///Teak logs
+        ///Mahogany logs
+        ///Yew logs
+        ///Magic logs
+        ///Pure essence
+        ///Uncut sapphire
+        ///Uncut emerald
+        ///Uncut ruby
+        ///Uncut diamond
+        ///Coal
+        ///Iron ore
+        ///Silver ore
+        ///Gold ore
+        ///Mithril ore
+        ///Adamantite ore
+        ///Runite ore
+        ///Grimy guam leaf
+        ///Grimy marrentill
+        ///Grimy harralander
+        ///Grimy avantoe
+        ///Grimy cadantine
+        ///Grimy ranarr weed
+        ///Grimy torstol
+        ///Grimy kwuarm
+        ///Tarromin seed
+        ///Harralander seed
+        ///Toadflax seed
+        ///Ranarr seed
+        ///Avantoe seed
+        ///Snapdragon seed
+        ///Banana tree seed
+        ///Teak seed
+        ///Mahogany seed
+        ///Acorn x  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Wintertodt_Drops {
+            get {
+                return ResourceManager.GetString("Wintertodt_Drops", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Wintertodt_Uniques {
+            get {
+                return ResourceManager.GetString("Wintertodt_Uniques", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Yew_logs {
@@ -9786,6 +11696,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Yew_logs_noted_150 {
             get {
                 object obj = ResourceManager.GetObject("Yew_logs_noted_150", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Yew_logs_noted_35 {
+            get {
+                object obj = ResourceManager.GetObject("Yew_logs_noted_35", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -9831,6 +11751,15 @@ namespace OldSchoolDropLogger.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Zamorak {
+            get {
+                return ResourceManager.GetString("Zamorak", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Zamorak_brew__2_ {
@@ -9847,6 +11776,39 @@ namespace OldSchoolDropLogger.Properties {
             get {
                 object obj = ResourceManager.GetObject("Zamorak_brew__3_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rune sword x 1
+        ///Rune scimitar x 1
+        ///Dragon dagger (p++) x 1
+        ///Adamant arrows
+        ///Adamant platebody x 1
+        ///Rune platelegs x 1
+        ///Lantadyme seed x 3
+        ///Grimy lantadyme
+        ///Super attack (3) x 3
+        ///Super strength (3) x 3
+        ///Super restore (3) x 3
+        ///Zamorak brew (3) x 3
+        ///Death rune
+        ///Blood rune
+        ///Coins
+        ///Elite clue scroll x 1
+        ///Godsword shard 1 x 1
+        ///Godsword shard 1 x 2
+        ///Godsword shard 1 x 3
+        ///Steam battlestaff x 1
+        ///Staff of the dead x 1
+        ///Zamorakian spear x 1
+        ///Zamorak hilt x 1
+        ///Pet k&apos;ril tsutsaroth x 1
+        ///RDT x 1.
+        /// </summary>
+        internal static string Zamorak_Drops {
+            get {
+                return ResourceManager.GetString("Zamorak_Drops", resourceCulture);
             }
         }
         
@@ -9881,6 +11843,18 @@ namespace OldSchoolDropLogger.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Steam battlestaff x 1
+        ///Staff of the dead x 1
+        ///Zamorakian spear x 1
+        ///Zamorak hilt x 1.
+        /// </summary>
+        internal static string Zamorak_Uniques {
+            get {
+                return ResourceManager.GetString("Zamorak_Uniques", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Zamorakian_spear {
@@ -9903,10 +11877,66 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Zul_andra_teleport_4 {
+            get {
+                object obj = ResourceManager.GetObject("Zul_andra_teleport_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Zul_andra_teleport_generic {
             get {
                 object obj = ResourceManager.GetObject("Zul_andra_teleport_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Zulrah {
+            get {
+                return ResourceManager.GetString("Zulrah", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pure essence x 1500
+        ///Law rune x 200
+        ///Chaos rune x 500
+        ///Death rune x 300
+        ///Toadflax x 20
+        ///Snapdragon x 20
+        ///Dwarf weed x 20
+        ///Torstol x 20
+        ///Toadflax seed x 2
+        ///Snapdragon seed x 2
+        ///Dwarf weed seed x 2
+        ///Torstol seed x 2
+        ///Watermelon seed x 2
+        ///Palm tree seed x 1
+        ///Magic seed x 1
+        ///Calquat seed x 2
+        ///Spirit seed x 1
+        ///Crystal seed x 1
+        ///Flax x 1000
+        ///Snakeskin x 35
+        ///Dragon bolt tips x 12
+        ///Magic logs x 100
+        ///Coal x 300
+        ///Runite ore x 10
+        ///Adamantite bar x 25
+        ///Mahogany plank x 50
+        ///Dragon bones x 30
+        ///Coconut x 20
+        ///Grapes x 250        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Zulrah_Drops {
+            get {
+                return ResourceManager.GetString("Zulrah_Drops", resourceCulture);
             }
         }
         
@@ -9937,6 +11967,15 @@ namespace OldSchoolDropLogger.Properties {
             get {
                 object obj = ResourceManager.GetObject("Zulrah_s_scales_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string Zulrah_Uniques {
+            get {
+                return ResourceManager.GetString("Zulrah_Uniques", resourceCulture);
             }
         }
     }

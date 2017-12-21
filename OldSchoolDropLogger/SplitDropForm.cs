@@ -5,6 +5,8 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using OldSchoolDropLogger.Properties;
+using System.Reflection;
+using System.Resources;
 
 namespace splitDrop {
 	public partial class SplitDropForm : Form {
@@ -34,6 +36,13 @@ namespace splitDrop {
 
 			int numUniques = stats.getUniquesFromBoss(currentBoss).Count;
 			resizeSplitWindow(numUniques);
+
+
+			String splitsFileLocation = System.IO.Directory.GetCurrentDirectory() + "/logs/Splits.txt";
+			Console.WriteLine("[DEBUG]: " + splitsFileLocation);
+
+
+
 		}
 
 		private void showUniques(String boss) {
@@ -122,30 +131,32 @@ namespace splitDrop {
 					pictureBox1.Tag = "Dragon thrownaxe x 100";
 					pictureBox2.BackgroundImage = Resources.Dragon_sword;
 					pictureBox2.Tag = "Dragon sword x 1";
-					pictureBox3.BackgroundImage = Resources.Dinh_s_bulwark;
-					pictureBox3.Tag = "Dinh's bulwark x 1";
-					pictureBox4.BackgroundImage = Resources.Twisted_buckler;
-					pictureBox4.Tag = "Twisted buckler x 1";
-					pictureBox5.BackgroundImage = Resources.Dragon_hunter_crossbow;
-					pictureBox5.Tag = "Dragon hunter crossbow x 1";
-					pictureBox6.BackgroundImage = Resources.Ancestral_hat;
-					pictureBox6.Tag = "Ancestral hat x 1";
-					pictureBox7.BackgroundImage = Resources.Ancestral_robe_top;
-					pictureBox7.Tag = "Ancestral robe top x 1";
-					pictureBox8.BackgroundImage = Resources.Ancestral_robe_bottom;
-					pictureBox8.Tag = "Ancestral robe bottom x 1";
-					pictureBox9.BackgroundImage = Resources.Arcane_prayer_scroll;
-					pictureBox9.Tag = "Arcane prayer scroll x 1";
-					pictureBox10.BackgroundImage = Resources.Dexterous_prayer_scroll;
-					pictureBox10.Tag = "Dexterous prayer scroll x 1";
-					pictureBox11.BackgroundImage = Resources.Dragon_claws;
-					pictureBox11.Tag = "Dragon claws x 1";
-					pictureBox12.BackgroundImage = Resources.Elder_maul;
-					pictureBox12.Tag = "Elder maul x 1";
-					pictureBox13.BackgroundImage = Resources.Kodai_insignia;
-					pictureBox13.Tag = "Kodai insignia x 1";
-					pictureBox14.BackgroundImage = Resources.Twisted_bow;
-					pictureBox14.Tag = "Twisted bow x 1";
+					pictureBox3.BackgroundImage = Resources.Dragon_harpoon;
+					pictureBox3.Tag = "Dragon harpoon x 1";
+					pictureBox4.BackgroundImage = Resources.Dinh_s_bulwark;
+					pictureBox4.Tag = "Dinh's bulwark x 1";
+					pictureBox5.BackgroundImage = Resources.Twisted_buckler;
+					pictureBox5.Tag = "Twisted buckler x 1";
+					pictureBox6.BackgroundImage = Resources.Arcane_prayer_scroll;
+					pictureBox6.Tag = "Arcane prayer scroll x 1";
+					pictureBox7.BackgroundImage = Resources.Ancestral_hat;
+					pictureBox7.Tag = "Ancestral hat x 1";
+					pictureBox8.BackgroundImage = Resources.Ancestral_robe_top;
+					pictureBox8.Tag = "Ancestral robe top x 1";
+					pictureBox9.BackgroundImage = Resources.Ancestral_robe_bottom;
+					pictureBox9.Tag = "Ancestral robe bottom x 1";
+					pictureBox10.BackgroundImage = Resources.Dragon_hunter_crossbow;
+					pictureBox10.Tag = "Dragon hunter crossbow x 1";
+					pictureBox11.BackgroundImage = Resources.Dexterous_prayer_scroll;
+					pictureBox11.Tag = "Dexterous prayer scroll x 1";
+					pictureBox12.BackgroundImage = Resources.Dragon_claws;
+					pictureBox12.Tag = "Dragon claws x 1";
+					pictureBox13.BackgroundImage = Resources.Elder_maul;
+					pictureBox13.Tag = "Elder maul x 1";
+					pictureBox14.BackgroundImage = Resources.Kodai_insignia;
+					pictureBox14.Tag = "Kodai insignia x 1";
+					pictureBox15.BackgroundImage = Resources.Twisted_bow;
+					pictureBox15.Tag = "Twisted bow x 1";
 					break;
 				case "Skotizo":
 					// none

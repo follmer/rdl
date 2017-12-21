@@ -15,7 +15,7 @@ Pure essence x 600
 Earth orb
 Magic logs
 Ranarr seed x 1
-Snapdragon xeed x 2
+Snapdragon seed x 2
 Torstol seed x 2
 Watermelon seed x 30
 Papaya tree seed x 2
@@ -46,7 +46,7 @@ Body talisman x 1
 Cosmic talisman x 1
 Nature talisman x 1
 Chaos talisman x 1
-Cannonball x 30
+Cannonball x 300
 Uncut diamond x 15
 Coins
 Onyx bolt tips x 10

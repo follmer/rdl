@@ -12,12 +12,12 @@ Chaos rune x 250
 Death rune x 150
 Blood rune x 60
 Soul rune x 50
-Air orb x 50
+Unpowered orb x 50
 Diamond x 8
 Oak plank x 60
 Raw shark x 50
 Raw monkfish x 100
-Runite bar x 1
+Runite bar x 2
 Grimy snapdragon x 6
 Shark x 5
 Edible seaweed x 5

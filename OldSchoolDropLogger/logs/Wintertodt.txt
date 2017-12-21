@@ -9,3 +9,5 @@
 9. Warm gloves x 1
 10. Tome of fire (empty) x 1
 11. Phoenix x 1
+12. Oak logs x 50000 [v]
+13. Magic logs x 99999999 [v]
