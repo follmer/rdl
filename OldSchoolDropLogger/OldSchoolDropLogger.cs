@@ -10435,10 +10435,9 @@ namespace dropLogger {
 		}
 
 		private void statsToolStripMenuItem_Click(object sender, EventArgs e) {
+
 			if (!isFormOpen("StatisticsForm")) {
-
 				stats.Show();
-
 			}
 		}
 	}

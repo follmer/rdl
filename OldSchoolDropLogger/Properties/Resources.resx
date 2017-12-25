@@ -3421,4 +3421,7 @@
   <data name="Zul_andra_teleport_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Zul-andra_teleport_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="uniques_icon_any" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\icons\uniques_icon_any.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

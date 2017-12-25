@@ -2137,6 +2137,7 @@
 			this.Controls.Add(this.itemDropListBox);
 			this.Controls.Add(this.buttonUndoLastDrop);
 			this.Controls.Add(this.menuStripLogger);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.KeyPreview = true;
 			this.MainMenuStrip = this.menuStripLogger;
