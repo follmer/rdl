@@ -24,7 +24,7 @@
 			this.buttonSplitOk = new System.Windows.Forms.Button();
 			this.radioButtonOwnDropNo = new System.Windows.Forms.RadioButton();
 			this.labelDropInYourNameText = new System.Windows.Forms.Label();
-			this.textBoxSplitAmount = new System.Windows.Forms.TextBox();
+			this.textboxSplitAmount = new System.Windows.Forms.TextBox();
 			this.panelYesNoRadio = new System.Windows.Forms.Panel();
 			this.pictureBoxTest = new System.Windows.Forms.PictureBox();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -48,6 +48,10 @@
 			this.pictureBox17 = new System.Windows.Forms.PictureBox();
 			this.pictureBox16 = new System.Windows.Forms.PictureBox();
 			this.labelNoUniquesForBoss = new System.Windows.Forms.Label();
+			this.textboxNumberPeople = new System.Windows.Forms.TextBox();
+			this.labelNumberPeopleText = new System.Windows.Forms.Label();
+			this.textboxNumberAlts = new System.Windows.Forms.TextBox();
+			this.labelNumberAltsText = new System.Windows.Forms.Label();
 			this.panelYesNoRadio.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxTest)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -78,10 +82,10 @@
 			this.buttonSplitCancel.FlatAppearance.BorderSize = 0;
 			this.buttonSplitCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.buttonSplitCancel.ForeColor = System.Drawing.Color.Silver;
-			this.buttonSplitCancel.Location = new System.Drawing.Point(117, 219);
+			this.buttonSplitCancel.Location = new System.Drawing.Point(117, 249);
 			this.buttonSplitCancel.Name = "buttonSplitCancel";
 			this.buttonSplitCancel.Size = new System.Drawing.Size(75, 23);
-			this.buttonSplitCancel.TabIndex = 6;
+			this.buttonSplitCancel.TabIndex = 7;
 			this.buttonSplitCancel.Text = "Cancel";
 			this.buttonSplitCancel.UseVisualStyleBackColor = false;
 			this.buttonSplitCancel.Click += new System.EventHandler(this.buttonSplitCancel_Click);
@@ -103,7 +107,7 @@
 			this.radioButtonOwnDropYes.Location = new System.Drawing.Point(3, 3);
 			this.radioButtonOwnDropYes.Name = "radioButtonOwnDropYes";
 			this.radioButtonOwnDropYes.Size = new System.Drawing.Size(43, 17);
-			this.radioButtonOwnDropYes.TabIndex = 3;
+			this.radioButtonOwnDropYes.TabIndex = 4;
 			this.radioButtonOwnDropYes.TabStop = true;
 			this.radioButtonOwnDropYes.Text = "Yes";
 			this.radioButtonOwnDropYes.UseVisualStyleBackColor = true;
@@ -114,10 +118,10 @@
 			this.buttonSplitOk.FlatAppearance.BorderSize = 0;
 			this.buttonSplitOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.buttonSplitOk.ForeColor = System.Drawing.Color.Silver;
-			this.buttonSplitOk.Location = new System.Drawing.Point(36, 219);
+			this.buttonSplitOk.Location = new System.Drawing.Point(36, 249);
 			this.buttonSplitOk.Name = "buttonSplitOk";
 			this.buttonSplitOk.Size = new System.Drawing.Size(75, 23);
-			this.buttonSplitOk.TabIndex = 5;
+			this.buttonSplitOk.TabIndex = 6;
 			this.buttonSplitOk.Text = "OK";
 			this.buttonSplitOk.UseVisualStyleBackColor = false;
 			this.buttonSplitOk.Click += new System.EventHandler(this.buttonSplitOk_Click);
@@ -130,7 +134,7 @@
 			this.radioButtonOwnDropNo.Location = new System.Drawing.Point(51, 3);
 			this.radioButtonOwnDropNo.Name = "radioButtonOwnDropNo";
 			this.radioButtonOwnDropNo.Size = new System.Drawing.Size(39, 17);
-			this.radioButtonOwnDropNo.TabIndex = 4;
+			this.radioButtonOwnDropNo.TabIndex = 5;
 			this.radioButtonOwnDropNo.TabStop = true;
 			this.radioButtonOwnDropNo.Text = "No";
 			this.radioButtonOwnDropNo.UseVisualStyleBackColor = true;
@@ -139,27 +143,27 @@
 			// 
 			this.labelDropInYourNameText.AutoSize = true;
 			this.labelDropInYourNameText.ForeColor = System.Drawing.Color.Silver;
-			this.labelDropInYourNameText.Location = new System.Drawing.Point(12, 192);
+			this.labelDropInYourNameText.Location = new System.Drawing.Point(12, 219);
 			this.labelDropInYourNameText.Name = "labelDropInYourNameText";
 			this.labelDropInYourNameText.Size = new System.Drawing.Size(99, 13);
 			this.labelDropInYourNameText.TabIndex = 31;
 			this.labelDropInYourNameText.Text = "Drop in your name?";
 			// 
-			// textBoxSplitAmount
+			// textboxSplitAmount
 			// 
-			this.textBoxSplitAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-			this.textBoxSplitAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.textBoxSplitAmount.ForeColor = System.Drawing.Color.Silver;
-			this.textBoxSplitAmount.Location = new System.Drawing.Point(87, 160);
-			this.textBoxSplitAmount.Name = "textBoxSplitAmount";
-			this.textBoxSplitAmount.Size = new System.Drawing.Size(124, 20);
-			this.textBoxSplitAmount.TabIndex = 2;
+			this.textboxSplitAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+			this.textboxSplitAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.textboxSplitAmount.ForeColor = System.Drawing.Color.Silver;
+			this.textboxSplitAmount.Location = new System.Drawing.Point(87, 160);
+			this.textboxSplitAmount.Name = "textboxSplitAmount";
+			this.textboxSplitAmount.Size = new System.Drawing.Size(124, 20);
+			this.textboxSplitAmount.TabIndex = 1;
 			// 
 			// panelYesNoRadio
 			// 
 			this.panelYesNoRadio.Controls.Add(this.radioButtonOwnDropYes);
 			this.panelYesNoRadio.Controls.Add(this.radioButtonOwnDropNo);
-			this.panelYesNoRadio.Location = new System.Drawing.Point(117, 187);
+			this.panelYesNoRadio.Location = new System.Drawing.Point(117, 214);
 			this.panelYesNoRadio.Name = "panelYesNoRadio";
 			this.panelYesNoRadio.Size = new System.Drawing.Size(94, 23);
 			this.panelYesNoRadio.TabIndex = 78;
@@ -453,12 +457,58 @@
 			this.labelNoUniquesForBoss.Text = "There are no uniques for this boss.";
 			this.labelNoUniquesForBoss.Visible = false;
 			// 
+			// textboxNumberPeople
+			// 
+			this.textboxNumberPeople.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+			this.textboxNumberPeople.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.textboxNumberPeople.ForeColor = System.Drawing.Color.Silver;
+			this.textboxNumberPeople.Location = new System.Drawing.Point(70, 189);
+			this.textboxNumberPeople.Name = "textboxNumberPeople";
+			this.textboxNumberPeople.Size = new System.Drawing.Size(40, 20);
+			this.textboxNumberPeople.TabIndex = 2;
+			this.textboxNumberPeople.Text = "0";
+			// 
+			// labelNumberPeopleText
+			// 
+			this.labelNumberPeopleText.AutoSize = true;
+			this.labelNumberPeopleText.ForeColor = System.Drawing.Color.Silver;
+			this.labelNumberPeopleText.Location = new System.Drawing.Point(12, 191);
+			this.labelNumberPeopleText.Name = "labelNumberPeopleText";
+			this.labelNumberPeopleText.Size = new System.Drawing.Size(53, 13);
+			this.labelNumberPeopleText.TabIndex = 154;
+			this.labelNumberPeopleText.Text = "# People:";
+			// 
+			// textboxNumberAlts
+			// 
+			this.textboxNumberAlts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+			this.textboxNumberAlts.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.textboxNumberAlts.ForeColor = System.Drawing.Color.Silver;
+			this.textboxNumberAlts.Location = new System.Drawing.Point(171, 189);
+			this.textboxNumberAlts.Name = "textboxNumberAlts";
+			this.textboxNumberAlts.Size = new System.Drawing.Size(40, 20);
+			this.textboxNumberAlts.TabIndex = 3;
+			this.textboxNumberAlts.Text = "0";
+			// 
+			// labelNumberAltsText
+			// 
+			this.labelNumberAltsText.AutoSize = true;
+			this.labelNumberAltsText.ForeColor = System.Drawing.Color.Silver;
+			this.labelNumberAltsText.Location = new System.Drawing.Point(129, 191);
+			this.labelNumberAltsText.Name = "labelNumberAltsText";
+			this.labelNumberAltsText.Size = new System.Drawing.Size(37, 13);
+			this.labelNumberAltsText.TabIndex = 156;
+			this.labelNumberAltsText.Text = "# Alts:";
+			// 
 			// SplitDropForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-			this.ClientSize = new System.Drawing.Size(229, 253);
+			this.ClientSize = new System.Drawing.Size(229, 281);
+			this.Controls.Add(this.textboxNumberAlts);
+			this.Controls.Add(this.labelNumberAltsText);
+			this.Controls.Add(this.textboxNumberPeople);
+			this.Controls.Add(this.labelNumberPeopleText);
 			this.Controls.Add(this.labelNoUniquesForBoss);
 			this.Controls.Add(this.pictureBox20);
 			this.Controls.Add(this.pictureBox19);
@@ -482,7 +532,7 @@
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.pictureBoxTest);
 			this.Controls.Add(this.panelYesNoRadio);
-			this.Controls.Add(this.textBoxSplitAmount);
+			this.Controls.Add(this.textboxSplitAmount);
 			this.Controls.Add(this.labelDropInYourNameText);
 			this.Controls.Add(this.labelSplitAmountText);
 			this.Controls.Add(this.buttonSplitCancel);
@@ -528,7 +578,7 @@
 		internal System.Windows.Forms.Button buttonSplitOk;
 		private System.Windows.Forms.RadioButton radioButtonOwnDropNo;
 		private System.Windows.Forms.Label labelDropInYourNameText;
-		internal System.Windows.Forms.TextBox textBoxSplitAmount;
+		internal System.Windows.Forms.TextBox textboxSplitAmount;
 		private System.Windows.Forms.Panel panelYesNoRadio;
 		private System.Windows.Forms.PictureBox pictureBoxTest;
 		internal System.Windows.Forms.PictureBox pictureBox1;
@@ -552,5 +602,9 @@
 		internal System.Windows.Forms.PictureBox pictureBox17;
 		internal System.Windows.Forms.PictureBox pictureBox16;
 		private System.Windows.Forms.Label labelNoUniquesForBoss;
+		internal System.Windows.Forms.TextBox textboxNumberPeople;
+		private System.Windows.Forms.Label labelNumberPeopleText;
+		internal System.Windows.Forms.TextBox textboxNumberAlts;
+		private System.Windows.Forms.Label labelNumberAltsText;
 	}
 }

@@ -13,6 +13,7 @@ namespace splitDrop {
 
 		private stats.StatisticsForm stats = null;
 		private Color highlightOrange = Color.FromArgb(179, 107, 0);
+		List<PictureBox> allPictureBoxes = new List<PictureBox>();
 
 		public static SplitDropForm instance;
 		private String splitsFileLocation = AppDomain.CurrentDomain.BaseDirectory + "/logs/Splits.txt";
@@ -37,16 +38,11 @@ namespace splitDrop {
 			int numUniques = stats.getUniquesFromBoss(currentBoss).Count;
 			resizeSplitWindow(numUniques);
 
-
 			String splitsFileLocation = System.IO.Directory.GetCurrentDirectory() + "/logs/Splits.txt";
 			Console.WriteLine("[DEBUG]: " + splitsFileLocation);
-
-
-
 		}
 
 		private void showUniques(String boss) {
-
 			int numUniques = stats.getUniquesFromBoss(boss).Count;
 
 			switch (boss) {
@@ -239,6 +235,7 @@ namespace splitDrop {
 					Console.WriteLine("[ERROR]: Unable to find boss to show uniques for. (Boss = " + boss + ")");
 					break;
 			}
+			
 			resizeSplitWindow(numUniques);
 		}
 
@@ -247,7 +244,7 @@ namespace splitDrop {
 			if (getCurrentSelectedPictureBox() == null) return;
 
 			String splitItem = getCurrentSelectedPictureBox().Tag.ToString();
-			String splitAmountText = textBoxSplitAmount.Text;
+			String splitAmountText = textboxSplitAmount.Text;
 
 			if (string.IsNullOrWhiteSpace(splitItem)) {
 				return;
@@ -258,6 +255,26 @@ namespace splitDrop {
 			}
 
 			int splitAmount = Int32.Parse(splitAmountText);
+
+			String numPeople = textboxNumberPeople.Text;
+			int numberPeople = 0;
+
+			if (string.IsNullOrWhiteSpace(numPeople)) {
+				numberPeople = 0;
+			}
+			else {
+				numberPeople = Int32.Parse(numPeople);
+			}
+
+			String numAlts = textboxNumberAlts.Text;
+			int numberAlts = 0;
+
+			if (string.IsNullOrWhiteSpace(numAlts)) {
+				numberAlts = 0;
+			}
+			else {
+				numberAlts = Int32.Parse(numAlts);
+			}
 
 			// if: 
 			//		file does not exist, create it
@@ -277,23 +294,34 @@ namespace splitDrop {
 			int totalSplitsLogged = alreadyLoggedSplits.Count();
 			String newTotalLogged = (totalSplitsLogged + 1).ToString();
 
-			String formattedSplit = "";
-
 			int currentBossKillcount = dropLogger.OldSchoolDropLogger.instance.getBossKillcount(currentBoss);
-			//int splitItemQuantity = 1;
-			//if (splitItem == "Dragon thrownaxe x 100") splitItemQuantity = 100;
 
+			// Assemble the string to log into the split file
+			String formattedSplit = "";
+			formattedSplit = currentBoss + ", " + splitItem;
+			formattedSplit += " [";
+			if (dropInOwnName) { formattedSplit += "kc=" + (currentBossKillcount + 1).ToString(); }
+			else { formattedSplit += "kc=" + currentBossKillcount.ToString(); }
+			formattedSplit += ",";
+			formattedSplit += "s";
 			if (dropInOwnName) {
-				formattedSplit = currentBoss + " [" + currentBossKillcount.ToString() + " kc], " + splitItem + /*" x " + splitItemQuantity +*/ " [sy=" + splitAmountText + "]";
-
-				pictureBoxTest.Tag = splitItem/* + " x " + splitItemQuantity.ToString()*/;
+				formattedSplit += "y";	
+				pictureBoxTest.Tag = splitItem;
 				dropLogger.OldSchoolDropLogger.instance.pictureBox_Click(pictureBoxTest, null);
 			}
 			else {
-				formattedSplit = currentBoss + ", " + splitItem + /*" x " + splitItemQuantity + */" [sn=" + splitAmountText + "]";
+				formattedSplit += "n";
 			}
-			// 3. Saradomin, Saradomin hilt x 1[sn = 20000000]
-			// 4. Saradomin[3 kc], Armadyl crossbow[sy = 13850000]
+			formattedSplit += "=" + splitAmountText;
+			formattedSplit += ",";
+			formattedSplit += "p=" + numberPeople.ToString();
+			formattedSplit += ",";
+			formattedSplit += "a=" + numberAlts.ToString();
+			formattedSplit += "]";
+
+
+			// 3. Saradomin, Saradomin hilt x 1[sn=20000000,p=3,a=0]
+			// 4. Saradomin[3 kc], Armadyl crossbow[sy=13850000,p=15,a=4]
 
 			List<String> newLoggedSplits = alreadyLoggedSplits;
 
@@ -354,6 +382,21 @@ namespace splitDrop {
 
 		private void resizeSplitWindow(int numberOfUniques) {
 
+			// to account for excluding pet
+			numberOfUniques -= 1;
+
+			// Only show number of alts box if we're logging raids stuff
+			if (dropLogger.OldSchoolDropLogger.instance.getCurrentBoss() != "Raids") {
+				labelNumberAltsText.Visible = false;
+				textboxNumberAlts.Visible = false;
+				textboxNumberPeople.Size = new Size(141, 20);
+			}
+			else {
+				labelNumberAltsText.Visible = true;
+				textboxNumberAlts.Visible = true;
+				textboxNumberPeople.Size = new Size(40, 20);
+			}
+
 			int numberOfRowsHidden = 4;
 
 			// calculate number of rows to hide
@@ -372,623 +415,104 @@ namespace splitDrop {
 			int totalDistModifier = 35 * numberOfRowsHidden;
 
 			if (numberOfUniques == 0) {
-				this.Size = new Size(245, 292 - 105);
+				this.Size = new Size(245, 320 - 105);
 				labelSplitAmountText.Location = new Point(12, 162 - 105);
-				textBoxSplitAmount.Location = new Point(87, 160 - 105);
-				labelDropInYourNameText.Location = new Point(12, 192 - 105);
-				panelYesNoRadio.Location = new Point(117, 187 - 105);
-				buttonSplitOk.Location = new Point(36, 219 - 105);
-				buttonSplitCancel.Location = new Point(117, 219 - 105);
+				textboxSplitAmount.Location = new Point(87, 160 - 105);
+				labelNumberPeopleText.Location = new Point(12, 191 - 105);
+				textboxNumberPeople.Location = new Point(70, 189 - 105);
+				labelNumberAltsText.Location = new Point(129, 191 - 105);
+				textboxNumberAlts.Location = new Point(171, 189 - 105);
+				labelDropInYourNameText.Location = new Point(12, 219 - 105);
+				panelYesNoRadio.Location = new Point(117, 214 - 105);
+				buttonSplitOk.Location = new Point(36, 249 - 105);
+				buttonSplitCancel.Location = new Point(117, 249 - 105);
 			}
 			else if (numberOfUniques <= 5) {
-				this.Size = new Size(245, 292 - totalDistModifier);
+				this.Size = new Size(245, 320 - totalDistModifier);
 				labelSplitAmountText.Location = new Point(12, 162 - totalDistModifier);
-				textBoxSplitAmount.Location = new Point(87, 160 - totalDistModifier);
-				labelDropInYourNameText.Location = new Point(12, 192 - totalDistModifier);
-				panelYesNoRadio.Location = new Point(117, 187 - totalDistModifier);
-				buttonSplitOk.Location = new Point(36, 219 - totalDistModifier);
-				buttonSplitCancel.Location = new Point(117, 219 - totalDistModifier);
+				textboxSplitAmount.Location = new Point(87, 160 - totalDistModifier);
+				labelNumberPeopleText.Location = new Point(12, 191 - totalDistModifier);
+				textboxNumberPeople.Location = new Point(70, 189 - totalDistModifier);
+				labelNumberAltsText.Location = new Point(129, 191 - totalDistModifier);
+				textboxNumberAlts.Location = new Point(171, 189 - totalDistModifier);
+				labelDropInYourNameText.Location = new Point(12, 219 - totalDistModifier);
+				panelYesNoRadio.Location = new Point(117, 214 - totalDistModifier);
+				buttonSplitOk.Location = new Point(36, 249 - totalDistModifier);
+				buttonSplitCancel.Location = new Point(117, 249 - totalDistModifier);
 			}
 			else if (numberOfUniques <= 10) {
-				this.Size = new Size(245, 292 - totalDistModifier);
+				this.Size = new Size(245, 320 - totalDistModifier);
 				labelSplitAmountText.Location = new Point(12, 162 - totalDistModifier);
-				textBoxSplitAmount.Location = new Point(87, 160 - totalDistModifier);
-				labelDropInYourNameText.Location = new Point(12, 192 - totalDistModifier);
-				panelYesNoRadio.Location = new Point(117, 187 - totalDistModifier);
-				buttonSplitOk.Location = new Point(36, 219 - totalDistModifier);
-				buttonSplitCancel.Location = new Point(117, 219 - totalDistModifier);
+				textboxSplitAmount.Location = new Point(87, 160 - totalDistModifier);
+				labelNumberPeopleText.Location = new Point(12, 191 - totalDistModifier);
+				textboxNumberPeople.Location = new Point(70, 189 - totalDistModifier);
+				labelNumberAltsText.Location = new Point(129, 191 - totalDistModifier);
+				textboxNumberAlts.Location = new Point(171, 189 - totalDistModifier);
+				labelDropInYourNameText.Location = new Point(12, 219 - totalDistModifier);
+				panelYesNoRadio.Location = new Point(117, 214 - totalDistModifier);
+				buttonSplitOk.Location = new Point(36, 249 - totalDistModifier);
+				buttonSplitCancel.Location = new Point(117, 249 - totalDistModifier);
 			}
 			else if (numberOfUniques <= 15) {
-				this.Size = new Size(245, 292 - totalDistModifier);
+				this.Size = new Size(245, 320 - totalDistModifier);
 				labelSplitAmountText.Location = new Point(12, 162 - totalDistModifier);
-				textBoxSplitAmount.Location = new Point(87, 160 - totalDistModifier);
-				labelDropInYourNameText.Location = new Point(12, 192 - totalDistModifier);
-				panelYesNoRadio.Location = new Point(117, 187 - totalDistModifier);
-				buttonSplitOk.Location = new Point(36, 219 - totalDistModifier);
-				buttonSplitCancel.Location = new Point(117, 219 - totalDistModifier);
+				textboxSplitAmount.Location = new Point(87, 160 - totalDistModifier);
+				labelNumberPeopleText.Location = new Point(12, 191 - totalDistModifier);
+				textboxNumberPeople.Location = new Point(70, 189 - totalDistModifier);
+				labelNumberAltsText.Location = new Point(129, 191 - totalDistModifier);
+				textboxNumberAlts.Location = new Point(171, 189 - totalDistModifier);
+				labelDropInYourNameText.Location = new Point(12, 219 - totalDistModifier);
+				panelYesNoRadio.Location = new Point(117, 214 - totalDistModifier);
+				buttonSplitOk.Location = new Point(36, 249 - totalDistModifier);
+				buttonSplitCancel.Location = new Point(117, 249 - totalDistModifier);
 			}
 			else if (numberOfUniques <= 20) {
-				this.Size = new Size(245, 292 - totalDistModifier);
+				this.Size = new Size(245, 320 - totalDistModifier);
 				labelSplitAmountText.Location = new Point(12, 162 - totalDistModifier);
-				textBoxSplitAmount.Location = new Point(87, 160 - totalDistModifier);
-				labelDropInYourNameText.Location = new Point(12, 192 - totalDistModifier);
-				panelYesNoRadio.Location = new Point(117, 187 - totalDistModifier);
-				buttonSplitOk.Location = new Point(36, 219 - totalDistModifier);
-				buttonSplitCancel.Location = new Point(117, 219 - totalDistModifier);
+				textboxSplitAmount.Location = new Point(87, 160 - totalDistModifier);
+				labelNumberPeopleText.Location = new Point(12, 191 - totalDistModifier);
+				textboxNumberPeople.Location = new Point(70, 189 - totalDistModifier);
+				labelNumberAltsText.Location = new Point(129, 191 - totalDistModifier);
+				textboxNumberAlts.Location = new Point(171, 189 - totalDistModifier);
+				labelDropInYourNameText.Location = new Point(12, 219 - totalDistModifier);
+				panelYesNoRadio.Location = new Point(117, 214 - totalDistModifier);
+				buttonSplitOk.Location = new Point(36, 249 - totalDistModifier);
+				buttonSplitCancel.Location = new Point(117, 249 - totalDistModifier);
 			}
 
 			setNPictureBoxesAsVisible(numberOfUniques);
 		}
 
 		private void setNPictureBoxesAsVisible(int n) {
-			switch (n) {
-				case 0:
-					labelNoUniquesForBoss.Visible = true;
-					buttonSplitOk.Enabled = false;
-					textBoxSplitAmount.Enabled = false;
-					radioButtonOwnDropNo.Enabled = false;
-					radioButtonOwnDropYes.Enabled = false;
-					pictureBox1.Visible = false;
-					pictureBox2.Visible = false;
-					pictureBox3.Visible = false;
-					pictureBox4.Visible = false;
-					pictureBox5.Visible = false;
-					pictureBox6.Visible = false;
-					pictureBox7.Visible = false;
-					pictureBox8.Visible = false;
-					pictureBox9.Visible = false;
-					pictureBox10.Visible = false;
-					pictureBox11.Visible = false;
-					pictureBox12.Visible = false;
-					pictureBox13.Visible = false;
-					pictureBox14.Visible = false;
-					pictureBox15.Visible = false;
-					pictureBox16.Visible = false;
-					pictureBox17.Visible = false;
-					pictureBox18.Visible = false;
-					pictureBox19.Visible = false;
-					pictureBox20.Visible = false;
-					break;
-				case 1:
-					labelNoUniquesForBoss.Visible = false;
-					buttonSplitOk.Enabled = true;
-					textBoxSplitAmount.Enabled = true;
-					radioButtonOwnDropNo.Enabled = true;
-					radioButtonOwnDropYes.Enabled = true;
-					pictureBox1.Visible = true;
-					pictureBox2.Visible = false;
-					pictureBox3.Visible = false;
-					pictureBox4.Visible = false;
-					pictureBox5.Visible = false;
-					pictureBox6.Visible = false;
-					pictureBox7.Visible = false;
-					pictureBox8.Visible = false;
-					pictureBox9.Visible = false;
-					pictureBox10.Visible = false;
-					pictureBox11.Visible = false;
-					pictureBox12.Visible = false;
-					pictureBox13.Visible = false;
-					pictureBox14.Visible = false;
-					pictureBox15.Visible = false;
-					pictureBox16.Visible = false;
-					pictureBox17.Visible = false;
-					pictureBox18.Visible = false;
-					pictureBox19.Visible = false;
-					pictureBox20.Visible = false;
-					break;
-				case 2:
-					labelNoUniquesForBoss.Visible = false;
-					buttonSplitOk.Enabled = true;
-					textBoxSplitAmount.Enabled = true;
-					radioButtonOwnDropNo.Enabled = true;
-					radioButtonOwnDropYes.Enabled = true;
-					pictureBox1.Visible = true;
-					pictureBox2.Visible = true;
-					pictureBox3.Visible = false;
-					pictureBox4.Visible = false;
-					pictureBox5.Visible = false;
-					pictureBox6.Visible = false;
-					pictureBox7.Visible = false;
-					pictureBox8.Visible = false;
-					pictureBox9.Visible = false;
-					pictureBox10.Visible = false;
-					pictureBox11.Visible = false;
-					pictureBox12.Visible = false;
-					pictureBox13.Visible = false;
-					pictureBox14.Visible = false;
-					pictureBox15.Visible = false;
-					pictureBox16.Visible = false;
-					pictureBox17.Visible = false;
-					pictureBox18.Visible = false;
-					pictureBox19.Visible = false;
-					pictureBox20.Visible = false;
-					break;
-				case 3:
-					labelNoUniquesForBoss.Visible = false;
-					buttonSplitOk.Enabled = true;
-					textBoxSplitAmount.Enabled = true;
-					radioButtonOwnDropNo.Enabled = true;
-					radioButtonOwnDropYes.Enabled = true;
-					pictureBox1.Visible = true;
-					pictureBox2.Visible = true;
-					pictureBox3.Visible = true;
-					pictureBox4.Visible = false;
-					pictureBox5.Visible = false;
-					pictureBox6.Visible = false;
-					pictureBox7.Visible = false;
-					pictureBox8.Visible = false;
-					pictureBox9.Visible = false;
-					pictureBox10.Visible = false;
-					pictureBox11.Visible = false;
-					pictureBox12.Visible = false;
-					pictureBox13.Visible = false;
-					pictureBox14.Visible = false;
-					pictureBox15.Visible = false;
-					pictureBox16.Visible = false;
-					pictureBox17.Visible = false;
-					pictureBox18.Visible = false;
-					pictureBox19.Visible = false;
-					pictureBox20.Visible = false;
-					break;
-				case 4:
-					labelNoUniquesForBoss.Visible = false;
-					buttonSplitOk.Enabled = true;
-					textBoxSplitAmount.Enabled = true;
-					radioButtonOwnDropNo.Enabled = true;
-					radioButtonOwnDropYes.Enabled = true;
-					pictureBox1.Visible = true;
-					pictureBox2.Visible = true;
-					pictureBox3.Visible = true;
-					pictureBox4.Visible = true;
-					pictureBox5.Visible = false;
-					pictureBox6.Visible = false;
-					pictureBox7.Visible = false;
-					pictureBox8.Visible = false;
-					pictureBox9.Visible = false;
-					pictureBox10.Visible = false;
-					pictureBox11.Visible = false;
-					pictureBox12.Visible = false;
-					pictureBox13.Visible = false;
-					pictureBox14.Visible = false;
-					pictureBox15.Visible = false;
-					pictureBox16.Visible = false;
-					pictureBox17.Visible = false;
-					pictureBox18.Visible = false;
-					pictureBox19.Visible = false;
-					pictureBox20.Visible = false;
-					break;
-				case 5:
-					labelNoUniquesForBoss.Visible = false;
-					buttonSplitOk.Enabled = true;
-					textBoxSplitAmount.Enabled = true;
-					radioButtonOwnDropNo.Enabled = true;
-					radioButtonOwnDropYes.Enabled = true;
-					pictureBox1.Visible = true;
-					pictureBox2.Visible = true;
-					pictureBox3.Visible = true;
-					pictureBox4.Visible = true;
-					pictureBox5.Visible = true;
-					pictureBox6.Visible = false;
-					pictureBox7.Visible = false;
-					pictureBox8.Visible = false;
-					pictureBox9.Visible = false;
-					pictureBox10.Visible = false;
-					pictureBox11.Visible = false;
-					pictureBox12.Visible = false;
-					pictureBox13.Visible = false;
-					pictureBox14.Visible = false;
-					pictureBox15.Visible = false;
-					pictureBox16.Visible = false;
-					pictureBox17.Visible = false;
-					pictureBox18.Visible = false;
-					pictureBox19.Visible = false;
-					pictureBox20.Visible = false;
-					break;
-				case 6:
-					labelNoUniquesForBoss.Visible = false;
-					buttonSplitOk.Enabled = true;
-					textBoxSplitAmount.Enabled = true;
-					radioButtonOwnDropNo.Enabled = true;
-					radioButtonOwnDropYes.Enabled = true;
-					pictureBox1.Visible = true;
-					pictureBox2.Visible = true;
-					pictureBox3.Visible = true;
-					pictureBox4.Visible = true;
-					pictureBox5.Visible = true;
-					pictureBox6.Visible = true;
-					pictureBox7.Visible = false;
-					pictureBox8.Visible = false;
-					pictureBox9.Visible = false;
-					pictureBox10.Visible = false;
-					pictureBox11.Visible = false;
-					pictureBox12.Visible = false;
-					pictureBox13.Visible = false;
-					pictureBox14.Visible = false;
-					pictureBox15.Visible = false;
-					pictureBox16.Visible = false;
-					pictureBox17.Visible = false;
-					pictureBox18.Visible = false;
-					pictureBox19.Visible = false;
-					pictureBox20.Visible = false;
-					break;
-				case 7:
-					labelNoUniquesForBoss.Visible = false;
-					buttonSplitOk.Enabled = true;
-					textBoxSplitAmount.Enabled = true;
-					radioButtonOwnDropNo.Enabled = true;
-					radioButtonOwnDropYes.Enabled = true;
-					pictureBox1.Visible = true;
-					pictureBox2.Visible = true;
-					pictureBox3.Visible = true;
-					pictureBox4.Visible = true;
-					pictureBox5.Visible = true;
-					pictureBox6.Visible = true;
-					pictureBox7.Visible = true;
-					pictureBox8.Visible = false;
-					pictureBox9.Visible = false;
-					pictureBox10.Visible = false;
-					pictureBox11.Visible = false;
-					pictureBox12.Visible = false;
-					pictureBox13.Visible = false;
-					pictureBox14.Visible = false;
-					pictureBox15.Visible = false;
-					pictureBox16.Visible = false;
-					pictureBox17.Visible = false;
-					pictureBox18.Visible = false;
-					pictureBox19.Visible = false;
-					pictureBox20.Visible = false;
-					break;
-				case 8:
-					labelNoUniquesForBoss.Visible = false;
-					buttonSplitOk.Enabled = true;
-					textBoxSplitAmount.Enabled = true;
-					radioButtonOwnDropNo.Enabled = true;
-					radioButtonOwnDropYes.Enabled = true;
-					pictureBox1.Visible = true;
-					pictureBox2.Visible = true;
-					pictureBox3.Visible = true;
-					pictureBox4.Visible = true;
-					pictureBox5.Visible = true;
-					pictureBox6.Visible = true;
-					pictureBox7.Visible = true;
-					pictureBox8.Visible = false;
-					pictureBox9.Visible = false;
-					pictureBox10.Visible = false;
-					pictureBox11.Visible = false;
-					pictureBox12.Visible = false;
-					pictureBox13.Visible = false;
-					pictureBox14.Visible = false;
-					pictureBox15.Visible = false;
-					pictureBox16.Visible = false;
-					pictureBox17.Visible = false;
-					pictureBox18.Visible = false;
-					pictureBox19.Visible = false;
-					pictureBox20.Visible = false;
-					break;
-				case 9:
-					labelNoUniquesForBoss.Visible = false;
-					buttonSplitOk.Enabled = true;
-					textBoxSplitAmount.Enabled = true;
-					radioButtonOwnDropNo.Enabled = true;
-					radioButtonOwnDropYes.Enabled = true;
-					pictureBox1.Visible = true;
-					pictureBox2.Visible = true;
-					pictureBox3.Visible = true;
-					pictureBox4.Visible = true;
-					pictureBox5.Visible = true;
-					pictureBox6.Visible = true;
-					pictureBox7.Visible = true;
-					pictureBox8.Visible = true;
-					pictureBox9.Visible = true;
-					pictureBox10.Visible = false;
-					pictureBox11.Visible = false;
-					pictureBox12.Visible = false;
-					pictureBox13.Visible = false;
-					pictureBox14.Visible = false;
-					pictureBox15.Visible = false;
-					pictureBox16.Visible = false;
-					pictureBox17.Visible = false;
-					pictureBox18.Visible = false;
-					pictureBox19.Visible = false;
-					pictureBox20.Visible = false;
-					break;
-				case 10:
-					labelNoUniquesForBoss.Visible = false;
-					buttonSplitOk.Enabled = true;
-					textBoxSplitAmount.Enabled = true;
-					radioButtonOwnDropNo.Enabled = true;
-					radioButtonOwnDropYes.Enabled = true;
-					pictureBox1.Visible = true;
-					pictureBox2.Visible = true;
-					pictureBox3.Visible = true;
-					pictureBox4.Visible = true;
-					pictureBox5.Visible = true;
-					pictureBox6.Visible = true;
-					pictureBox7.Visible = true;
-					pictureBox8.Visible = true;
-					pictureBox9.Visible = true;
-					pictureBox10.Visible = true;
-					pictureBox11.Visible = true;
-					pictureBox12.Visible = true;
-					pictureBox13.Visible = true;
-					pictureBox14.Visible = true;
-					pictureBox15.Visible = true;
-					pictureBox16.Visible = true;
-					pictureBox17.Visible = true;
-					pictureBox18.Visible = true;
-					pictureBox19.Visible = true;
-					pictureBox20.Visible = true;
-					break;
-				case 11:
-					labelNoUniquesForBoss.Visible = false;
-					buttonSplitOk.Enabled = true;
-					textBoxSplitAmount.Enabled = true;
-					radioButtonOwnDropNo.Enabled = true;
-					radioButtonOwnDropYes.Enabled = true;
-					pictureBox1.Visible = true;
-					pictureBox2.Visible = true;
-					pictureBox3.Visible = true;
-					pictureBox4.Visible = true;
-					pictureBox5.Visible = true;
-					pictureBox6.Visible = true;
-					pictureBox7.Visible = true;
-					pictureBox8.Visible = true;
-					pictureBox9.Visible = true;
-					pictureBox10.Visible = true;
-					pictureBox11.Visible = true;
-					pictureBox12.Visible = false;
-					pictureBox13.Visible = false;
-					pictureBox14.Visible = false;
-					pictureBox15.Visible = false;
-					pictureBox16.Visible = false;
-					pictureBox17.Visible = false;
-					pictureBox18.Visible = false;
-					pictureBox19.Visible = false;
-					pictureBox20.Visible = false;
-					break;
-				case 12:
-					labelNoUniquesForBoss.Visible = false;
-					buttonSplitOk.Enabled = true;
-					textBoxSplitAmount.Enabled = true;
-					radioButtonOwnDropNo.Enabled = true;
-					radioButtonOwnDropYes.Enabled = true;
-					pictureBox1.Visible = true;
-					pictureBox2.Visible = true;
-					pictureBox3.Visible = true;
-					pictureBox4.Visible = true;
-					pictureBox5.Visible = true;
-					pictureBox6.Visible = true;
-					pictureBox7.Visible = true;
-					pictureBox8.Visible = true;
-					pictureBox9.Visible = true;
-					pictureBox10.Visible = true;
-					pictureBox11.Visible = true;
-					pictureBox12.Visible = true;
-					pictureBox13.Visible = false;
-					pictureBox14.Visible = false;
-					pictureBox15.Visible = false;
-					pictureBox16.Visible = false;
-					pictureBox17.Visible = false;
-					pictureBox18.Visible = false;
-					pictureBox19.Visible = false;
-					pictureBox20.Visible = false;
-					break;
-				case 13:
-					labelNoUniquesForBoss.Visible = false;
-					buttonSplitOk.Enabled = true;
-					textBoxSplitAmount.Enabled = true;
-					radioButtonOwnDropNo.Enabled = true;
-					radioButtonOwnDropYes.Enabled = true;
-					pictureBox1.Visible = true;
-					pictureBox2.Visible = true;
-					pictureBox3.Visible = true;
-					pictureBox4.Visible = true;
-					pictureBox5.Visible = true;
-					pictureBox6.Visible = true;
-					pictureBox7.Visible = true;
-					pictureBox8.Visible = true;
-					pictureBox9.Visible = true;
-					pictureBox10.Visible = true;
-					pictureBox11.Visible = true;
-					pictureBox12.Visible = true;
-					pictureBox13.Visible = true;
-					pictureBox14.Visible = false;
-					pictureBox15.Visible = false;
-					pictureBox16.Visible = false;
-					pictureBox17.Visible = false;
-					pictureBox18.Visible = false;
-					pictureBox19.Visible = false;
-					pictureBox20.Visible = false;
-					break;
-				case 14:
-					labelNoUniquesForBoss.Visible = false;
-					buttonSplitOk.Enabled = true;
-					textBoxSplitAmount.Enabled = true;
-					radioButtonOwnDropNo.Enabled = true;
-					radioButtonOwnDropYes.Enabled = true;
-					pictureBox1.Visible = true;
-					pictureBox2.Visible = true;
-					pictureBox3.Visible = true;
-					pictureBox4.Visible = true;
-					pictureBox5.Visible = true;
-					pictureBox6.Visible = true;
-					pictureBox7.Visible = true;
-					pictureBox8.Visible = true;
-					pictureBox9.Visible = true;
-					pictureBox10.Visible = true;
-					pictureBox11.Visible = true;
-					pictureBox12.Visible = true;
-					pictureBox13.Visible = true;
-					pictureBox14.Visible = true;
-					pictureBox15.Visible = false;
-					pictureBox16.Visible = false;
-					pictureBox17.Visible = false;
-					pictureBox18.Visible = false;
-					pictureBox19.Visible = false;
-					pictureBox20.Visible = false;
-					break;
-				case 15:
-					labelNoUniquesForBoss.Visible = false;
-					buttonSplitOk.Enabled = true;
-					textBoxSplitAmount.Enabled = true;
-					radioButtonOwnDropNo.Enabled = true;
-					radioButtonOwnDropYes.Enabled = true;
-					pictureBox1.Visible = true;
-					pictureBox2.Visible = true;
-					pictureBox3.Visible = true;
-					pictureBox4.Visible = true;
-					pictureBox5.Visible = true;
-					pictureBox6.Visible = true;
-					pictureBox7.Visible = true;
-					pictureBox8.Visible = true;
-					pictureBox9.Visible = true;
-					pictureBox10.Visible = true;
-					pictureBox11.Visible = true;
-					pictureBox12.Visible = true;
-					pictureBox13.Visible = true;
-					pictureBox14.Visible = true;
-					pictureBox15.Visible = true;
-					pictureBox16.Visible = false;
-					pictureBox17.Visible = false;
-					pictureBox18.Visible = false;
-					pictureBox19.Visible = false;
-					pictureBox20.Visible = false;
-					break;
-				case 16:
-					labelNoUniquesForBoss.Visible = false;
-					buttonSplitOk.Enabled = true;
-					textBoxSplitAmount.Enabled = true;
-					radioButtonOwnDropNo.Enabled = true;
-					radioButtonOwnDropYes.Enabled = true;
-					pictureBox1.Visible = true;
-					pictureBox2.Visible = true;
-					pictureBox3.Visible = true;
-					pictureBox4.Visible = true;
-					pictureBox5.Visible = true;
-					pictureBox6.Visible = true;
-					pictureBox7.Visible = true;
-					pictureBox8.Visible = true;
-					pictureBox9.Visible = true;
-					pictureBox10.Visible = true;
-					pictureBox11.Visible = true;
-					pictureBox12.Visible = true;
-					pictureBox13.Visible = true;
-					pictureBox14.Visible = true;
-					pictureBox15.Visible = true;
-					pictureBox16.Visible = true;
-					pictureBox17.Visible = false;
-					pictureBox18.Visible = false;
-					pictureBox19.Visible = false;
-					pictureBox20.Visible = false;
-					break;
-				case 17:
-					labelNoUniquesForBoss.Visible = false;
-					buttonSplitOk.Enabled = true;
-					textBoxSplitAmount.Enabled = true;
-					radioButtonOwnDropNo.Enabled = true;
-					radioButtonOwnDropYes.Enabled = true;
-					pictureBox1.Visible = true;
-					pictureBox2.Visible = true;
-					pictureBox3.Visible = true;
-					pictureBox4.Visible = true;
-					pictureBox5.Visible = true;
-					pictureBox6.Visible = true;
-					pictureBox7.Visible = true;
-					pictureBox8.Visible = true;
-					pictureBox9.Visible = true;
-					pictureBox10.Visible = true;
-					pictureBox11.Visible = true;
-					pictureBox12.Visible = true;
-					pictureBox13.Visible = true;
-					pictureBox14.Visible = true;
-					pictureBox15.Visible = true;
-					pictureBox16.Visible = true;
-					pictureBox17.Visible = true;
-					pictureBox18.Visible = false;
-					pictureBox19.Visible = false;
-					pictureBox20.Visible = false;
-					break;
-				case 18:
-					labelNoUniquesForBoss.Visible = false;
-					buttonSplitOk.Enabled = true;
-					textBoxSplitAmount.Enabled = true;
-					radioButtonOwnDropNo.Enabled = true;
-					radioButtonOwnDropYes.Enabled = true;
-					pictureBox1.Visible = true;
-					pictureBox2.Visible = true;
-					pictureBox3.Visible = true;
-					pictureBox4.Visible = true;
-					pictureBox5.Visible = true;
-					pictureBox6.Visible = true;
-					pictureBox7.Visible = true;
-					pictureBox8.Visible = true;
-					pictureBox9.Visible = true;
-					pictureBox10.Visible = true;
-					pictureBox11.Visible = true;
-					pictureBox12.Visible = true;
-					pictureBox13.Visible = true;
-					pictureBox14.Visible = true;
-					pictureBox15.Visible = true;
-					pictureBox16.Visible = true;
-					pictureBox17.Visible = true;
-					pictureBox18.Visible = true;
-					pictureBox19.Visible = false;
-					pictureBox20.Visible = false;
-					break;
-				case 19:
-					labelNoUniquesForBoss.Visible = false;
-					buttonSplitOk.Enabled = true;
-					textBoxSplitAmount.Enabled = true;
-					radioButtonOwnDropNo.Enabled = true;
-					radioButtonOwnDropYes.Enabled = true;
-					pictureBox1.Visible = true;
-					pictureBox2.Visible = true;
-					pictureBox3.Visible = true;
-					pictureBox4.Visible = true;
-					pictureBox5.Visible = true;
-					pictureBox6.Visible = true;
-					pictureBox7.Visible = true;
-					pictureBox8.Visible = true;
-					pictureBox9.Visible = true;
-					pictureBox10.Visible = true;
-					pictureBox11.Visible = true;
-					pictureBox12.Visible = true;
-					pictureBox13.Visible = true;
-					pictureBox14.Visible = true;
-					pictureBox15.Visible = true;
-					pictureBox16.Visible = true;
-					pictureBox17.Visible = true;
-					pictureBox18.Visible = true;
-					pictureBox19.Visible = true;
-					pictureBox20.Visible = false;
-					break;
-				case 20:
-					labelNoUniquesForBoss.Visible = false;
-					buttonSplitOk.Enabled = true;
-					textBoxSplitAmount.Enabled = true;
-					radioButtonOwnDropNo.Enabled = true;
-					radioButtonOwnDropYes.Enabled = true;
-					pictureBox1.Visible = true;
-					pictureBox2.Visible = true;
-					pictureBox3.Visible = true;
-					pictureBox4.Visible = true;
-					pictureBox5.Visible = true;
-					pictureBox6.Visible = true;
-					pictureBox7.Visible = true;
-					pictureBox8.Visible = true;
-					pictureBox9.Visible = true;
-					pictureBox10.Visible = true;
-					pictureBox11.Visible = true;
-					pictureBox12.Visible = true;
-					pictureBox13.Visible = true;
-					pictureBox14.Visible = true;
-					pictureBox15.Visible = true;
-					pictureBox16.Visible = true;
-					pictureBox17.Visible = true;
-					pictureBox18.Visible = true;
-					pictureBox19.Visible = true;
-					pictureBox20.Visible = true;
-					break;
+
+			// Show the error message if there are no uniques
+			if (n == 0) {
+				labelNoUniquesForBoss.Visible = true;
+				buttonSplitOk.Enabled = false;
+				textboxSplitAmount.Enabled = false;
+				radioButtonOwnDropNo.Enabled = false;
+				radioButtonOwnDropYes.Enabled = false;
+			}
+			else {
+				labelNoUniquesForBoss.Visible = false;
+				buttonSplitOk.Enabled = true;
+				textboxSplitAmount.Enabled = true;
+				radioButtonOwnDropNo.Enabled = true;
+				radioButtonOwnDropYes.Enabled = true;
+			}
+
+			int numShowing = 0;
+
+			for (int i = 0; i < allPictureBoxes.Count; i++) {
+
+				// (n - 1) since we need to account for the last unique being the pet which can't be split
+				if (numShowing < n) {
+					allPictureBoxes[i].Visible = true;
+				}
+				else {
+					allPictureBoxes[i].Visible = false;
+				}
+				numShowing++;
 			}
 		}
 		private PictureBox getCurrentSelectedPictureBox() {
@@ -1014,7 +538,7 @@ namespace splitDrop {
 			// Still change the picture box that was clicked
 			pb.BackColor = highlightOrange;
 		}
-		List<PictureBox> allPictureBoxes = new List<PictureBox>();
+		
 		private void putAllPictureBoxesIntoList() {
 			// Put all pictureboxes into allPictureBoxes list
 			Control[] c;
