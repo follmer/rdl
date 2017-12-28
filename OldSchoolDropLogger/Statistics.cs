@@ -7,6 +7,7 @@ using System.IO;
 using itemQuantityCreator;
 using System.Diagnostics;
 using OldSchoolDropLogger.Properties;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace stats {
 	public partial class StatisticsForm : Form {
@@ -22,6 +23,16 @@ namespace stats {
 		public Dictionary<String, Dictionary<String, int>> totalDropsFromAllBosses;
 		private String selectedStatisticsBoss = "Abyssal Sire";
 		private List<PictureBox> allUniquesPictureBoxes;
+		private List<Label> allUniquesLabels;
+
+
+		// Boss chart colors
+		Dictionary<String, Color> bossChartColors = new Dictionary<string, Color>();
+
+		/* End vars */
+
+
+		public StringAlignment Center { get; private set; }
 
 		/* Getters & Setters */
 		public Dictionary<String, int> getTotalKillsLoggedPerBoss() {
@@ -45,6 +56,34 @@ namespace stats {
 			Console.WriteLine("Statistics.setTotalKillsLoggedPerBoss()");
 
 			return killsPerBoss;
+		}
+		private void setBossChartColors() {
+			bossChartColors.Add("Abyssal Sire", ColorTranslator.FromHtml("#631408"));
+			bossChartColors.Add("Raids", ColorTranslator.FromHtml("#838d8d"));
+			bossChartColors.Add("Wintertodt", ColorTranslator.FromHtml("#dc6e38"));
+			bossChartColors.Add("Chaos Elemental", ColorTranslator.FromHtml("#6d647d"));
+			bossChartColors.Add("Dagannoth Kings", ColorTranslator.FromHtml("#7a7261"));
+			bossChartColors.Add("Corporeal Beast", ColorTranslator.FromHtml("#554262"));
+			bossChartColors.Add("Bandos", ColorTranslator.FromHtml("#617a61"));
+			bossChartColors.Add("Kraken", ColorTranslator.FromHtml("#b59415"));
+			bossChartColors.Add("Armadyl", ColorTranslator.FromHtml("#948a8a"));
+			bossChartColors.Add("Zamorak", ColorTranslator.FromHtml("#b0492e"));
+			bossChartColors.Add("Thermonuclear Smoke Devil", ColorTranslator.FromHtml("#788196"));
+			bossChartColors.Add("Zulrah", ColorTranslator.FromHtml("#9dae15"));
+			bossChartColors.Add("Giant Mole", ColorTranslator.FromHtml("#544838"));
+			bossChartColors.Add("Vet'ion", ColorTranslator.FromHtml("#550853"));
+			bossChartColors.Add("Venenatis", ColorTranslator.FromHtml("#591108"));
+			bossChartColors.Add("Callisto", ColorTranslator.FromHtml("#373232"));
+			bossChartColors.Add("Grotesque Guardians", ColorTranslator.FromHtml("#5b635b"));
+			bossChartColors.Add("Kalphite Queen", ColorTranslator.FromHtml("#6f812f"));
+			bossChartColors.Add("King Black Dragon", ColorTranslator.FromHtml("#3a3a2e"));
+			bossChartColors.Add("Skotizo", ColorTranslator.FromHtml("#1d042b"));
+			bossChartColors.Add("Scorpia", ColorTranslator.FromHtml("#464141"));
+			bossChartColors.Add("Barrows", ColorTranslator.FromHtml("#4d4b33"));
+			bossChartColors.Add("Cerberus", ColorTranslator.FromHtml("#3e0900"));
+			bossChartColors.Add("Chaos Fanatic", ColorTranslator.FromHtml("#ececec"));
+			bossChartColors.Add("Crazy Archaeologist", ColorTranslator.FromHtml("#6d5f32"));
+			bossChartColors.Add("Saradomin", ColorTranslator.FromHtml("#dbcf98"));
 		}
 		public int getBossKills(String boss) {
 			return killsPerBoss[boss];
@@ -72,18 +111,17 @@ namespace stats {
 		}
 		public List<String> getUniquesFromBoss(string boss) {
 
-			if (File.Exists(logsFilePath + boss + " Uniques.txt")) {
+			boss = prepareStringForResourceGrab(boss);
 
-				// Get the lines from the file
-				var file = File.ReadAllLines(logsFilePath + boss + " Uniques.txt");
+			if (Resources.ResourceManager.GetObject(boss + "_Uniques") != null) {
 
-				// Convert the lines in the file to a list
-				List<String> drops = new List<String>(file);
+				String file = Resources.ResourceManager.GetString(boss + "_Uniques");
+				List<String> drops = file.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries).ToList();
 
 				return drops;
 			}
 			else {
-				Console.WriteLine("[ERROR]: " + boss + " Uniques.txt at path: " + logsFilePath + " does not exist.");
+				Console.WriteLine("[ERROR]: No unique file found for " + boss);
 			}
 
 			return null;
@@ -328,8 +366,6 @@ namespace stats {
 			return false;
 		}
 
-
-
 		/* Constructor */
 		public StatisticsForm() {
 			InitializeComponent();
@@ -363,33 +399,8 @@ namespace stats {
 
 			createAllDropsWithZeroQuantity();
 			setTotalDropsFromAllBosses();
-			putUniquesPictureBoxesIntoList();
-		}
-
-		private void button1_Click(object sender, EventArgs e) {
-			//reset your chart series and legends
-			//chart1.Series.Clear();
-			//chart1.Legends.Clear();
-
-			////Add a new Legend(if needed) and do some formating
-			//chart1.Legends.Add("MyLegend");
-			//chart1.Legends[0].LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Table;
-			//chart1.Legends[0].Alignment = StringAlignment.Center;
-			//chart1.Legends[0].Title = "MyTitle";
-			//chart1.Legends[0].BorderColor = Color.Black;
-
-			////Add a new chart-series
-			//string seriesname = "MySeriesName";
-			//chart1.Series.Add(seriesname);
-			////set the chart-type to "Pie"
-			//chart1.Series[seriesname].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-
-			////Add some datapoints so the series. in this case you can pass the values to this method
-			//chart1.Series[seriesname].Points.AddXY("MyPointName", 20);
-			//chart1.Series[seriesname].Points.AddXY("MyPointName1", 40);
-			//chart1.Series[seriesname].Points.AddXY("MyPointName2", 60);
-			//chart1.Series[seriesname].Points.AddXY("MyPointName3", 100);
-			//chart1.Series[seriesname].Points.AddXY("MyPointName4", 80);
+			putControlsIntoList();
+			setBossChartColors();
 		}
 
 		private void labelSideNavigation_Click(object sender, EventArgs e) {
@@ -400,9 +411,12 @@ namespace stats {
 
 			String nodeName = statisticsNavigationTree.SelectedNode.Name;
 
-			switch (statisticsNavigationTree.SelectedNode.Name) {
+			switch (nodeName) {
 				case "nodeUniquesDryStreaks":
 					displayStatUniquesDryStreaks();
+					break;
+				case "nodeUniquesTotalUniques":
+					displayStatUniquesTotalUniques();
 					break;
 				default:
 					Console.WriteLine("Could not find a method to call for the selected node: " + nodeName);
@@ -410,13 +424,146 @@ namespace stats {
 			}
 		}
 
+		/* Displayed Statistics */
+		private void displayStatUniquesTotalUniques() {
+
+			labelViewingStatistic.Text = "Total Uniques";
+
+			List<String> bossStrings = getAllBossStrings();
+			int bossNumber = 0;
+
+			int totalUniquesForAllBosses = 0;
+
+
+			foreach (String boss in bossStrings) {
+
+				// get the uniques for the selected boss
+				List<String> uniqueList = this.getUniquesFromBoss(boss);
+				int numUniquesForBoss = 0;
+				if (uniqueList != null) {
+					numUniquesForBoss = uniqueList.Count;
+				}
+
+				Dictionary<String, int> uniquesAndAmounts = getUniquesAndUniqueAmountsForBoss(boss);
+				if (uniquesAndAmounts == null) {
+					Console.WriteLine("[ERROR]: displayStatUniquesTotalUniques(): call to getUniquesAndUniqueAmountsForBoss(" + boss + ") returned null.");
+				}
+
+				allUniquesPictureBoxes[bossNumber].BackgroundImage = getGeneralImageFromString(prepareStringForResourceGrab("Boss_" + boss));
+
+				int sumOfUniques = 0;
+				if (uniquesAndAmounts != null) {
+					foreach (KeyValuePair<String, int> kp in uniquesAndAmounts) {
+						sumOfUniques += kp.Value;
+					}
+				}
+				
+				allUniquesLabels[bossNumber].Text = sumOfUniques.ToString();
+				tt.SetToolTip(allUniquesPictureBoxes[bossNumber], boss);
+
+				totalUniquesForAllBosses += sumOfUniques;
+
+				bossNumber++;
+			}
+
+			// format series
+			clearCharts();
+
+			chartUniques.Series.Add("chartUniquesData");
+			chartUniques.Series["chartUniquesData"].ChartType = SeriesChartType.Doughnut;
+			chartUniques.Series["chartUniquesData"].BorderDashStyle = ChartDashStyle.Solid;
+			chartUniques.Series["chartUniquesData"].BorderColor = Color.DimGray;
+			chartUniques.Series["chartUniquesData"].BorderWidth = 1;
+			chartUniques.Series["chartUniquesData"].CustomProperties = "DoughnutRadius=50";
+			
+			// format legend
+			chartUniques.Legends.Clear();
+			chartUniques.Legends.Add("chartUniquesLegend");
+			chartUniques.Legends["chartUniquesLegend"].LegendStyle = LegendStyle.Table;
+			chartUniques.Legends["chartUniquesLegend"].Title = "Boss - Total Uniques";
+			chartUniques.Legends["chartUniquesLegend"].BackColor = Color.Transparent;
+			chartUniques.Legends["chartUniquesLegend"].TitleBackColor = Color.Transparent;
+			chartUniques.Legends["chartUniquesLegend"].Title = "Boss";
+			chartUniques.Legends["chartUniquesLegend"].Docking = Docking.Right;
+			chartUniques.Legends["chartUniquesLegend"].Alignment = StringAlignment.Center;
+			chartUniques.Legends["chartUniquesLegend"].ForeColor = Color.Silver;
+			chartUniques.Legends["chartUniquesLegend"].TitleForeColor = Color.Silver;
+			chartUniques.Legends["chartUniquesLegend"].BorderDashStyle = ChartDashStyle.NotSet;
+			chartUniques.Legends["chartUniquesLegend"].TextWrapThreshold = 10;
+
+			chartUniques.Size = new Size(378, 415);
+			chartUniques.Location = new Point(622, 41);
+			
+
+			int i = 0;
+			foreach (String boss in bossStrings) {
+
+				Dictionary<String, int> uniquesAndAmounts = getUniquesAndUniqueAmountsForBoss(boss);
+
+				int sumOfUniques = 0;
+				if (uniquesAndAmounts != null) {
+					foreach (KeyValuePair<String, int> kp in uniquesAndAmounts) {
+						sumOfUniques += kp.Value;
+					}
+				}
+
+				double percentOfUniquesFromThisBoss = 0.0;
+				if (sumOfUniques != 0) {
+					percentOfUniquesFromThisBoss = (double) sumOfUniques / (double) totalUniquesForAllBosses;
+					chartUniques.Series["chartUniquesData"].Points.AddXY(sumOfUniques.ToString(), percentOfUniquesFromThisBoss);
+					chartUniques.Series["chartUniquesData"].Points[i].LegendText = boss;
+					chartUniques.Series["chartUniquesData"].Points[i].Color = bossChartColors[boss];
+
+					if (bossChartColors[boss].GetBrightness() > 0.3) {
+						chartUniques.Series["chartUniquesData"].Points[i].LabelForeColor = ColorTranslator.FromHtml("#000000");
+					}
+					else {
+						chartUniques.Series["chartUniquesData"].Points[i].LabelForeColor = ColorTranslator.FromHtml("#dddddd");
+					}
+					
+					
+
+					i++;
+				}
+			}
+
+			
+			
+
+			//Add some datapoints so the series. in this case you can pass the values to this method
+
+
+
+
+
+
+
+
+			setNPictureBoxesAsVisible(bossStrings.Count);
+			showNUniquesLabels(bossStrings.Count);
+
+			// get the string names of all the bosses
+			// put into list
+			// loop through this list
+			//		- grab all uniques for this boss
+			//		- put boss on picture box and # uniques as label
+		}
 		private void displayStatUniquesDryStreaks() {
+
+			clearCharts();
+			labelViewingStatistic.Text = "Unique Dry Streaks";
+
+			selectedStatisticsBoss = prepareStringForResourceGrab(selectedStatisticsBoss);
+
 			Console.WriteLine("[DEBUG]: Statistics.displayStatUniquesDryStreaks()");
 
 			// get the uniques for the selected boss
 			List<String> uniqueList = this.getUniquesFromBoss(selectedStatisticsBoss);
-			int numUniquesForBoss = uniqueList.Count;
 
+			int numUniquesForBoss = 0;
+			if (uniqueList != null) {
+				numUniquesForBoss = uniqueList.Count;
+			}
 
 			// Make sure the boss's log file exists before trying to do anything
 			if (Resources.ResourceManager.GetString(selectedStatisticsBoss) != null) {
@@ -443,25 +590,20 @@ namespace stats {
 
 				// The max of the list gives us the most recent killcount that we received a unique on.
 				// Subtract from the total killcount to find the # dry for any unique
-				int lastSeenUniqueKc = totalKillcount - kcList.Max();
+				int lastSeenUniqueKc = 0;
 
-				// Display the data for the ANY picture box
-				pictureBoxUniquesAny.Image = iqc.createQuantityImage(totalKillcount);
-
-				Console.WriteLine("Total kc: " + totalKillcount);
-				Console.WriteLine("max kc in list: " + kcList.Max());
-				Console.WriteLine();
-				Console.WriteLine("Kc dry of a unique: " + lastSeenUniqueKc);
-				Console.WriteLine();
-
-
+				if (kcList.Count > 0) {
+					lastSeenUniqueKc = totalKillcount - kcList.Max();
+				}
 
 				// Create a new dictionary for us to store the uniques in
 				Dictionary<String, int> uniqueDictionary = new Dictionary<String, int>();
 
+				uniqueDictionary.Add("uniques_icon_any", lastSeenUniqueKc);
 				// Fill the uniqueDictionary with the highest dry streak first, then we will
 				// update it if we found that we got a drop later on (below)
 				foreach (String unique in uniqueList) {
+
 					uniqueDictionary.Add(unique, totalKillcount);
 				}
 
@@ -472,11 +614,14 @@ namespace stats {
 					int x = items.LastIndexOf(unique);
 
 					foreach (String line in items) {
+
 						if (line.Contains(unique)) {
+
 							// Remove a key if it already exists to update it
 							if (uniqueDictionary.ContainsKey(unique)) {
 								uniqueDictionary.Remove(unique);
 							}
+
 							uniqueDictionary.Add(unique, totalKillcount - specificKc);
 						}
 						specificKc++;
@@ -484,14 +629,14 @@ namespace stats {
 				}
 
 				// Display the correct picturebox images for the uniques
-				// Display the specific dry streaks
 				setBackgroundImageFromUniqueList(uniqueDictionary);
-			}
 
+			}
 
 			// Show the correct number of pictureboxes equal to the number of uniques
 			// + 1 since we are going to show a picturebox with the word "any" in it
 			setNPictureBoxesAsVisible(numUniquesForBoss + 1);
+			showNUniquesLabels(numUniquesForBoss + 1);
 		}
 
 		private void dropdownSelectedBoss_SelectedIndexChanged(object sender, EventArgs e) {
@@ -510,561 +655,137 @@ namespace stats {
 			if (labelViewingStatistic.Text == "Unique Dry Streaks") {
 				displayStatUniquesDryStreaks();
 			}
+			else {
+				
+			}
 		}
+		private void showNUniquesLabels(int n) {
 
-		private void putUniquesPictureBoxesIntoList() {
+			Color c = ColorTranslator.FromHtml("#c0c0c0");
+			// dark red = 78180e
+			// light red = 8c3932
+			// dark orange = ad562b
+			// light orange = b76f15
+			// dark yellow = cb9818
+			// yellow = ffff00
+			// silver = c0c0c0
+
+			int numShowing = 0;
+
+			for (int i = 0; i < allUniquesLabels.Count; i++) {
+
+				if (numShowing < n) {
+					allUniquesLabels[i].Visible = true;
+					allUniquesLabels[i].ForeColor = c;
+				}
+				else {
+					allUniquesLabels[i].Visible = false;
+				}
+				numShowing++;
+			}
+		}
+		private void setNPictureBoxesAsVisible(int n) {
+
+			int numShowing = 0;
+
+			for (int i = 0; i < allUniquesPictureBoxes.Count; i++) {
+
+				if (numShowing < n) {
+					allUniquesPictureBoxes[i].Visible = true;
+				}
+				else {
+					allUniquesPictureBoxes[i].Visible = false;
+				}
+				numShowing++;
+			}
+		}
+		private void hideAllUniquesLables() {
+			labelUniques0.Visible = false;
+
+			for (int i = 0; i < allUniquesLabels.Count; i++) {
+				allUniquesLabels[i].Visible = false;
+			}
+		}
+		private void putControlsIntoList() {
 
 			allUniquesPictureBoxes = new List<PictureBox>();
 
 			Control[] c;
-			for (int i = 1; i <= 20; i++) {
+			for (int i = 0; i <= 27; i++) {
 				c = this.Controls.Find("pictureBoxUniques" + i.ToString(), true);
 				allUniquesPictureBoxes.Add((PictureBox)c[0]);
 			}
+
+			allUniquesLabels = new List<Label>();
+			Control[] d;
+			for (int i = 0; i <= 27; i++) {
+				d = this.Controls.Find("labelUniques" + i.ToString(), true);
+				allUniquesLabels.Add((Label)d[0]);
+			}
+
 		}
 
 		private void setBackgroundImageFromUniqueList(Dictionary<String, int> uniqueDictionary) {
 
+			List<String> keys = uniqueDictionary.Keys.ToList();
+			List<int> values = uniqueDictionary.Values.ToList();
+
 			for (int i = 0; i < uniqueDictionary.Count; i++) {
 
 				Bitmap b = getUniqueImageFromString(uniqueDictionary.Keys.ToList()[i]);
-				Bitmap q = iqc.createQuantityImage(uniqueDictionary.Values.ToList()[i]);
 
-				if (b == null) {
-					Console.WriteLine("b is null");
+				if (b != null) {
+					allUniquesPictureBoxes[i].BackgroundImage = b;
+					allUniquesLabels[i].Text = values[i].ToString();
+					if (keys[i] == "uniques_icon_any") {
+						tt.SetToolTip(allUniquesPictureBoxes[i], "Any unique");
+					}
+					else {
+						tt.SetToolTip(allUniquesPictureBoxes[i], keys[i]);
+					}
 				}
 				else {
-					Console.WriteLine("not null");
-
-					//allUniquesPictureBoxes[i].BackgroundImage = Resources.Abyssal_orphan;
-
-					allUniquesPictureBoxes[i].BackgroundImage = b;
-					allUniquesPictureBoxes[i].Image = q;
+					Console.WriteLine("setBackgroundImageFromUniqueList(): Bitmap request for " + keys[i] + " is null.");
 				}
-
 			}
 		}
 
-		private void setNPictureBoxesAsVisible(int n) {
-			switch (n) {
-				case 0:
-					pictureBoxUniquesAny.Visible = false;
-					pictureBoxUniques1.Visible = false;
-					pictureBoxUniques2.Visible = false;
-					pictureBoxUniques3.Visible = false;
-					pictureBoxUniques4.Visible = false;
-					pictureBoxUniques5.Visible = false;
-					pictureBoxUniques6.Visible = false;
-					pictureBoxUniques7.Visible = false;
-					pictureBoxUniques8.Visible = false;
-					pictureBoxUniques9.Visible = false;
-					pictureBoxUniques10.Visible = false;
-					pictureBoxUniques11.Visible = false;
-					pictureBoxUniques12.Visible = false;
-					pictureBoxUniques13.Visible = false;
-					pictureBoxUniques14.Visible = false;
-					pictureBoxUniques15.Visible = false;
-					pictureBoxUniques16.Visible = false;
-					pictureBoxUniques17.Visible = false;
-					pictureBoxUniques18.Visible = false;
-					pictureBoxUniques19.Visible = false;
-					pictureBoxUniques20.Visible = false;
-					break;
-				case 1:
-					pictureBoxUniquesAny.Visible = true;
-					pictureBoxUniques1.Visible = false;
-					pictureBoxUniques2.Visible = false;
-					pictureBoxUniques3.Visible = false;
-					pictureBoxUniques4.Visible = false;
-					pictureBoxUniques5.Visible = false;
-					pictureBoxUniques6.Visible = false;
-					pictureBoxUniques7.Visible = false;
-					pictureBoxUniques8.Visible = false;
-					pictureBoxUniques9.Visible = false;
-					pictureBoxUniques10.Visible = false;
-					pictureBoxUniques11.Visible = false;
-					pictureBoxUniques12.Visible = false;
-					pictureBoxUniques13.Visible = false;
-					pictureBoxUniques14.Visible = false;
-					pictureBoxUniques15.Visible = false;
-					pictureBoxUniques16.Visible = false;
-					pictureBoxUniques17.Visible = false;
-					pictureBoxUniques18.Visible = false;
-					pictureBoxUniques19.Visible = false;
-					pictureBoxUniques20.Visible = false;
-					break;
-				case 2:
-					pictureBoxUniquesAny.Visible = true;
-					pictureBoxUniques1.Visible = true;
-					pictureBoxUniques2.Visible = false;
-					pictureBoxUniques3.Visible = false;
-					pictureBoxUniques4.Visible = false;
-					pictureBoxUniques5.Visible = false;
-					pictureBoxUniques6.Visible = false;
-					pictureBoxUniques7.Visible = false;
-					pictureBoxUniques8.Visible = false;
-					pictureBoxUniques9.Visible = false;
-					pictureBoxUniques10.Visible = false;
-					pictureBoxUniques11.Visible = false;
-					pictureBoxUniques12.Visible = false;
-					pictureBoxUniques13.Visible = false;
-					pictureBoxUniques14.Visible = false;
-					pictureBoxUniques15.Visible = false;
-					pictureBoxUniques16.Visible = false;
-					pictureBoxUniques17.Visible = false;
-					pictureBoxUniques18.Visible = false;
-					pictureBoxUniques19.Visible = false;
-					pictureBoxUniques20.Visible = false;
-					break;
-				case 3:
-					pictureBoxUniquesAny.Visible = true;
-					pictureBoxUniques1.Visible = true;
-					pictureBoxUniques2.Visible = true;
-					pictureBoxUniques3.Visible = false;
-					pictureBoxUniques4.Visible = false;
-					pictureBoxUniques5.Visible = false;
-					pictureBoxUniques6.Visible = false;
-					pictureBoxUniques7.Visible = false;
-					pictureBoxUniques8.Visible = false;
-					pictureBoxUniques9.Visible = false;
-					pictureBoxUniques10.Visible = false;
-					pictureBoxUniques11.Visible = false;
-					pictureBoxUniques12.Visible = false;
-					pictureBoxUniques13.Visible = false;
-					pictureBoxUniques14.Visible = false;
-					pictureBoxUniques15.Visible = false;
-					pictureBoxUniques16.Visible = false;
-					pictureBoxUniques17.Visible = false;
-					pictureBoxUniques18.Visible = false;
-					pictureBoxUniques19.Visible = false;
-					pictureBoxUniques20.Visible = false;
-					break;
-				case 4:
-					pictureBoxUniquesAny.Visible = true;
-					pictureBoxUniques1.Visible = true;
-					pictureBoxUniques2.Visible = true;
-					pictureBoxUniques3.Visible = true;
-					pictureBoxUniques4.Visible = false;
-					pictureBoxUniques5.Visible = false;
-					pictureBoxUniques6.Visible = false;
-					pictureBoxUniques7.Visible = false;
-					pictureBoxUniques8.Visible = false;
-					pictureBoxUniques9.Visible = false;
-					pictureBoxUniques10.Visible = false;
-					pictureBoxUniques11.Visible = false;
-					pictureBoxUniques12.Visible = false;
-					pictureBoxUniques13.Visible = false;
-					pictureBoxUniques14.Visible = false;
-					pictureBoxUniques15.Visible = false;
-					pictureBoxUniques16.Visible = false;
-					pictureBoxUniques17.Visible = false;
-					pictureBoxUniques18.Visible = false;
-					pictureBoxUniques19.Visible = false;
-					pictureBoxUniques20.Visible = false;
-					break;
-				case 5:
-					pictureBoxUniquesAny.Visible = true;
-					pictureBoxUniques1.Visible = true;
-					pictureBoxUniques2.Visible = true;
-					pictureBoxUniques3.Visible = true;
-					pictureBoxUniques4.Visible = true;
-					pictureBoxUniques5.Visible = false;
-					pictureBoxUniques6.Visible = false;
-					pictureBoxUniques7.Visible = false;
-					pictureBoxUniques8.Visible = false;
-					pictureBoxUniques9.Visible = false;
-					pictureBoxUniques10.Visible = false;
-					pictureBoxUniques11.Visible = false;
-					pictureBoxUniques12.Visible = false;
-					pictureBoxUniques13.Visible = false;
-					pictureBoxUniques14.Visible = false;
-					pictureBoxUniques15.Visible = false;
-					pictureBoxUniques16.Visible = false;
-					pictureBoxUniques17.Visible = false;
-					pictureBoxUniques18.Visible = false;
-					pictureBoxUniques19.Visible = false;
-					pictureBoxUniques20.Visible = false;
-					break;
-				case 6:
-					pictureBoxUniquesAny.Visible = true;
-					pictureBoxUniques1.Visible = true;
-					pictureBoxUniques2.Visible = true;
-					pictureBoxUniques3.Visible = true;
-					pictureBoxUniques4.Visible = true;
-					pictureBoxUniques5.Visible = true;
-					pictureBoxUniques6.Visible = false;
-					pictureBoxUniques7.Visible = false;
-					pictureBoxUniques8.Visible = false;
-					pictureBoxUniques9.Visible = false;
-					pictureBoxUniques10.Visible = false;
-					pictureBoxUniques11.Visible = false;
-					pictureBoxUniques12.Visible = false;
-					pictureBoxUniques13.Visible = false;
-					pictureBoxUniques14.Visible = false;
-					pictureBoxUniques15.Visible = false;
-					pictureBoxUniques16.Visible = false;
-					pictureBoxUniques17.Visible = false;
-					pictureBoxUniques18.Visible = false;
-					pictureBoxUniques19.Visible = false;
-					pictureBoxUniques20.Visible = false;
-					break;
-				case 7:
-					pictureBoxUniquesAny.Visible = true;
-					pictureBoxUniques1.Visible = true;
-					pictureBoxUniques2.Visible = true;
-					pictureBoxUniques3.Visible = true;
-					pictureBoxUniques4.Visible = true;
-					pictureBoxUniques5.Visible = true;
-					pictureBoxUniques6.Visible = true;
-					pictureBoxUniques7.Visible = false;
-					pictureBoxUniques8.Visible = false;
-					pictureBoxUniques9.Visible = false;
-					pictureBoxUniques10.Visible = false;
-					pictureBoxUniques11.Visible = false;
-					pictureBoxUniques12.Visible = false;
-					pictureBoxUniques13.Visible = false;
-					pictureBoxUniques14.Visible = false;
-					pictureBoxUniques15.Visible = false;
-					pictureBoxUniques16.Visible = false;
-					pictureBoxUniques17.Visible = false;
-					pictureBoxUniques18.Visible = false;
-					pictureBoxUniques19.Visible = false;
-					pictureBoxUniques20.Visible = false;
-					break;
-				case 8:
-					pictureBoxUniquesAny.Visible = true;
-					pictureBoxUniques1.Visible = true;
-					pictureBoxUniques2.Visible = true;
-					pictureBoxUniques3.Visible = true;
-					pictureBoxUniques4.Visible = true;
-					pictureBoxUniques5.Visible = true;
-					pictureBoxUniques6.Visible = true;
-					pictureBoxUniques7.Visible = false;
-					pictureBoxUniques8.Visible = false;
-					pictureBoxUniques9.Visible = false;
-					pictureBoxUniques10.Visible = false;
-					pictureBoxUniques11.Visible = false;
-					pictureBoxUniques12.Visible = false;
-					pictureBoxUniques13.Visible = false;
-					pictureBoxUniques14.Visible = false;
-					pictureBoxUniques15.Visible = false;
-					pictureBoxUniques16.Visible = false;
-					pictureBoxUniques17.Visible = false;
-					pictureBoxUniques18.Visible = false;
-					pictureBoxUniques19.Visible = false;
-					pictureBoxUniques20.Visible = false;
-					break;
-				case 9:
-					pictureBoxUniquesAny.Visible = true;
-					pictureBoxUniques1.Visible = true;
-					pictureBoxUniques2.Visible = true;
-					pictureBoxUniques3.Visible = true;
-					pictureBoxUniques4.Visible = true;
-					pictureBoxUniques5.Visible = true;
-					pictureBoxUniques6.Visible = true;
-					pictureBoxUniques7.Visible = true;
-					pictureBoxUniques8.Visible = true;
-					pictureBoxUniques9.Visible = false;
-					pictureBoxUniques10.Visible = false;
-					pictureBoxUniques11.Visible = false;
-					pictureBoxUniques12.Visible = false;
-					pictureBoxUniques13.Visible = false;
-					pictureBoxUniques14.Visible = false;
-					pictureBoxUniques15.Visible = false;
-					pictureBoxUniques16.Visible = false;
-					pictureBoxUniques17.Visible = false;
-					pictureBoxUniques18.Visible = false;
-					pictureBoxUniques19.Visible = false;
-					pictureBoxUniques20.Visible = false;
-					break;
-				case 10:
-					pictureBoxUniquesAny.Visible = true;
-					pictureBoxUniques1.Visible = true;
-					pictureBoxUniques2.Visible = true;
-					pictureBoxUniques3.Visible = true;
-					pictureBoxUniques4.Visible = true;
-					pictureBoxUniques5.Visible = true;
-					pictureBoxUniques6.Visible = true;
-					pictureBoxUniques7.Visible = true;
-					pictureBoxUniques8.Visible = true;
-					pictureBoxUniques9.Visible = true;
-					pictureBoxUniques10.Visible = true;
-					pictureBoxUniques11.Visible = true;
-					pictureBoxUniques12.Visible = true;
-					pictureBoxUniques13.Visible = true;
-					pictureBoxUniques14.Visible = true;
-					pictureBoxUniques15.Visible = true;
-					pictureBoxUniques16.Visible = true;
-					pictureBoxUniques17.Visible = true;
-					pictureBoxUniques18.Visible = true;
-					pictureBoxUniques19.Visible = true;
-					pictureBoxUniques20.Visible = false;
-					break;
-				case 11:
-					pictureBoxUniquesAny.Visible = true;
-					pictureBoxUniques1.Visible = true;
-					pictureBoxUniques2.Visible = true;
-					pictureBoxUniques3.Visible = true;
-					pictureBoxUniques4.Visible = true;
-					pictureBoxUniques5.Visible = true;
-					pictureBoxUniques6.Visible = true;
-					pictureBoxUniques7.Visible = true;
-					pictureBoxUniques8.Visible = true;
-					pictureBoxUniques9.Visible = true;
-					pictureBoxUniques10.Visible = true;
-					pictureBoxUniques11.Visible = false;
-					pictureBoxUniques12.Visible = false;
-					pictureBoxUniques13.Visible = false;
-					pictureBoxUniques14.Visible = false;
-					pictureBoxUniques15.Visible = false;
-					pictureBoxUniques16.Visible = false;
-					pictureBoxUniques17.Visible = false;
-					pictureBoxUniques18.Visible = false;
-					pictureBoxUniques19.Visible = false;
-					pictureBoxUniques20.Visible = false;
-					break;
-				case 12:
-					pictureBoxUniquesAny.Visible = true;
-					pictureBoxUniques1.Visible = true;
-					pictureBoxUniques2.Visible = true;
-					pictureBoxUniques3.Visible = true;
-					pictureBoxUniques4.Visible = true;
-					pictureBoxUniques5.Visible = true;
-					pictureBoxUniques6.Visible = true;
-					pictureBoxUniques7.Visible = true;
-					pictureBoxUniques8.Visible = true;
-					pictureBoxUniques9.Visible = true;
-					pictureBoxUniques10.Visible = true;
-					pictureBoxUniques11.Visible = true;
-					pictureBoxUniques12.Visible = false;
-					pictureBoxUniques13.Visible = false;
-					pictureBoxUniques14.Visible = false;
-					pictureBoxUniques15.Visible = false;
-					pictureBoxUniques16.Visible = false;
-					pictureBoxUniques17.Visible = false;
-					pictureBoxUniques18.Visible = false;
-					pictureBoxUniques19.Visible = false;
-					pictureBoxUniques20.Visible = false;
-					break;
-				case 13:
-					pictureBoxUniquesAny.Visible = true;
-					pictureBoxUniques1.Visible = true;
-					pictureBoxUniques2.Visible = true;
-					pictureBoxUniques3.Visible = true;
-					pictureBoxUniques4.Visible = true;
-					pictureBoxUniques5.Visible = true;
-					pictureBoxUniques6.Visible = true;
-					pictureBoxUniques7.Visible = true;
-					pictureBoxUniques8.Visible = true;
-					pictureBoxUniques9.Visible = true;
-					pictureBoxUniques10.Visible = true;
-					pictureBoxUniques11.Visible = true;
-					pictureBoxUniques12.Visible = true;
-					pictureBoxUniques13.Visible = false;
-					pictureBoxUniques14.Visible = false;
-					pictureBoxUniques15.Visible = false;
-					pictureBoxUniques16.Visible = false;
-					pictureBoxUniques17.Visible = false;
-					pictureBoxUniques18.Visible = false;
-					pictureBoxUniques19.Visible = false;
-					pictureBoxUniques20.Visible = false;
-					break;
-				case 14:
-					pictureBoxUniquesAny.Visible = true;
-					pictureBoxUniques1.Visible = true;
-					pictureBoxUniques2.Visible = true;
-					pictureBoxUniques3.Visible = true;
-					pictureBoxUniques4.Visible = true;
-					pictureBoxUniques5.Visible = true;
-					pictureBoxUniques6.Visible = true;
-					pictureBoxUniques7.Visible = true;
-					pictureBoxUniques8.Visible = true;
-					pictureBoxUniques9.Visible = true;
-					pictureBoxUniques10.Visible = true;
-					pictureBoxUniques11.Visible = true;
-					pictureBoxUniques12.Visible = true;
-					pictureBoxUniques13.Visible = true;
-					pictureBoxUniques14.Visible = false;
-					pictureBoxUniques15.Visible = false;
-					pictureBoxUniques16.Visible = false;
-					pictureBoxUniques17.Visible = false;
-					pictureBoxUniques18.Visible = false;
-					pictureBoxUniques19.Visible = false;
-					pictureBoxUniques20.Visible = false;
-					break;
-				case 15:
-					pictureBoxUniquesAny.Visible = true;
-					pictureBoxUniques1.Visible = true;
-					pictureBoxUniques2.Visible = true;
-					pictureBoxUniques3.Visible = true;
-					pictureBoxUniques4.Visible = true;
-					pictureBoxUniques5.Visible = true;
-					pictureBoxUniques6.Visible = true;
-					pictureBoxUniques7.Visible = true;
-					pictureBoxUniques8.Visible = true;
-					pictureBoxUniques9.Visible = true;
-					pictureBoxUniques10.Visible = true;
-					pictureBoxUniques11.Visible = true;
-					pictureBoxUniques12.Visible = true;
-					pictureBoxUniques13.Visible = true;
-					pictureBoxUniques14.Visible = true;
-					pictureBoxUniques15.Visible = false;
-					pictureBoxUniques16.Visible = false;
-					pictureBoxUniques17.Visible = false;
-					pictureBoxUniques18.Visible = false;
-					pictureBoxUniques19.Visible = false;
-					pictureBoxUniques20.Visible = false;
-					break;
-				case 16:
-					pictureBoxUniquesAny.Visible = true;
-					pictureBoxUniques1.Visible = true;
-					pictureBoxUniques2.Visible = true;
-					pictureBoxUniques3.Visible = true;
-					pictureBoxUniques4.Visible = true;
-					pictureBoxUniques5.Visible = true;
-					pictureBoxUniques6.Visible = true;
-					pictureBoxUniques7.Visible = true;
-					pictureBoxUniques8.Visible = true;
-					pictureBoxUniques9.Visible = true;
-					pictureBoxUniques10.Visible = true;
-					pictureBoxUniques11.Visible = true;
-					pictureBoxUniques12.Visible = true;
-					pictureBoxUniques13.Visible = true;
-					pictureBoxUniques14.Visible = true;
-					pictureBoxUniques15.Visible = true;
-					pictureBoxUniques16.Visible = false;
-					pictureBoxUniques17.Visible = false;
-					pictureBoxUniques18.Visible = false;
-					pictureBoxUniques19.Visible = false;
-					pictureBoxUniques20.Visible = false;
-					break;
-				case 17:
-					pictureBoxUniquesAny.Visible = true;
-					pictureBoxUniques1.Visible = true;
-					pictureBoxUniques2.Visible = true;
-					pictureBoxUniques3.Visible = true;
-					pictureBoxUniques4.Visible = true;
-					pictureBoxUniques5.Visible = true;
-					pictureBoxUniques6.Visible = true;
-					pictureBoxUniques7.Visible = true;
-					pictureBoxUniques8.Visible = true;
-					pictureBoxUniques9.Visible = true;
-					pictureBoxUniques10.Visible = true;
-					pictureBoxUniques11.Visible = true;
-					pictureBoxUniques12.Visible = true;
-					pictureBoxUniques13.Visible = true;
-					pictureBoxUniques14.Visible = true;
-					pictureBoxUniques15.Visible = true;
-					pictureBoxUniques16.Visible = true;
-					pictureBoxUniques17.Visible = false;
-					pictureBoxUniques18.Visible = false;
-					pictureBoxUniques19.Visible = false;
-					pictureBoxUniques20.Visible = false;
-					break;
-				case 18:
-					pictureBoxUniquesAny.Visible = true;
-					pictureBoxUniques1.Visible = true;
-					pictureBoxUniques2.Visible = true;
-					pictureBoxUniques3.Visible = true;
-					pictureBoxUniques4.Visible = true;
-					pictureBoxUniques5.Visible = true;
-					pictureBoxUniques6.Visible = true;
-					pictureBoxUniques7.Visible = true;
-					pictureBoxUniques8.Visible = true;
-					pictureBoxUniques9.Visible = true;
-					pictureBoxUniques10.Visible = true;
-					pictureBoxUniques11.Visible = true;
-					pictureBoxUniques12.Visible = true;
-					pictureBoxUniques13.Visible = true;
-					pictureBoxUniques14.Visible = true;
-					pictureBoxUniques15.Visible = true;
-					pictureBoxUniques16.Visible = true;
-					pictureBoxUniques17.Visible = true;
-					pictureBoxUniques18.Visible = false;
-					pictureBoxUniques19.Visible = false;
-					pictureBoxUniques20.Visible = false;
-					break;
-				case 19:
-					pictureBoxUniquesAny.Visible = true;
-					pictureBoxUniques1.Visible = true;
-					pictureBoxUniques2.Visible = true;
-					pictureBoxUniques3.Visible = true;
-					pictureBoxUniques4.Visible = true;
-					pictureBoxUniques5.Visible = true;
-					pictureBoxUniques6.Visible = true;
-					pictureBoxUniques7.Visible = true;
-					pictureBoxUniques8.Visible = true;
-					pictureBoxUniques9.Visible = true;
-					pictureBoxUniques10.Visible = true;
-					pictureBoxUniques11.Visible = true;
-					pictureBoxUniques12.Visible = true;
-					pictureBoxUniques13.Visible = true;
-					pictureBoxUniques14.Visible = true;
-					pictureBoxUniques15.Visible = true;
-					pictureBoxUniques16.Visible = true;
-					pictureBoxUniques17.Visible = true;
-					pictureBoxUniques18.Visible = true;
-					pictureBoxUniques19.Visible = false;
-					pictureBoxUniques20.Visible = false;
-					break;
-				case 20:
-					pictureBoxUniquesAny.Visible = true;
-					pictureBoxUniques1.Visible = true;
-					pictureBoxUniques2.Visible = true;
-					pictureBoxUniques3.Visible = true;
-					pictureBoxUniques4.Visible = true;
-					pictureBoxUniques5.Visible = true;
-					pictureBoxUniques6.Visible = true;
-					pictureBoxUniques7.Visible = true;
-					pictureBoxUniques8.Visible = true;
-					pictureBoxUniques9.Visible = true;
-					pictureBoxUniques10.Visible = true;
-					pictureBoxUniques11.Visible = true;
-					pictureBoxUniques12.Visible = true;
-					pictureBoxUniques13.Visible = true;
-					pictureBoxUniques14.Visible = true;
-					pictureBoxUniques15.Visible = true;
-					pictureBoxUniques16.Visible = true;
-					pictureBoxUniques17.Visible = true;
-					pictureBoxUniques18.Visible = true;
-					pictureBoxUniques19.Visible = true;
-					pictureBoxUniques20.Visible = false;
-					break;
-				case 21:
-					pictureBoxUniquesAny.Visible = true;
-					pictureBoxUniques1.Visible = true;
-					pictureBoxUniques2.Visible = true;
-					pictureBoxUniques3.Visible = true;
-					pictureBoxUniques4.Visible = true;
-					pictureBoxUniques5.Visible = true;
-					pictureBoxUniques6.Visible = true;
-					pictureBoxUniques7.Visible = true;
-					pictureBoxUniques8.Visible = true;
-					pictureBoxUniques9.Visible = true;
-					pictureBoxUniques10.Visible = true;
-					pictureBoxUniques11.Visible = true;
-					pictureBoxUniques12.Visible = true;
-					pictureBoxUniques13.Visible = true;
-					pictureBoxUniques14.Visible = true;
-					pictureBoxUniques15.Visible = true;
-					pictureBoxUniques16.Visible = true;
-					pictureBoxUniques17.Visible = true;
-					pictureBoxUniques18.Visible = true;
-					pictureBoxUniques19.Visible = true;
-					pictureBoxUniques20.Visible = true;
-					break;
+		private Bitmap getGeneralImageFromString(String item) {
+			item = runescapeCase(item);
+			item = prepareStringForResourceGrab(item);
+			if (Resources.ResourceManager.GetObject(item) != null) {
+				return (Bitmap)Resources.ResourceManager.GetObject(item);
 			}
+
+			return null;
 		}
 		private Bitmap getUniqueImageFromString(String unique) {
-			Console.WriteLine("getUniqueImageFromString(): " + unique);
+
+			// Special case 
+			if (unique == "uniques_icon_any") {
+
+				return (Bitmap)Resources.uniques_icon_any;
+			}
 
 			// Remove the " x 1" from the end of the unique
-			unique = unique.Substring(0, unique.IndexOf(" x "));
-			Console.WriteLine(unique);
+			// Need to make sure that the unique doesn't have a quantity behind the " x " 
+			// such as "Onyx bolts (e) x 175"
+			// Handle this as well
+			String qtyStr = unique.Substring(unique.IndexOf(" x ") + 3, unique.Length - unique.IndexOf(" x ") - 3);
+			int itemQuantity = Int32.Parse(qtyStr);
+
+			// If the quantity ended up being more than 1, we need to remove the " x " and then add back in the quantity
+			if (itemQuantity > 1) {
+				unique = unique.Substring(0, unique.IndexOf(" x "));
+				unique += " " + qtyStr;
+			}
+			else {
+				unique = unique.Substring(0, unique.IndexOf(" x "));
+			}
+
 			unique = prepareStringForResourceGrab(unique);
 
 			if (Resources.ResourceManager.GetObject(unique) != null) {
-				Console.WriteLine("found image-------------------------------");
 				return (Bitmap)Resources.ResourceManager.GetObject(unique);
 			}
 
@@ -1072,14 +793,63 @@ namespace stats {
 		}
 
 		public String prepareStringForResourceGrab(String s) {
-
 			s = s.Replace(" ", "_");
 			s = s.Replace("'", "_");
+			s = s.Replace("(", "_");
+			s = s.Replace(")", "_");
+			return s;
+		}
+		public String runescapeCase(String s) {
+			s = s.ToLower();
+			s = s.First().ToString().ToUpper() + s.Substring(1);
 			return s;
 		}
 
 		private void StatisticsForm_Load(object sender, EventArgs e) {
+			dropdownSelectedBoss.Text = "Abyssal Sire";
+		}
 
+		private Dictionary<String, int> getUniquesAndUniqueAmountsForBoss(String boss) {
+
+			// Get the uniques for the boss
+			List<String> uniqueList = this.getUniquesFromBoss(boss);
+
+			if (uniqueList == null) {
+				return null;
+			}
+
+			Dictionary<String, int> uniquesAndUniqueAmounts = new Dictionary<string, int>();
+
+			// Make sure the boss's log file exists before trying to do anything
+			if (Resources.ResourceManager.GetString(boss) != null) {
+
+				String filename = Resources.ResourceManager.GetString(boss);
+				List<String> items = filename.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries).ToList();
+
+				// loop through all the logged items (all kc)
+				foreach (String unique in uniqueList) {
+
+					int timesUniqueHasBeenSeen = 0;
+					// loop through the unique for this boss
+					foreach (String line in items) {
+
+						if (line.Contains(unique)) {
+							timesUniqueHasBeenSeen++;
+						}
+					}
+					uniquesAndUniqueAmounts.Add(unique, timesUniqueHasBeenSeen);
+				}
+			}
+			else {
+				foreach (String unique in uniqueList) {
+					uniquesAndUniqueAmounts.Add(unique, 0);
+				}
+			}
+			return uniquesAndUniqueAmounts;
+		}
+
+		private void clearCharts() {
+			chartUniques.Series.Clear();
 		}
 	}
 }

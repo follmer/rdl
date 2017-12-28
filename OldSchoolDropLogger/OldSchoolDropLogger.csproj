@@ -185,6 +185,81 @@
     <None Include="Assets\icons\uniques_icon_any3.png" />
     <None Include="Assets\icons\uniques_icon_any4.png" />
     <None Include="Assets\icons\uniques_icon_any.png" />
+    <None Include="bin\Debug\logs\Callisto Uniques.txt" />
+    <None Include="bin\Debug\logs\Cerberus Uniques.txt" />
+    <None Include="bin\Debug\logs\Chaos Elemental Uniques.txt" />
+    <None Include="bin\Debug\logs\Chaos Fanatic Uniques.txt" />
+    <None Include="bin\Debug\logs\Corporeal Beast Uniques.txt" />
+    <None Include="bin\Debug\logs\Crazy Archaeologist Uniques.txt" />
+    <None Include="bin\Debug\logs\Dagannoth Kings Uniques.txt" />
+    <None Include="bin\Debug\logs\Giant Mole Uniques.txt" />
+    <None Include="bin\Debug\logs\Grotesque Guardians Uniques.txt" />
+    <None Include="bin\Debug\logs\Kalphite Queen Uniques.txt" />
+    <None Include="bin\Debug\logs\King Black Dragon Uniques.txt" />
+    <None Include="bin\Debug\logs\Kraken Uniques.txt" />
+    <None Include="bin\Debug\logs\Raids Uniques.txt" />
+    <None Include="bin\Debug\logs\Saradomin Uniques.txt" />
+    <None Include="bin\Debug\logs\Scorpia Uniques.txt" />
+    <None Include="bin\Debug\logs\Skotizo Drops.txt" />
+    <None Include="bin\Debug\logs\Skotizo Uniques.txt" />
+    <None Include="bin\Debug\logs\Thermonuclear Smoke Devil Uniques.txt" />
+    <None Include="bin\Debug\logs\Venenatis Uniques.txt" />
+    <None Include="bin\Debug\logs\Vet%27ion Uniques.txt" />
+    <None Include="bin\Debug\logs\Wintertodt Uniques.txt" />
+    <None Include="bin\Debug\logs\Wintertodt Drops.txt" />
+    <None Include="bin\Debug\logs\Bandos Uniques.txt" />
+    <None Include="bin\Debug\logs\Zamorak Uniques.txt" />
+    <None Include="bin\Debug\logs\Zulrah Uniques.txt" />
+    <None Include="bin\Debug\logs\Abyssal Sire Uniques.txt" />
+    <None Include="bin\Debug\logs\Armadyl Uniques.txt" />
+    <None Include="bin\Debug\logs\Barrows Uniques.txt" />
+    <None Include="Assets\Dark_claw.png" />
+    <None Include="Assets\Skotos.png" />
+    <None Include="Assets\King_black_dragon.png" />
+    <None Include="Assets\Kalphite_queen.png" />
+    <None Include="Assets\Grotesque_guardians.png" />
+    <None Include="Assets\Callisto.png" />
+    <None Include="Assets\Venenatis.png" />
+    <None Include="Assets\Vet%27ion.png" />
+    <None Include="Assets\Giant_mole.png" />
+    <None Include="Assets\Zulrah.png" />
+    <None Include="Assets\Thermonuclear_smoke_devil.png" />
+    <None Include="Assets\Zamorak.png" />
+    <None Include="Assets\Armadyl.png" />
+    <None Include="Assets\Kraken.png" />
+    <None Include="Assets\Bandos.png" />
+    <None Include="Assets\Corporeal_beast.png" />
+    <None Include="Assets\Dagannoth_kings.png" />
+    <None Include="Assets\Chaos_elemental.png" />
+    <None Include="Assets\Wintertodt.png" />
+    <None Include="Assets\Raids.png" />
+    <None Include="Assets\Abyssal_sire.png" />
+    <None Include="Assets\Boss_king_black_dragon.png" />
+    <None Include="Assets\Boss_kalphite_queen.png" />
+    <None Include="Assets\Boss_grotesque_guardians.png" />
+    <None Include="Assets\Boss_callisto.png" />
+    <None Include="Assets\Boss_venenatis.png" />
+    <None Include="Assets\Boss_vet%27ion.png" />
+    <None Include="Assets\Boss_giant_mole.png" />
+    <None Include="Assets\Boss_zulrah.png" />
+    <None Include="Assets\Boss_thermonuclear_smoke_devil.png" />
+    <None Include="Assets\Boss_zamorak.png" />
+    <None Include="Assets\Boss_armadyl.png" />
+    <None Include="Assets\Boss_kraken.png" />
+    <None Include="Assets\Boss_bandos.png" />
+    <None Include="Assets\Boss_corporeal_beast.png" />
+    <None Include="Assets\Boss_dagannoth_kings.png" />
+    <None Include="Assets\Boss_chaos_elemental.png" />
+    <None Include="Assets\Boss_wintertodt.png" />
+    <None Include="Assets\Boss_raids.png" />
+    <None Include="Assets\Boss_abyssal_sire.png" />
+    <None Include="Assets\Boss_skotizo.png" />
+    <None Include="Assets\Boss_cerberus.png" />
+    <None Include="Assets\Boss_barrows.png" />
+    <None Include="Assets\Boss_scorpia.png" />
+    <None Include="Assets\Boss_crazy_archaeologist.png" />
+    <None Include="Assets\Boss_saradomin.png" />
+    <None Include="Assets\Boss_chaos_fanatic.png" />
     <Content Include="logs\Abyssal Sire Drops.txt" />
     <Content Include="logs\Abyssal Sire Uniques.txt" />
     <Content Include="logs\Abyssal Sire.txt" />
@@ -2123,262 +2198,262 @@
   <ItemGroup>
     <PublishFile Include="logs\Abyssal Sire.txt">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="logs\Armadyl.txt">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="logs\Bandos.txt">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="logs\Barrows.txt">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="logs\Callisto.txt">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="logs\Cerberus.txt">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="logs\Chaos Elemental.txt">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="logs\Chaos Fanatic.txt">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="logs\Corporeal Beast.txt">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="logs\Crazy Archaeologist.txt">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="logs\Dagannoth Kings.txt">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="logs\Giant Mole.txt">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="logs\Grotesque Guardians.txt">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="logs\Kalphite Queen.txt">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="logs\King Black Dragon.txt">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="logs\Kraken.txt">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="logs\Raids.txt">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="logs\Saradomin.txt">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="logs\Scorpia.txt">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="logs\Skotizo.txt">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="logs\Thermonuclear Smoke Devil.txt">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="logs\Venenatis.txt">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="logs\Vet%27ion.txt">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="logs\Wintertodt.txt">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="logs\Zamorak.txt">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="logs\Zulrah.txt">
       <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Exclude</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>

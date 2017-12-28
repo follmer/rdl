@@ -142,17 +142,11 @@
   <data name="Abyssal_Sire_Drops" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Abyssal Sire Drops.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="Abyssal_Sire_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\logs\Abyssal Sire Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="Armadyl" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Armadyl.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Armadyl_Drops" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Armadyl Drops.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
-  <data name="Armadyl_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\logs\Armadyl Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Bandos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Bandos.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
@@ -160,17 +154,11 @@
   <data name="Bandos_Drops" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Bandos Drops.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="Bandos_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\logs\Bandos Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="Barrows" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Barrows.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Barrows_Drops" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Barrows Drops.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
-  <data name="Barrows_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\logs\Barrows Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Callisto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Callisto.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
@@ -178,17 +166,11 @@
   <data name="Callisto_Drops" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Callisto Drops.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="Callisto_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\logs\Callisto Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="Cerberus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Cerberus.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Cerberus_Drops" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Cerberus Drops.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
-  <data name="Cerberus_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\logs\Cerberus Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Chaos_Elemental" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Chaos Elemental.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
@@ -196,17 +178,11 @@
   <data name="Chaos_Elemental_Drops" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Chaos Elemental Drops.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="Chaos_Elemental_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\logs\Chaos Elemental Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="Chaos_Fanatic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Chaos Fanatic.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Chaos_Fanatic_Drops" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Chaos Fanatic Drops.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
-  <data name="Chaos_Fanatic_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\logs\Chaos Fanatic Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Corporeal_Beast" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Corporeal Beast.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
@@ -214,17 +190,11 @@
   <data name="Corporeal_Beast_Drops" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Corporeal Beast Drops.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="Corporeal_Beast_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\logs\Corporeal Beast Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="Crazy_Archaeologist" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Crazy Archaeologist.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Crazy_Archaeologist_Drops" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Crazy Archaeologist Drops.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
-  <data name="Crazy_Archaeologist_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\logs\Crazy Archaeologist Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Dagannoth_Kings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Dagannoth Kings.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
@@ -232,17 +202,11 @@
   <data name="Dagannoth_Kings_Drops" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Dagannoth Kings Drops.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="Dagannoth_Kings_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\logs\Dagannoth Kings Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="Giant_Mole" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Giant Mole.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Giant_Mole_Drops" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Giant Mole Drops.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
-  <data name="Giant_Mole_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\logs\Giant Mole Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Grotesque_Guardians" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Grotesque Guardians.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
@@ -250,17 +214,11 @@
   <data name="Grotesque_Guardians_Drops" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Grotesque Guardians Drops.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="Grotesque_Guardians_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\logs\Grotesque Guardians Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="Kalphite_Queen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Kalphite Queen.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Kalphite_Queen_Drops" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Kalphite Queen Drops.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
-  <data name="Kalphite_Queen_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\logs\Kalphite Queen Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="King_Black_Dragon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\King Black Dragon.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
@@ -268,17 +226,11 @@
   <data name="King_Black_Dragon_Drops" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\King Black Dragon Drops.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="King_Black_Dragon_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\logs\King Black Dragon Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="Kraken" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Kraken.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Kraken_Drops" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Kraken Drops.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
-  <data name="Kraken_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\logs\Kraken Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Saradomin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Saradomin.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;iso-8859-1</value>
@@ -286,26 +238,14 @@
   <data name="Saradomin_Drops" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Saradomin Drops.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="Saradomin_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\logs\Saradomin Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="Scorpia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Scorpia.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Scorpia_Drops" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Scorpia Drops.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="Scorpia_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\logs\Scorpia Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="Skotizo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Skotizo.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
-  <data name="Skotizo_Drops" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\logs\Skotizo Drops.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
-  <data name="Skotizo_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\logs\Skotizo Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Splits" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Splits.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
@@ -316,17 +256,11 @@
   <data name="Thermonuclear_Smoke_Devil_Drops" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Thermonuclear Smoke Devil Drops.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="Thermonuclear_Smoke_Devil_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\logs\Thermonuclear Smoke Devil Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="Venenatis" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Venenatis.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Venenatis_Drops" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Venenatis Drops.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
-  <data name="Venenatis_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\logs\Venenatis Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Vet_ion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Vet'ion.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
@@ -334,17 +268,11 @@
   <data name="Vet_ion_Drops" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Vet'ion Drops.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="Vet_ion_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\logs\Vet'ion Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="Wintertodt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Wintertodt.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Wintertodt_Drops" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Wintertodt Drops.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
-  <data name="Wintertodt_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\logs\Wintertodt Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Zamorak" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Zamorak.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
@@ -352,17 +280,11 @@
   <data name="Zamorak_Drops" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Zamorak Drops.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="Zamorak_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\logs\Zamorak Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="Zulrah" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Zulrah.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Zulrah_Drops" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\logs\Zulrah Drops.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
-  <data name="Zulrah_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\logs\Zulrah Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="Abyssal_orphan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Abyssal_orphan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -3241,9 +3163,6 @@
   <data name="Raids_Drops" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Raids Drops.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
-  <data name="Raids_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Raids Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
-  </data>
   <data name="Smoke_rune_generic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Smoke_rune_generic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -3423,5 +3342,170 @@
   </data>
   <data name="uniques_icon_any" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\icons\uniques_icon_any.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Abyssal_Sire_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logs\Abyssal Sire Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Armadyl_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logs\Armadyl Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Barrows_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logs\Barrows Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Callisto_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logs\Callisto Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Cerberus_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logs\Cerberus Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Chaos_Elemental_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logs\Chaos Elemental Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Chaos_Fanatic_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logs\Chaos Fanatic Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Corporeal_Beast_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logs\Corporeal Beast Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Crazy_Archaeologist_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logs\Crazy Archaeologist Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Dagannoth_Kings_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logs\Dagannoth Kings Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Giant_Mole_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logs\Giant Mole Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Grotesque_Guardians_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logs\Grotesque Guardians Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Kalphite_Queen_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logs\Kalphite Queen Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="King_Black_Dragon_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logs\King Black Dragon Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Kraken_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logs\Kraken Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Raids_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logs\Raids Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Saradomin_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logs\Saradomin Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Scorpia_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logs\Scorpia Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Skotizo_Drops" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logs\Skotizo Drops.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Skotizo_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logs\Skotizo Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Thermonuclear_Smoke_Devil_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logs\Thermonuclear Smoke Devil Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Venenatis_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logs\Venenatis Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Vet_ion_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logs\Vet'ion Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Wintertodt_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logs\Wintertodt Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Zamorak_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logs\Zamorak Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Zulrah_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logs\Zulrah Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Bandos_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\logs\Bandos Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Dark_claw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Dark_claw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Skotos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Skotos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boss_abyssal_sire" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Boss_abyssal_sire.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boss_armadyl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Boss_armadyl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boss_bandos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Boss_bandos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boss_barrows" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Boss_barrows.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boss_callisto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Boss_callisto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boss_cerberus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Boss_cerberus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boss_chaos_elemental" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Boss_chaos_elemental.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boss_corporeal_beast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Boss_corporeal_beast.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boss_crazy_archaeologist" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Boss_crazy_archaeologist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boss_dagannoth_kings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Boss_dagannoth_kings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boss_giant_mole" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Boss_giant_mole.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boss_grotesque_guardians" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Boss_grotesque_guardians.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boss_kalphite_queen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Boss_kalphite_queen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boss_king_black_dragon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Boss_king_black_dragon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boss_kraken" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Boss_kraken.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boss_raids" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Boss_raids.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boss_saradomin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Boss_saradomin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boss_scorpia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Boss_scorpia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boss_skotizo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Boss_skotizo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boss_thermonuclear_smoke_devil" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Boss_thermonuclear_smoke_devil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boss_venenatis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Boss_venenatis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boss_vet_ion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Boss_vet'ion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boss_wintertodt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Boss_wintertodt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boss_zamorak" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Boss_zamorak.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boss_zulrah" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Boss_zulrah.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boss_chaos_fanatic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Boss_chaos_fanatic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
