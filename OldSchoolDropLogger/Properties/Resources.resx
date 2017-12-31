@@ -3340,9 +3340,6 @@
   <data name="Zul_andra_teleport_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Zul-andra_teleport_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="uniques_icon_any" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\icons\uniques_icon_any.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Abyssal_Sire_Uniques" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\logs\Abyssal Sire Uniques.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
@@ -3507,5 +3504,11 @@
   </data>
   <data name="Boss_chaos_fanatic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Boss_chaos_fanatic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Boss_icon_any" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\icons\uniques_icon_any5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_any" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\icons\uniques_icon_any.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

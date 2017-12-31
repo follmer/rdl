@@ -77,7 +77,7 @@ namespace itemQuantityCreator {
 					modifyOffset = -1;
 				}
 				else if (number[i - 1] == '4') {
-					modifyOffset = -2;
+					modifyOffset = -1;
 				}
 				else {
 					modifyOffset = 0;

@@ -23,7 +23,9 @@ namespace stats {
 		public Dictionary<String, Dictionary<String, int>> totalDropsFromAllBosses;
 		private String selectedStatisticsBoss = "Abyssal Sire";
 		private List<PictureBox> allUniquesPictureBoxes;
+		private List<PictureBox> allSplitsPictureBoxes;
 		private List<Label> allUniquesLabels;
+		private List<Label> allSplitsLabels;
 
 
 		// Boss chart colors
@@ -122,6 +124,21 @@ namespace stats {
 			}
 			else {
 				Console.WriteLine("[ERROR]: No unique file found for " + boss);
+			}
+
+			return null;
+		}
+		public List<String> getSplits() {
+
+			if (Resources.ResourceManager.GetObject("Splits") != null) {
+
+				String file = Resources.ResourceManager.GetString("Splits");
+				List<String> splits = file.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries).ToList();
+
+				return splits;
+			}
+			else {
+				Console.WriteLine("[ERROR]: No splits file found.");
 			}
 
 			return null;
@@ -418,6 +435,9 @@ namespace stats {
 				case "nodeUniquesTotalUniques":
 					displayStatUniquesTotalUniques();
 					break;
+				case "nodeSplitsDryStreaks":
+					displayStatSplitsDryStreaks();
+					break;
 				default:
 					Console.WriteLine("Could not find a method to call for the selected node: " + nodeName);
 					break;
@@ -428,6 +448,10 @@ namespace stats {
 		private void displayStatUniquesTotalUniques() {
 
 			labelViewingStatistic.Text = "Total Uniques";
+			tt.SetToolTip(labelViewingStatistic, "The total number of uniques you have logged for each boss.");
+
+			clearStatArea();
+			clearCharts();
 
 			List<String> bossStrings = getAllBossStrings();
 			int bossNumber = 0;
@@ -549,9 +573,12 @@ namespace stats {
 			//		- put boss on picture box and # uniques as label
 		}
 		private void displayStatUniquesDryStreaks() {
-
-			clearCharts();
+			
 			labelViewingStatistic.Text = "Unique Dry Streaks";
+			tt.SetToolTip(labelViewingStatistic, "The amount of kills dry you are since last receiving a unique (in your name), for each boss as well as in total.");
+
+			clearStatArea();
+			clearCharts();
 
 			selectedStatisticsBoss = prepareStringForResourceGrab(selectedStatisticsBoss);
 
@@ -599,7 +626,7 @@ namespace stats {
 				// Create a new dictionary for us to store the uniques in
 				Dictionary<String, int> uniqueDictionary = new Dictionary<String, int>();
 
-				uniqueDictionary.Add("uniques_icon_any", lastSeenUniqueKc);
+				uniqueDictionary.Add("icon_any", lastSeenUniqueKc);
 				// Fill the uniqueDictionary with the highest dry streak first, then we will
 				// update it if we found that we got a drop later on (below)
 				foreach (String unique in uniqueList) {
@@ -638,6 +665,178 @@ namespace stats {
 			setNPictureBoxesAsVisible(numUniquesForBoss + 1);
 			showNUniquesLabels(numUniquesForBoss + 1);
 		}
+		private void displayStatSplitsDryStreaks() {
+
+			clearCharts();
+			clearStatArea();
+
+			labelViewingStatistic.Text = "Splits Dry Streaks";
+			tt.SetToolTip(labelViewingStatistic, "The amount of kills dry you are since last receiving a split, for each boss as well as in total.");
+
+			selectedStatisticsBoss = prepareStringForResourceGrab(selectedStatisticsBoss);
+
+			Console.WriteLine("[DEBUG]: Statistics.displayStatSplitsDryStreaks()");
+
+			// get the splits for the selected boss
+			List<String> splitList = this.getSplits();
+
+			Dictionary<String, int> splitDryStreaksList = new Dictionary<String, int>();
+			Dictionary<String, int> lastSplitSeenForAllBosses = new Dictionary<String, int>();
+
+			String mostRecentSplitItem = "";
+			String mostRecentSplitBoss = "";
+			int mostRecentSplitValue = -1;
+			int mostRecentSplitKillcount = -1;
+
+			// Make sure the splits aren't null
+			if (splitList != null) {
+
+				// Populate the dictionary first with 0 killcount
+				List<String> bossStrings = getAllBossStrings();
+
+				// Deal with time since last split (any)
+				int totalSplitCount = splitList.Count;
+
+				List<int> kcList = new List<int>();
+
+				// Populate the list with all bosses before we proceed
+				// so that no boss is left null
+				foreach (String b in bossStrings) {
+					splitDryStreaksList.Add(b, 0);
+				}
+
+				int currentSplit = 0;
+
+				// loop through all the logged splits
+				foreach (String line in splitList) {
+
+					// [x] get the kc of the split and put it into the kc list to know when the last split for the boss we're on was
+					// [x]- get the log file for the boss we're on
+					// [x]	- get the count of this log file, i.e.   (90 - kcOfSplit) = split dry streak for current boss
+					// [ ]			- put this split dry streak into the splitDryStreaksList
+					// [ ] it would be cool for the any pb to say what the last drop was, from who, and what kc
+
+					String boss = line.Substring(0, line.IndexOf(","));
+					boss = boss.Substring(boss.IndexOf(".") + 2);
+
+					String item = line.Substring(line.IndexOf(",") + 2, line.IndexOf("[") - line.IndexOf(",") - 3);
+
+					String data = line.Substring(line.IndexOf("["));
+
+					// Remove the [ and ] from the beginning and end of our data
+					data = data.Substring(1, data.Length - 2);
+
+					List<String> dataList = data.Split(',').ToList();
+
+					int splitKc = -1;
+					int splitAmount = -1;
+					int numPeople = -1;
+					int numAlts = -1;
+					Boolean selfDrop = false;
+
+					foreach (String s in dataList) {
+
+						if (s.Substring(0, 3) == "kc=") {
+							Int32.TryParse(s.Substring(3, s.Length - 3), out splitKc);
+
+							int oldKc = 0;
+
+							// Remove a key to prevent duplicates
+							if (lastSplitSeenForAllBosses.ContainsKey(boss)) {
+								oldKc = lastSplitSeenForAllBosses[boss];
+								lastSplitSeenForAllBosses.Remove(boss);
+							}
+
+							// Make sure that the kc we're logging is the highest, this should never not happen
+							// but just in case
+							if (oldKc < splitKc) {
+								lastSplitSeenForAllBosses.Add(boss, splitKc);
+							}
+							else {
+								lastSplitSeenForAllBosses.Add(boss, oldKc);
+							}
+							
+						}
+						else if (s.Substring(0, 3) == "sn=") {
+							Int32.TryParse(s.Substring(3, s.Length - 3), out splitAmount);
+							selfDrop = false;
+						}
+						else if (s.Substring(0, 3) == "sy=") {
+							Int32.TryParse(s.Substring(3, s.Length - 3), out splitAmount);
+							selfDrop = true;
+						}
+						else if (s.Substring(0, 2) == "p=") {
+							Int32.TryParse(s.Substring(2, s.Length - 2), out numPeople);
+						}
+						else if (s.Substring(0, 2) == "a=") {
+							Int32.TryParse(s.Substring(2, s.Length - 2), out numAlts);
+						}
+						else {
+							Console.WriteLine("Statistics.displayStatSplitsDryStreaks(): [ERROR]: Could not find a match for the split data logged.");
+						}
+
+						mostRecentSplitBoss = boss;
+						mostRecentSplitItem = item;
+						mostRecentSplitValue = splitAmount;
+						mostRecentSplitKillcount = splitKc;
+					}
+
+					int numSplitsDry = 0;
+
+					// Make sure the log file exists, if it doesn't and they have a split logged for the boss
+					// then they fucked up somewhere but we have to handle it anyway ¯\_(ツ)_/¯
+					if (Resources.ResourceManager.GetString(boss) != null) {
+
+						String filename = Resources.ResourceManager.GetString(selectedStatisticsBoss);
+						List<String> items = filename.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries).ToList();
+
+						// Grab the total drops logged
+						int logCount = items.Count;
+
+						// Subtract to find the uniques dry they are
+						numSplitsDry = lastSplitSeenForAllBosses[boss] - numSplitsDry;
+
+						if (splitDryStreaksList.ContainsKey(boss)) {
+							splitDryStreaksList.Remove(boss);
+						}
+
+						// Add the number of splits dry for that specific boss
+						splitDryStreaksList.Add(boss, numSplitsDry);
+
+					}
+					else {
+						Console.WriteLine("[ERROR]: No log file found for " + boss + "... somehow... ¯\\_(ツ)_/¯");
+					}
+
+					currentSplit++;
+				}
+
+				// Possibly unnecessary but it works so I'm leaving it
+				String shortestDryForAllBossesText = "";
+				int shortestDryForAllBosses = Int32.MaxValue;
+				foreach (KeyValuePair<String, int> kp in lastSplitSeenForAllBosses) {
+					if (kp.Value < shortestDryForAllBosses) {
+						shortestDryForAllBosses = kp.Value;
+						shortestDryForAllBossesText = kp.Key;
+					}
+				}
+
+				// Need to copy over all the data from before since we also need to update
+				// the value of the 'any' key
+				Dictionary<String, int> streakCopy = new Dictionary<string, int>();
+				streakCopy.Add("icon_any", shortestDryForAllBosses);
+				foreach (KeyValuePair<String, int> kp in splitDryStreaksList) {
+					streakCopy.Add(kp.Key, kp.Value);
+				}
+
+				setBackgroundImageFromSplitsList(streakCopy, mostRecentSplitBoss, mostRecentSplitKillcount, mostRecentSplitItem, mostRecentSplitValue);
+
+				// Show the correct number of pictureboxes equal to the number of uniques
+				// + 1 since we are going to show a picturebox with the word "any" in it
+				setNGeneralPictureBoxesAsVisible(bossStrings.Count + 1, allSplitsPictureBoxes);
+				setNGeneralLabelsAsVisible(bossStrings.Count + 1, allSplitsLabels);
+			}
+		}
 
 		private void dropdownSelectedBoss_SelectedIndexChanged(object sender, EventArgs e) {
 			if (dropdownSelectedBoss.SelectedItem.ToString() == "Thermy") {
@@ -657,6 +856,37 @@ namespace stats {
 			}
 			else {
 				
+			}
+		}
+
+		private void setNGeneralPictureBoxesAsVisible(int n, List<PictureBox> pbList) {
+
+			int numShowing = 0;
+
+			for (int i = 0; i < pbList.Count; i++) {
+
+				if (numShowing < n) {
+					pbList[i].Visible = true;
+				}
+				else {
+					pbList[i].Visible = false;
+				}
+				numShowing++;
+			}
+		}
+		private void setNGeneralLabelsAsVisible(int n, List<Label> labelList) {
+
+			int numShowing = 0;
+
+			for (int i = 0; i < labelList.Count; i++) {
+
+				if (numShowing < n) {
+					labelList[i].Visible = true;
+				}
+				else {
+					labelList[i].Visible = false;
+				}
+				numShowing++;
 			}
 		}
 		private void showNUniquesLabels(int n) {
@@ -709,7 +939,6 @@ namespace stats {
 		private void putControlsIntoList() {
 
 			allUniquesPictureBoxes = new List<PictureBox>();
-
 			Control[] c;
 			for (int i = 0; i <= 27; i++) {
 				c = this.Controls.Find("pictureBoxUniques" + i.ToString(), true);
@@ -721,6 +950,20 @@ namespace stats {
 			for (int i = 0; i <= 27; i++) {
 				d = this.Controls.Find("labelUniques" + i.ToString(), true);
 				allUniquesLabels.Add((Label)d[0]);
+			}
+
+			allSplitsPictureBoxes = new List<PictureBox>();
+			Control[] e;
+			for (int i = 1; i <= 27; i++) {
+				e = this.Controls.Find("pictureBoxSplits" + i.ToString(), true);
+				allSplitsPictureBoxes.Add((PictureBox)e[0]);
+			}
+
+			allSplitsLabels = new List<Label>();
+			Control[] f;
+			for (int i = 1; i <= 27; i++) {
+				f = this.Controls.Find("labelSplits" + i.ToString(), true);
+				allSplitsLabels.Add((Label)f[0]);
 			}
 
 		}
@@ -737,7 +980,7 @@ namespace stats {
 				if (b != null) {
 					allUniquesPictureBoxes[i].BackgroundImage = b;
 					allUniquesLabels[i].Text = values[i].ToString();
-					if (keys[i] == "uniques_icon_any") {
+					if (keys[i] == "icon_any") {
 						tt.SetToolTip(allUniquesPictureBoxes[i], "Any unique");
 					}
 					else {
@@ -746,6 +989,37 @@ namespace stats {
 				}
 				else {
 					Console.WriteLine("setBackgroundImageFromUniqueList(): Bitmap request for " + keys[i] + " is null.");
+				}
+			}
+		}
+
+		private void setBackgroundImageFromSplitsList(Dictionary<String, int> splitDictionary, String mostRecentSplitBoss, int mostRecentSplitKillcount, String mostRecentSplitItem, int mostRecentSplitValue) {
+
+			List<String> keys = splitDictionary.Keys.ToList();
+			List<int> values = splitDictionary.Values.ToList();
+
+			for (int i = 0; i < splitDictionary.Count; i++) {
+
+
+				Bitmap b = getGeneralImageFromString(prepareStringForResourceGrab("Boss_" + splitDictionary.Keys.ToList()[i]));
+
+				if (b != null) {
+					allSplitsPictureBoxes[i].BackgroundImage = b;
+					allSplitsLabels[i].Text = values[i].ToString();
+
+					if (keys[i] == "icon_any") {
+						//streakCopy, mostRecentSplitBoss, mostRecentSplitKillcount, mostRecentSplitItem, mostRecentSplitValue formatted += String.Format("{0:n0}", int.Parse(splitAmount)) + " gp";
+						tt.SetToolTip(allSplitsPictureBoxes[i], "Last split was at " + mostRecentSplitBoss + Environment.NewLine +
+						"	– kc: " + mostRecentSplitKillcount.ToString() + Environment.NewLine +
+						"	– item: " + mostRecentSplitItem + Environment.NewLine +
+						"	– split: " + String.Format("{0:n0}", mostRecentSplitValue) + "gp");
+					}
+					else {
+						tt.SetToolTip(allSplitsPictureBoxes[i], keys[i]);
+					}
+				}
+				else {
+					Console.WriteLine("setBackgroundImageFromSplitsList(): Bitmap request for " + keys[i] + " is null.");
 				}
 			}
 		}
@@ -762,9 +1036,9 @@ namespace stats {
 		private Bitmap getUniqueImageFromString(String unique) {
 
 			// Special case 
-			if (unique == "uniques_icon_any") {
+			if (unique == "icon_any") {
 
-				return (Bitmap)Resources.uniques_icon_any;
+				return (Bitmap)Resources.icon_any;
 			}
 
 			// Remove the " x 1" from the end of the unique
@@ -850,6 +1124,12 @@ namespace stats {
 
 		private void clearCharts() {
 			chartUniques.Series.Clear();
+		}
+		private void clearStatArea() {
+			setNGeneralPictureBoxesAsVisible(0, allUniquesPictureBoxes);
+			setNGeneralLabelsAsVisible(0, allUniquesLabels);
+			setNGeneralPictureBoxesAsVisible(0, allSplitsPictureBoxes);
+			setNGeneralLabelsAsVisible(0, allSplitsLabels);
 		}
 	}
 }

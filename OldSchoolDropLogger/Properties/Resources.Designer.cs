@@ -1903,6 +1903,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Boss_icon_any {
+            get {
+                object obj = ResourceManager.GetObject("Boss_icon_any", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Boss_kalphite_queen {
             get {
                 object obj = ResourceManager.GetObject("Boss_kalphite_queen", resourceCulture);
@@ -5511,6 +5521,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_any {
+            get {
+                object obj = ResourceManager.GetObject("icon_any", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Irit_seed_1 {
             get {
                 object obj = ResourceManager.GetObject("Irit_seed_1", resourceCulture);
@@ -8170,6 +8190,7 @@ namespace OldSchoolDropLogger.Properties {
         ///   Looks up a localized string similar to Arcane prayer scroll x 1
         ///Dexterous prayer scroll x 1
         ///Dragon sword x 1
+        ///Dragon harpoon x 1
         ///Dragon thrownaxe x 100
         ///Twisted buckler x 1
         ///Dragon hunter crossbow x 1
@@ -10212,11 +10233,14 @@ namespace OldSchoolDropLogger.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 1. Raids, Dexterous prayer scroll x 1 [sn=19561000]
-        ///2. Raids, Dexterous prayer scroll x 1 [sn=12000000]
-        ///3. Raids, Arcane prayer scroll x 1 [sn=2360000]
-        ///4. Raids, Ancestral robe bottom x 1 [sn=19475000]
-        ///5. Raids, Dragon harpoon x 1 [sn=1966000]
+        ///   Looks up a localized string similar to 9. Armadyl, Armadyl chainskirt x 1 [kc=142,sn=123123123,p=4,a=2]
+        ///14. Armadyl, Armadyl hilt x 1 [kc=147,sn=123123123,p=2,a=0]
+        ///10. Armadyl, Armadyl chainskirt x 1 [kc=142,sy=123,p=2,a=0]
+        ///13. Armadyl, Armadyl chainskirt x 1 [kc=144,sn=2,p=0,a=0]
+        ///13. Raids, Twised bow x 1 [kc=634,sy=302954332,p=3,a=1]
+        ///11. Armadyl, Armadyl chainskirt x 1 [kc=144,sn=123,p=3,a=0]
+        ///12. Armadyl, Armadyl chestplate x 1 [kc=145,sy=2,p=2,a=0]
+        ///13. Armadyl, Armadyl chainskirt x 1 [kc=144,sn=2,p=0,a=0]
         ///.
         /// </summary>
         internal static string Splits {
@@ -10722,7 +10746,7 @@ namespace OldSchoolDropLogger.Properties {
         ///14. Occult necklace x 1
         ///15. Tinderbox x 1
         ///16. Dragonstone ring x 1
-        ///.
+        ///17. Pet smoke devil x 1.
         /// </summary>
         internal static string Thermonuclear_Smoke_Devil {
             get {
@@ -11414,16 +11438,6 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Unicorn_horn_noted_generic {
             get {
                 object obj = ResourceManager.GetObject("Unicorn_horn_noted_generic", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap uniques_icon_any {
-            get {
-                object obj = ResourceManager.GetObject("uniques_icon_any", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

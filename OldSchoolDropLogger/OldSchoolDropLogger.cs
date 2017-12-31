@@ -2664,8 +2664,7 @@ namespace dropLogger {
 
 				}
 			}
-
-			updateSidebarBossKillcounts();
+			updateSidebarBossKillcounts("added", isControlPressed);
 			// Update the list box
 			updateSidebarWindow();
 			updateListBox();
@@ -3451,7 +3450,7 @@ namespace dropLogger {
 				listBoxSidebar.Items.Add(split);
 			}
 		}
-		private void updateSidebarBossKillcounts(String itemAddedOrRemoved = "added") {
+		private void updateSidebarBossKillcounts(String itemAddedOrRemoved = "added", Boolean ctrlPressed = false) {
 
 			Console.WriteLine("updateSidebarBossKillCounts()");
 
@@ -3475,7 +3474,12 @@ namespace dropLogger {
 					int.TryParse(entryArr[entryArr.Length - 1], out updateKillcount);
 
 					if (itemAddedOrRemoved == "added") {
-						kc = updateKillcount + 1;
+						if (ctrlPressed == false) {
+							kc = updateKillcount + 1;
+						}
+						else {
+							kc = updateKillcount;
+						}
 					}
 					else {
 						kc = updateKillcount - 1;

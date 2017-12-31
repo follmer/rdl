@@ -114,6 +114,62 @@ namespace stats {
 			this.pictureBoxUniques22 = new System.Windows.Forms.PictureBox();
 			this.pictureBoxUniques21 = new System.Windows.Forms.PictureBox();
 			this.chartUniques = new System.Windows.Forms.DataVisualization.Charting.Chart();
+			this.labelSplits28 = new System.Windows.Forms.Label();
+			this.labelSplits27 = new System.Windows.Forms.Label();
+			this.labelSplits26 = new System.Windows.Forms.Label();
+			this.labelSplits25 = new System.Windows.Forms.Label();
+			this.labelSplits24 = new System.Windows.Forms.Label();
+			this.labelSplits23 = new System.Windows.Forms.Label();
+			this.labelSplits22 = new System.Windows.Forms.Label();
+			this.pictureBoxSplits28 = new System.Windows.Forms.PictureBox();
+			this.pictureBoxSplits27 = new System.Windows.Forms.PictureBox();
+			this.pictureBoxSplits26 = new System.Windows.Forms.PictureBox();
+			this.pictureBoxSplits25 = new System.Windows.Forms.PictureBox();
+			this.pictureBoxSplits24 = new System.Windows.Forms.PictureBox();
+			this.pictureBoxSplits23 = new System.Windows.Forms.PictureBox();
+			this.pictureBoxSplits22 = new System.Windows.Forms.PictureBox();
+			this.labelSplits21 = new System.Windows.Forms.Label();
+			this.labelSplits20 = new System.Windows.Forms.Label();
+			this.labelSplits19 = new System.Windows.Forms.Label();
+			this.labelSplits18 = new System.Windows.Forms.Label();
+			this.labelSplits17 = new System.Windows.Forms.Label();
+			this.labelSplits16 = new System.Windows.Forms.Label();
+			this.labelSplits15 = new System.Windows.Forms.Label();
+			this.labelSplits14 = new System.Windows.Forms.Label();
+			this.labelSplits13 = new System.Windows.Forms.Label();
+			this.labelSplits12 = new System.Windows.Forms.Label();
+			this.labelSplits11 = new System.Windows.Forms.Label();
+			this.labelSplits10 = new System.Windows.Forms.Label();
+			this.labelSplits9 = new System.Windows.Forms.Label();
+			this.labelSplits8 = new System.Windows.Forms.Label();
+			this.labelSplits7 = new System.Windows.Forms.Label();
+			this.labelSplits6 = new System.Windows.Forms.Label();
+			this.labelSplits5 = new System.Windows.Forms.Label();
+			this.labelSplits4 = new System.Windows.Forms.Label();
+			this.labelSplits3 = new System.Windows.Forms.Label();
+			this.labelSplits2 = new System.Windows.Forms.Label();
+			this.labelSplits1 = new System.Windows.Forms.Label();
+			this.pictureBoxSplits21 = new System.Windows.Forms.PictureBox();
+			this.pictureBoxSplits20 = new System.Windows.Forms.PictureBox();
+			this.pictureBoxSplits19 = new System.Windows.Forms.PictureBox();
+			this.pictureBoxSplits18 = new System.Windows.Forms.PictureBox();
+			this.pictureBoxSplits17 = new System.Windows.Forms.PictureBox();
+			this.pictureBoxSplits16 = new System.Windows.Forms.PictureBox();
+			this.pictureBoxSplits15 = new System.Windows.Forms.PictureBox();
+			this.pictureBoxSplits14 = new System.Windows.Forms.PictureBox();
+			this.pictureBoxSplits13 = new System.Windows.Forms.PictureBox();
+			this.pictureBoxSplits12 = new System.Windows.Forms.PictureBox();
+			this.pictureBoxSplits11 = new System.Windows.Forms.PictureBox();
+			this.pictureBoxSplits10 = new System.Windows.Forms.PictureBox();
+			this.pictureBoxSplits9 = new System.Windows.Forms.PictureBox();
+			this.pictureBoxSplits8 = new System.Windows.Forms.PictureBox();
+			this.pictureBoxSplits7 = new System.Windows.Forms.PictureBox();
+			this.pictureBoxSplits6 = new System.Windows.Forms.PictureBox();
+			this.pictureBoxSplits5 = new System.Windows.Forms.PictureBox();
+			this.pictureBoxSplits4 = new System.Windows.Forms.PictureBox();
+			this.pictureBoxSplits3 = new System.Windows.Forms.PictureBox();
+			this.pictureBoxSplits2 = new System.Windows.Forms.PictureBox();
+			this.pictureBoxSplits1 = new System.Windows.Forms.PictureBox();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxUniques0)).BeginInit();
@@ -145,6 +201,34 @@ namespace stats {
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxUniques22)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxUniques21)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.chartUniques)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits28)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits27)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits26)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits25)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits24)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits23)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits22)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits21)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits20)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits19)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits18)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits17)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits16)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits15)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits14)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits13)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits12)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits11)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits10)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits9)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits8)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits7)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits6)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits5)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits4)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits3)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// statisticsNavigationTree
@@ -164,7 +248,7 @@ namespace stats {
 			treeNode4.Text = "Uniques";
 			treeNode5.Name = "rootNodeDrops";
 			treeNode5.Text = "Drops";
-			treeNode6.Name = "Node2";
+			treeNode6.Name = "nodeSplitsDryStreaks";
 			treeNode6.Text = "Dry Streaks";
 			treeNode7.Name = "rootNodeSplits";
 			treeNode7.Text = "Splits";
@@ -280,7 +364,7 @@ namespace stats {
 			// 
 			// pictureBoxUniques0
 			// 
-			this.pictureBoxUniques0.BackgroundImage = global::OldSchoolDropLogger.Properties.Resources.uniques_icon_any;
+			this.pictureBoxUniques0.BackgroundImage = global::OldSchoolDropLogger.Properties.Resources.icon_any;
 			this.pictureBoxUniques0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.pictureBoxUniques0.Location = new System.Drawing.Point(209, 66);
 			this.pictureBoxUniques0.Name = "pictureBoxUniques0";
@@ -918,6 +1002,595 @@ namespace stats {
 			this.chartUniques.TabIndex = 1014;
 			this.chartUniques.Text = "chartUniques";
 			// 
+			// labelSplits28
+			// 
+			this.labelSplits28.AutoSize = true;
+			this.labelSplits28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelSplits28.ForeColor = System.Drawing.Color.Silver;
+			this.labelSplits28.Location = new System.Drawing.Point(578, 400);
+			this.labelSplits28.Name = "labelSplits28";
+			this.labelSplits28.Size = new System.Drawing.Size(14, 15);
+			this.labelSplits28.TabIndex = 1070;
+			this.labelSplits28.Text = "0";
+			this.labelSplits28.Visible = false;
+			// 
+			// labelSplits27
+			// 
+			this.labelSplits27.AutoSize = true;
+			this.labelSplits27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelSplits27.ForeColor = System.Drawing.Color.Silver;
+			this.labelSplits27.Location = new System.Drawing.Point(578, 346);
+			this.labelSplits27.Name = "labelSplits27";
+			this.labelSplits27.Size = new System.Drawing.Size(14, 15);
+			this.labelSplits27.TabIndex = 1069;
+			this.labelSplits27.Text = "0";
+			this.labelSplits27.Visible = false;
+			// 
+			// labelSplits26
+			// 
+			this.labelSplits26.AutoSize = true;
+			this.labelSplits26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelSplits26.ForeColor = System.Drawing.Color.Silver;
+			this.labelSplits26.Location = new System.Drawing.Point(578, 292);
+			this.labelSplits26.Name = "labelSplits26";
+			this.labelSplits26.Size = new System.Drawing.Size(14, 15);
+			this.labelSplits26.TabIndex = 1068;
+			this.labelSplits26.Text = "0";
+			this.labelSplits26.Visible = false;
+			// 
+			// labelSplits25
+			// 
+			this.labelSplits25.AutoSize = true;
+			this.labelSplits25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelSplits25.ForeColor = System.Drawing.Color.Silver;
+			this.labelSplits25.Location = new System.Drawing.Point(578, 238);
+			this.labelSplits25.Name = "labelSplits25";
+			this.labelSplits25.Size = new System.Drawing.Size(14, 15);
+			this.labelSplits25.TabIndex = 1067;
+			this.labelSplits25.Text = "0";
+			this.labelSplits25.Visible = false;
+			// 
+			// labelSplits24
+			// 
+			this.labelSplits24.AutoSize = true;
+			this.labelSplits24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelSplits24.ForeColor = System.Drawing.Color.Silver;
+			this.labelSplits24.Location = new System.Drawing.Point(578, 184);
+			this.labelSplits24.Name = "labelSplits24";
+			this.labelSplits24.Size = new System.Drawing.Size(14, 15);
+			this.labelSplits24.TabIndex = 1066;
+			this.labelSplits24.Text = "0";
+			this.labelSplits24.Visible = false;
+			// 
+			// labelSplits23
+			// 
+			this.labelSplits23.AutoSize = true;
+			this.labelSplits23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelSplits23.ForeColor = System.Drawing.Color.Silver;
+			this.labelSplits23.Location = new System.Drawing.Point(578, 130);
+			this.labelSplits23.Name = "labelSplits23";
+			this.labelSplits23.Size = new System.Drawing.Size(14, 15);
+			this.labelSplits23.TabIndex = 1065;
+			this.labelSplits23.Text = "0";
+			this.labelSplits23.Visible = false;
+			// 
+			// labelSplits22
+			// 
+			this.labelSplits22.AutoSize = true;
+			this.labelSplits22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelSplits22.ForeColor = System.Drawing.Color.Silver;
+			this.labelSplits22.Location = new System.Drawing.Point(578, 76);
+			this.labelSplits22.Name = "labelSplits22";
+			this.labelSplits22.Size = new System.Drawing.Size(14, 15);
+			this.labelSplits22.TabIndex = 1064;
+			this.labelSplits22.Text = "0";
+			this.labelSplits22.Visible = false;
+			// 
+			// pictureBoxSplits28
+			// 
+			this.pictureBoxSplits28.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxSplits28.Location = new System.Drawing.Point(536, 390);
+			this.pictureBoxSplits28.Name = "pictureBoxSplits28";
+			this.pictureBoxSplits28.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxSplits28.TabIndex = 1063;
+			this.pictureBoxSplits28.TabStop = false;
+			// 
+			// pictureBoxSplits27
+			// 
+			this.pictureBoxSplits27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxSplits27.Location = new System.Drawing.Point(536, 336);
+			this.pictureBoxSplits27.Name = "pictureBoxSplits27";
+			this.pictureBoxSplits27.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxSplits27.TabIndex = 1062;
+			this.pictureBoxSplits27.TabStop = false;
+			// 
+			// pictureBoxSplits26
+			// 
+			this.pictureBoxSplits26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxSplits26.Location = new System.Drawing.Point(536, 282);
+			this.pictureBoxSplits26.Name = "pictureBoxSplits26";
+			this.pictureBoxSplits26.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxSplits26.TabIndex = 1061;
+			this.pictureBoxSplits26.TabStop = false;
+			// 
+			// pictureBoxSplits25
+			// 
+			this.pictureBoxSplits25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxSplits25.Location = new System.Drawing.Point(536, 228);
+			this.pictureBoxSplits25.Name = "pictureBoxSplits25";
+			this.pictureBoxSplits25.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxSplits25.TabIndex = 1060;
+			this.pictureBoxSplits25.TabStop = false;
+			// 
+			// pictureBoxSplits24
+			// 
+			this.pictureBoxSplits24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxSplits24.Location = new System.Drawing.Point(536, 174);
+			this.pictureBoxSplits24.Name = "pictureBoxSplits24";
+			this.pictureBoxSplits24.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxSplits24.TabIndex = 1059;
+			this.pictureBoxSplits24.TabStop = false;
+			// 
+			// pictureBoxSplits23
+			// 
+			this.pictureBoxSplits23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxSplits23.Location = new System.Drawing.Point(536, 120);
+			this.pictureBoxSplits23.Name = "pictureBoxSplits23";
+			this.pictureBoxSplits23.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxSplits23.TabIndex = 1058;
+			this.pictureBoxSplits23.TabStop = false;
+			// 
+			// pictureBoxSplits22
+			// 
+			this.pictureBoxSplits22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxSplits22.Location = new System.Drawing.Point(536, 66);
+			this.pictureBoxSplits22.Name = "pictureBoxSplits22";
+			this.pictureBoxSplits22.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxSplits22.TabIndex = 1057;
+			this.pictureBoxSplits22.TabStop = false;
+			// 
+			// labelSplits21
+			// 
+			this.labelSplits21.AutoSize = true;
+			this.labelSplits21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelSplits21.ForeColor = System.Drawing.Color.Silver;
+			this.labelSplits21.Location = new System.Drawing.Point(469, 400);
+			this.labelSplits21.Name = "labelSplits21";
+			this.labelSplits21.Size = new System.Drawing.Size(14, 15);
+			this.labelSplits21.TabIndex = 1056;
+			this.labelSplits21.Text = "0";
+			this.labelSplits21.Visible = false;
+			// 
+			// labelSplits20
+			// 
+			this.labelSplits20.AutoSize = true;
+			this.labelSplits20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelSplits20.ForeColor = System.Drawing.Color.Silver;
+			this.labelSplits20.Location = new System.Drawing.Point(469, 346);
+			this.labelSplits20.Name = "labelSplits20";
+			this.labelSplits20.Size = new System.Drawing.Size(14, 15);
+			this.labelSplits20.TabIndex = 1055;
+			this.labelSplits20.Text = "0";
+			this.labelSplits20.Visible = false;
+			// 
+			// labelSplits19
+			// 
+			this.labelSplits19.AutoSize = true;
+			this.labelSplits19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelSplits19.ForeColor = System.Drawing.Color.Silver;
+			this.labelSplits19.Location = new System.Drawing.Point(469, 292);
+			this.labelSplits19.Name = "labelSplits19";
+			this.labelSplits19.Size = new System.Drawing.Size(14, 15);
+			this.labelSplits19.TabIndex = 1054;
+			this.labelSplits19.Text = "0";
+			this.labelSplits19.Visible = false;
+			// 
+			// labelSplits18
+			// 
+			this.labelSplits18.AutoSize = true;
+			this.labelSplits18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelSplits18.ForeColor = System.Drawing.Color.Silver;
+			this.labelSplits18.Location = new System.Drawing.Point(469, 238);
+			this.labelSplits18.Name = "labelSplits18";
+			this.labelSplits18.Size = new System.Drawing.Size(14, 15);
+			this.labelSplits18.TabIndex = 1053;
+			this.labelSplits18.Text = "0";
+			this.labelSplits18.Visible = false;
+			// 
+			// labelSplits17
+			// 
+			this.labelSplits17.AutoSize = true;
+			this.labelSplits17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelSplits17.ForeColor = System.Drawing.Color.Silver;
+			this.labelSplits17.Location = new System.Drawing.Point(469, 184);
+			this.labelSplits17.Name = "labelSplits17";
+			this.labelSplits17.Size = new System.Drawing.Size(14, 15);
+			this.labelSplits17.TabIndex = 1052;
+			this.labelSplits17.Text = "0";
+			this.labelSplits17.Visible = false;
+			// 
+			// labelSplits16
+			// 
+			this.labelSplits16.AutoSize = true;
+			this.labelSplits16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelSplits16.ForeColor = System.Drawing.Color.Silver;
+			this.labelSplits16.Location = new System.Drawing.Point(469, 130);
+			this.labelSplits16.Name = "labelSplits16";
+			this.labelSplits16.Size = new System.Drawing.Size(14, 15);
+			this.labelSplits16.TabIndex = 1051;
+			this.labelSplits16.Text = "0";
+			this.labelSplits16.Visible = false;
+			// 
+			// labelSplits15
+			// 
+			this.labelSplits15.AutoSize = true;
+			this.labelSplits15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelSplits15.ForeColor = System.Drawing.Color.Silver;
+			this.labelSplits15.Location = new System.Drawing.Point(469, 76);
+			this.labelSplits15.Name = "labelSplits15";
+			this.labelSplits15.Size = new System.Drawing.Size(14, 15);
+			this.labelSplits15.TabIndex = 1050;
+			this.labelSplits15.Text = "0";
+			this.labelSplits15.Visible = false;
+			// 
+			// labelSplits14
+			// 
+			this.labelSplits14.AutoSize = true;
+			this.labelSplits14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelSplits14.ForeColor = System.Drawing.Color.Silver;
+			this.labelSplits14.Location = new System.Drawing.Point(360, 400);
+			this.labelSplits14.Name = "labelSplits14";
+			this.labelSplits14.Size = new System.Drawing.Size(14, 15);
+			this.labelSplits14.TabIndex = 1049;
+			this.labelSplits14.Text = "0";
+			this.labelSplits14.Visible = false;
+			// 
+			// labelSplits13
+			// 
+			this.labelSplits13.AutoSize = true;
+			this.labelSplits13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelSplits13.ForeColor = System.Drawing.Color.Silver;
+			this.labelSplits13.Location = new System.Drawing.Point(360, 346);
+			this.labelSplits13.Name = "labelSplits13";
+			this.labelSplits13.Size = new System.Drawing.Size(14, 15);
+			this.labelSplits13.TabIndex = 1048;
+			this.labelSplits13.Text = "0";
+			this.labelSplits13.Visible = false;
+			// 
+			// labelSplits12
+			// 
+			this.labelSplits12.AutoSize = true;
+			this.labelSplits12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelSplits12.ForeColor = System.Drawing.Color.Silver;
+			this.labelSplits12.Location = new System.Drawing.Point(360, 292);
+			this.labelSplits12.Name = "labelSplits12";
+			this.labelSplits12.Size = new System.Drawing.Size(14, 15);
+			this.labelSplits12.TabIndex = 1047;
+			this.labelSplits12.Text = "0";
+			this.labelSplits12.Visible = false;
+			// 
+			// labelSplits11
+			// 
+			this.labelSplits11.AutoSize = true;
+			this.labelSplits11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelSplits11.ForeColor = System.Drawing.Color.Silver;
+			this.labelSplits11.Location = new System.Drawing.Point(360, 238);
+			this.labelSplits11.Name = "labelSplits11";
+			this.labelSplits11.Size = new System.Drawing.Size(14, 15);
+			this.labelSplits11.TabIndex = 1046;
+			this.labelSplits11.Text = "0";
+			this.labelSplits11.Visible = false;
+			// 
+			// labelSplits10
+			// 
+			this.labelSplits10.AutoSize = true;
+			this.labelSplits10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelSplits10.ForeColor = System.Drawing.Color.Silver;
+			this.labelSplits10.Location = new System.Drawing.Point(360, 184);
+			this.labelSplits10.Name = "labelSplits10";
+			this.labelSplits10.Size = new System.Drawing.Size(14, 15);
+			this.labelSplits10.TabIndex = 1045;
+			this.labelSplits10.Text = "0";
+			this.labelSplits10.Visible = false;
+			// 
+			// labelSplits9
+			// 
+			this.labelSplits9.AutoSize = true;
+			this.labelSplits9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelSplits9.ForeColor = System.Drawing.Color.Silver;
+			this.labelSplits9.Location = new System.Drawing.Point(360, 130);
+			this.labelSplits9.Name = "labelSplits9";
+			this.labelSplits9.Size = new System.Drawing.Size(14, 15);
+			this.labelSplits9.TabIndex = 1044;
+			this.labelSplits9.Text = "0";
+			this.labelSplits9.Visible = false;
+			// 
+			// labelSplits8
+			// 
+			this.labelSplits8.AutoSize = true;
+			this.labelSplits8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelSplits8.ForeColor = System.Drawing.Color.Silver;
+			this.labelSplits8.Location = new System.Drawing.Point(360, 76);
+			this.labelSplits8.Name = "labelSplits8";
+			this.labelSplits8.Size = new System.Drawing.Size(14, 15);
+			this.labelSplits8.TabIndex = 1043;
+			this.labelSplits8.Text = "0";
+			this.labelSplits8.Visible = false;
+			// 
+			// labelSplits7
+			// 
+			this.labelSplits7.AutoSize = true;
+			this.labelSplits7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelSplits7.ForeColor = System.Drawing.Color.Silver;
+			this.labelSplits7.Location = new System.Drawing.Point(251, 400);
+			this.labelSplits7.Name = "labelSplits7";
+			this.labelSplits7.Size = new System.Drawing.Size(14, 15);
+			this.labelSplits7.TabIndex = 1042;
+			this.labelSplits7.Text = "0";
+			this.labelSplits7.Visible = false;
+			// 
+			// labelSplits6
+			// 
+			this.labelSplits6.AutoSize = true;
+			this.labelSplits6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelSplits6.ForeColor = System.Drawing.Color.Silver;
+			this.labelSplits6.Location = new System.Drawing.Point(251, 346);
+			this.labelSplits6.Name = "labelSplits6";
+			this.labelSplits6.Size = new System.Drawing.Size(14, 15);
+			this.labelSplits6.TabIndex = 1041;
+			this.labelSplits6.Text = "0";
+			this.labelSplits6.Visible = false;
+			// 
+			// labelSplits5
+			// 
+			this.labelSplits5.AutoSize = true;
+			this.labelSplits5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelSplits5.ForeColor = System.Drawing.Color.Silver;
+			this.labelSplits5.Location = new System.Drawing.Point(251, 292);
+			this.labelSplits5.Name = "labelSplits5";
+			this.labelSplits5.Size = new System.Drawing.Size(14, 15);
+			this.labelSplits5.TabIndex = 1040;
+			this.labelSplits5.Text = "0";
+			this.labelSplits5.Visible = false;
+			// 
+			// labelSplits4
+			// 
+			this.labelSplits4.AutoSize = true;
+			this.labelSplits4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelSplits4.ForeColor = System.Drawing.Color.Silver;
+			this.labelSplits4.Location = new System.Drawing.Point(251, 238);
+			this.labelSplits4.Name = "labelSplits4";
+			this.labelSplits4.Size = new System.Drawing.Size(14, 15);
+			this.labelSplits4.TabIndex = 1039;
+			this.labelSplits4.Text = "0";
+			this.labelSplits4.Visible = false;
+			// 
+			// labelSplits3
+			// 
+			this.labelSplits3.AutoSize = true;
+			this.labelSplits3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelSplits3.ForeColor = System.Drawing.Color.Silver;
+			this.labelSplits3.Location = new System.Drawing.Point(251, 184);
+			this.labelSplits3.Name = "labelSplits3";
+			this.labelSplits3.Size = new System.Drawing.Size(14, 15);
+			this.labelSplits3.TabIndex = 1038;
+			this.labelSplits3.Text = "0";
+			this.labelSplits3.Visible = false;
+			// 
+			// labelSplits2
+			// 
+			this.labelSplits2.AutoSize = true;
+			this.labelSplits2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelSplits2.ForeColor = System.Drawing.Color.Silver;
+			this.labelSplits2.Location = new System.Drawing.Point(251, 130);
+			this.labelSplits2.Name = "labelSplits2";
+			this.labelSplits2.Size = new System.Drawing.Size(14, 15);
+			this.labelSplits2.TabIndex = 1037;
+			this.labelSplits2.Text = "0";
+			this.labelSplits2.Visible = false;
+			// 
+			// labelSplits1
+			// 
+			this.labelSplits1.AutoSize = true;
+			this.labelSplits1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelSplits1.ForeColor = System.Drawing.Color.Silver;
+			this.labelSplits1.Location = new System.Drawing.Point(251, 76);
+			this.labelSplits1.Name = "labelSplits1";
+			this.labelSplits1.Size = new System.Drawing.Size(14, 15);
+			this.labelSplits1.TabIndex = 1036;
+			this.labelSplits1.Text = "0";
+			this.labelSplits1.Visible = false;
+			// 
+			// pictureBoxSplits21
+			// 
+			this.pictureBoxSplits21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxSplits21.Location = new System.Drawing.Point(427, 390);
+			this.pictureBoxSplits21.Name = "pictureBoxSplits21";
+			this.pictureBoxSplits21.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxSplits21.TabIndex = 1035;
+			this.pictureBoxSplits21.TabStop = false;
+			// 
+			// pictureBoxSplits20
+			// 
+			this.pictureBoxSplits20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxSplits20.Location = new System.Drawing.Point(427, 336);
+			this.pictureBoxSplits20.Name = "pictureBoxSplits20";
+			this.pictureBoxSplits20.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxSplits20.TabIndex = 1034;
+			this.pictureBoxSplits20.TabStop = false;
+			// 
+			// pictureBoxSplits19
+			// 
+			this.pictureBoxSplits19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxSplits19.Location = new System.Drawing.Point(427, 282);
+			this.pictureBoxSplits19.Name = "pictureBoxSplits19";
+			this.pictureBoxSplits19.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxSplits19.TabIndex = 1033;
+			this.pictureBoxSplits19.TabStop = false;
+			// 
+			// pictureBoxSplits18
+			// 
+			this.pictureBoxSplits18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxSplits18.Location = new System.Drawing.Point(427, 228);
+			this.pictureBoxSplits18.Name = "pictureBoxSplits18";
+			this.pictureBoxSplits18.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxSplits18.TabIndex = 1032;
+			this.pictureBoxSplits18.TabStop = false;
+			// 
+			// pictureBoxSplits17
+			// 
+			this.pictureBoxSplits17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxSplits17.Location = new System.Drawing.Point(427, 174);
+			this.pictureBoxSplits17.Name = "pictureBoxSplits17";
+			this.pictureBoxSplits17.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxSplits17.TabIndex = 1031;
+			this.pictureBoxSplits17.TabStop = false;
+			// 
+			// pictureBoxSplits16
+			// 
+			this.pictureBoxSplits16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxSplits16.Location = new System.Drawing.Point(427, 120);
+			this.pictureBoxSplits16.Name = "pictureBoxSplits16";
+			this.pictureBoxSplits16.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxSplits16.TabIndex = 1030;
+			this.pictureBoxSplits16.TabStop = false;
+			// 
+			// pictureBoxSplits15
+			// 
+			this.pictureBoxSplits15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxSplits15.Location = new System.Drawing.Point(427, 66);
+			this.pictureBoxSplits15.Name = "pictureBoxSplits15";
+			this.pictureBoxSplits15.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxSplits15.TabIndex = 1029;
+			this.pictureBoxSplits15.TabStop = false;
+			// 
+			// pictureBoxSplits14
+			// 
+			this.pictureBoxSplits14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxSplits14.Location = new System.Drawing.Point(318, 390);
+			this.pictureBoxSplits14.Name = "pictureBoxSplits14";
+			this.pictureBoxSplits14.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxSplits14.TabIndex = 1028;
+			this.pictureBoxSplits14.TabStop = false;
+			// 
+			// pictureBoxSplits13
+			// 
+			this.pictureBoxSplits13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxSplits13.Location = new System.Drawing.Point(318, 336);
+			this.pictureBoxSplits13.Name = "pictureBoxSplits13";
+			this.pictureBoxSplits13.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxSplits13.TabIndex = 1027;
+			this.pictureBoxSplits13.TabStop = false;
+			// 
+			// pictureBoxSplits12
+			// 
+			this.pictureBoxSplits12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxSplits12.Location = new System.Drawing.Point(318, 282);
+			this.pictureBoxSplits12.Name = "pictureBoxSplits12";
+			this.pictureBoxSplits12.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxSplits12.TabIndex = 1026;
+			this.pictureBoxSplits12.TabStop = false;
+			// 
+			// pictureBoxSplits11
+			// 
+			this.pictureBoxSplits11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxSplits11.Location = new System.Drawing.Point(318, 228);
+			this.pictureBoxSplits11.Name = "pictureBoxSplits11";
+			this.pictureBoxSplits11.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxSplits11.TabIndex = 1025;
+			this.pictureBoxSplits11.TabStop = false;
+			// 
+			// pictureBoxSplits10
+			// 
+			this.pictureBoxSplits10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxSplits10.Location = new System.Drawing.Point(318, 174);
+			this.pictureBoxSplits10.Name = "pictureBoxSplits10";
+			this.pictureBoxSplits10.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxSplits10.TabIndex = 1024;
+			this.pictureBoxSplits10.TabStop = false;
+			// 
+			// pictureBoxSplits9
+			// 
+			this.pictureBoxSplits9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxSplits9.Location = new System.Drawing.Point(318, 120);
+			this.pictureBoxSplits9.Name = "pictureBoxSplits9";
+			this.pictureBoxSplits9.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxSplits9.TabIndex = 1023;
+			this.pictureBoxSplits9.TabStop = false;
+			// 
+			// pictureBoxSplits8
+			// 
+			this.pictureBoxSplits8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxSplits8.Location = new System.Drawing.Point(318, 66);
+			this.pictureBoxSplits8.Name = "pictureBoxSplits8";
+			this.pictureBoxSplits8.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxSplits8.TabIndex = 1022;
+			this.pictureBoxSplits8.TabStop = false;
+			// 
+			// pictureBoxSplits7
+			// 
+			this.pictureBoxSplits7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxSplits7.Location = new System.Drawing.Point(209, 390);
+			this.pictureBoxSplits7.Name = "pictureBoxSplits7";
+			this.pictureBoxSplits7.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxSplits7.TabIndex = 1021;
+			this.pictureBoxSplits7.TabStop = false;
+			// 
+			// pictureBoxSplits6
+			// 
+			this.pictureBoxSplits6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxSplits6.Location = new System.Drawing.Point(209, 336);
+			this.pictureBoxSplits6.Name = "pictureBoxSplits6";
+			this.pictureBoxSplits6.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxSplits6.TabIndex = 1020;
+			this.pictureBoxSplits6.TabStop = false;
+			// 
+			// pictureBoxSplits5
+			// 
+			this.pictureBoxSplits5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxSplits5.Location = new System.Drawing.Point(209, 282);
+			this.pictureBoxSplits5.Name = "pictureBoxSplits5";
+			this.pictureBoxSplits5.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxSplits5.TabIndex = 1019;
+			this.pictureBoxSplits5.TabStop = false;
+			// 
+			// pictureBoxSplits4
+			// 
+			this.pictureBoxSplits4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxSplits4.Location = new System.Drawing.Point(209, 228);
+			this.pictureBoxSplits4.Name = "pictureBoxSplits4";
+			this.pictureBoxSplits4.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxSplits4.TabIndex = 1018;
+			this.pictureBoxSplits4.TabStop = false;
+			// 
+			// pictureBoxSplits3
+			// 
+			this.pictureBoxSplits3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxSplits3.Location = new System.Drawing.Point(209, 174);
+			this.pictureBoxSplits3.Name = "pictureBoxSplits3";
+			this.pictureBoxSplits3.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxSplits3.TabIndex = 1017;
+			this.pictureBoxSplits3.TabStop = false;
+			// 
+			// pictureBoxSplits2
+			// 
+			this.pictureBoxSplits2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxSplits2.Location = new System.Drawing.Point(209, 120);
+			this.pictureBoxSplits2.Name = "pictureBoxSplits2";
+			this.pictureBoxSplits2.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxSplits2.TabIndex = 1016;
+			this.pictureBoxSplits2.TabStop = false;
+			// 
+			// pictureBoxSplits1
+			// 
+			this.pictureBoxSplits1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pictureBoxSplits1.Location = new System.Drawing.Point(209, 66);
+			this.pictureBoxSplits1.Name = "pictureBoxSplits1";
+			this.pictureBoxSplits1.Size = new System.Drawing.Size(35, 35);
+			this.pictureBoxSplits1.TabIndex = 1015;
+			this.pictureBoxSplits1.TabStop = false;
+			this.pictureBoxSplits1.Visible = false;
+			// 
 			// StatisticsForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -925,6 +1598,62 @@ namespace stats {
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.ClientSize = new System.Drawing.Size(1001, 455);
+			this.Controls.Add(this.labelSplits28);
+			this.Controls.Add(this.labelSplits27);
+			this.Controls.Add(this.labelSplits26);
+			this.Controls.Add(this.labelSplits25);
+			this.Controls.Add(this.labelSplits24);
+			this.Controls.Add(this.labelSplits23);
+			this.Controls.Add(this.labelSplits22);
+			this.Controls.Add(this.pictureBoxSplits28);
+			this.Controls.Add(this.pictureBoxSplits27);
+			this.Controls.Add(this.pictureBoxSplits26);
+			this.Controls.Add(this.pictureBoxSplits25);
+			this.Controls.Add(this.pictureBoxSplits24);
+			this.Controls.Add(this.pictureBoxSplits23);
+			this.Controls.Add(this.pictureBoxSplits22);
+			this.Controls.Add(this.labelSplits21);
+			this.Controls.Add(this.labelSplits20);
+			this.Controls.Add(this.labelSplits19);
+			this.Controls.Add(this.labelSplits18);
+			this.Controls.Add(this.labelSplits17);
+			this.Controls.Add(this.labelSplits16);
+			this.Controls.Add(this.labelSplits15);
+			this.Controls.Add(this.labelSplits14);
+			this.Controls.Add(this.labelSplits13);
+			this.Controls.Add(this.labelSplits12);
+			this.Controls.Add(this.labelSplits11);
+			this.Controls.Add(this.labelSplits10);
+			this.Controls.Add(this.labelSplits9);
+			this.Controls.Add(this.labelSplits8);
+			this.Controls.Add(this.labelSplits7);
+			this.Controls.Add(this.labelSplits6);
+			this.Controls.Add(this.labelSplits5);
+			this.Controls.Add(this.labelSplits4);
+			this.Controls.Add(this.labelSplits3);
+			this.Controls.Add(this.labelSplits2);
+			this.Controls.Add(this.labelSplits1);
+			this.Controls.Add(this.pictureBoxSplits21);
+			this.Controls.Add(this.pictureBoxSplits20);
+			this.Controls.Add(this.pictureBoxSplits19);
+			this.Controls.Add(this.pictureBoxSplits18);
+			this.Controls.Add(this.pictureBoxSplits17);
+			this.Controls.Add(this.pictureBoxSplits16);
+			this.Controls.Add(this.pictureBoxSplits15);
+			this.Controls.Add(this.pictureBoxSplits14);
+			this.Controls.Add(this.pictureBoxSplits13);
+			this.Controls.Add(this.pictureBoxSplits12);
+			this.Controls.Add(this.pictureBoxSplits11);
+			this.Controls.Add(this.pictureBoxSplits10);
+			this.Controls.Add(this.pictureBoxSplits9);
+			this.Controls.Add(this.pictureBoxSplits8);
+			this.Controls.Add(this.pictureBoxSplits7);
+			this.Controls.Add(this.pictureBoxSplits6);
+			this.Controls.Add(this.pictureBoxSplits5);
+			this.Controls.Add(this.pictureBoxSplits4);
+			this.Controls.Add(this.pictureBoxSplits3);
+			this.Controls.Add(this.pictureBoxSplits2);
+			this.Controls.Add(this.pictureBoxSplits1);
 			this.Controls.Add(this.chartUniques);
 			this.Controls.Add(this.labelUniques27);
 			this.Controls.Add(this.labelUniques26);
@@ -1024,6 +1753,34 @@ namespace stats {
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxUniques22)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxUniques21)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.chartUniques)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits28)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits27)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits26)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits25)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits24)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits23)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits22)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits21)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits20)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits19)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits18)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits17)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits16)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits15)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits14)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits13)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits12)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits11)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits10)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits9)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits8)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits7)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits6)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits5)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits4)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits3)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxSplits1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -1094,5 +1851,61 @@ namespace stats {
 		private PictureBox pictureBoxUniques22;
 		private PictureBox pictureBoxUniques21;
 		private System.Windows.Forms.DataVisualization.Charting.Chart chartUniques;
+		private Label labelSplits28;
+		private Label labelSplits27;
+		private Label labelSplits26;
+		private Label labelSplits25;
+		private Label labelSplits24;
+		private Label labelSplits23;
+		private Label labelSplits22;
+		private PictureBox pictureBoxSplits28;
+		private PictureBox pictureBoxSplits27;
+		private PictureBox pictureBoxSplits26;
+		private PictureBox pictureBoxSplits25;
+		private PictureBox pictureBoxSplits24;
+		private PictureBox pictureBoxSplits23;
+		private PictureBox pictureBoxSplits22;
+		private Label labelSplits21;
+		private Label labelSplits20;
+		private Label labelSplits19;
+		private Label labelSplits18;
+		private Label labelSplits17;
+		private Label labelSplits16;
+		private Label labelSplits15;
+		private Label labelSplits14;
+		private Label labelSplits13;
+		private Label labelSplits12;
+		private Label labelSplits11;
+		private Label labelSplits10;
+		private Label labelSplits9;
+		private Label labelSplits8;
+		private Label labelSplits7;
+		private Label labelSplits6;
+		private Label labelSplits5;
+		private Label labelSplits4;
+		private Label labelSplits3;
+		private Label labelSplits2;
+		private Label labelSplits1;
+		private PictureBox pictureBoxSplits21;
+		private PictureBox pictureBoxSplits20;
+		private PictureBox pictureBoxSplits19;
+		private PictureBox pictureBoxSplits18;
+		private PictureBox pictureBoxSplits17;
+		private PictureBox pictureBoxSplits16;
+		private PictureBox pictureBoxSplits15;
+		private PictureBox pictureBoxSplits14;
+		private PictureBox pictureBoxSplits13;
+		private PictureBox pictureBoxSplits12;
+		private PictureBox pictureBoxSplits11;
+		private PictureBox pictureBoxSplits10;
+		private PictureBox pictureBoxSplits9;
+		private PictureBox pictureBoxSplits8;
+		private PictureBox pictureBoxSplits7;
+		private PictureBox pictureBoxSplits6;
+		private PictureBox pictureBoxSplits5;
+		private PictureBox pictureBoxSplits4;
+		private PictureBox pictureBoxSplits3;
+		private PictureBox pictureBoxSplits2;
+		private PictureBox pictureBoxSplits1;
 	}
 }
