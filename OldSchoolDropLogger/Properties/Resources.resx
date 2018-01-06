@@ -2203,9 +2203,6 @@
   <data name="Raw_tuna_noted_generic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Raw_tuna_noted_generic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RDT" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RDT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Red_dragonhide" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Red_dragonhide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -3505,10 +3502,88 @@
   <data name="Boss_chaos_fanatic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Boss_chaos_fanatic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Boss_icon_any" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\icons\uniques_icon_any5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icon_any" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\icons\uniques_icon_any.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Assets\icons\icon_any.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RDT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\RDT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dragonbone_necklace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Dragonbone_necklace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dragon_platelegs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Dragon_platelegs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dragon_plateskirt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Dragon_plateskirt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Jar_of_decay" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Jar_of_decay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Skeletal_visage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Skeletal_visage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Superior_dragon_bones" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Superior_dragon_bones.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Vorkath_s_head" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Vorkath's_head.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Vorki" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Vorki.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wrath_talisman" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Wrath_talisman.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Antifire_potion__4__noted_generic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Antifire_potion_(4)_noted_generic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Black_dragonhide_noted_generic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Black_dragonhide_noted_generic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Blue_dragonhide_noted_generic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Blue_dragonhide_noted_generic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Blue_dragon_scale_noted_generic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Blue_dragon_scale_noted_generic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Diamond_bolt_tips_30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Diamond_bolt_tips_30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Diamond_bolt_tips_generic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Diamond_bolt_tips_generic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dragonstone_noted_generic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Dragonstone_noted_generic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dragon_bolts__unf__generic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Dragon_bolts_(unf)_generic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dragon_scale_dust_noted_generic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Dragon_scale_dust_noted_generic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Emerald_bolt_tips_generic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Emerald_bolt_tips_generic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Magic_logs_noted_50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Magic_logs_noted_50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Prayer_potion__4__noted_generic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Prayer_potion_(4)_noted_generic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ruby_bolt_tips_31" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Ruby_bolt_tips_31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ruby_bolt_tips_generic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Ruby_bolt_tips_generic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rune_kiteshield_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Rune_kiteshield_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rune_longsword_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Rune_longsword_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wrath_rune_generic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Wrath_rune_generic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

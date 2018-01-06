@@ -179,6 +179,7 @@
 			this.pictureBox68 = new System.Windows.Forms.PictureBox();
 			this.pictureBox67 = new System.Windows.Forms.PictureBox();
 			this.pictureBox65 = new System.Windows.Forms.PictureBox();
+			this.vorkathToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStripLogger.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothPrime)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothRex)).BeginInit();
@@ -318,7 +319,7 @@
             this.saradominToolStripMenuItem,
             this.zamorakToolStripMenuItem});
 			this.godwarsToolStripMenuItem.Name = "godwarsToolStripMenuItem";
-			this.godwarsToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+			this.godwarsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.godwarsToolStripMenuItem.Text = "Godwars";
 			// 
 			// armadylToolStripMenuItem
@@ -359,10 +360,11 @@
             this.kalphiteQueenToolStripMenuItem,
             this.raidsToolStripMenuItem,
             this.skotizoToolStripMenuItem,
+            this.vorkathToolStripMenuItem,
             this.wintertodtToolStripMenuItem,
             this.zulrahToolStripMenuItem});
 			this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
-			this.otherToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+			this.otherToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.otherToolStripMenuItem.Text = "Other";
 			// 
 			// barrowsToolStripMenuItem
@@ -437,7 +439,7 @@
             this.krakenToolStripMenuItem,
             this.thermonuclearSmokeDevilToolStripMenuItem});
 			this.slayerToolStripMenuItem.Name = "slayerToolStripMenuItem";
-			this.slayerToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+			this.slayerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.slayerToolStripMenuItem.Text = "Slayer";
 			// 
 			// abyssalSireToolStripMenuItem
@@ -487,7 +489,7 @@
             this.venenatisToolStripMenuItem,
             this.vetionToolStripMenuItem});
 			this.wildernessToolStripMenuItem.Name = "wildernessToolStripMenuItem";
-			this.wildernessToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+			this.wildernessToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.wildernessToolStripMenuItem.Text = "Wilderness";
 			// 
 			// callistoToolStripMenuItem
@@ -605,9 +607,9 @@
 			this.buttonUndoLastDrop.FlatAppearance.BorderSize = 0;
 			this.buttonUndoLastDrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.buttonUndoLastDrop.ForeColor = System.Drawing.Color.Silver;
-			this.buttonUndoLastDrop.Location = new System.Drawing.Point(12, 59);
+			this.buttonUndoLastDrop.Location = new System.Drawing.Point(5, 59);
 			this.buttonUndoLastDrop.Name = "buttonUndoLastDrop";
-			this.buttonUndoLastDrop.Size = new System.Drawing.Size(160, 23);
+			this.buttonUndoLastDrop.Size = new System.Drawing.Size(175, 23);
 			this.buttonUndoLastDrop.TabIndex = 2;
 			this.buttonUndoLastDrop.Text = "Undo Last Drop";
 			this.buttonUndoLastDrop.UseVisualStyleBackColor = false;
@@ -619,16 +621,16 @@
 			this.itemDropListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.itemDropListBox.ForeColor = System.Drawing.SystemColors.Control;
 			this.itemDropListBox.FormattingEnabled = true;
-			this.itemDropListBox.Location = new System.Drawing.Point(12, 88);
+			this.itemDropListBox.Location = new System.Drawing.Point(5, 88);
 			this.itemDropListBox.Name = "itemDropListBox";
-			this.itemDropListBox.Size = new System.Drawing.Size(160, 234);
+			this.itemDropListBox.Size = new System.Drawing.Size(175, 234);
 			this.itemDropListBox.TabIndex = 72;
 			// 
 			// labelAddCustomDrop
 			// 
 			this.labelAddCustomDrop.AutoSize = true;
 			this.labelAddCustomDrop.ForeColor = System.Drawing.Color.Silver;
-			this.labelAddCustomDrop.Location = new System.Drawing.Point(11, 326);
+			this.labelAddCustomDrop.Location = new System.Drawing.Point(4, 326);
 			this.labelAddCustomDrop.Name = "labelAddCustomDrop";
 			this.labelAddCustomDrop.Size = new System.Drawing.Size(93, 13);
 			this.labelAddCustomDrop.TabIndex = 73;
@@ -639,9 +641,9 @@
 			this.textboxCustomDrop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
 			this.textboxCustomDrop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.textboxCustomDrop.ForeColor = System.Drawing.Color.Silver;
-			this.textboxCustomDrop.Location = new System.Drawing.Point(12, 342);
+			this.textboxCustomDrop.Location = new System.Drawing.Point(5, 342);
 			this.textboxCustomDrop.Name = "textboxCustomDrop";
-			this.textboxCustomDrop.Size = new System.Drawing.Size(100, 20);
+			this.textboxCustomDrop.Size = new System.Drawing.Size(115, 20);
 			this.textboxCustomDrop.TabIndex = 74;
 			// 
 			// buttonAddCustomDrop
@@ -650,7 +652,7 @@
 			this.buttonAddCustomDrop.FlatAppearance.BorderSize = 0;
 			this.buttonAddCustomDrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.buttonAddCustomDrop.ForeColor = System.Drawing.Color.Silver;
-			this.buttonAddCustomDrop.Location = new System.Drawing.Point(118, 342);
+			this.buttonAddCustomDrop.Location = new System.Drawing.Point(126, 342);
 			this.buttonAddCustomDrop.Name = "buttonAddCustomDrop";
 			this.buttonAddCustomDrop.Size = new System.Drawing.Size(54, 20);
 			this.buttonAddCustomDrop.TabIndex = 75;
@@ -1917,9 +1919,9 @@
 			this.buttonSplitDrop.FlatAppearance.BorderSize = 0;
 			this.buttonSplitDrop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.buttonSplitDrop.ForeColor = System.Drawing.Color.Silver;
-			this.buttonSplitDrop.Location = new System.Drawing.Point(12, 368);
+			this.buttonSplitDrop.Location = new System.Drawing.Point(5, 368);
 			this.buttonSplitDrop.Name = "buttonSplitDrop";
-			this.buttonSplitDrop.Size = new System.Drawing.Size(160, 20);
+			this.buttonSplitDrop.Size = new System.Drawing.Size(175, 20);
 			this.buttonSplitDrop.TabIndex = 160;
 			this.buttonSplitDrop.Text = "Split Drop";
 			this.buttonSplitDrop.UseVisualStyleBackColor = false;
@@ -2035,6 +2037,13 @@
 			this.pictureBox65.TabIndex = 162;
 			this.pictureBox65.TabStop = false;
 			this.pictureBox65.Visible = false;
+			// 
+			// vorkathToolStripMenuItem
+			// 
+			this.vorkathToolStripMenuItem.Name = "vorkathToolStripMenuItem";
+			this.vorkathToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+			this.vorkathToolStripMenuItem.Text = "Vorkath";
+			this.vorkathToolStripMenuItem.Click += new System.EventHandler(this.vorkathToolStripMenuItem_Click);
 			// 
 			// OldSchoolDropLogger
 			// 
@@ -2389,6 +2398,7 @@
 		internal System.Windows.Forms.PictureBox pictureBox68;
 		internal System.Windows.Forms.PictureBox pictureBox67;
 		internal System.Windows.Forms.PictureBox pictureBox65;
+		private System.Windows.Forms.ToolStripMenuItem vorkathToolStripMenuItem;
 	}
 }
 

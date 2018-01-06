@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"><?define OldSchoolDropLogger_TargetDir=$(var.OldSchoolDropLogger.TargetDir)?>
+	<Product Id="244db34f-d3a0-452b-aabd-d65b394ea769" Name="TODO Application Name" Language="1033" Version="1.0.0.0" Manufacturer="Hess" UpgradeCode="1aa66b12-15b0-404a-92cc-95167ebd3294">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <Icon Id="icon_64x64.ico" SourceFile="$(var.ProjectDir)/Assets/icon_64x64.ico" />
+    <Property Id="ARPPRODUCTICON" Value="icon_64x64.ico" />
+
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER"/>
+    <UIRef Id="WixUI_InstallDir"/>
+    
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate EmbedCab="yes"/>
+
+		<Feature Id="ProductFeature" Title="TODOProductFeature" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+			<ComponentGroupRef Id="logs_files" />
+      <ComponentRef Id="ApplicationShortcut"/>
+      <ComponentRef Id="ApplicationShortcutDesktop"/>
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="TODOProductFeature">
+          <Directory Id="logs" Name="logs" />
+        </Directory>
+        <Directory Id="ProgramMenuFolder">
+          <Directory Id="ApplicationProgramsFolder" Name="TODO FOlde rname"/>
+        </Directory>
+        <Directory Id="DesktopFolder" Name="Desktop"/>
+			</Directory>
+		</Directory>
+	</Fragment>
+
+  <Fragment>
+    <DirectoryRef Id="ApplicationProgramsFolder">
+      <Component Id="ApplicationShortcut" Guid="1aa66b12-15b0-404a-92cc-95167ebd3294">
+        <Shortcut Id="ApplicationStartMenuShortcut"
+                  Name="My Application Name"
+                  Description="My Application Description"
+                  Target="[INSTALLFOLDER]OldSchoolDropLogger.exe"
+                  WorkingDirectory="APPLICATIONROOTDIRECTORY"/>
+        <RemoveFolder Id="RemoveApplicationProgramsFolder" Directory="ApplicationProgramsFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\Microsoft\MyApplicationName" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+    <DirectoryRef Id="DesktopFolder">
+      <Component Id="ApplicationShortcutDesktop" Guid="1aa66b12-15b0-404a-92cc-95167ebd3295">
+        <Shortcut Id="ApplicationDesktopShortcut"
+                  Name="My Application Name"
+                  Description="My Application Description"
+                  Target="[INSTALLFOLDER]OldSchoolDropLogger.exe"
+                  WorkingDirectory="APPLICATIONROOTDIRECTORY"/>
+        <RemoveFolder Id="RemoveDesktopFolder" Directory="ApplicationProgramsFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\Microsoft\MyApplicationName" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+  
+  
+  
+  
+  
+  
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+			<!-- <Component Id="ProductComponent"> -->
+				<!-- TODO: Insert files, registry keys, and other resources here. -->
+			<!-- </Component> -->
+			<Component Id="OldSchoolDropLogger.exe" Guid="6930a0cb-dbb9-43cc-a682-2bc55611a89b">
+			  <File Id="OldSchoolDropLogger.exe" Name="OldSchoolDropLogger.exe" Source="$(var.OldSchoolDropLogger_TargetDir)OldSchoolDropLogger.exe" />
+			</Component>
+			<Component Id="OldSchoolDropLogger.exe.config" Guid="06cb8499-0076-4921-bc69-a0512a8fb68b">
+			  <File Id="OldSchoolDropLogger.exe.config" Name="OldSchoolDropLogger.exe.config" Source="$(var.OldSchoolDropLogger_TargetDir)OldSchoolDropLogger.exe.config" />
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+	<Fragment>
+	  <ComponentGroup Id="logs_files" Directory="logs">
+	    <Component Id="logs_Abyssal_Sire_Drops.txt" Guid="03993490-3230-4377-a417-d912be7a2c8c">
+	      <File Id="logs_Abyssal_Sire_Drops.txt" Name="Abyssal Sire Drops.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Abyssal Sire Drops.txt" />
+	    </Component>
+	    <Component Id="logs_Abyssal_Sire_Uniques.txt" Guid="f9789184-e13a-4612-95f3-08f041f51514">
+	      <File Id="logs_Abyssal_Sire_Uniques.txt" Name="Abyssal Sire Uniques.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Abyssal Sire Uniques.txt" />
+	    </Component>
+	    <Component Id="logs_Abyssal_Sire.txt" Guid="60f49680-8485-4e7a-bc05-d0ad65621328">
+	      <File Id="logs_Abyssal_Sire.txt" Name="Abyssal Sire.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Abyssal Sire.txt" />
+	    </Component>
+	    <Component Id="logs_Armadyl_Drops.txt" Guid="e9861222-de09-4769-a638-4bd277770c7b">
+	      <File Id="logs_Armadyl_Drops.txt" Name="Armadyl Drops.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Armadyl Drops.txt" />
+	    </Component>
+	    <Component Id="logs_Armadyl_Uniques.txt" Guid="23759785-b8e2-452c-875b-741e09961cdd">
+	      <File Id="logs_Armadyl_Uniques.txt" Name="Armadyl Uniques.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Armadyl Uniques.txt" />
+	    </Component>
+	    <Component Id="logs_Bandos_Drops.txt" Guid="f948838a-ad93-4b23-b087-b654f8fd9d3f">
+	      <File Id="logs_Bandos_Drops.txt" Name="Bandos Drops.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Bandos Drops.txt" />
+	    </Component>
+	    <Component Id="logs_Armadyl.txt" Guid="f29433f9-781b-426a-96b8-75ad2e876bc8">
+	      <File Id="logs_Armadyl.txt" Name="Armadyl.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Armadyl.txt" />
+	    </Component>
+	    <Component Id="logs_Bandos_Uniques.txt" Guid="c4c109dc-e508-4185-8e82-4e48fdbff268">
+	      <File Id="logs_Bandos_Uniques.txt" Name="Bandos Uniques.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Bandos Uniques.txt" />
+	    </Component>
+	    <Component Id="logs_Bandos.txt" Guid="f2a6322d-ee61-43b5-b6d0-a7e5f370b2a9">
+	      <File Id="logs_Bandos.txt" Name="Bandos.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Bandos.txt" />
+	    </Component>
+	    <Component Id="logs_Barrows_Drops.txt" Guid="390aca44-a201-4d82-ac42-5ea923246da9">
+	      <File Id="logs_Barrows_Drops.txt" Name="Barrows Drops.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Barrows Drops.txt" />
+	    </Component>
+	    <Component Id="logs_Barrows_Uniques.txt" Guid="76c158e4-1d2b-47f8-9a9f-ecf28a912cbc">
+	      <File Id="logs_Barrows_Uniques.txt" Name="Barrows Uniques.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Barrows Uniques.txt" />
+	    </Component>
+	    <Component Id="logs_Barrows.txt" Guid="7a695555-ea37-4fca-9ba0-ba3306346b31">
+	      <File Id="logs_Barrows.txt" Name="Barrows.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Barrows.txt" />
+	    </Component>
+	    <Component Id="logs_Callisto_Drops.txt" Guid="4d26277c-0265-42ad-80d2-bff53a0caae8">
+	      <File Id="logs_Callisto_Drops.txt" Name="Callisto Drops.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Callisto Drops.txt" />
+	    </Component>
+	    <Component Id="logs_Crazy_Archaeologist.txt" Guid="4e2d9e34-cd2c-438b-a8c0-7fc2dc8a6c5c">
+	      <File Id="logs_Crazy_Archaeologist.txt" Name="Crazy Archaeologist.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Crazy Archaeologist.txt" />
+	    </Component>
+	    <Component Id="logs_Crazy_Archaeologist_Uniques.txt" Guid="6d6d17c0-9314-4364-9b49-a97a35394bea">
+	      <File Id="logs_Crazy_Archaeologist_Uniques.txt" Name="Crazy Archaeologist Uniques.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Crazy Archaeologist Uniques.txt" />
+	    </Component>
+	    <Component Id="logs_Crazy_Archaeologist_Drops.txt" Guid="b2a215d3-30ef-463f-9471-54e9ce8ec70a">
+	      <File Id="logs_Crazy_Archaeologist_Drops.txt" Name="Crazy Archaeologist Drops.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Crazy Archaeologist Drops.txt" />
+	    </Component>
+	    <Component Id="logs_Corporeal_Beast.txt" Guid="69690731-f0da-4b1d-b0eb-b6a7a7d915ef">
+	      <File Id="logs_Corporeal_Beast.txt" Name="Corporeal Beast.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Corporeal Beast.txt" />
+	    </Component>
+	    <Component Id="logs_Callisto_Uniques.txt" Guid="dea33bbc-b166-45f6-8a7c-ea0e14d7229c">
+	      <File Id="logs_Callisto_Uniques.txt" Name="Callisto Uniques.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Callisto Uniques.txt" />
+	    </Component>
+	    <Component Id="logs_Callisto.txt" Guid="9e018e4d-e8f5-4fa0-9ebd-faa2e4949df9">
+	      <File Id="logs_Callisto.txt" Name="Callisto.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Callisto.txt" />
+	    </Component>
+	    <Component Id="logs_Cerberus_Drops.txt" Guid="569a1d04-ac8d-4791-a8d6-72d90fc5c511">
+	      <File Id="logs_Cerberus_Drops.txt" Name="Cerberus Drops.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Cerberus Drops.txt" />
+	    </Component>
+	    <Component Id="logs_Cerberus_Uniques.txt" Guid="65cfd5a2-a9d4-405a-a4b6-e9453d93e4f3">
+	      <File Id="logs_Cerberus_Uniques.txt" Name="Cerberus Uniques.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Cerberus Uniques.txt" />
+	    </Component>
+	    <Component Id="logs_Cerberus.txt" Guid="c93f59da-c3be-4bde-947c-772e3b6d44e0">
+	      <File Id="logs_Cerberus.txt" Name="Cerberus.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Cerberus.txt" />
+	    </Component>
+	    <Component Id="logs_Chaos_Elemental_Drops.txt" Guid="466547dd-24ab-4bc4-9c1a-469cf2632efb">
+	      <File Id="logs_Chaos_Elemental_Drops.txt" Name="Chaos Elemental Drops.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Chaos Elemental Drops.txt" />
+	    </Component>
+	    <Component Id="logs_Chaos_Elemental_Uniques.txt" Guid="aa841109-72ba-4a64-9fd2-8be2414be5f2">
+	      <File Id="logs_Chaos_Elemental_Uniques.txt" Name="Chaos Elemental Uniques.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Chaos Elemental Uniques.txt" />
+	    </Component>
+	    <Component Id="logs_Chaos_Elemental.txt" Guid="6d65c370-a3f6-42d5-8507-c9e13ff80759">
+	      <File Id="logs_Chaos_Elemental.txt" Name="Chaos Elemental.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Chaos Elemental.txt" />
+	    </Component>
+	    <Component Id="logs_Chaos_Fanatic_Drops.txt" Guid="6fbec2d3-9357-437d-ad25-0b08967b4aef">
+	      <File Id="logs_Chaos_Fanatic_Drops.txt" Name="Chaos Fanatic Drops.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Chaos Fanatic Drops.txt" />
+	    </Component>
+	    <Component Id="logs_Chaos_Fanatic_Uniques.txt" Guid="66b6e04f-62cd-46c8-a8b0-ec9676be7cd1">
+	      <File Id="logs_Chaos_Fanatic_Uniques.txt" Name="Chaos Fanatic Uniques.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Chaos Fanatic Uniques.txt" />
+	    </Component>
+	    <Component Id="logs_Chaos_Fanatic.txt" Guid="3d027bf7-92c4-4b3a-8c6a-079b5035b8c4">
+	      <File Id="logs_Chaos_Fanatic.txt" Name="Chaos Fanatic.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Chaos Fanatic.txt" />
+	    </Component>
+	    <Component Id="logs_Corporeal_Beast_Drops.txt" Guid="6fe1a3ce-4b88-40d4-837d-1353bab03df7">
+	      <File Id="logs_Corporeal_Beast_Drops.txt" Name="Corporeal Beast Drops.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Corporeal Beast Drops.txt" />
+	    </Component>
+	    <Component Id="logs_Dagannoth_Kings_Drops.txt" Guid="962220c8-15ad-4547-ac9d-566c8485cec9">
+	      <File Id="logs_Dagannoth_Kings_Drops.txt" Name="Dagannoth Kings Drops.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Dagannoth Kings Drops.txt" />
+	    </Component>
+	    <Component Id="logs_Dagannoth_Kings.txt" Guid="4b01e151-b3e6-4692-b2cb-21bd379c28c9">
+	      <File Id="logs_Dagannoth_Kings.txt" Name="Dagannoth Kings.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Dagannoth Kings.txt" />
+	    </Component>
+	    <Component Id="logs_Dagannoth_Kings_Uniques.txt" Guid="893c16f2-dc28-46aa-b26f-d4091bc972f1">
+	      <File Id="logs_Dagannoth_Kings_Uniques.txt" Name="Dagannoth Kings Uniques.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Dagannoth Kings Uniques.txt" />
+	    </Component>
+	    <Component Id="logs_Corporeal_Beast_Uniques.txt" Guid="f62c16a2-af46-405a-b94d-2b82ed9096ac">
+	      <File Id="logs_Corporeal_Beast_Uniques.txt" Name="Corporeal Beast Uniques.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Corporeal Beast Uniques.txt" />
+	    </Component>
+	    <Component Id="logs_Giant_Mole_Drops.txt" Guid="d625ad03-deaa-41e6-bb7a-f6dba8d60a26">
+	      <File Id="logs_Giant_Mole_Drops.txt" Name="Giant Mole Drops.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Giant Mole Drops.txt" />
+	    </Component>
+	    <Component Id="logs_Giant_Mole_Uniques.txt" Guid="5cda98a9-a6a1-4c07-b573-488274349149">
+	      <File Id="logs_Giant_Mole_Uniques.txt" Name="Giant Mole Uniques.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Giant Mole Uniques.txt" />
+	    </Component>
+	    <Component Id="logs_Giant_Mole.txt" Guid="62f95a25-bcc9-4da7-a08e-032b969b662f">
+	      <File Id="logs_Giant_Mole.txt" Name="Giant Mole.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Giant Mole.txt" />
+	    </Component>
+	    <Component Id="logs_Grotesque_Guardians_Drops.txt" Guid="b3339839-f3fb-425f-8e7e-38ccc42b6df7">
+	      <File Id="logs_Grotesque_Guardians_Drops.txt" Name="Grotesque Guardians Drops.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Grotesque Guardians Drops.txt" />
+	    </Component>
+	    <Component Id="logs_Grotesque_Guardians_Uniques.txt" Guid="727b874d-f1bc-4ea1-9617-623f5dab8e4d">
+	      <File Id="logs_Grotesque_Guardians_Uniques.txt" Name="Grotesque Guardians Uniques.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Grotesque Guardians Uniques.txt" />
+	    </Component>
+	    <Component Id="logs_Grotesque_Guardians.txt" Guid="0bc43965-f3b3-4007-8bda-5494325b182c">
+	      <File Id="logs_Grotesque_Guardians.txt" Name="Grotesque Guardians.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Grotesque Guardians.txt" />
+	    </Component>
+	    <Component Id="logs_Kalphite_Queen_Drops.txt" Guid="9fce6dbd-c5e6-44b1-b77e-95cdb54a1f4b">
+	      <File Id="logs_Kalphite_Queen_Drops.txt" Name="Kalphite Queen Drops.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Kalphite Queen Drops.txt" />
+	    </Component>
+	    <Component Id="logs_Kalphite_Queen_Uniques.txt" Guid="88615d34-810e-47bf-b905-16aa8b3e79d0">
+	      <File Id="logs_Kalphite_Queen_Uniques.txt" Name="Kalphite Queen Uniques.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Kalphite Queen Uniques.txt" />
+	    </Component>
+	    <Component Id="logs_Kalphite_Queen.txt" Guid="9c074085-882a-4094-ade3-06315e20154f">
+	      <File Id="logs_Kalphite_Queen.txt" Name="Kalphite Queen.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Kalphite Queen.txt" />
+	    </Component>
+	    <Component Id="logs_King_Black_Dragon_Drops.txt" Guid="12d7259b-ff78-4779-b62a-9504bd752690">
+	      <File Id="logs_King_Black_Dragon_Drops.txt" Name="King Black Dragon Drops.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\King Black Dragon Drops.txt" />
+	    </Component>
+	    <Component Id="logs_King_Black_Dragon_Uniques.txt" Guid="c9e9f07e-af10-4b82-84da-f06c029be981">
+	      <File Id="logs_King_Black_Dragon_Uniques.txt" Name="King Black Dragon Uniques.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\King Black Dragon Uniques.txt" />
+	    </Component>
+	    <Component Id="logs_King_Black_Dragon.txt" Guid="8a3e92e3-40a6-4728-a152-84195bd0f4d7">
+	      <File Id="logs_King_Black_Dragon.txt" Name="King Black Dragon.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\King Black Dragon.txt" />
+	    </Component>
+	    <Component Id="logs_Kraken_Drops.txt" Guid="14c29f96-3cdc-48e7-b842-26ebe78e9f6f">
+	      <File Id="logs_Kraken_Drops.txt" Name="Kraken Drops.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Kraken Drops.txt" />
+	    </Component>
+	    <Component Id="logs_Raids_Drops.txt" Guid="f71a9547-0e24-4e31-87f1-561c17d0af9c">
+	      <File Id="logs_Raids_Drops.txt" Name="Raids Drops.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Raids Drops.txt" />
+	    </Component>
+	    <Component Id="logs_Raids_Uniques.txt" Guid="76e6922b-e011-4232-9cf8-12f3c317c001">
+	      <File Id="logs_Raids_Uniques.txt" Name="Raids Uniques.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Raids Uniques.txt" />
+	    </Component>
+	    <Component Id="logs_Saradomin_Drops.txt" Guid="86f5446f-08e8-4357-9a76-d56bbdbcdc5a">
+	      <File Id="logs_Saradomin_Drops.txt" Name="Saradomin Drops.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Saradomin Drops.txt" />
+	    </Component>
+	    <Component Id="logs_Raids.txt" Guid="ca37c5b1-9153-4bc3-861f-7ed34673c0d0">
+	      <File Id="logs_Raids.txt" Name="Raids.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Raids.txt" />
+	    </Component>
+	    <Component Id="logs_Saradomin_Uniques.txt" Guid="c56dad35-70e9-4e4c-a441-fdb520af6e4d">
+	      <File Id="logs_Saradomin_Uniques.txt" Name="Saradomin Uniques.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Saradomin Uniques.txt" />
+	    </Component>
+	    <Component Id="logs_Saradomin.txt" Guid="3486b05e-d5b8-4f46-bc2a-b01a899aebf3">
+	      <File Id="logs_Saradomin.txt" Name="Saradomin.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Saradomin.txt" />
+	    </Component>
+	    <Component Id="logs_Scorpia_Drops.txt" Guid="aa583359-128f-4d70-a3c6-f8226c857d7f">
+	      <File Id="logs_Scorpia_Drops.txt" Name="Scorpia Drops.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Scorpia Drops.txt" />
+	    </Component>
+	    <Component Id="logs_Scorpia_Uniques.txt" Guid="27b3cc7a-bc43-4717-8797-4633baa25522">
+	      <File Id="logs_Scorpia_Uniques.txt" Name="Scorpia Uniques.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Scorpia Uniques.txt" />
+	    </Component>
+	    <Component Id="logs_Skotizo.txt" Guid="8170f282-7e07-4bfa-97d2-8838408fbcf7">
+	      <File Id="logs_Skotizo.txt" Name="Skotizo.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Skotizo.txt" />
+	    </Component>
+	    <Component Id="logs_Skotizo_Drops.txt" Guid="d6c20dc8-7fe7-44fc-b6dc-c7680f0054a8">
+	      <File Id="logs_Skotizo_Drops.txt" Name="Skotizo Drops.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Skotizo Drops.txt" />
+	    </Component>
+	    <Component Id="logs_Scorpia.txt" Guid="86dc4c4e-fdde-41ae-aa59-fcbcea8a8132">
+	      <File Id="logs_Scorpia.txt" Name="Scorpia.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Scorpia.txt" />
+	    </Component>
+	    <Component Id="logs_Skotizo_Uniques.txt" Guid="afcbdf2f-ae4e-427c-bb34-997dcb60592e">
+	      <File Id="logs_Skotizo_Uniques.txt" Name="Skotizo Uniques.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Skotizo Uniques.txt" />
+	    </Component>
+	    <Component Id="logs_Thermonuclear_Smoke_Devil_Drops.txt" Guid="fdf3f164-1f90-4537-8841-78dcdbc5655e">
+	      <File Id="logs_Thermonuclear_Smoke_Devil_Drops.txt" Name="Thermonuclear Smoke Devil Drops.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Thermonuclear Smoke Devil Drops.txt" />
+	    </Component>
+	    <Component Id="logs_Splits.txt" Guid="0678c7da-e0e5-4f3d-af9f-2a28fc4462fe">
+	      <File Id="logs_Splits.txt" Name="Splits.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Splits.txt" />
+	    </Component>
+	    <Component Id="logs_Thermonuclear_Smoke_Devil_Uniques.txt" Guid="ec55660e-4879-4598-aaa6-2155716080b5">
+	      <File Id="logs_Thermonuclear_Smoke_Devil_Uniques.txt" Name="Thermonuclear Smoke Devil Uniques.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Thermonuclear Smoke Devil Uniques.txt" />
+	    </Component>
+	    <Component Id="logs_Thermonuclear_Smoke_Devil.txt" Guid="09c1def1-627f-4d38-a065-0536e2906925">
+	      <File Id="logs_Thermonuclear_Smoke_Devil.txt" Name="Thermonuclear Smoke Devil.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Thermonuclear Smoke Devil.txt" />
+	    </Component>
+	    <Component Id="logs_Venenatis_Drops.txt" Guid="8c0f1c70-893c-411a-9828-8c9f0d6dbe8e">
+	      <File Id="logs_Venenatis_Drops.txt" Name="Venenatis Drops.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Venenatis Drops.txt" />
+	    </Component>
+	    <Component Id="logs_Venenatis.txt" Guid="16c76ab2-0a9b-4ab7-b372-0c7cb4508cb1">
+	      <File Id="logs_Venenatis.txt" Name="Venenatis.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Venenatis.txt" />
+	    </Component>
+	    <Component Id="logs_Vet_ion_Uniques.txt" Guid="4372cb8c-a09d-4951-a4d2-519686d847d2">
+	      <File Id="logs_Vet_ion_Uniques.txt" Name="Vet'ion Uniques.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Vet'ion Uniques.txt" />
+	    </Component>
+	    <Component Id="logs_Vet_ion.txt" Guid="4459802e-f51a-4301-b8ec-b809ad43f5c0">
+	      <File Id="logs_Vet_ion.txt" Name="Vet'ion.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Vet'ion.txt" />
+	    </Component>
+	    <Component Id="logs_Venenatis_Uniques.txt" Guid="9c56425e-eb85-436c-9461-f9aabf024bda">
+	      <File Id="logs_Venenatis_Uniques.txt" Name="Venenatis Uniques.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Venenatis Uniques.txt" />
+	    </Component>
+	    <Component Id="logs_Vet_ion_Drops.txt" Guid="e7122963-516d-4e5d-8d64-bdcaf82dd77e">
+	      <File Id="logs_Vet_ion_Drops.txt" Name="Vet'ion Drops.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Vet'ion Drops.txt" />
+	    </Component>
+	    <Component Id="logs_Wintertodt_Drops.txt" Guid="f2e30244-f145-48e0-9854-0afc98efad44">
+	      <File Id="logs_Wintertodt_Drops.txt" Name="Wintertodt Drops.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Wintertodt Drops.txt" />
+	    </Component>
+	    <Component Id="logs_Wintertodt_Uniques.txt" Guid="cd0f618a-047f-4a63-9ef9-1c5a57a7b25f">
+	      <File Id="logs_Wintertodt_Uniques.txt" Name="Wintertodt Uniques.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Wintertodt Uniques.txt" />
+	    </Component>
+	    <Component Id="logs_Wintertodt.txt" Guid="5797d8e3-404a-4b23-9ef7-f9ae1701784f">
+	      <File Id="logs_Wintertodt.txt" Name="Wintertodt.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Wintertodt.txt" />
+	    </Component>
+	    <Component Id="logs_Zamorak_Drops.txt" Guid="482b629b-5c8a-447e-9dfb-5e0d94d753b8">
+	      <File Id="logs_Zamorak_Drops.txt" Name="Zamorak Drops.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Zamorak Drops.txt" />
+	    </Component>
+	    <Component Id="logs_Zamorak_Uniques.txt" Guid="32f03f47-51bb-4e7b-a641-b76ee85e43e5">
+	      <File Id="logs_Zamorak_Uniques.txt" Name="Zamorak Uniques.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Zamorak Uniques.txt" />
+	    </Component>
+	    <Component Id="logs_Zamorak.txt" Guid="39faca90-b607-4b54-9295-322983866537">
+	      <File Id="logs_Zamorak.txt" Name="Zamorak.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Zamorak.txt" />
+	    </Component>
+	    <Component Id="logs_Zulrah_Drops.txt" Guid="9237958d-de07-4abc-9d6b-c1c4f0c18852">
+	      <File Id="logs_Zulrah_Drops.txt" Name="Zulrah Drops.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Zulrah Drops.txt" />
+	    </Component>
+	    <Component Id="logs_Zulrah_Uniques.txt" Guid="b75955c3-4b59-4757-ad98-5726b8d934e4">
+	      <File Id="logs_Zulrah_Uniques.txt" Name="Zulrah Uniques.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Zulrah Uniques.txt" />
+	    </Component>
+	    <Component Id="logs_Zulrah.txt" Guid="2c0ab305-0717-4cc8-9499-2570992e8443">
+	      <File Id="logs_Zulrah.txt" Name="Zulrah.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Zulrah.txt" />
+	    </Component>
+	    <Component Id="logs_Kraken_Uniques.txt" Guid="f6879786-2d7f-4e64-a255-a27abf608c9d">
+	      <File Id="logs_Kraken_Uniques.txt" Name="Kraken Uniques.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Kraken Uniques.txt" />
+	    </Component>
+	    <Component Id="logs_Kraken.txt" Guid="40496787-c56c-448f-b412-3d520f07f992">
+	      <File Id="logs_Kraken.txt" Name="Kraken.txt" Source="$(var.OldSchoolDropLogger_TargetDir)logs\Kraken.txt" />
+	    </Component>
+	  </ComponentGroup>
+	</Fragment>
+</Wix>
