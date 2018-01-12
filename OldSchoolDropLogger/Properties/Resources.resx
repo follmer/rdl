@@ -1006,7 +1006,7 @@
   <data name="Dragon_dagger__p___" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dragon_dagger_(p++).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Dragon_dart_tip" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Dragon_dart_tips_generic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dragon_dart_tip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Dragon_halberd" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -3585,5 +3585,29 @@
   </data>
   <data name="Wrath_rune_generic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Wrath_rune_generic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dragon_platelegs_grayscale" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Dragon_platelegs_grayscale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dragon_plateskirt_grayscale" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Dragon_plateskirt_grayscale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_0_grayscale" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Numbers\0_grayscale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Amethyst_bolt_tips_generic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Amethyst_bolt_tips_generic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dragon_battleaxe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Dragon_battleaxe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Watermelon_seed_15" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Watermelon_seed_15.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rune_dart_tips_generic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Rune_dart_tip_generic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sapphire_bolt_tips_generic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Sapphire_bolt_tips_generic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

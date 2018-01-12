@@ -63,6 +63,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _0_grayscale {
+            get {
+                object obj = ResourceManager.GetObject("_0_grayscale", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _0_green {
             get {
                 object obj = ResourceManager.GetObject("_0_green", resourceCulture);
@@ -798,6 +808,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Air_talisman {
             get {
                 object obj = ResourceManager.GetObject("Air_talisman", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Amethyst_bolt_tips_generic {
+            get {
+                object obj = ResourceManager.GetObject("Amethyst_bolt_tips_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -3772,6 +3792,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Dragon_battleaxe {
+            get {
+                object obj = ResourceManager.GetObject("Dragon_battleaxe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Dragon_bolt_tips_12 {
             get {
                 object obj = ResourceManager.GetObject("Dragon_bolt_tips_12", resourceCulture);
@@ -3932,9 +3962,9 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Dragon_dart_tip {
+        internal static System.Drawing.Bitmap Dragon_dart_tips_generic {
             get {
-                object obj = ResourceManager.GetObject("Dragon_dart_tip", resourceCulture);
+                object obj = ResourceManager.GetObject("Dragon_dart_tips_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -4042,9 +4072,29 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Dragon_platelegs_grayscale {
+            get {
+                object obj = ResourceManager.GetObject("Dragon_platelegs_grayscale", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Dragon_plateskirt {
             get {
                 object obj = ResourceManager.GetObject("Dragon_plateskirt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Dragon_plateskirt_grayscale {
+            get {
+                object obj = ResourceManager.GetObject("Dragon_plateskirt_grayscale", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -8933,6 +8983,16 @@ namespace OldSchoolDropLogger.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Rune_dart_tips_generic {
+            get {
+                object obj = ResourceManager.GetObject("Rune_dart_tips_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Rune_full_helm {
             get {
                 object obj = ResourceManager.GetObject("Rune_full_helm", resourceCulture);
@@ -9606,6 +9666,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Sanfew_serum__4__noted_generic {
             get {
                 object obj = ResourceManager.GetObject("Sanfew_serum__4__noted_generic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sapphire_bolt_tips_generic {
+            get {
+                object obj = ResourceManager.GetObject("Sapphire_bolt_tips_generic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -11974,6 +12044,16 @@ namespace OldSchoolDropLogger.Properties {
         internal static System.Drawing.Bitmap Watermelon_seed_1 {
             get {
                 object obj = ResourceManager.GetObject("Watermelon_seed_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Watermelon_seed_15 {
+            get {
+                object obj = ResourceManager.GetObject("Watermelon_seed_15", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

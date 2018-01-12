@@ -198,7 +198,6 @@ namespace stats {
 							lines[i] = lines[i].Substring(lines[i].IndexOf(":") + 1);
 						}
 
-
 						// Split drop on the comma - will do nothing if the drop isn't a multidrop,
 						// but will count all multidrops correctly
 						String[] drops = lines[i].Split(',');
@@ -243,6 +242,10 @@ namespace stats {
 									// Check if the previously logged quantities + the new quantity that we are logging is > 2147m
 									long checkMaxIntWhenAdded;
 									checkMaxIntWhenAdded = (long)totalDropsFromAllBosses[boss][ssDrop] + dropQuantity;
+
+									//Console.WriteLine("\n=============== DEBUG ================");
+									//Console.WriteLine("Drop: " + drop);
+									//Console.WriteLine("=============== DEBUG ================\n");
 
 									if (checkMaxIntWhenAdded > 2147000000 || checkMaxIntWhenAdded < 0) {
 										totalDropsFromAllBosses[boss][ssDrop] = 2147000000;

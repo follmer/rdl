@@ -42,6 +42,7 @@
 			this.kalphiteQueenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.raidsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.skotizoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.vorkathToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.wintertodtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.zulrahToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.slayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -179,7 +180,6 @@
 			this.pictureBox68 = new System.Windows.Forms.PictureBox();
 			this.pictureBox67 = new System.Windows.Forms.PictureBox();
 			this.pictureBox65 = new System.Windows.Forms.PictureBox();
-			this.vorkathToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStripLogger.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothPrime)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxDagannothRex)).BeginInit();
@@ -415,6 +415,13 @@
 			this.skotizoToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
 			this.skotizoToolStripMenuItem.Text = "Skotizo";
 			this.skotizoToolStripMenuItem.Click += new System.EventHandler(this.skotizoToolStripMenuItem_Click);
+			// 
+			// vorkathToolStripMenuItem
+			// 
+			this.vorkathToolStripMenuItem.Name = "vorkathToolStripMenuItem";
+			this.vorkathToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+			this.vorkathToolStripMenuItem.Text = "Vorkath";
+			this.vorkathToolStripMenuItem.Click += new System.EventHandler(this.vorkathToolStripMenuItem_Click);
 			// 
 			// wintertodtToolStripMenuItem
 			// 
@@ -2037,13 +2044,6 @@
 			this.pictureBox65.TabIndex = 162;
 			this.pictureBox65.TabStop = false;
 			this.pictureBox65.Visible = false;
-			// 
-			// vorkathToolStripMenuItem
-			// 
-			this.vorkathToolStripMenuItem.Name = "vorkathToolStripMenuItem";
-			this.vorkathToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-			this.vorkathToolStripMenuItem.Text = "Vorkath";
-			this.vorkathToolStripMenuItem.Click += new System.EventHandler(this.vorkathToolStripMenuItem_Click);
 			// 
 			// OldSchoolDropLogger
 			// 

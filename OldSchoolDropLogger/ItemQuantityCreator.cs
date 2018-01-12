@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Media;
 using OldSchoolDropLogger.Properties;
+using System.Windows.Forms;
 
 namespace itemQuantityCreator {
 	class ItemQuantityCreator {
@@ -124,6 +125,16 @@ namespace itemQuantityCreator {
 
 			// Returns the quantity to be shown with the appropriate letter and appropriate colors
 			return result;
+		}
+		public Bitmap setCorrectBackgroundsAndQuantities(PictureBox pb, String item, int quantity) {
+
+			// check that the resource exists for the passed in item
+			// create the background image normally (just grab the resource from that string)
+			// if qty == 0 then make it grayscale
+			// set the pb passed in bg = resource, and set image to createquantityimage(quantity)
+			// return void
+
+			return null;
 		}
 
 		private Bitmap getNumberImage(int number, String textColor, String endingLetter = "") {
